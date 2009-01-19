@@ -1,5 +1,4 @@
 require 'rubygems'
-require 'lazypaper'
 require 'rake/clean'
 
 # set up some constants to say where things are
@@ -32,7 +31,7 @@ task :default => :paper
 desc "Construct the paper"
 task :paper => PDF
 
-file PDF => ["#{PAPER}.tex", BIBLIOGRAPHY] do
+file PDF => FileList["#{PAPER}.tex", BIBLIOGRAPHY, "chapters/*.tex"] do
   Task[:clean].invoke
   sh "pdflatex #{PAPER}"
   sh "bibtex #{PAPER}"
