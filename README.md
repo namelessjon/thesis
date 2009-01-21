@@ -14,22 +14,25 @@ Introduction
 Toolkit Methods
 ---------------
 
-* results implemented
-* how
+* experimental protocols
+* new methods
+* tying it together
 
 
 ThreeD Methods
 --------------
 
-* results implemented
-* how
+* fibre structure
+* heterogenity
+* parallelization
 
 
 Body Surface Potential Methods
 ------------------------------
 
-* resulted implemented
-* how
+* math involved
+* heart rotation
+* phase measurement methods
 
 
 Toolkit Results
