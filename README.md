@@ -18,13 +18,24 @@ Introduction
   * Why are we interested?
   * the ECG
   * P-waves
+  * current state of simulations
 
 
 Toolkit Methods
 ---------------
 
 * experimental protocols
+  * APD
+  * APDr
+  * ERPr
+  * CV
+  * VW
+  * cut wave?
 * new methods
+  * binary searching
+  * caching
+  * direct visualization
+  * maps expanded for general use.
 * tying it together
 
 
@@ -64,6 +75,7 @@ Body Surface Potential Results
 * plots
 * ecgs
 * phase plots
+* location of arrhythmias and ECG profiles.
 
 Discussion
 ----------
@@ -71,6 +83,10 @@ Discussion
 * toolkit
 * threeD
 * BSP
+
+Appendix A
+----------
+* documentation for toolkit
 
 
 
