@@ -68,3 +68,18 @@ end
 #   end
 # end
 
+task :contents => 'contents.html'
+
+CLEAN.include('contents.html')
+
+file 'contents.html' => 'README.md' do |t|
+  require 'rdiscount'
+  File.open(t.name, 'w') do |f|
+    f.puts '<html>'
+    f.puts '<head><title>J Stott Thesis Contents</title></head>'
+    f.puts '<body>'
+    f.puts RDiscount.new(File.open(t.prerequisites.first) {|i| i.read}).to_html
+    f.puts '</body>'
+    f.puts '</html>'
+  end
+end
