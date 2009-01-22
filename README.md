@@ -5,10 +5,19 @@ Introduction
 ------------
 
 * The Heart
+  * structure
+  * function
 * Cellular Modelling
+  * basic principles
+  * model development
+  * models
 * Toolkits
+  * advantages of toolkits
+  * currently existing ones
 * The BSP
-* P-waves
+  * Why are we interested?
+  * the ECG
+  * P-waves
 
 
 Toolkit Methods
