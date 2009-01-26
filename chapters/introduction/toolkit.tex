@@ -5,8 +5,28 @@ needed, as has been previously mentioned: the mathematical models used for
 cardiac activity and a computational representation of the experimental
 protocols followed to produce results.  A cardiac simulation toolkit provides
 one or both of these components to an investigator, removing the need for the
-investigator to implement those components themselves.  Toolkits have a number
-of advantages to the investigator, including
+investigator to implement those components themselves.  The word toolkit is
+chosen to differentiate from the relatively more common practice of just
+providing individual cell models.  A toolkit implies more than one model, or
+variants on a model, with a common calling interface and implementation of one
+or more experimental protocols or a non-programmatic way of setting up such
+protocols---whether through a GUI or through command-line options or
+configuration files.
+
+Toolkits have a number of advantages to the investigator, including a reduction
+in the work required to bring a paper to publication, increased consistency both
+within and outside of the group, fewer implementation mistakes, increased
+possibilities for collaboration and verification and a greater accessibility to
+cardiac simulations for non-programmers.  The disadvantages of toolkits are not
+as numerous, but they too will be considered.  A toolkit will need auditing, to
+ensure that the results it gives are accurate.  Toolkits can also constrain the
+avenues of experimentation pursued by an investigator by making protocols easier
+or harder to implement.  Finally, the additional complexity makes adding any new
+feature a little harder---there is a `feature cost'.
+
+\subsection{Advantages of Cardiac Simulation Toolkits}
+
+
 
 Cardiac simulation toolkits have existed in one form or another for some
 time and include both commercial and open source 
