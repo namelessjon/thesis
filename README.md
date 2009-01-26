@@ -14,6 +14,10 @@ Introduction
 * Toolkits
   * advantages of toolkits
   * currently existing ones
+    * COR
+    * PhyENV
+    * OXSOFT Heart
+    * CellML
 * The BSP
   * Why are we interested?
   * the ECG
