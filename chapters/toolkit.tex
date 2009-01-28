@@ -1,9 +1,31 @@
 \chapter{Constructing a Cardiac Simulation Toolkit}
 
+\section{Simulation Environment}
+
+The simulation environment provided by the cardiac toolkit is intended to be as
+portable as possible, so that numerical experiments may be run on whichever
+platforms are appropriate.  To this end, all the data input structures are based
+on open standards, or simple binary formats.  The output formats provided by the
+various driver programs are also in simple binary or ASCII formats, to allow
+them to be easily visualized with both commercial and open source visualisation
+tools.  The results presented later in this chapter were performed on desktop
+computers with a XX GHz Althon X2 chip and 1 GB RAM and on Horace, a ...
+
+\subsection{Implementation}
+
+The experimental protocol drivers and the cellular models were implemented in
+the C programming language, although much of the supporting code and
+supplementary tools were implemented in the ruby programming language.
+
+\subsection{Optimisation}
+
+\subsection{Parallelization}
+
+
+
 \section{Experimental Protocols}
 
 
 
 \subsection{Action Potential Duration}
 
-\section{New Methods}
