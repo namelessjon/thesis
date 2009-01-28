@@ -83,3 +83,13 @@ file 'contents.html' => 'README.md' do |t|
     f.puts '</html>'
   end
 end
+
+task :count do
+  count = `find . -name '*.tex' | xargs TeXcount.pl -brief`
+  if count =~ /Total(\d+)\+(\d+)\+(\d+)/
+    puts "Words in text:     #{$1}"
+    puts "Words in headers:  #{$2}"
+    puts "Words in captions: #{$3}"
+    puts "Total:             #{$1.to_i + $2.to_i + $3.to_i}"
+  end
+end
