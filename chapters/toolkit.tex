@@ -93,18 +93,101 @@ of ``No code is faster than no code'', although it might be more accurate to say
 another way, it is that no combination of compiler flags can compete with a
 sensible choice of algorithm which minimizes the number of computational steps
 to be performed or the amount of data to be written to a file.  This is not to
-say that compiler flags are unimportant, but that they are merely the start of
+say that the compiler is are unimportant, but that it is merely the start of
 optimisations, rather than the final step.
 
-\subsubsection{Compiler Flags}
+\subsubsection{The Compiler}
 
-
+The toolkit has been compiled using the GNU C compiler (gcc)~\cite{gcc}, the
+Intel C compiler (icc)~\cite{icc} and the Sun microsystems .  All three have
+OpenMP implementations available and all three are capable of performing a
+number of optimisations, controlled via flags.  The most important aspect of the
+optimisations is that they should not alter the behaviour of the floating point
+handling, as this could have significant impact on the final result computed.
+Despite this caveat, the results of applying certain optimisation flags can be
+quite significant.
 
 \subsubsection{Caching of Computed Values}
 
+Moving beyond the compiler, one of the simplest forms of optimisation is to only
+calculate each value once, if at all possible.  This can be done in a number of
+ways and the toolkit developed here implements two such methods for saving
+computational time.
+
+State saving is one of the most direct ways of caching computed values.  At a
+particular point in the simulation, all of the state variables of the
+system are copied into an intermediate location.  This might be a file on disk or
+to another location in memory.  If the state is written out to a file, that file can
+be used as a `save point', allowing the simulation to be continued from that
+point in the future, ensuring work is not wasted.
+
+When copied to another memory location, this allows the program to return to
+that point in the future.  This is useful in modelling many experimental
+protocols, which often call for a number of `conditioning' pulses to allow the
+cell or model to settle.  The state can be saved after the conditioning pulses
+and then the actual tests can be performed quickly, saving the execution of
+several seconds of simulated activity.  This technique should obviously only be
+used for cells in the Hodgkin-Huxley formalism which are deterministic and thus
+give identical results whether the state is saved or not.  Using such a
+technique with a cell that has a number of stochastic components could
+potentially affect the quality of the results.
+
+The second way in which caching can be employed is in the creation of `lookup
+tables'.  A lookup table is a pre-computed table of the values an expression can
+take.  When the expression would normally be evaluated, the table is used
+instead, replacing what might be a complicated expression with a single array
+lookup.  For lookup tables to be efficient to pre-compute, the tabulated
+expression should depend on only one variable and should be sufficiently
+`complex' expression, such as one involving the computation of mathematical logs
+or exponentials.  The expression should depend on only one variable as the
+pre-computed table has to be indexed over each variable the computation depends
+on and even dependence on just two variables would increase the number of table
+entries required by thousands or millions.  The requirement for complexity is a
+little more obvious, as any optimisation can only save as much time as the
+original series of operations took.  With these limitations in mind, it is still
+possible to find many candidates for pre-computation in typical cardiac cell
+models, most notably the activation and inactivations of voltage dependent
+gates.  This technique is typically only worthwhile performing in the case of
+tissue simulations where the benefits can be shared amongst all the cells since
+pre-computation can be quite expensive, destroying any efficiency gains made
+through their use for single cell simulations.
+
 \subsubsection{Binary Searches}
 
+Several of the experimental protocols provided by the toolkit are intended to
+determine the value of a parameter which causes a particular condition to be
+fulfilled, such as a successful excitation of the cellular model after
+progressively shortening stimulus intervals.  This value we will call the
+critical value. In real experiments, ones involving actual cardiac tissue, the
+typical experimental protocol would involve stimulating the tissue at
+sequentially shorter intervals, until no stimulation was provoked.  This might
+involve stimulating the cell thousands of times, which would be expensive
+computationally to model exactly.  Instead, a binary search for the critical
+value can be performed, using the pseudo-code shown here.
+
+
+To explain in words, first two guesses are made; the high guess, which is the
+maximum value that the critical value can take, and the low guess, the
+minimum it is presumed to take.  The simulation is then run with the parameter
+set at the average of the low and high guesses--the current guess.  If the test is successful, the
+critical value evidently lies somewhere between the low guess and the average,
+and so the high guess is set to the current guess.  Conversely, if the test is
+unsuccessful, the critical value is obviously above the current guess, and so
+the low guess is set to the current guess.  The simulation is then repeated with
+the average of the new high and low guess.  Using this algorithm, the search
+space is halved with each iteration, swiftly finding the critical value.  For
+example, to find a parameter somewhere in the range of 0--1000~ms to the nearest
+millisecond requires just 10 iterations of the binary search algorithm, but
+might take hundreds of iterations with sequential searching.
+
+One important thing that must be considered when using binary searches is that
+there is only one critical value in the range considered or else the algorithm
+will give unpredictable results.  In practice, this limitation is often quite
+easy to work within.
+
 \subsubsection{Adaptive Steps}
+
+
 
 \subsubsection{Parallel Output}
 
