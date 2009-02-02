@@ -185,9 +185,34 @@ there is only one critical value in the range considered or else the algorithm
 will give unpredictable results.  In practice, this limitation is often quite
 easy to work within.
 
-\subsubsection{Adaptive Steps}
+\subsubsection{Adaptive Step}
 
+Adaptive step mechanisms are employed in the toolkit when there is a need to
+provide output over a wide range of times, when the slope of the graph is not
+constant over the range to be graphed.  This is very common in the modelling of
+cardiac cells, which often show an exponential dependence of various parameters
+on the  stimulus interval, and are graphed over a range of hundreds or thousands
+of milliseconds.  A step that sufficient to track the curve at the upper limits
+of the range will completely fail at the steeper slow of the lower limits,
+whilst a step that will track the curve for the lower limits will result in
+unnecessary work being done at the upper end of the range.  To alleviate this
+problem, an adaptive stepping mechanism is used, as shown in this pseudo-code.
 
+First, the measurement is performed at the largest desired point.  The interval
+is then reduced by the step, and the measurement is performed again.  The
+difference in the measurements is calculated and compared to the desired maximum
+delta.  If the difference is acceptable, the interval is once more reduced by
+the step, and the measurement taken once more.  If the difference is too great,
+then instead the step size is halved and the measurement repeated.  If the
+difference is now acceptable, then the interval is reduced by the new step and
+the experiment proceeds.  If it is not, then the step size is once more halved.
+The step size used is therefore always appropriate to the slope of the curve and
+a smooth graph results.  Additional logic, not shown in the pseudo-code, is used
+to ensure the step size does not become too small, and to terminate the graph at
+the lower end of the range.
+
+Since curves can increase or decrease the absolute difference between the two
+values is compared.
 
 \subsubsection{Parallel Output}
 
