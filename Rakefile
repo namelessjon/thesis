@@ -94,7 +94,8 @@ task :count do
     require 'rest_client'
     require 'system_timer'
     SystemTimer.timeout(30) do
-      RestClient.post "http://rifgraf.heroku.com/graphs/nameless_thesis", :value => "#{$1.to_i + $2.to_i + $3.to_i}"
+      RestClient.post "http://rifgraf.heroku.com/graphs/nameless_thesis",
+        :value => "#{$1.to_i + $2.to_i + $3.to_i}", :timestamp => Time.now
     end
   end
 end
