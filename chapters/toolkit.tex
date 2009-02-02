@@ -167,18 +167,18 @@ value can be performed, using the pseudo-code shown here.
 
 
 To explain in words, first two guesses are made; the high guess, which is the
-maximum value that the critical value can take, and the low guess, the
-minimum it is presumed to take.  The simulation is then run with the parameter
-set at the average of the low and high guesses--the current guess.  If the test is successful, the
-critical value evidently lies somewhere between the low guess and the average,
-and so the high guess is set to the current guess.  Conversely, if the test is
-unsuccessful, the critical value is obviously above the current guess, and so
-the low guess is set to the current guess.  The simulation is then repeated with
-the average of the new high and low guess.  Using this algorithm, the search
-space is halved with each iteration, swiftly finding the critical value.  For
-example, to find a parameter somewhere in the range of 0--1000~ms to the nearest
-millisecond requires just 10 iterations of the binary search algorithm, but
-might take hundreds of iterations with sequential searching.
+maximum value that the critical value can take, and the low guess, the minimum
+it is presumed to take.  The simulation is then run with the parameter set at
+the average of the low and high guesses--the current guess.  If the test is
+successful, the critical value evidently lies somewhere between the low guess
+and the average, and so the high guess is set to the current guess.  Conversely,
+if the test is unsuccessful, the critical value is obviously above the current
+guess, and so the low guess is set to the current guess.  The simulation is then
+repeated with the average of the new high and low guess.  Using this algorithm,
+the search space is halved with each iteration, swiftly finding the critical
+value.  For example, to find a parameter somewhere in the range of 0--1000~ms to
+the nearest millisecond requires just 10 iterations of the binary search
+algorithm, but might take hundreds of iterations with sequential searching.
 
 One important thing that must be considered when using binary searches is that
 there is only one critical value in the range considered or else the algorithm
