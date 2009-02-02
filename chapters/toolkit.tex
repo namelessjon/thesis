@@ -20,12 +20,93 @@ and for both the MPI and OpenMP parallelization libraries.
 
 The experimental protocol drivers and the cellular models were implemented in
 the C programming language, although much of the supporting code and
-supplementary tools were implemented in the ruby programming language.
+supplementary tools were implemented in the ruby programming language.  The
+cellular models currently implemented are based on the Hodgkin-Huxley formalism,
+although there is no fundamental reason why a Markov chain based model could not
+be included.  Inter-cellular coupling for propagation of excitation over a
+strand or tissue was implemented using the monodomain equations.
 
-\subsection{Optimisation}
+\subsubsection{Cellular Models}
+
+The cellular model used for much of the developmental process was the
+Courtemanche et al. human atrial myocyte model~\cite{crn98}.  Also currently
+implemented are the Nygern et al. human atrial myocyte model~\cite{nygern98} and
+the four variable formulation of the Fenton-Karma minimal variable
+model~\cite{overo2008}.  These cellular models describe the behaviour of a cell
+using coupled systems of non-linear ordinary differential equations.  The ODEs
+represent the concentrations of intra- and extra-cellular ion species and the
+flow of current through ionic channels in the cell membrane or between
+intra-cellular compartments (Or their notional equivalents in the minimal
+variable model)
+
+These equations were generally solved using the simplest time-stepping method
+available, the explicit Euler method.  To improve performance and stability,
+some variables were integrated using the Rush-Larsen method.  More complex
+integration schemes were tried, but did not significantly improve performance to
+compensate for the greater complexity.
+
+\subsubsection{Monodomain Equations}
+
+The monodomain equations were used to couple multiple cells together to describe
+a tissue over which excitation could be conducted.
+
+
+
+The monodomain equations are considerably simpler than the bidomain equations
+which have an elliptical component, representing the extra-cellular potentials,
+that must be solved via iterative methods.  This additional complexity is not
+required unless the desire is to model situations where there is significant
+coupling to external voltage sources, for example to model defibrillation
+techniques.
 
 \subsection{Parallelization}
 
+Some parts of the toolkit require the modelling of large numbers of cells, on
+the order of tens or even hundreds of thousands of cellular models in two
+dimensional sheets.  Solving all the equations involved takes a significant
+amount of time and so it is desirable for such simulations to be parallelized so
+that the work involved can be split over several processors.  This can have
+advantages beyond merely having eight rather than one cores worth of
+computational cycles working on solving the equations.  Splitting the work over
+multiple cores can also increase the amount of cache available, allowing for
+more efficient operation of the solvers.
+
+For the toolkit, the OpenMP~\cite{OpenMP} parallelization library was chosen.
+This implements the shared memory parallelism paradigm.  Using the shared memory
+paradigm is simpler, due to the lack of explicit communication calls, and can be
+faster, as there is merely memory access involved, rather than communication
+over an network or other interconnect.  Finally, a program written using OpenMP
+can, with some care, also be compiled serially if an OpenMP compiler is not
+available.  Whilst a program implemented using a non-shared memory paradigm,
+such as using the MPI library, would allow it to be executed on potentially more
+processors which would potentially offer faster run times, in practice the eight
+core shared memory system Horace provides as a compute node was general found to
+be sufficient for the task.
+
+\subsection{Optimisation}
+
+The toolkit uses several techniques to optimize the computations performed,
+reducing the number of processing cycles required to compute the results needed
+for publication.  These optimisations are generally built around the principle
+of ``No code is faster than no code'', although it might be more accurate to say
+``No code execution is faster than no code executed''.  To explain this idea
+another way, it is that no combination of compiler flags can compete with a
+sensible choice of algorithm which minimizes the number of computational steps
+to be performed or the amount of data to be written to a file.  This is not to
+say that compiler flags are unimportant, but that they are merely the start of
+optimisations, rather than the final step.
+
+\subsubsection{Compiler Flags}
+
+
+
+\subsubsection{Caching of Computed Values}
+
+\subsubsection{Binary Searches}
+
+\subsubsection{Adaptive Steps}
+
+\subsubsection{Parallel Output}
 
 
 \section{Experimental Protocols}
