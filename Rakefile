@@ -91,5 +91,10 @@ task :count do
     puts "Words in headers:  #{$2}"
     puts "Words in captions: #{$3}"
     puts "Total:             #{$1.to_i + $2.to_i + $3.to_i}"
+    require 'rest_client'
+    require 'system_timer'
+    SystemTimer.timeout(30) do
+      RestClient.post "http://rifgraf.heroku.com/graphs/nameless_thesis", :value => "#{$1.to_i + $2.to_i + $3.to_i}"
+    end
   end
 end
