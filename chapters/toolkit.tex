@@ -258,3 +258,49 @@ of at least 80\% of the magnitude of a normal AP.  To determine the rate
 dependence of the ERP, it is evaluated at a decreasing BCL.
 
 
+The cellular model is paced seven times, and then the state is saved just before
+the eighth AP is initiated.  The ERP for each chosen pacing rate is found via
+binary search.  The low guess is typically chosen as zero, whilst the high guess
+is the BCL being tested.  The eight AP is initiated immediately and then the S2
+stimulus is delivered at the average of the guesses, as described previously.
+If the ninth AP is successful, in addition to updating the high guess, the S2
+interval is stored in a `best guess'.  With this small alteration, the binary
+search algorithm is performed as described, with the saved state restored after
+each iteration.
+
+The reduction in BCL is stepped via an adaptive mechanism.  The BCL is reduced
+until it is sufficiently short that the stimuli are occurring within the tail end
+of the AP.
+
+\subsection{Vulnerable Window}
+
+The VW is principally a tool of numeric experimentation, based around a 1D ring
+model of cardiac arrhythmia.  The VW is defined as the time period after a
+stimulation during which a second stimulus elicits unidirectional propagation
+along the strand.  In the case of a ring this causes retrograde propagation
+which cycles endlessly.  If the stimulus is given too early, then the tissue
+will still be refractory and no propagation of excitation will ensue.  If it is
+given too late, then propagation will occur in both directions, which in the
+ring case, results in the two excitation wavefronts annihilating each other.
+Normal pacing could then resume.
+
+The VW is found in a 1D strand model, set up as described previously.  The
+strand is 200 units long and with a space step of 0.1~mm.  The first stimulus is
+given to a 3 unit (0.3~mm) section at one end of the strand.  The test stimulus
+is given to a 4 unit (0.4~mm) section, usually centred in the middle of the
+strand. The VW is bounded on the lower side at the time when a stimulus any
+earlier would result in no propagation from a test stimulus, and on the upper
+side at the time when a stimulus any later would result in bidirectional
+propagation from a test stimulus.  These three cases (no, unidirectional,
+bidirectional) propagation are illustrated in figure TODO.
+
+By counting the number of APs which cross the two ends of the strand--2, 3 and
+4, respectively, for the three cases in figure TODO--the result of the test
+stimulus can be determined.  The two boundaries of the VW are found via binary
+search, with a lower guess of 0~ms and an upper guess of 1000~ms.  First, the
+upper bound of the VW is determined by searching for the delay when 3 APs
+crossing the ends becomes 4.  The lower bound is then found by looking for the
+delay at which 3 APs crossing the ends of the strand become 2.  A minor
+optimisation is performed when looking for the upper bounds, in that the lower
+bound high and low guesses are updated at the same time, reducing the total
+space which must be searched in the second half of the program.
