@@ -301,6 +301,49 @@ search, with a lower guess of 0~ms and an upper guess of 1000~ms.  First, the
 upper bound of the VW is determined by searching for the delay when 3 APs
 crossing the ends becomes 4.  The lower bound is then found by looking for the
 delay at which 3 APs crossing the ends of the strand become 2.  A minor
-optimisation is performed when looking for the upper bounds, in that the lower
-bound high and low guesses are updated at the same time, reducing the total
+optimisation is performed when looking for the upper bound, in that the lower
+bound's high and low guesses are updated at the same time, reducing the total
 space which must be searched in the second half of the program.
+
+\subsection{Conduction Velocity Restitution}
+
+Measurement of CV (or solitary wave velocity) itself is performed both
+experimentally and numerically, as is the minimum conduction interval, which is
+the shortest interval between an S1 and an S2 stimulus which still travels the
+length of the strand.  This is similar to the ERP, but can also be influenced by
+factors which affect the inter-cellular coupling as well as heterogeneity in the
+strand.  The CVr provides both the solitary wave velocity, the CV for a large S2
+interval and the minimum stimulus interval, when the S2 interval gets too short
+for an excitation wavefront to be fully propagated.
+
+The CVr is found in a 1D strand model, set up as described previously.  The
+strand is 200 units long with a space step of 0.1~mm.  Both the stimuli are
+given to a 3 unit (0.3~mm) section at one end of the strand.  The conduction
+velocity is estimated from the time taken to propagate between two points 10
+units from the ends of the strand, to minimize the influence of boundary
+effects.  The S2 time is then stepped via an adaptive step, until a second
+excitation wave does not propagate.
+
+\subsection{Spiral Wave Life Span}
+
+Spiral Wave LS is examined experimentally and numerically.  The LS of the spiral
+wave and the meander pattern of the tip are both used to gain insight into the
+behaviour of the tissue under conditions of cardiac arrhythmia.
+
+Spiral waves are initiated in a square section of tissue 375x375 nodes in
+dimension with a space step of 0.1~mm, as described previously.  The tissue is
+first stimulated along one edge via current injection of the first 3 rows of the
+tissue.  The planar wave is then allowed to propagate over the tissue.  Some
+time after the first wave is initiated, a second stimulus is applied.  The
+second stimulus is applied to half the tissue, bisecting the first wave's
+propagation front.  The second stimulus is a voltage clamp, with all the
+included tissue clamped to a `high' potential, typically +20~mV--+50~mV for a
+millisecond.  The generated spiral is then allowed to evolve until it
+self-terminates, the spiral wave tip exits the tissue or until a sufficient
+amount of time has passed such that the spiral can be classified as
+`persistent'.  The time allowed for a wave to be classified as persistent is
+typically 5 or 10~s.
+
+The spiral wave tip traces are calculated via a standard contour based
+algorithm, comparing the -60~mV contour line on snapshots of the electrical
+activity 2.5~ms apart.
