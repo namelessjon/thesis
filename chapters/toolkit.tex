@@ -36,8 +36,8 @@ model~\cite{overo2008}.  These cellular models describe the behaviour of a cell
 using coupled systems of non-linear ordinary differential equations.  The ODEs
 represent the concentrations of intra- and extra-cellular ion species and the
 flow of current through ionic channels in the cell membrane or between
-intra-cellular compartments (Or their notional equivalents in the minimal
-variable model)
+intra-cellular compartments, or their notional equivalents in the case of minimal
+variable models.
 
 These equations were generally solved using the simplest time-stepping method
 available, the explicit Euler method.  To improve performance and stability,
@@ -58,6 +58,34 @@ that must be solved via iterative methods.  This additional complexity is not
 required unless the desire is to model situations where there is significant
 coupling to external voltage sources, for example to model defibrillation
 techniques.
+
+\subsubsection{Strand Model}
+
+The 1D strand model is used for several experimental protocols, as
+a computationally cheaper alternative to a full tissue model.  The 1D strand
+model consists of a number of nodes, typically 200 or 300, which are coupled
+electrically at the ends of the cells.  The electrical activity at each node is
+modelled via a cellular electrophysiology model and electrical conduction between the
+nodes is handled via a 1D formulation of the monodomain equations, with no
+flux boundary conditions.
+
+\subsubsection{Sheet Model}
+
+The 2D sheet model is used for several experimental protocols, as well as more
+general numerical experimentation.  The 2D sheet model consists of a grid of
+nodes, coupled electrically along the cardinal directions of the grid.  The
+electrical activity at each node is modelled via a cellular electrophysiology
+model.  Conduction of the electrical excitation between the nodes uses the
+mono-domain equations with no flux boundary conditions applied at all tissue
+boundaries.  The square sheet model, used in several of the numerical
+experimental protocols described later, is typically 375x375 nodes, representing
+140625 cellular models.  Two dimensional idealizations of physiological
+preparations can have many more nodes, to on the order of $10^{6}$ cellular
+models.  These idealizations can often be quite irregular and so to allow easy
+and effective partition of workload across multiple processors, the tissue map
+is decomposed into a 1D array which contains references to the neighbouring
+cells.
+
 
 \subsection{Parallelization}
 
@@ -214,7 +242,28 @@ the lower end of the range.
 Since curves can increase or decrease the absolute difference between the two
 values is compared.
 
-\subsubsection{Parallel Output}
+\subsubsection{Parallel Input/Output}
+
+Input and output for simulations is obviously essential if they are to be of any
+use.  This input and output can involve the reading or writing of many megabytes
+or gigabytes of information over the course of a simulation, often in a variety
+of different formats.  This most significant for sheet simulations and it is
+those that we consider here.
+
+Data input is typically not that significant a cost for
+simulations, as whilst various simulation maps and saved states be quite large,
+the cost is typically only paid once.  Data output is often required at numerous
+points throughout the course of the simulation since almost all simulations are
+performed to examine the time evolution of the cardiac system.  Many simulations
+will output the value of state parameters, most commonly the voltage, at all
+points in the tissue every few milliseconds of simulated time.  Other state
+variables might also be desired and the toolkit also offers `live visualization'
+of two dimensional sheets via output of images in the GIF format.  In addition,
+the whole state is output regularly, to allow simulations to be resumed at a
+later point in time.  This output usually stops all simulation whilst it is
+being written to disk, time during which the processors are typically idle.  By
+allowing multiple threads to output in parallel, the cost of outputting multiple
+files can be reduced to the cost of outputting one.
 
 
 \section{Experimental Protocols}
@@ -330,7 +379,7 @@ Spiral Wave LS is examined experimentally and numerically.  The LS of the spiral
 wave and the meander pattern of the tip are both used to gain insight into the
 behaviour of the tissue under conditions of cardiac arrhythmia.
 
-Spiral waves are initiated in a square section of tissue 375x375 nodes in
+Spiral waves are initiated in a square sheet of tissue 375x375 nodes in
 dimension with a space step of 0.1~mm, as described previously.  The tissue is
 first stimulated along one edge via current injection of the first 3 rows of the
 tissue.  The planar wave is then allowed to propagate over the tissue.  Some
@@ -347,3 +396,90 @@ typically 5 or 10~s.
 The spiral wave tip traces are calculated via a standard contour based
 algorithm, comparing the -60~mV contour line on snapshots of the electrical
 activity 2.5~ms apart.
+
+\subsection{Spatial Vulnerability Window}
+
+The SVW is examined both experimentally and numerically.  It is used together
+with the (Temporal) VW for quantifying a mutation or condition's potential for
+arrhymogenesis.  It is defined as the smallest area of tissue in a 2D sheet,
+which when given a threshold stimulus in the wake of a conditioning pulse causes
+at least one `figure of eight' re-entry.  A figure of eight re-entry occurs when
+the excitation waves from the tips of the test area propagate back through the
+centre of the area, resulting in a pair of contra-rotating spiral waves at each
+end of the region.
+
+The sheet model used for the determination of the SVW can vary in size, as the
+SVW can vary substantially, depending on the electrophysiology being simulated
+by the cellular models at the nodes, but the smallest used is typically 375x375
+nodes, with a spatial resolution of 0.1~mm.  The sheet is first given one
+conditioning excitation, initiated by injecting a strip of nodes 3 nodes
+(0.3~mm) in width with current along one edge of the sheet.  The wave is then
+allowed to propagate through the tissue.  When the VW of the tissue is
+positioned at the centre of the tissue, the test stimulus is delivered.  The
+test stimulus is an area of tissue 20 nodes (2~mm) wide and of variable length.
+After the test stimulus is delivered, the sheet is observed until figure of
+eight re-entry is observed, or it is obvious that it will not occur.  The
+protocol is then repeated with a test stimulus area of greater length.
+
+
+\section{Results From Simulation Studies}
+
+The cardiac simulation toolkit has been used in several simulation studies.
+Here I present two such studies, representing different aspects of the toolkit.
+The first is based on an experimental study which determined the existence of a
+novel ion channel in the human atrium which caries an anion current through the
+cellular membrane.  The second is principally a 2D study, concerning the effects
+of Atrial Fibrillation induced Electrical Remodelling (AFER) and
+electrophysiological heterogeneity in a 2D idealization of the right atrium and
+the sino-atrial node.
+
+\subsection{Anion Currents In The Human Atrium}
+
+In a recent experimental study, Li et al.~\cite{li2007} determined the existence
+of a novel outwardly rectifying anion current in human atrial myocytes isolated
+from right atrial appendages taken from patients undergoing coronary bypass
+surgery.  They determined that it was separate other known ionic currents and
+performed preliminary modelling based on the CRN Human Atrial Myocyte
+model~\cite{crn98}.  They determined the current could be modelled by
+equation~\ref{anion:eqn} with the constants given in table~\ref{anion:table}.
+
+The total current carried by the channel, $I_{ANION}$ was given by
+
+\begin{equation}
+\label{anion:eqn}
+I_{ANION} = g_{ANION} \frac{V-E_{ANION}}{1-\left(c\times e^{\left(V-E_{ANION}\right)}\right)}
+\end{equation}
+
+where $g_{ANION}$ is the conductivity of the anion channel, $E_{ANION}$ is
+the reversal potential of the channel and $c$ and $d$ are constants to
+describe the behaviour.  All other symbols have their usual meanings.
+
+The simulation study used the parameter set for the anion current carrying
+$NO_{3^{-}}$ ions.  The effects of the addition of this current were quantified
+via the experimental protocols outlined previously.  In the following
+paragraphs, `control' is used to denote the unmodified CRN model and `anion' to
+denote the CRN model with the additional current described by (\ref{anion:eqn})
+with the $NO_{3^{-}}$ parameter set from Table \ref{anion:table}.
+
+\subsubsection{Action Potential}
+
+The AP generated by the control and anion simulations are shown in
+figure~\ref{anion:ap}.  The AP profile shows a depressed plateau region (phase
+2) and a slightly elevated resting potential.  There was no significant effect
+on the $APD_{90}$ but the $APD_{50}$ is abbreviated by the presence of the anion
+current, as shown in the Li et al.~\cite{li2007}
+
+\subsubsection{Action Potential Duration Restitution}
+
+The APDr curves produced by the control and anion cases are shown in
+figure~\ref{anion:apd50} and \ref{anion:apd90}, for the restitution of
+$APD_{50}$ and $APD_{90}$, respectively.  The $APD_{90}$ restitution is very
+similar for the control and anion cases with both showing a large plateau region
+where there is little changed, followed by a rapidly increasing slope as the DI
+gets closer to 0~ms.  The maximal slopes are XXX in control and XXX in the anion
+case.  By contrast, the $APD_{50}$ restitution for the anion case is depressed
+when compared to the control case.
+
+\subsubsection{Effective Refractory Period Restitution}
+
+
