@@ -31,7 +31,7 @@ task :default => :paper
 desc "Construct the paper"
 task :paper => PDF
 
-file "#{PAPER}.dvi" => FileList["#{PAPER}.tex", BIBLIOGRAPHY, "chapters/**/*.tex"] do
+file "#{PAPER}.dvi" => FileList["#{PAPER}.tex", BIBLIOGRAPHY, "chapters/**/*.tex", "figures/**/*.eps"] do
   Task[:clean].invoke
   sh "latex #{PAPER}"
   sh "bibtex #{PAPER}"
