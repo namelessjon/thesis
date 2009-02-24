@@ -31,16 +31,25 @@ task :default => :paper
 desc "Construct the paper"
 task :paper => PDF
 
-file PDF => FileList["#{PAPER}.tex", BIBLIOGRAPHY, "chapters/**/*.tex"] do
+file "#{PAPER}.dvi" => FileList["#{PAPER}.tex", BIBLIOGRAPHY, "chapters/**/*.tex"] do
   Task[:clean].invoke
-  sh "pdflatex #{PAPER}"
+  sh "latex #{PAPER}"
   sh "bibtex #{PAPER}"
-  sh "pdflatex #{PAPER}"
-  sh "pdflatex #{PAPER}"
+  sh "latex #{PAPER}"
+  sh "latex #{PAPER}"
 end
 
+file "#{PAPER}.ps" => "#{PAPER}.dvi" do
+  sh "dvips #{PAPER}"
+end
+
+file PDF =>  "#{PAPER}.ps" do |t|
+  sh "ps2pdf #{t.prerequisites.first}"
+end
+
+
 # clean up common latex gunk
-%w{aux log bbl blg}.each do |ext| 
+%w{aux log bbl blg ps dvi toc lof}.each do |ext|
   CLEAN.include("#{PAPER}.#{ext}")
 end
 CLEAN.include(FileList["chapters/*.tex"].pathmap('%X.aux'))
