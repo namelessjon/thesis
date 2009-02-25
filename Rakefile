@@ -95,7 +95,7 @@ end
 
 task :count do
   count = `find . -name '*.tex' | xargs TeXcount.pl -brief`
-  if count =~ /Total(\d+)\+(\d+)\+(\d+)/
+  if count =~ /(\d+)\+(\d+)\+(\d+) \([^)]+\) TOTAL COUNT/
     puts "Words in text:     #{$1}"
     puts "Words in headers:  #{$2}"
     puts "Words in captions: #{$3}"
