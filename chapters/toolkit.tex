@@ -601,15 +601,40 @@ finally it exits the tissue when it cannot turn fast enough around its own
 refractory tail.  This process takes \ms{1700} in control and \ms{2300} in
 anion.
 
-\subsubsection{Discussion}
+\subsubsection{Discussions and Conclusions}
 
 The effects of the inclusion of an anion sensitive current do not seem to be
 that large, at least when considered on the single cell level.  This is perhaps
 to be expected, as a current which did have a significant influence on the
 action potential would surely have been identified sooner.  However, despite the
-current's small influence on the individual action potential, it does have
+current's small influence on the action potential duration, it does have
 significant effects on the restitution properties of the cell and on the
-behaviour of cells in a tissue. \ii{CaL}
+behaviour of cells in a tissue.
+
+The most noticeable effect of the inclusion of \ii{ANION}\ in a cellular model
+is the abbreviation of the \apd[50]\ and the accompanying reduction in the
+plateau potential.  The abbreviation is due to \ii{ANION}\ acting as a
+rectifying current when the membrane potential is above \mv{-45}.   Conversely,
+at potentials below \mv{-45}\ \ii{ANION}\ acts to depolarize the cell, leading
+to the slightly elevated resting membrane potential observed between action
+potentials.  This difference in effect is what leads to the interesting
+behaviours observed in cells with \ii{ANION}.
+
+The \apdr[50]\ and \apdr\ curves show that \ii{ANION} has a rate dependent
+effect.  Both curves are flattened in the cells which include \ii{ANION}\, but
+this flattening is not uniform over the range of S2 intervals considered.
+\ii{ANION}\ has a simple exponential dependence on the membrane potential and no
+gating variables however, so it is not \ii{ANION}\ which causes this rate
+dependence directly.  Instead, we must look to the currents active within the
+plateau region of the action potential.  \ii{CaL}\ is the principle current
+responsible for the plateau region of the action potential and unlike \ii{ANION}
+it has both an activation gate, $d$, and an inactivation gate, $f$.  The $d$\
+gate is not as interesting as the $f$\ gate, as its time-course is not affected
+by the presence of \ii{ANION}, although its activation during the plateau region
+is reduced.  Conversely, the $f$\ gate in \ii{ANION} cells never inactivates as
+completely as it does in the control simulations which lack the current.
+
+
 
 
 \subsection{Atrial Fibrillation Induced Remodelling And Heterogeneity}
