@@ -352,7 +352,10 @@ crossing the ends becomes 4.  The lower bound is then found by looking for the
 delay at which 3 APs crossing the ends of the strand become 2.  A minor
 optimisation is performed when looking for the upper bound, in that the lower
 bound's high and low guesses are updated at the same time, reducing the total
-space which must be searched in the second half of the program.
+space which must be searched in the second half of the program.  Before the test
+stimulus is administered, the strand may be pre-paced a number of times.  In
+this case the strand state is saved as the middle of the strand is depolarized
+and then restored for each binary division.
 
 \subsection{Conduction Velocity Restitution}
 
@@ -456,8 +459,8 @@ the reversal potential of the channel and $c$ and $d$ are constants to
 describe the behaviour.  All other symbols have their usual meanings.
 
 The simulation study used the parameter set for the anion current carrying
-$NO_{3^{-}}$ ions.  The effects of the addition of this current were quantified
-via the experimental protocols outlined previously.  In the following
+$NO_{3^{-}}$ ions.  The effects of the addition of this current to atrial
+myocyte cells was quantified .  In the following
 paragraphs, `control' is used to denote the unmodified CRN model and `anion' to
 denote the CRN model with the additional current described by (\ref{anion:eqn})
 with the $NO_{3^{-}}$ parameter set from Table \ref{anion:table}.
