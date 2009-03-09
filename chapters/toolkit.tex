@@ -375,7 +375,7 @@ whole strand is cached.
 
 The threshold of excitation is then found via binary search, with a lower bound
 of \unit{0}{nS} and an upper bound chosen to be 5x the normal threshold.  The
-test stimulus is delivered $\delta t$\ seconds after the 100th node depolarises
+test stimulus is delivered $\Delta t$\ seconds after the 100th node depolarises
 to a group of 4 nodes centred on the 100th node.  After the test stimulus is
 delivered the 4 nodes are tested for the excitation condition, attaining a
 membrane potential of \mv{-20}.  If it is successful, the current stimulus
@@ -384,8 +384,8 @@ addition, the simulation is continued to evaluate whether bidirectional,
 unidirectional or no conduction of the excitation wave is evoked by the
 stimulus.  The strand is then reset to the cached state and the new stimulus
 strength is tested until a sufficient accuracy has been attained.  Once the
-threshold of excitation has been determined for a given $\delta t$\ the state of
-the strand is once more reset to the cached state and a shorter $\delta t$\
+threshold of excitation has been determined for a given $\Delta t$\ the state of
+the strand is once more reset to the cached state and a shorter $\Delta t$\
 tested.
 
 \subsection{Conduction Velocity Restitution}
