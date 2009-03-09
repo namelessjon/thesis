@@ -357,6 +357,41 @@ stimulus is administered, the strand may be pre-paced a number of times.  In
 this case the strand state is saved as the middle of the strand is depolarized
 and then restored for each binary division.
 
+\subsection{Threshold of Excitation}
+
+The threshold of excitation is a theoretical measure, proposed by Zhang et
+al.~\cite{Zhang2003}\ and used in modelling studies~\cite{Kharche2008}.  It is
+defined as the minimum stimulus current which, when delivered to a cell, will
+cause the cell to depolarize to a membrane potential of at least \mv{-20}.  The
+threshold of excitation is calculated for a range of stimulus intervals,
+successively reducing the interval until it is impossible to elicit a
+depolarization of sufficient magnitude.  At each stimulus interval it is
+recorded if the test pulse elicits bidirectional, unidirectional or no
+propagation.
+
+The threshold of excitation is found in a 1D strand model.  The strand is 300
+units long, with a space step of \mm{0.1}.  The strand is first given $N$ S1
+stimuli at a rate which allows the strand to recover between each excitation
+wave.  Each S1 stimulus is delivered to the first 4 nodes (\mm{0.4}) and is
+chosen to be above the threshold of excitation.  The threshold of excitation is
+calculated at the 100th node and so as this node depolarises, the state for the
+whole strand is cached.
+
+The threshold of excitation is then found via binary search, with a lower bound
+of \unit{0}{nS} and an upper bound chosen to be 5x the normal threshold.  The
+test stimulus is delivered $\delta t$\ seconds after the 100th node depolarises
+to a group of 4 nodes centred on the 100th node.  After the test stimulus is
+delivered the 4 nodes are tested for the excitation condition, attaining a
+membrane potential of \mv{-20}.  If it is successful, the current stimulus
+strength will assigned to the high guess.  If not, to the low guess.  In
+addition, the simulation is continued to evaluate whether bidirectional,
+unidirectional or no conduction of the excitation wave is evoked by the
+stimulus.  The strand is then reset to the cached state and the new stimulus
+strength is tested until a sufficient accuracy has been attained.  Once the
+threshold of excitation has been determined for a given $\delta t$\ the state of
+the strand is once more reset to the cached state and a shorter $\delta t$\
+tested.
+
 \subsection{Conduction Velocity Restitution}
 
 Measurement of CV (or solitary wave velocity) itself is performed both
