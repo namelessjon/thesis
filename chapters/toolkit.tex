@@ -567,11 +567,11 @@ al.~\cite{li2007} study, and is included here only for completeness.
 \includegraphics{figures/toolkit/anion/01_AP}
 \caption[Anion Sensitive AP Profile]{\label{anion:ap} AP profile for the CRN
 model in control (black) and anion (red) cases.  The inclusion of the
-$NO_{3^{-}}$ carrying current results in a small change of AP morphology, with
+\nothree\ carrying current results in a small change of AP morphology, with
 a depressed plateau potential and an elevated resting potential.}
 \end{figure}
 
-The APDr curves produced by the control and anion cases are shown in
+The APD\emph{r}\ curves produced by the control and anion cases are shown in
 figure~\ref{anion:apdr50} and \ref{anion:apdr90}, for the restitution of APD at
 50\% (\apdr[50]) and 90\% (\apdr) of repolarization, respectively.  The
 \apdr[50]\ shows the most significant differences, with the anion
@@ -607,7 +607,7 @@ rejoin each other.}
 \end{figure}
 
 The ERPr curves produced by the control and anion cases are shown in
-figure~\ref{anion:erpr}.  In both cases the ERPr curves are relatively flat,
+figure~\ref{anion:erpr}.  In both cases the ERP\emph{r}\ curves are relatively flat,
 decreasing by approximately \ms{50}\ over the \ms{500}\ range of BCLs considered.  The
 addition of the anion current increased the ERP at all the BCLs considered in
 the simulation by \msrange{10}{15}.  At very short BCLs (below \ms{400}), the shortest BCL
@@ -617,46 +617,46 @@ compared to the anion cases.
 \begin{figure}
 \includegraphics{figures/toolkit/anion/04_ERPR}
 \caption[Anion Sensitive Effective Refractory Period Restitution]{
-\label{anion:erpr} ERPr curves for the CRN model in control (black) and anion
-(red) cases.  The ERPr curves are relatively flat for both cases.  The ERP is
+\label{anion:erpr} ERP\emph{r} curves for the CRN model in control (black) and anion
+(red) cases.  The ERP\emph{r} curves are relatively flat for both cases.  The ERP is
 always greater for the anion case.  In addition, the control case allows
-successful excitation after pacing at 25~ms shorter BCL.}
+successful excitation after pacing at \ms{25} shorter BCL.}
 \end{figure}
 
 The temporal VW increased with the addition of the anion current from
-\ms{6.7} in
-control to \ms{7.3}\ in anion case, a 10\% increase in the size of the region of
-unidirectional conduction block.  The CVR curves, shown in
+\ms{3.20} in
+control to \ms{3.81}\ in anion case, a 20\% increase in the size of the region of
+unidirectional conduction block.  The CV\emph{r}\ curves, shown in
 figure~\ref{anion:cvr}, suggest that tissue with the anion sensitive current
 shows faster CV at normal physiological stimulus intervals (corresponding to
 \msrange{500}{1000}), with an average conduction velocity of
-\cms{27.1}\ in anion, compared with \cms{26.7}\ in control.  As the conduction
+\cms{27.2}\ in anion, compared with \cms{26.9}\ in control.  As the conduction
 interval is reduced below \ms{500}, the conduction velocity starts to decrease
-rapidly until conduction stops at \ms{340} for anion and \ms{320} for control.
+rapidly until conduction stops at \ms{325} for anion and \ms{319} for control.
+There is a brief recovery of conduction velocity visible in both cases, just
+before conduction block.
 
 \begin{figure}
 \includegraphics{figures/toolkit/anion/06_CV}
 \caption[Anion Sensitive Conduction Velocity Restitution]{
-\label{anion:cvr} CVr curves for the CRN model in control (black) and anion
-(red) cases. The CVr curves are relatively flat for both cases over the range of
+\label{anion:cvr} CV\emph{r}\ curves for the CRN model in control (black) and anion
+(red) cases. The CV\emph{r}\ curves are relatively flat for both cases over the range of
 \msrange{500}{1000}, before they both increase rapidly in steepness until the minimum
-stimulus interval is reached at approximately \ms{325} for both control and anion.
+stimulus interval is reached at approximately \ms{320} for both control and anion.
 The CV is higher at longer stimulus intervals for the anion case, before it
-crosses the control curve at a stimulus interval of \ms{475}.}
+crosses the control curve at a approximate stimulus interval of \ms{460}.}
 \end{figure}
 
-Spiral waves were induced in a square $375\,\text{x}\,375$\ node sheet at a
-resolution of \mm{0.1}, for a sheet dimension of \mm{37.5}\ per
-side.  Representative plots of the membrane potential over the whole sheet,
-produced as the simulation was ongoing, are show in figure~\ref{anion:spiral}.
-Panels A i--iv show the membrane potential for control, whilst Panels B i--iv
-show the membrane potential for anion, as the simulation evolved.  The path
-followed by the spiral wave tip as it meandered is shown in A,v and B,v for
-control and anion, respectively.  In both cases the spiral wave starts in the
-centre of the tissue and then follows a looping track around the tissue before
-finally it exits the tissue when it cannot turn fast enough around its own
-refractory tail.  This process takes \ms{1700} in control and \ms{2300} in
-anion.
+Spiral waves were induced in a square sheet.  Representative plots of the
+membrane potential over the whole sheet, produced as the simulation was ongoing,
+are show in figure~\ref{anion:spiral}.  Panels A i--iv show the membrane
+potential for control, whilst Panels B i--iv show the membrane potential for
+anion, as the simulation evolved.  The path followed by the spiral wave tip as
+it meandered is shown in A,v and B,v for control and anion, respectively.  In
+both cases the spiral wave starts in the centre of the tissue and then follows a
+looping track around the tissue before finally it exits the tissue when it
+cannot turn fast enough around its own refractory tail.  This process takes
+\ms{1700} in control and \ms{2300} in anion.
 
 \subsubsection{Discussions and Conclusions}
 
@@ -691,8 +691,46 @@ by the presence of \ii{ANION}, although its activation during the plateau region
 is reduced.  Conversely, the $f$\ gate in \ii{ANION} cells never inactivates as
 completely as it does in the control simulations which lack the current.
 
+Considering next the 1D strand results, both the CV\emph{r} and threshold of
+excitation data continue the story of a rate dependent influence.  At a long
+stimulus interval, the increased excitability of the anion cells leads to a
+higher conduction velocity.  The increased excitability at long stimulus
+interval is due to the inward nature of the current in the very first stages of
+the action potential.  This increased excitability allows the cells with
+\ii{ANION}\ to conduct excitation faster until, at stimulus intervals of below
+\ms{500}\ control cells start to conduct faster.  At this stimulus interval, the
+threshold of excitation is still lower for the anion case, so another factor is
+responsible for the reduction in conduction velocity.  The excitability of the
+cell is an important influence on the conduction velocity, but it is not the
+only factor.  Another major factor is the upstroke velocity which is principally
+governed by the fast sodium current, \ii{Na}.  This is partially inactivated by
+the elevated resting potential in the anion case, which also reduces the rate of
+recovery of the inactivation variables.  When the test stimulus is delivered
+after a reduced conduction interval in the anion case \ii{Na}\ does not open as
+fully, slowing the upstroke and thus leading to a reduced conduction velocity at
+short stimulus intervals, compared with the control case.  The increase in the
+vulnerability window appears to be quite significant, an extra 20\% of the size
+of the vulnerability window in tissue without \ii{ANION}.  Both the reduced
+vulnerability window and the reduced conduction velocity at short pacing
+intervals suggests that the addition of \ii{ANION} may be pro-arrhythmogenic.
+The increased vulnerability window has an obvious influence on the genesis of
+re-entrant excitation---A larger vulnerability window increases the chance of a
+premature excitation interrupting the normal function of the heart.  The
+influence of conduction velocity on re-entrant excitation is subtler, but a
+reduced conduction velocity reduces the wavelength of the excitation wave.  This
+allows a greater number of excitation waves to persist in the same area of
+tissue, reducing the likelihood of a re-entrant excitation self-terminating.
 
-
+Finally, considering the results from the sheet model of the tissue which was
+used to investigate the lifespan of induced spiral wave re-entry, we can see our
+hypothesis from the 1D strand results is born out.  A revolving spiral wave
+typically rotates at a higher frequency than the normal excitation rate of
+cardiac tissue.  The excitation waves in the 2D sheet are therefore operating in
+the short stimulus interval regime.  Cells which contain \ii{ANION}\ have a
+slower conduction velocity in this regime and so the spiral wave can be
+sustained for longer due to it's shorter wavelength.  However, the reduction in
+wavelength is not so severe as to create a stable mother rotor, as been observed
+in studies of pathological conditions.
 
 \subsection{Atrial Fibrillation Induced Remodelling And Heterogeneity}
 
@@ -731,7 +769,7 @@ Kharche et al.~\cite{Kharche2007}.
 The effects of AFER were quantified through a variety of measures.  The
 \apdr\ and the \apdr[50]\ were calculated
 as described in .  There were 9 S1 stimuli at a frequency of
-\unit{1}{Hz}, followed by a varying DI after~\cite{blah2009}.  The ERP\emph{r}
+\unit{1}{Hz}, followed by a varying DI.  The ERP\emph{r}
 was calculated as described previously, with 7 S1 delivered at the given pacing
 rate and then a final S2 stimulus was used to determine the ERP after Workman et
 al.~\cite{Workman2001}.  The VW and the CV\emph{r} were determined for control,
@@ -749,8 +787,8 @@ applied over 4 nodes (\unit{0.4}{mm}), had duration \ms{2} and magnitude
 Further, a 2D electrically heterogeneous sheet model was developed based on a
 laboratory photograph of the right atrium.  The photograph was digitized at a
 spatial resolution of \mm{0.1}. The model developed by segmenting areas of the
-tissue into AM, PM and CT tissue types.  The complete model had a size of
-$130\,\text{x}\,100\,\text{mm}$ and consisted of approximately 1 million active cell nodes.  The
+tissue into AM, PM and CT tissue types.  The complete model had an approximate size of
+$130\times100\,\text{mm}$ and consisted of approximately 1 million active cell nodes.  The
 simulations were performed with all cells under control, AF1 and AF2 conditions,
 with the conditions applied uniformly to the tissue.  All 2D sheet simulations
 were performed with the space step of \mm{0.1} and a time step of \ms{0.05}.
