@@ -48,39 +48,87 @@ compensate for the greater complexity.
 \subsubsection{Monodomain Equations}
 
 The monodomain equations were used to couple multiple cells together to describe
-a tissue over which excitation could be conducted.
-
-
-A discussion of the merits of the monodomain and bidomain equations can be found
-in the introduction.
-
+a tissue over which excitation could be conducted.  The rate of change of
+membrane potential, $V$, is given by
+\begin{equation}
+\label{toolkit:monodomain}
+\frac{\partial V}{\partial t} = D \nabla^{2} V - \frac{\ii{ion}}{C_{m}}
+\end{equation}
+where $D$ is a constant representing the diffusivity through space, \ii{ion}\
+represents the total trans-membrane of a cellular model and $C_{m}$ is the
+membrane capacitance of the cell.  A finite differences approach is used to
+discretize the model in 1D or 2D with an explicit Euler scheme used to advance
+the timestep. A aiscussion of the merits of the monodomain
+and bidomain equations can be found in the introduction.
 
 \subsubsection{Strand Model}
+
+\begin{figure}[h]
+\setlength{\unitlength}{1mm}
+\begin{picture}(130,30)
+
+\multiput(0,10)(20, 0){7}{\usebox{\cell}}
+\multiput(10,14)(20, 0){6}{\usebox{\resistor}}
+\end{picture}
+\caption[Schematic diagram of a 1D strand]{\label{toolkit:strand}
+Schematic diagram of a 1D strand.  The strand is 7 nodes long.  The electrical
+activity at each node is represented by a mathematical model of the
+trans-membrane currents.  The cell is coupled to its neighbours through
+resistances.}
+\end{figure}
 
 The 1D strand model is used for several experimental protocols, as
 a computationally cheaper alternative to a full tissue model.  The 1D strand
 model consists of a number of nodes, typically 200 or 300, which are coupled
-electrically at the ends of the cells.  The electrical activity at each node is
+electrically at the ends of the cells as shown in figure~\ref{toolkit:strand}.  The electrical activity at each node is
 modelled via a cellular electrophysiology model and electrical conduction between the
-nodes is handled via a 1D formulation of the monodomain equations, with no
-flux boundary conditions.
+nodes is handled via a 1D formulation of the monodomain equations using a 3-node
+approximation of the laplacian, with no flux boundary conditions.
+
+
 
 \subsubsection{Sheet Model}
+
+\begin{figure}[h]
+\setlength{\unitlength}{1mm}
+\begin{picture}(130,130)
+\multiput(0,0)(20, 0){7}{
+    \multiput(0,0)(0,20){7}{
+        \usebox{\cell}
+    }
+}
+\multiput(10,4)(20, 0){6}{
+    \multiput(0,0)(0, 20){7}{
+        \usebox{\resistor}
+    }
+}
+\multiput(4, 10)(20, 0){7}{
+    \multiput(0, 0)(0, 20){6}{
+        \usebox{\vresistor}
+    }
+}
+\end{picture}
+\caption[Schematic diagram of a 2D sheet]{\label{toolkit:sheet}
+Schematic diagram of a 2D strand.  The strand is $7\times7$ nodes in size.  The electrical
+activity at each node is represented by a mathematical model of the
+trans-membrane currents.  The cell is coupled to its neighbours along the
+cardinal directions through resistances.}
+\end{figure}
 
 The 2D sheet model is used for several experimental protocols, as well as more
 general numerical experimentation.  The 2D sheet model consists of a grid of
 nodes, coupled electrically along the cardinal directions of the grid.  The
 electrical activity at each node is modelled via a cellular electrophysiology
 model.  Conduction of the electrical excitation between the nodes uses the
-mono-domain equations with no flux boundary conditions applied at all tissue
-boundaries.  The square sheet model, used in several of the numerical
-experimental protocols described later, is typically 375x375 nodes, representing
-140625 cellular models.  Two dimensional idealizations of physiological
-preparations can have many more nodes, to on the order of $10^{6}$ cellular
-models.  These idealizations can often be quite irregular and so to allow easy
-and effective partition of workload across multiple processors, the tissue map
-is decomposed into a 1D array which contains references to the neighbouring
-cells.
+monodomain equations with no flux boundary conditions applied at all tissue
+boundaries and a 5-node approximation of the laplacian.  The square sheet model,
+used in several of the numerical experimental protocols described later, is
+typically $375\times375$ nodes, representing 140,625 cellular models.  Two dimensional
+idealizations of physiological preparations can have many more nodes, to on the
+order of $10^{6}$ cellular models.  These idealizations can often be quite
+irregular and so to allow easy and effective partition of workload across
+multiple processors, the tissue map is decomposed into a 1D array which contains
+references to the neighbouring cells.
 
 
 \subsection{Parallelization}
@@ -267,36 +315,47 @@ files can be reduced to the cost of outputting one.
 The toolkit developed provides a number of experimental protocols to use with
 the cellular models to quantify the electrophysiological behaviour of the
 modelled cells.  The provided protocols include the action potential duration at
-90\% repolarisation (APD90) and the action potential (AP) profile; the
-APD90 and APD50 restitution; the effective refractory period (ERP) restituion
-(ERPr); the conduction velocity (CV) restitution (CVr); the temporal
-vulnerability window to unidirectional conduction block (VW) and a flexible
-system for specifying two dimensional sheet experiments, including the
-initiation of re-entry via wavebreak protocols and computation of the spatial
-vulnerability window.
+90\% repolarisation (\apd) and the action potential (AP) profile; the \apdr\ and
+\apdr[50]\ restitution; the effective refractory period (ERP) restitution
+(ERP\emph{r}); the conduction velocity (CV) restitution (CV\emph{r}); the
+temporal vulnerability window to unidirectional conduction block (VW); the
+threshold of excitation and a flexible system for specifying two dimensional
+sheet experiments, including the initiation of re-entry via wavebreak protocols
+and computation of the spatial vulnerability window.
 
-\subsection{Action Potential Duration}
+\subsection{Action Potential}
+
+The action potential profile is one of the fundamentals of cellular modelling,
+with a number of associated properties.  These include the action potential
+duration at 90\% repolarisation, \apd; the action potential
+duration at 50\% repolarisation, \apd[50]; the maximal overshoot, OS; the
+upstroke velocity, $\frac{dV}{dt}_{\text{max}}$\ and the resting membrane
+potential.
+
+To compute these quantities, the cell is paced $N$\ times at given S1 interval.
+After another S1 interval, a final AP is elicited from the cell and the
+properties are measured.  In addition, it is common to want current and
+cellular model state traces over the course of an AP and these can be provided
+by the library alongside the membrane potential trace.
 
 \subsection{Action Potential Duration Restitution}
 
-The toolkit calculates the APDr via a standard S1--S2 protocol used in both
-numerical simulations and also in physiological experiments.  The APDr is used
-as a measure of how the cell responds to stimulations at different rates.  The
-protocol used is shown here.
+The library calculates the APD\emph{r} via a standard S1--S2 protocol used in both
+numerical simulations and also in physiological experiments.  The APD\emph{r} is used
+as a measure of how the cell responds to stimulations at different rates.
 
-
-The cellular model is paced nine times with a stimulus close to the threshold
-value at a given frequency or BCL.  At this point, the state is saved for the
-paced cells.  The tenth S1 stimulus is then given, followed by the S2 after a
+The cellular model is paced $N-1$\ times with a stimulus close to the threshold
+value at a given stimulus interval, S1.  At this point, the state is saved for the
+paced cells.  The $N$th S1 stimulus is then given, followed by the S2 after a
 varying DI, which is reduced via an adaptive step to record the relationship
 between DI and the APD of the following AP.  The toolkit also determines useful
 parameters such as the maximal slope of the restitution curve, which can be
-related to the stability of spiral waves within the tissue.  Both the APD90 and
-the APD50 restitution can be calculated.
+related to the stability of spiral waves within the tissue.  Both the \apdr\ and
+the \apdr[50]\ restitution can be calculated.
 
 \subsection{Effective Refractory Period Restitution}
 
-The ERPr is calculated by the toolkit using standard experimental protocols.
+The ERP\emph{r} is calculated by the toolkit using standard experimental protocols.
 The ERP is defined as the shortest possible stimulus interval, $S2$, which still
 allows a successful AP to be elicited after pacing $N$ times at a pacing
 interval $S1$.  A successful AP is defined as an AP which has an amplitude
@@ -874,8 +933,8 @@ slopes was 0.1, compared with 0.4 in AF1 and 0.5 in AF2 tissue.
 
 \begin{figure}[tb]
 \centering
-%\includegraphics{figures/2_apdr}
-\caption{APDr curves for control CT (A), control AM/PM (B), AF1 CT (C),
+\includegraphics{figures/toolkit/afer/2_apdr}
+\caption[AFER APDr curves]{APDr curves for control CT (A), control AM/PM (B), AF1 CT (C),
 AF1 AM/PM (D), AF2 CT (E), AF2 AM/PM (F). In all cases the CT action
 potentials are above the AM/PM action potentials over the whole of the
 range considered.}
@@ -890,8 +949,8 @@ Heterogeneity in ERP\emph{r} was largely unaffected by AF.
 
 \begin{figure}[tb]
 \centering
-%\includegraphics{figures/3_erpr}
-\caption{ERPr curves for control CT (A), control AM/PM (B), AF1 CT (C),
+\includegraphics{figures/toolkit/afer/3_erpr}
+\caption[AFER ERPr curves]{ERPr curves for control CT (A), control AM/PM (B), AF1 CT (C),
 AF1 AM/PM (D), AF2 CT (E), AF2 AM/PM (F).  Both AF1 and AF2 have a
 significantly reduced ERPr over the whole range considered, with AF1
 having a lower ERP then AF2.  In addition, AF1 and AF2 cells are still
@@ -914,8 +973,8 @@ AF2, respectively.
 
 \begin{figure}[tb]
 \centering
-%\includegraphics{figures/4_cvr}
-\caption{CVr curves for control CT (A), control AM/PM (B), AF1 CT (C),
+\includegraphics{figures/toolkit/afer/4_cvr}
+\caption[AFER CVr curves]{CVr curves for control CT (A), control AM/PM (B), AF1 CT (C),
 AF1 AM/PM (D), AF2 CT (E), AF2 AM/PM (F).  In each of the conditions,
 the CT cells showed a higher CV at long (1000~ms) S2 intervals, but AM
 and PM cells allow faster conduction at shorter S2 intervals.  The AF
@@ -947,7 +1006,7 @@ regions, forming a complex and chaotic pattern of excitation.
 \begin{figure*}[t]
 \centering
 %\includegraphics{figures/figure4}
-\caption{Simulation of re-entry in 2D sheets of electrically homogeneous
+\caption[AFER 2D re-entry plots]{Simulation of re-entry in 2D sheets of electrically homogeneous
 (A) and electrically heterogeneous (B) sheets.  Columns show
 representative frames after initiation of re-entry at t = 0.  Panels i
 show data under control conditions, panels ii under AF1 conditions and

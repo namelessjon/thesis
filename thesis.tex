@@ -26,6 +26,37 @@
 
 \newcommand{\nothree}{\ensuremath{\text{NO}_{3^{\text{-}}}}}
 
+% picture predefines
+\setlength{\unitlength}{1mm}
+
+\newsavebox{\resistor}
+\savebox{\resistor}(10,2)[bl]{
+\put(0, 1){\line(1, 0){1}}
+\put(1, 0){\line(0, 1){2}}
+\put(1, 0){\line(1, 0){8}}
+\put(1, 2){\line(1, 0){8}}
+\put(9, 0){\line(0, 1){2}}
+\put(9, 1){\line(1, 0){1}}
+}
+
+\newsavebox{\vresistor}
+\savebox{\vresistor}(2, 10)[bl]{
+\put(1, 0){\line(0, 1){1}}
+\put(0, 1){\line(1, 0){2}}
+\put(0, 1){\line(0, 1){8}}
+\put(2, 1){\line(0, 1){8}}
+\put(0, 9){\line(1, 0){2}}
+\put(1, 9){\line(0, 1){1}}
+}
+
+\newsavebox{\cell}
+\savebox{\cell}(10,10)[bl]{
+\put(0, 0){\line(0, 1){10}}
+\put(10, 0){\line(0, 1){10}}
+\put(0, 0){\line(1, 0){10}}
+\put(0, 10){\line(1, 0){10}}
+}
+
 \begin{document}
 
     \title{TITLE}
@@ -44,7 +75,7 @@
     \listoffigures
     \newpage
 
-    \include{chapters/introduction}
+%    \include{chapters/introduction}
     \include{chapters/toolkit}
 
     \bibliography{refs}
