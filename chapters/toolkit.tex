@@ -297,25 +297,29 @@ the APD50 restitution can be calculated.
 \subsection{Effective Refractory Period Restitution}
 
 The ERPr is calculated by the toolkit using standard experimental protocols.
-The ERP is defined as the shortest possible stimulus interval which still allows
-for a successful AP.  A successful AP is defined as an AP which has an amplitude
-of at least 80\% of the magnitude of a normal AP.  To determine the rate
-dependence of the ERP, it is evaluated at a decreasing BCL.
+The ERP is defined as the shortest possible stimulus interval, $S2$, which still
+allows a successful AP to be elicited after pacing $N$ times at a pacing
+interval $S1$.  A successful AP is defined as an AP which has an amplitude
+of at least 80\% of the magnitude of the preceeding AP.  To determine the rate
+dependence of the ERP, it is evaluated at a decreasing $S1$ interval.
 
+To find the ERP for a given $S1$ interval the cellular model is paced $N$ times
+at that interval. The state is saved just before the $N-1$th AP is initiated.
+The ERP is found via binary search.  The low guess for $S2$ is typically chosen
+as zero, whilst the high guess is the $S1$ interval being tested.  The $S2$\
+interval for each attempt is the average of the high and low guesses.  After the
+state has been saved, the $N$th AP is initiated and its amplitude recorded.
+Then \ms{S2} after, the test AP is invoked.  If it is successful, that is if it
+has an amplitude of at least 80\% of the magnitude of the $N$th $S1$\ AP, then
+various parameters relating to the APs are stored such as the $S1$\ and $S2$\
+amplitudes and the ratio between them.  The stored state is then restored to the
+cellular model and the next binary iteration is attempted, until the ERP has
+been found at the desired precision.
 
-The cellular model is paced seven times, and then the state is saved just before
-the eighth AP is initiated.  The ERP for each chosen pacing rate is found via
-binary search.  The low guess is typically chosen as zero, whilst the high guess
-is the BCL being tested.  The eight AP is initiated immediately and then the S2
-stimulus is delivered at the average of the guesses, as described previously.
-If the ninth AP is successful, in addition to updating the high guess, the S2
-interval is stored in a `best guess'.  With this small alteration, the binary
-search algorithm is performed as described, with the saved state restored after
-each iteration.
-
-The reduction in BCL is stepped via an adaptive mechanism.  The BCL is reduced
-until it is sufficiently short that the stimuli are occurring within the tail end
-of the AP.
+The reduction in $S1$\ interval is stepped via an adaptive mechanism which is
+used to keep the reduction in ERP between successive $S1$ intervals to below
+\ms{1}.  The $S1$\ interval is reduced until it is sufficiently short that the
+$S2$ interval would fall within the $N$th AP.
 
 \subsection{Vulnerable Window}
 
