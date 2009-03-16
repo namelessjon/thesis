@@ -537,7 +537,9 @@ voltage dependent properties.
 Simulating a single cell, the following measures were quantified: the AP
 profile, the restitution of APD at 50\% repolarization, \apdr[50], the
 restitution of APD at 90\% of repolarization, \apdr\ and the Effective
-Refractory Period restitution, ERP\emph{r}.  In all the single cell cases, the
+Refractory Period restitution, ERP\emph{r}.  The maximal fast sodium activation
+was quantified at the same time as the \apdr\ was computed and is the product of
+the three gates in \ii{Na}, as $m^{3}hj$. In all the single cell cases, the
 cell was paced 10 times before the measurement was taken, to allow simulation
 parameters to settle and to adapt to any changes in pacing rate.  Storage of the
 cellular state was used in all appropriate points in the simulation, to minimise
@@ -582,12 +584,11 @@ figure~\ref{anion:apdr50} and \ref{anion:apdr90}, for the restitution of APD at
 curve depressed by \ms{20} even at the largest DI, increasing to a maximum
 difference of over \ms{40} at at DI of \ms{380}.  The two curves then rejoin each
 other before they cross over at a DI of \ms{200}.  The \apdr\ curves, by
-contrast, are very similar for control and anion cases at large (> \ms{600}) DI.
+contrast, are very similar for control and anion cases at large (over \ms{600}) DI.
 Between \msrange{100}{400}\ DI, the anion case is depressed compared to the control
 case, with a difference of up to \ms{25}\ observed in the measured APDs.  At
 \ms{100}, the curves rejoin one another and show a rapidly increasing slope as the
-DI approaches \ms{0}.  In this region, the observed maximal slopes are XXX in
-control and XXX in anion case.
+DI approaches \ms{0}.
 
 \begin{figure}
 \includegraphics{figures/toolkit/anion/03_S1S2_50}
@@ -610,21 +611,31 @@ greater reduction in the \apd.  At short DI (below \ms{100}) the two curves
 rejoin each other.}
 \end{figure}
 
-The ERPr curves produced by the control and anion cases are shown in
-figure~\ref{anion:erpr}.  In both cases the ERP\emph{r}\ curves are relatively flat,
-decreasing by approximately \ms{50}\ over the \ms{500}\ range of BCLs considered.  The
-addition of the anion current increased the ERP at all the BCLs considered in
-the simulation by \msrange{10}{15}.  At very short BCLs (below \ms{400}), the shortest BCL
-that can still produce an effective excitation is \ms{25}\ shorter for the control
-compared to the anion cases.
+The ERP\emph{r} curves produced by the control and anion cases are shown in
+figure~\ref{anion:erpr}.  In both cases the ERP\emph{r}\ curves are relatively
+flat, decreasing by approximately \ms{60}\ over the \ms{700}\ range of S1
+intervals considered.  The addition of the \ii{ANION}\ current changes the
+behaviour of the ERP\emph{r} curve in a manner which is not simply a shift left
+or right.  The control case shows a response which has a clear plateau region
+which continues until an S1 interval of \ms{500}\ is reached and then a
+relatively steeper decline until eliciting an AP of the appropriate magnitude
+becomes impossible at an S1 interval of \ms{330}.  The anion case, by contrast,
+shows a decreasing ERP over the whole range of S1 intervals considered although
+it too shows its steepest slope just before eliciting a sufficiently large AP
+becomes impossible, also at approximately \ms{330}.  At long S1 intervals (above
+\ms{700}) the ERP\emph{r}\ is longer for the anion case before the curves cross
+at \ms{600}\  and then again at \ms{450}\ with the ERP in anion at the point
+where further stimulation becomes impossible almost \ms{20}\ higher than in the
+control case.
 
 \begin{figure}
 \includegraphics{figures/toolkit/anion/04_ERPR}
 \caption[Anion Sensitive Effective Refractory Period Restitution]{
 \label{anion:erpr} ERP\emph{r} curves for the CRN model in control (black) and anion
-(red) cases.  The ERP\emph{r} curves are relatively flat for both cases.  The ERP is
-always greater for the anion case.  In addition, the control case allows
-successful excitation after pacing at \ms{25} shorter BCL.}
+(red) cases.  The
+addition of the \ii{ANION} current changes the behaviour of the cell from a long
+and flat plateau region followed by a relatively sharp decrease into a more
+constant decline.}
 \end{figure}
 
 The temporal VW increased with the addition of the anion current from
