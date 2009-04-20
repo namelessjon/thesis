@@ -1,6 +1,7 @@
-\chapter{Modelling the Atrium}
+\chapter{Modelling the Whole Atrium}
 
 \section{Atrial Geometry}
+\label{atrium:sec:geometry}
 
 The atrial geometry used in the simulation studies presented here was based on
 the visible human project female dataset.  The visible human dataset was
@@ -13,7 +14,7 @@ the crista terminalis, the Bachmann bundle and the sino-atrial node, as shown in
 figure \ref{atrium:geometry}.  The geometry has been used in numerous previous
 simulation studies.  It was discretised via a finite differences approach, which
 allows the whole atrium to be embedded in a block of $298\times269\times235$
-nodes.  This gives it a total size of approximately 18 million total nodes,
+nodes.  This gives it a total size of approximately 19 million total nodes,
 although only approximately 1.6 million of those nodes correspond to excitable
 cells.  The geometry also has simple fibre orientation in the pectinate muscles,
 crista terminalis and Bachmann bundle.  The fibres are considered to always run
@@ -61,8 +62,7 @@ changes in $V$ in time, $t$, the trans-membrane voltage.
 \label{atrium:monodomain}
 \frac{\partial V}{\partial t} = \nabla\cdot D \nabla V - \frac{\ii{ion}}{C_{m}}
 \end{equation}
-
-where $D$ is a tensor representing the diffusivity, \ii{ion} is described by the
+where $D$ is a tensor representing the diffusivity of electrical potential, \ii{ion} is described by the
 CRN model (\ref{atrium:crn}), $C_{m}$ is the membrane capacitance and all other
 symbols have their usual meanings.  Equation (\ref{atrium:monodomain}) is
 advanced in time via the forward euler method with a timestep of \ms{0.05}.  For
