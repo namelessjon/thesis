@@ -235,8 +235,33 @@ typical experimental protocol would involve stimulating the tissue at
 sequentially shorter intervals, until no stimulation was provoked.  This might
 involve stimulating the cell thousands of times, which would be expensive
 computationally to model exactly.  Instead, a binary search for the critical
-value can be performed, using the pseudo-code shown here.
+value can be performed, using the pseudo-code shown in Algorithm~\ref{toolkit:binary}
 
+\begin{algorithm}
+\caption{
+Binary search for the critical value of the function $f(x)$.
+The critical value is defined as the smallest $x$ which still makes $f(x)$
+produce a value, $v$, greater than the threshold, $t$.
+The initial guesses for $x$ are $high$ and $low$.
+The guessing continues until sufficiently close for the accuracy condition to be
+fulfilled.
+}
+\label{toolkit:binary}
+\begin{algorithmic}
+\STATE $x_{high} = high$
+\STATE $x_{low} = low$
+\REPEAT
+\STATE $x_{current} = \left(x_{high} - x_{low}\right) / 2$
+\STATE $v = f\!\left(x_{current}\right)$
+\COMMENT{Compute $v$ using $x_{current}$}
+\IF {$v \geq t$}
+\STATE $x_{high} = x_{current}$
+\ELSE
+\STATE $x_{low} = x_{current}$
+\ENDIF
+\UNTIL{$\left(x_{high} - x_{low}\right) \leq accuracy$}
+\end{algorithmic}
+\end{algorithm}
 
 To explain in words, first two guesses are made; the high guess, which is the
 maximum value that the critical value can take, and the low guess, the minimum
@@ -268,7 +293,39 @@ of milliseconds.  A step that sufficient to track the curve at the upper limits
 of the range will completely fail at the steeper slow of the lower limits,
 whilst a step that will track the curve for the lower limits will result in
 unnecessary work being done at the upper end of the range.  To alleviate this
-problem, an adaptive stepping mechanism is used, as shown in this pseudo-code.
+problem, an adaptive stepping mechanism is used, as shown in the pseudo-code
+Algorithm~\ref{toolkit:adaptive}.
+
+\begin{algorithm}
+\caption{
+Adaptive stepping algorithm for calculating a value, $v$, for decreasing values
+of time, $t$ with the function $f\!\left(t\right)$.
+$t$ starts at $t_{max}$ and is computed until $t_{min}$.
+The initial step size used to reduce $t$ is $step$.
+}
+\label{toolkit:adaptive}
+\begin{algorithmic}
+\STATE $step = step_{start}$
+\STATE $factor = \frac{step}{2}$
+\STATE $v_{last} = f\!\left(t_{max}\right)$
+\STATE $t_{prev} = t$
+\STATE $t = t_{max} - step$
+\WHILE{$t \geq t_{min}$}
+    \STATE $v = f\!\left(t\right)$
+
+    \IF {$|v - v_{last}| \leq threshold$}
+        \PRINT $t, v$
+        \STATE $v_{last} = v$
+        \STATE $t_{prev} = t$
+        \STATE $t = t - step$
+    \ELSE
+        \STATE $step = step - factor$
+        \STATE $factor = \frac{factor}{2}$
+        \STATE $t = t_{prev} - step$
+    \ENDIF
+\ENDWHILE
+\end{algorithmic}
+\end{algorithm}
 
 First, the measurement is performed at the largest desired point.  The interval
 is then reduced by the step, and the measurement is performed again.  The
