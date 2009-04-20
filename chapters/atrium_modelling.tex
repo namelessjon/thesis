@@ -70,3 +70,128 @@ simulations with isotropic conductivity between nodes a 7-node approximation of
 the differential operator is used.  When anisoptropy is present, a 27-node
 approximation is used.
 
+\subsection{Tissue Anisotropy}
+
+The heart has a complex fibrous structure (Chapter 1), and this manifests
+electrically as regions which have preferential conduction directions.
+The preferential conduction directions show greatly increased conduction
+velocities, sometimes by a factor of up to five~\cite{}.
+The fibre structure and regions of preferential conduction are generally
+considered much more important for the ventricles than for the atria.
+The atria, or more specifically the right atrium, do possess several structures
+with a definite direction of preferential conduction.
+These are the crista terminalis, responsible for rapid conduction of the
+depolarization wave to the atrio-ventricular node, the pectinate muscles and the
+Bachmann bundle, the preferential pathway for conduction between the atria.
+To determine the influence of anisotropic conduction on the propagation of the
+electrical activity, we follow a method after Panfilov and
+Keener~\cite{panfilov1995}.
+In this method there is a unit vector, $\mathbf{f}$, defined at every point in
+the tissue which has significant fibre orientation.
+This unit vector defines a set of co-ordinate axes, in which the conductivity
+tensor is diagonal
+\begin{equation}
+\label{atrium:dtilde}
+\mathbf{\tilde{D}} =
+\begin{pmatrix}
+D_{\parallel} & 0 & 0\\
+0 & D_{\perp} & 0\\
+0 & 0 & D_{\perp}
+\end{pmatrix}
+\end{equation}
+where $D_{\parallel}$ is the diffusion constant for conduction parallel to the
+preferential direction of conduction and $D_{\perp}$ is the diffusion constant
+for conduction perpendicular to this direction.
+In this formulation it is assumed that there is no `sheet' structure which gives
+a higher conduction velocity in one direction perpendicular to the main fibre
+axis.
+The diffusion tensor $\mathbf{\tilde{D}}$\ will only be diagonal in the
+Cartesian co-ordinate system of the heart if the direction of preferential
+conduction is parallel to one of the axes.
+Therefore, to find the conductivity tensor in the global co-ordinate system,
+$\mathbf{D}$, we need to find two transformation matrices $\mathbf{A}$\ and
+$\mathbf{A^{T}}$\ such that
+\begin{equation}
+\label{atrium:d}
+\mathbf{D} = \mathbf{A} \mathbf{\tilde{D}} \mathbf{A^{T}}
+\end{equation}
+To find $\mathbf{A}$\ it is possible to write out the involved rotations
+explicitly, however an alternative method~\cite{fention2005}\ uses the fact that
+$\mathbf{f}$\ and the two vectors orthogonal to it, $\mathbf{g}$\ and
+$\mathbf{h}$\ are eigenvectors of $\mathbf{D}$.
+These have the eigenvalues of $D_{\parallel}$\ and $D_{\perp}$.
+The matrix $\mathbf{A}$\ is therefore an orthogonal matrix of the form
+$\mathbf{A} = \left(\mathbf{f},\mathbf{g},\mathbf{h}\right)$ and so, using
+(\ref{atrium:d}) $\mathbf{D}$\ can be written as
+\begin{equation}
+\label{atrium:dfgh}
+\mathbf{D} = D_{\parallel}\mathbf{f}\mathbf{f^{T}} +
+D_{\perp}\left(\mathbf{g}\mathbf{g^{T}} + \mathbf{h}\mathbf{h^{T}}\right)
+\end{equation}
+Using the fact that $\mathbf{A}\mathbf{A^T} = \mathbf{I}$ it is possible to
+write
+\begin{equation}
+\label{atrium:dwithf}
+\mathbf{D} = D_{\perp}\mathbf{I} + \left(D_{\parallel}-D_{\perp}\right)\mathbf{f}\mathbf{f^{T}}
+\end{equation}
+where $\mathbf{I}$\ is the identity matrix, and all other symbols are as defined
+previously.
+The directions of preferential conduction for the atrial geometry used in the
+study were described by a pair of angles $\theta$\ and $\phi$\ representing the
+orientation of the unit vector $\mathbf{f}$\ at each point in spherical polar
+co-ordinates.
+In cells with no assigned preferential conduction direction, the components of
+$\mathbf{f}$\ were set to zero, giving a diffusion tensor of
+\begin{equation}
+\label{atrium:dnofibre}
+\mathbf{D} =
+\begin{pmatrix}
+D_{\perp} & 0 & 0\\
+0 & D_{\perp} & 0\\
+0 & 0 & D_{\perp}
+\end{pmatrix}
+\end{equation}
+which is the diffusion tensor for isotropic conduction.
+
+\subsection{Computational Implementation}
+
+The atrial geometry used in these studies is quite large, consisting of almost
+19 million nodes.
+As noted in \ref{atrium:sec:geometry}, only approximately 1.6 million of these
+nodes correspond to active tissue--less than 10\% of the total.
+The electrical activity at each node is represented by the CRN model and thus
+requires 21 double precision numbers to be stored, representing the state
+variables of the model.
+The memory requirements of the model may be significantly reduced by storing
+state variables, and where anisotropy is present the diffusion tensor, only for
+the active nodes.
+This reduces the memory requirements for storing the state variables from
+approximately \unit{2.9}{GB}\ to \unit{256}{MB}.
+A further simplification may be obtained by decomposing the geometry into a
+linear array, containing the 7 or 27 neighbours of the active nodes to be used
+in the diffusion tensor approximation.
+The geometry and state information can therefore be represented by one linear
+array of cellular states, one linear array used as a `map' and optionally, one
+linear array representing the components of $\mathbf{D}$.
+This linear data structure is very easy to parallelize on a shared memory
+system.
+
+The parallelization was accomplished through the use of the OpenMP shared
+memory parallelism library~\cite{OpenMP}.
+The system was then solved on 1 node of the Horace supercomputer on a total of 8
+cores.
+The linear array of active nodes was divided equally between the 8 cores, with
+each core solving (\ref{atrium:crn}) for all nodes its assigned section of the
+array.
+A snapshot of the trans-membrane potentials at each of the active node sites was
+output every \ms{2.5}\ of simulated time.
+Simulation of \unit{1}{s}\ of atrial activity took XXXX hours.
+A parallel fraction of XXXX was attained, indicating that almost all of the
+workload was effectively distributed over the 8 cores.
+
+\section{The KCNQ1 Mutation: A Simulation Study}
+
+Familial Atrial Fibrillation is blaaah.
+
+
+
