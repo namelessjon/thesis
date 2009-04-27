@@ -1,0 +1,75 @@
+\chapter{The Body Surface Potential}
+
+Whilst modelling the heart itself can provide valuable insights into the effects
+of diseases and inherited conditions, as Chapters 2 and 3 show, a clinical
+doctor cannot look at the heart's activity directly without a surgical
+procedure.
+Instead they must rely on external tools such as the echocardiogram and the
+electro-cardiogram (ECG).
+To reproduce the ECG with mathematical models, it is necessary to solve what is known as
+the ``forward problem''.
+
+
+\section{The Forward Problem}
+
+To solve the forward problem, Maxwell's equations must be solved to determine the
+field in the torso which arises from currents flowing within the heart.
+Due to the nature of the problem---the finite size of the torso and the
+relatively low frequencies involved---simplifying assumptions can be made.
+The effects of propagation and of capacitive and inductive currents may be
+neglected~\cite{Barnard1966}.
+The situation must solve therefore becomes a quasi-static volume conductor
+problem, which involves only tissue conductances.
+The current flow in the torso, $\mathbf{J}$, is given by Ohm's law
+\begin{equation}
+\label{bsp:ohm}
+\mathbf{J} = \sigma\mathbf{E} + \mathbf{J}^{i}
+\end{equation}
+where $\mathbf{E}$ is the electric field, $\sigma$ is the tissue conductivity
+and $\mathbf{J}^{i}$ is an impressed, or applied, current.
+The applied current term is included to allow for the presence of active sources and
+is non-zero only at the locations of active sources, i.e. the heart.
+Since the total current in (\ref{bsp:ohm}) is solenoidal (the net flow into or
+out of any closed region is zero),
+\begin{equation}
+\label{bsp:ohm2}
+\nabla \cdot \mathbf{J} = 0 = \sigma \nabla \cdot \mathbf{E} + \nabla \cdot \mathbf{J}^{i}
+%= 0 = \sigma \bigtriangledown \cdot \mathbf{E} +
+%    \bigtriangledown \cdot \mathbf{J}^{i}
+\end{equation}
+must be true.
+As we are solving the quasi-static problem, $\mathbf{E}$ can be
+found simply from the gradient of the scalar potential, $\phi$, as
+\begin{equation}
+\label{bsp:maxwell}
+\mathbf{E} = - \nabla\phi
+\end{equation}
+
+If (\ref{bsp:maxwell}) is substituted into (\ref{bsp:ohm2}) then we obtain
+\begin{equation}
+\label{bsp:poisson}
+\nabla^{2}\phi = \frac{\nabla \cdot \mathbf{J}^{i}}{\sigma}
+\end{equation}
+which can be recognised as Possion's equation.
+In an infinite homogeneous conducting medium, a solution to Poisson's equation
+for the field at any given point, $\phi\left(x\right)$, is~\cite{Plonsey1963}
+\begin{equation}
+\label{bsp:infinite}
+\phi\left(\mathbf{x}\right) = \frac{1}{4 \pi \sigma} \int \frac{- \nabla \cdot
+\mathbf{J}^{i} }{\mathbf{r}} dV
+\end{equation}
+where $\mathbf{r}$ is a vector from source point $\mathbf{x'}$ to field point $\mathbf{x}$.
+To account for the influence of the finite dimensions of the torso we can use
+either a FEM or a BEM (See Chapter XXXX for a discussion
+of the history of the two methods).
+The derivation for the BEM method is based on Green's Theorem~\cite{Barr1966},
+which states that for a volume, $V$, bounded by a surface, $S$, that
+\begin{equation}
+\label{bsp:green}
+\int_{V} \left(\phi \nabla^{2}\psi - \psi \nabla^{2}\phi  \right) dV =
+\int_{S} \left( \phi \nabla \psi - \psi \nabla \phi \right) \cdot d\mathbf{S}
+\end{equation}
+where $\phi$ and $\psi$ are scalar functions of position.
+If $\phi$ is the electrical potential and $\psi$ is set as $\frac{1}{r}$ where
+$r$ is $|\mathbf{r}|$, the same $\mathbf{r}$ as in (\ref{bsp:infinite}).
+
