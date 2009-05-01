@@ -1,6 +1,18 @@
 require 'rubygems'
 require 'rake/clean'
 
+def figure_prereqs(tex_files)
+  figures = []
+  # get a list of our tex files and grep them for include graphics lines.
+  FileList[tex_files].egrep(/^[^%]*\\includegraphics\{[^}]+\}/) do |fn, c, l|
+    if l =~ /\\includegraphics\{([^}]+)\}/
+      figures << "#{$1}.pdf"
+    end
+  end
+
+  figures
+end
+
 # set up some constants to say where things are
 
 # name of the paper to build
@@ -31,22 +43,14 @@ task :default => :paper
 desc "Construct the paper"
 task :paper => PDF
 
-file "#{PAPER}.dvi" => FileList["#{PAPER}.tex", BIBLIOGRAPHY, "chapters/**/*.tex", "figures/**/*.eps"] do
+
+file PDF => (FileList["#{PAPER}.tex", BIBLIOGRAPHY, "chapters/**/*.tex"] + figure_prereqs("chapters/**/*.tex")) do
   Task[:clean].invoke
-  sh "latex #{PAPER}"
+  sh "pdflatex #{PAPER}"
   sh "bibtex #{PAPER}"
-  sh "latex #{PAPER}"
-  sh "latex #{PAPER}"
+  sh "pdflatex #{PAPER}"
+  sh "pdflatex #{PAPER}"
 end
-
-file "#{PAPER}.ps" => "#{PAPER}.dvi" do
-  sh "dvips #{PAPER}"
-end
-
-file PDF =>  "#{PAPER}.ps" do |t|
-  sh "ps2pdf #{t.prerequisites.first}"
-end
-
 
 # clean up common latex gunk
 %w{aux log bbl blg ps dvi toc lof}.each do |ext|
@@ -60,6 +64,11 @@ CLOBBER.include(PDF)
 [SRCDIR, OBJDIR, BINDIR, PLOTDIR].each do |dir|
   directory dir
 end
+
+rule '.pdf' => ['.eps'] do |t|
+  sh "epstopdf #{t.source} -o=#{t.name}"
+end
+
 
 # example numbers.tex script
 # file "numbers.tex" => ["apd.dat", "plateau.dat"] do |t|
