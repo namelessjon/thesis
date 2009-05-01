@@ -22,6 +22,7 @@ parallel to the local axis of the tissue bundle, as determined by principle
 component analysis~\cite{Seemann2006}.
 
 \section{Simulation Methods}
+\label{atrium:sec:model}
 
 \subsection{Atrial Model}
 
@@ -231,10 +232,103 @@ provide an appropriate substrate for the genesis of AF.
 
 This study had two goals: To construct a computer model of the available
 experimental data from Chen et al. and to then use this model to quantify the
-effects of the mutation through the use of cellular, 1D, 2D and 3D models.
+effects of the mutation through the use of cellular, 1D, 2D and 3D models
 
+\subsubsection{Modelling the Mutation}
 
+This study, as in the previous chapter, uses the CRN model, developed by
+Courtemanche et al.~\cite{CRN1998}\ for simulation of the human atrial action
+potential.
+As a biophysically detailed model with 21 state variables and numerous ion
+channels it is ideal for use in mutation studies.
+The CRN model has individual descriptions of several $K^{+}$\ currents.
+These include the time-independent potassium current, \ii{K1}, the ultra-rapid
+potassium current, \ii{Kur}, the transient outward current, \ii{to}\ and the
+rapid and slow delayed rectifier currents, \ii{Kr}\ and \ii{Ks}.
+The latter current is modulated by the mutation and is described in the control
+CRN cell by
+\begin{equation}
+\label{atrium:iks_con}
+\ii{Ks} = g_{Ks}x_{s}^{2}\left(V-E_{K}\right)
+\end{equation}
+where $g_{\tiny{Ks}}$\ is the channel conductance (\unit{0.129}{nS/pF}), $x_{s}$\ is
+the activation variable and $E_{K}$\ is the $K^{+}$\ reversal potential, found
+through the Nernst potential.
 
+\subsubsection{Simulation of the S140G mutation of KCNQ1 I-V relationship}
 
+The Chen et al.~\cite{Chen2003} study determined that the most likely cause of
+familial AF was was the S140G mutation of the KCQN1 gene, which forms part of
+the $\alpha$-subunit of the \ii{Ks}\ channel.
+The gene was transfected into COS7 cells along with the second component of
+the $\alpha$-subunit, KCNE1, in both normal (WT) and mutated type (MT).
+The tranfected cells were used to perform voltage clamp experiments.
+The clamp protocol used is shown in Figure \ref{atrium:iks:vc},A.
+The voltage clamp experiments were used to determine I-V relationships for WT
+and MT cells, shown in Figure \ref{atrium:iks:vc},B (points with errors) and
+current traces, shown in Figure \ref{atrium:iks:vc},C and D for WT and MT,
+respectively.
 
+The I-V relationship shows that the mutation causes a gain-of-function across
+all the clamp potentials.
+It also reveals that the mutation appears to cause an inward current at negative
+potentials.
+The current traces suggest a drastic change in the kinetics of the \ii{Ks}\
+channel with a significant component of the current being activated immediately.
+The addition of a leakage component to (\ref{atrium:iks_con}) allowed simulation
+of \ii{Ks}\ characteristics which closely matched the experimental data.
+Under MT conditions, the new total current \iip{Ks}\ was described by
+\begin{equation}
+\label{atrium:iks_mut}
+\iip{Ks} = \ii{Ks} + \varphi g_{Ks}x\left(V-E_{rev}\right)
+\end{equation}
+where \ii{Ks}\ is (\ref{atrium:iks_con}), $\varphi$\ is a multiplicative parameter
+from with values between 0 and 1, $g_{Ks}$ is as in (\ref{atrium:iks_con}) and
+$E_{rev}$\ is the reversal potential of the leakage component.
+The reversal potential was estimated from the experimental I-V relationships to be
+\mv{-76.3}.
+The inclusion of the $\varphi$\ parameter allowed the simulation of several
+intermediate mutant states, representative of a heterozygous mutation.
+Setting $\varphi = 1$\ and following the voltage clamp protocol shown in panel A
+of Figure \ref{atrium:iks:vc}\ the I-V relationship of \ii{Ks}\ was simulated to
+provide a good match to experimental data shown as the lines in panel B of
+Figure \ref{atrium:iks:vc}.
+Also shown are the simulated current traces elicited by the voltage clamp
+protocol in panels D and F.
 
+\subsubsection{Simulation Protocols}
+
+To assess the effects of the mutation on human atrial myocytes, cellular models
+including the modified \iip{Ks}\ described by (\ref{atrium:iks_mut}) were used
+in a number of simulation protocols, as described in Chapter 2.
+Initially the \apd\ was evaluated under conditions corresponding to $\varphi =
+0$\ (WT) and $\varphi = 1$\ (MT).
+Under such conditions, the induced \apd\ shortening was found to result in
+un-physiological \apd s, shown in Figure \ref{atrium:iks:apd}.
+Therefore a heterozygous case, corresponding to $\varphi = 0.1$, was created and
+was used in the evaluation of the mutation's effects (HT).
+
+Using the models and protocols described in Chapter 2 the \apdr, ERP\emph{r}, VW,
+CV\emph{r}, SVW and the dynamic behaviours of spiral waves were evaluated for
+the WT and HT cases.
+For the 3D simulations, the model described in Sections
+\ref{atrium:sec:geometry}\ and \ref{atrium:sec:model}\ was used.
+Since the intention was just to investigate the influence of the mutation, the
+model was used without tissue anisotropy.
+The mutation was applied homogeneously with the electrical activity at all
+nodes described by either the WT or HT cells.
+There was no heterogeneity introduced to account for the differing cell types
+present in the human atrium.
+To examine the behaviour of scroll waves under WT and HT conditions a protocol
+analogous to the wave-break protocol described for 2D sheets of tissue was
+used~\cite{Kharche2007}.
+The protocol is illustrated in Figure \ref{atrium:iks:scroll_init}.
+First, a small number of cells are simulated at one extreme of the atrial model.
+The excitation is allowed to propagate through the model until the S2 stimulus
+is delivered.
+The S2 stimulus is delivered via briefly clamping half of the atrial model to
+\mv{50}\ and then releasing the clamp.
+A correctly timed S2 stimulus results in a scroll wave on the wall of the right
+atrium.
+After initiation, the models were simulated until activity ceased or until
+\unit{6}{s}\ of simulated time had elapsed.
