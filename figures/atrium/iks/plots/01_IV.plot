@@ -17,7 +17,7 @@ plot sin(x)
 set label 1 "B"
 set zeroaxis ls 1
 set xtics axis nomirror
-set ytics axis nomirror
+set ytics axis nomirror 40
 set key top left reverse Left at graph 0.05,0.9
 set xrange [-130:50]
 plot    "01_IV/iks_iv_con_exp.dat" w yerrorbars ls 2 t "Chen et al, WT", \
