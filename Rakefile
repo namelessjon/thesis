@@ -6,7 +6,17 @@ def figure_prereqs(tex_files)
   # get a list of our tex files and grep them for include graphics lines.
   FileList[tex_files].egrep(/^[^%]*\\includegraphics\{[^}]+\}/) do |fn, c, l|
     if l =~ /\\includegraphics\{([^}]+)\}/
-      figures << "#{$1}.pdf"
+      found_non_eps = false
+      %w{png pdf tif}.each do |ext|
+        if File.file?("#{$1}.#{ext}")
+          figures << "#{$1}.#{ext}"
+          found_non_eps = true
+          break
+        end
+      end
+      unless found_non_eps
+        figures << "#{$1}.pdf" if File.file?("#{$1}.eps")
+      end
     end
   end
 
