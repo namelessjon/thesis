@@ -1,0 +1,17 @@
+def plot_figure(name)
+  file "figures/#{name}.pdf" => "figures/#{name}.eps" do
+    sh "epstopdf figures/#{name}.eps"
+  end
+
+  file "figures/#{name}.eps" => ["plots/#{name}.plot"] + FileList["#{name}/*.dat", "#{name}/*.csv"] do
+    sh "gnuplot plots/#{name}.plot"
+  end
+
+  task :figures => "figures/#{name}.pdf"
+end
+
+task :default => :figures
+
+%w{01_IV}.each do |f|
+  plot_figure(f)
+end
