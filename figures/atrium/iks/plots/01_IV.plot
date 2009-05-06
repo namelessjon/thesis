@@ -1,5 +1,5 @@
 # plot for I-V curves and current traces
-set terminal postscript enhanced eps color size 17cm,20.7cm "Times-Roman" 20
+set terminal postscript enhanced eps color size 17cm,18cm "Times-Roman" 20
 set output "figures/01_IV.eps"
 set border 0
 set multiplot layout 3,2 rowsfirst
