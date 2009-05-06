@@ -3,14 +3,16 @@ def plot_figure(name)
     sh "epstopdf figures/#{name}.eps"
   end
 
-  file "figures/#{name}.eps" => ["plots/#{name}.plot"] + FileList["#{name}/*.dat", "#{name}/*.csv"] do
+  file "figures/#{name}.eps" => ["plots/#{name}.plot", 'figures'] + FileList["#{name}/*.dat", "#{name}/*.csv"] do
     sh "gnuplot plots/#{name}.plot"
   end
 
-  task :figures => "figures/#{name}.pdf"
+  task :make_figures => "figures/#{name}.pdf"
 end
 
-task :default => :figures
+task :default => :make_figures
+
+directory 'figures'
 
 %w{01_IV}.each do |f|
   plot_figure(f)
