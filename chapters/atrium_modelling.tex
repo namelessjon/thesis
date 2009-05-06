@@ -286,12 +286,35 @@ familial AF was was the S140G mutation of the KCQN1 gene, which forms part of
 the $\alpha$-subunit of the \ii{Ks}\ channel.
 The gene was transfected into COS7 cells along with the second component of
 the $\alpha$-subunit, KCNE1, in both normal (WT) and mutated type (MT).
-The tranfected cells were used to perform voltage clamp experiments.
-The clamp protocol used is shown in Figure \ref{atrium:iks:vc},A.
-The voltage clamp experiments were used to determine I-V relationships for WT
-and MT cells, shown in Figure \ref{atrium:iks:vc},B (points with errors) and
-current traces, shown in Figure \ref{atrium:iks:vc},C and D for WT and MT,
+The transfected cells were used to perform voltage clamp experiments.
+The clamp protocol used is shown in Figure~\ref{atrium:iks:vc},A.
+This is the experimental protocol used by Chen et al.~\cite{Chen2003}.
+The cell was held at a holding potential of \mv{80} for \unit{0.5}{s}\ before
+being held at \mv{10}\ steps between \mv{-130}\ to \mv{50}\ for \unit{3}{s}.
+The voltage steps were followed by a \mv{-40}\ holding potential, applied for
+\unit{1}{s}.
+The values of \ii{Ks} at the end of the step voltages were plotted against the
+step voltages to determine  I-V relationships for WT
+and MT cells, shown in Figure~\ref{atrium:iks:vc},B (points with errors) and
+current traces, shown in Figure~\ref{atrium:iks:vc},C and D for WT and MT,
 respectively.
+
+\begin{figure}
+\includegraphics{figures/atrium/iks/figures/01_IV}
+\caption[KCNQ1 mutation in IKs, experimental data]{
+\label{atrium:iks:vc}
+\textbf{A} Voltage clamp protocol used by Chen et al.~\cite{Chen2003}.
+\textbf{B} Experimental WT (black, closed circles) and MT (red, open circles)
+I-V relationships recorded by Chen et al.  Simulated I-V curves for WT (black
+lines) and MT (red lines).  Modelled curves are scaled to experimental points
+based on the WT current density at \mv{50}.
+\textbf{C} Experimental current traces for WT.
+\textbf{D} Simulated current traces for WT.
+\textbf{E} Experimental current traces for MT.  Note the instantaneous
+activation, and the significant inward current at negative clamp potentials.
+\textbf{F} Simulated current traces for MT.
+}
+\end{figure}
 
 The I-V relationship shows that the mutation causes a gain-of-function across
 all the clamp potentials.
@@ -314,11 +337,13 @@ The reversal potential was estimated from the experimental I-V relationships to 
 The inclusion of the $\varphi$\ parameter allowed the simulation of several
 intermediate mutant states, representative of a heterozygous mutation.
 Setting $\varphi = 1$\ and following the voltage clamp protocol shown in panel A
-of Figure \ref{atrium:iks:vc}\ the I-V relationship of \ii{Ks}\ was simulated to
+of Figure~\ref{atrium:iks:vc}\ the I-V relationship of \ii{Ks}\ was simulated to
 provide a good match to experimental data shown as the lines in panel B of
-Figure \ref{atrium:iks:vc}.
+Figure~\ref{atrium:iks:vc}.
 Also shown are the simulated current traces elicited by the voltage clamp
 protocol in panels D and F.
+The non-gated leakage component of \iip{Ks}\ sufficiently accounts for the
+changed current density and kinetics.
 
 \subsubsection{Simulation Protocols}
 
@@ -328,31 +353,97 @@ in a number of simulation protocols, as described in Chapter 2.
 Initially the \apd\ was evaluated under conditions corresponding to $\varphi =
 0$\ (WT) and $\varphi = 1$\ (MT).
 Under such conditions, the induced \apd\ shortening was found to result in
-un-physiological \apd s, shown in Figure \ref{atrium:iks:apd}.
-Therefore a heterozygous case, corresponding to $\varphi = 0.1$, was created and
-was used in the evaluation of the mutation's effects (HT).
+un-physiological \apd\ values, shown in Figure \ref{atrium:iks:apd}.
+Therefore a pair of heterozygous cases, corresponding to $\varphi = 0.10$\
+(HT10) and $\varphi = 0.25$\ (HT25) were created and used in the evaluation of
+the mutation's effects.
 
 Using the models and protocols described in Chapter 2 the \apdr, ERP\emph{r}, VW,
 CV\emph{r}, SVW and the dynamic behaviours of spiral waves were evaluated for
-the WT and HT cases.
+the WT, HT10 and HT25 cases.
 For the 3D simulations, the model described in Sections
 \ref{atrium:sec:geometry}\ and \ref{atrium:sec:model}\ was used.
 Since the intention was just to investigate the influence of the mutation, the
 model was used without tissue anisotropy.
 The mutation was applied homogeneously with the electrical activity at all
-nodes described by either the WT or HT cells.
+nodes described by either the WT or HT10 cells.
+An atrial model of nodes described by HT25 cells did support stable conduction
+and so it was not used in the 3D studies.
 There was no heterogeneity introduced to account for the differing cell types
 present in the human atrium.
-To examine the behaviour of scroll waves under WT and HT conditions a protocol
+To examine the behaviour of scroll waves under WT and HT10 conditions a protocol
 analogous to the wave-break protocol described for 2D sheets of tissue was
 used~\cite{Kharche2007}.
-The protocol is illustrated in Figure \ref{atrium:iks:scroll_init}.
+The protocol is illustrated in Figure~\ref{atrium:iks:scroll_init}.
+\begin{figure}
+\includegraphics{figures/atrium/iks/scrollhowto}
+\caption[Initiating a Scroll Wave]{
+\label{atrium:iks:scroll_init}
+Stimulus protocol used to initiate a scroll wave.
+\textbf{A} One extreme of the atrial model is stimulated
+\textbf{B} The excitation is allowed to propagate
+\textbf{C} An S2 stimulus is delivered by clamping a section of the tissue, here
+the lower quarter.
+\textbf{D} A scroll wave begins on the wall of the right atrium.
+}
+\end{figure}
 First, a small number of cells are simulated at one extreme of the atrial model.
 The excitation is allowed to propagate through the model until the S2 stimulus
 is delivered.
-The S2 stimulus is delivered via briefly clamping half of the atrial model to
+The S2 stimulus is delivered via briefly clamping a section of the atrial model to
 \mv{50}\ and then releasing the clamp.
 A correctly timed S2 stimulus results in a scroll wave on the wall of the right
 atrium.
 After initiation, the models were simulated until activity ceased or until
 \unit{6}{s}\ of simulated time had elapsed.
+
+\subsubsection{Changes in \apd\ due to S140G mutation}
+
+The effect of an increase in the leakage current parameter were investigated.
+This was done using the standard \apd\ protocol and varying $\varphi$\ between
+0 and 1.
+Variation in \apd\ as $\varphi$\ is altered is shown in
+Figure~\ref{atrium:iks:aps},A.
+Representative APs are shown in Figure~\ref{atrium:iks:aps},B.
+The \apd\ under Control conditions (WT) was seen to be \ms{312.0}.
+Progressive mutation decreased the \apd\ to \ms{150.5}\ in HT10 case and
+\ms{79.3}\ in HT25 case.
+Under homozygous conditions, $\varphi = 1$\, the \apd\ was seen to be \ms{22.4}.
+Figure~\ref{atrium:iks:aps},B shows the inclusion of the mutant channel causes
+the changes in morphology associated with none of the mutant types having a
+plateau region.
+Inclusion of the mutant channel decreased the upstroke velocity of the AP from
+\unit{217.1}{V/s}\ in WT, to \unit{214.0}{V/s}\ in HT10 and \unit{208.6}{V/s}\
+in HT25.
+The upstroke velocity in the homozygous case was \unit{192.0}{V/s}.
+
+\subsubsection{\apdr\, ERP\emph{r}, CV\emph{r} and VW}
+
+Figure~\ref{atrium:iks:apdretal},A shows the current profiles of \ii{Ks} over the course of
+an AP which correspond to the AP traces shown in Figure~\ref{atrium:iks:aps},B.
+\ii{Ks}\ is seen to increase considerably in both the HT10 and HT25 cases
+compared with the WT case.
+The leak also changes the morphology of the current profile to one showing
+almost instant activation in HT10 and HT25 cases, compared to the slow
+activation in WT.
+The \apdr\, Figure~\ref{atrium:iks:apdretal},B, reflects the decreased \apd\ with
+the restitution curves considerably flattened for both the mutant cases.
+The maximal slopes of the \apdr\ were measured to be 1.9, 0.78 and 0.56 in cases
+WT, HT10 and HT25 respectively.
+The ERP\emph{r}\ curves, Figure~\ref{atrium:iks:apdretal},C, also reflect the
+reduced \apd\.
+At an S1 interval of \ms{1000}\ the ERP was found to be \ms{XXXX}\ in WT,
+\ms{XXXX} in HT10 and \ms{XXXX} in HT25.
+In addition, the mutant cases supported excitation at much lower S1 intervals
+(or higher pacing rate) compared to the control case.
+The minimum S1 interval sustained during the ERP\emph{r}\ calculations was
+\ms{XXXX}\ in WT, \ms{XXXX} in HT10 and \ms{XXXX} in HT25.
+The solitary wave CV was not altered considerably by the mutation (\cms{26.7}\
+in WT c.f. \cms{27.0} in HT25).
+The CV\emph{r}\, Figure~\ref{atrium:iks:apdretal},D, curves confirm the findings
+of the ERP\emph{r}\ calculations, that the mutant case supports successful
+excitation after a considerably reduced S2 interval.
+The minimum S2 interval which still allowed the test stimulus to propagate was
+found to be \ms{318.9}\ in WT, \ms{181.2}\ in HT10 and \ms{120.4}\ in HT25.
+Vulnerability to premature excitation was relatively unaffected by the mutation,
+having a value of approximately \ms{XXXX} in all cases.
