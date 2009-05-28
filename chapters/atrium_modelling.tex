@@ -346,7 +346,7 @@ The non-gated leakage component of \iip{Ks}\ sufficiently accounts for the
 changed current density and kinetics.
 
 \subsubsection{Simulation Protocols}
-
+\label{sec:atrium:s140g:methods}
 To assess the effects of the mutation on human atrial myocytes, cellular models
 including the modified \iip{Ks}\ described by (\ref{atrium:iks_mut}) were used
 in a number of simulation protocols, as described in Chapter 2.
@@ -509,3 +509,99 @@ The mutation induced remodelling dramatically reduced the size of the SVW, from
 \mm{99.1}\ in WT conditions to \mm{12.3}\ in HT25 conditions, a reduction of
 87.5\%.
 
+\subsubsection{Modelling the S140G mutation in the Whole Atrium}
+
+Scroll waves were initiated in the whole atrial model as described in
+\ref{sec:atrium:s140g:methods}.
+Scroll wave behaviour for control (WT) and $\varphi = 0.1$\ (HT10) were studied
+as representative cases.
+The scroll waves were initiated on the right atrial free wall to allow
+initiation and initial evolution without interference with anatomical obstacles.
+The 3D simulation visualisations are presented in
+Figure~\ref{atrium:iks:threed}.
+In WT conditions, as observed in the 2D simulations, the scroll waves have a
+large meander and self-terminated in approximately \unit{4.2}{s}.
+As long as the scroll wave was initiated far from anatomical obstacles such as
+venous openings, self-termination was independent of position.
+In certain cases where it was not `entrapment' of the scroll wave around an
+anatomical obstacle was observed, leading to prolonged scroll wave activity even
+in the WT case.
+Under HT10 conditions the small wavelength allowed scroll waves to become
+persistent in all cases, as observed in 2D simulations.
+In contrast to the 2D simulations the presence of anatomical obstacles led to break up of the
+scroll wave into erratic propagations and short-lived wavelets.
+This erratic behaviour then persisted until the end of simulation at
+\unit{6}{s}.
+
+Representative AP profiles were extracted from several points throughout the
+atrial model and used in dominant frequency analysis.
+The dominant frequency in the HT10 case was found to be much higher,
+approximately \unit{10}{Hz}, than in the WT case, less than \unit{3}{Hz}.
+This is shown in Figure~\ref{atrium:iks:threeddf}.
+
+\subsubsection{Discussion and Conclusions of the S140G Study}
+
+\paragraph{S140G mutation}
+
+The S140G mutation of the KCNQ1 $\beta$\ subunit of the \ii{Ks}\ ion channel
+causes a large gain of function.
+This gain of function manifests as a component of the \ii{Ks}\ channel which
+shows instantaneous activation kinetics under voltage clamp conditions.
+Modelling the effects of the mutation as the addition of a leakage component
+with constant conductance to the \ii{Ks}\ channel therefore seems to be a good
+fit to the experimental data provided by Chen et al.
+Incorporation of the mutation into models of cellular electrophysiology
+dramatically reduces the \apd\ and the ERP.
+The increased repolarisation current also flattens the plateau region, or
+eliminates it entirely.
+Conduction velocity was not significantly affected by the presence of the
+mutation, possibly due to the leakage component being inward at resting
+potentials, contributing to the upstroke.
+In 2D simulations, the mutation stabilised re-entrant spiral waves, leading to
+long lived arrhythmic activity at a high frequency.
+In 3D, simulations showed that with the addition of anatomical obstacles,
+scroll-waves would instead break up.
+The shorter wavelength and refractory length introduced by the mutation assists
+in the maintenance of the fibrillatory activity.
+The fibrillatory activity in the presence of the mutation shows a very high
+frequency, approximately \unit{600}{bpm}, which is in agreement with the
+definition Chen et al. used when selecting AF sufferers for their study.
+The Chen et al. hypothesis is supported by this study, which reproduces both
+voltage clamp experiments and then provides insight into the mechanisms
+responsible for the maintenance of AF in those afflicted with the mutation.
+
+Repolarisation of cardiac myocytes depends on the \ii{Ks}\ (KCNQ1/KCNE1) and
+\ii{Kr}\ (hERG) channels.
+Previous clinical and simulation studies have linked mutation leading to
+gain of function in the \ii{Ks}\ to SQT syndromes.
+Studies by Bosch and Workmann into AF induced remodelling focused on the
+\ii{K1}\ and \ii{to}\ potassium channels, as well as the L-type calcium channel.
+Atrial \ii{Ks}\ is a much lower magnitude than ventricular \ii{Ks}\ so its
+upregulation may have been overlooked in their studies.
+The simulations shows that \ii{Ks}\ has an important role to play in the behaviour
+of atrial cell electrophysiology and that gain of function mutations in the
+channel can lead to a large reduction in the \apd\ and ERP.
+
+\paragraph{Limitations of the Study}
+
+Limitations of the Courtemanche et al. model have been discussed
+previously\ref{CRN98}.
+This study was carried out using a model of the human atria which omitted
+spatial and electrical heterogeneity.
+This allowed the mutation to be studied without the additional complexity
+introduced by heterogeneity.
+In addition, it is well known that AF can induce significant structural
+remodelling with most AF observed in clinical settings accompanied by cardiac
+structural disorders.
+Such etiology is beyond the scope of this study and would be a significant
+investigation in its own right.
+Despite the relative simplicity of the study in 3D, the control cases still show
+self-termination as expected, whilst the presence of the mutation leads to
+breakup and fibrillation.
+Simulation studies allow modelling of only the aspects of the disease which
+interest the investigator.
+
+\paragraph{Comparisons with other studies}
+
+Electrical remodelling is a complex topic and there have been many clinical and
+simulation studies 
