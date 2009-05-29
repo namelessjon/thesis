@@ -2,7 +2,7 @@
 set terminal postscript enhanced eps color size 3cm,3cm "Times-Roman" 20
 
 # setup line styles to use
-set style line 1 lw 3 lt 1 lc "black"
+set style line 1 lw 3 lt 1 pt 7 ps 0.5 lc "black"
 
 unset xtics
 unset ytics
@@ -18,10 +18,10 @@ set rmargin 0
 set tmargin 0
 
 set output "figures/04_2D_trace_con.eps"
-plot "04_2D_trace/control_core.dat" u 2:3 w l ls 1
+plot "04_2D_trace/con_340.dat" u 2:3 w p ls 1
 
 set output "figures/04_2D_trace_HT10.eps"
-plot "04_2D_trace/ten_core.dat" u 2:3 w l ls 1
+plot "04_2D_trace/s140g10_200.dat" u 2:3 w p ls 1
 
 set output "figures/04_2D_trace_HT25.eps"
-plot "04_2D_trace/twentyfive_core.dat" u 2:3 w l ls 1
+plot "04_2D_trace/s140g25_180.dat" u 2:3 w p ls 1

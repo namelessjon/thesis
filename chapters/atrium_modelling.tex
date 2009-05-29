@@ -45,6 +45,19 @@ crista terminalis and Bachmann bundle.  The fibres are considered to always run
 parallel to the local axis of the tissue bundle, as determined by principle
 component analysis~\cite{Seemann2006}.
 
+\begin{figure}
+\includegraphics{figures/atrium/iks/atrial_geometry}
+\caption[Atrial Geometry]{
+\label{atrium:geometry}
+\textbf{A} View up into the right atrium, showing the pectinate muscles
+(orange), crista terminalis (yellow) and sino-atrial node (red).  The atrial
+muscle is shown in blue.
+\textbf{B} A view of the atrial geometry looking down onto the wall of the right
+atrium.  Visible at the top of the panel is the opening for one of the pulmonary
+veins.
+}
+\end{figure}
+
 \section{Simulation Methods}
 \label{atrium:sec:model}
 
@@ -78,6 +91,27 @@ Seemann et al.~\cite{Seemann2004} and have been used in several simulation
 studies~\cite{Seemann2006,Stott2008}.  They are shown in
 table~\ref{atrium:het_params}.
 
+\begin{table}
+\caption[Tissue Heterogeneity Parameters]{
+\label{atrium:het_params}
+Table showing the parameters altered to differentiate pectinate muscle (PM) and
+crista terminalis (CT) cells, compared to the normal Courtemanche et al. (CRN)
+parameters.
+}
+\begin{center}
+\begin{tabular}{|r|ccc|}
+\hline
+ & CRN & PM & CT \\
+\hline
+\hline
+\g{to,max} & 0.1652 & 0.1652 & 0.2215 \\
+\g{Ca,L,max} & 0.1238 & 0.1238 & 0.2067 \\
+\g{Kr,max} & 0.0294 & 0.0294 & 0.0294 \\
+\hline
+\end{tabular}
+\end{center}
+\end{table}
+
 \subsection{Monodomain Equation}
 
 To simulate the propagation of electrical activity over the finite difference
@@ -92,7 +126,7 @@ CRN model (\ref{atrium:crn}), $C_{m}$ is the membrane capacitance and all other
 symbols have their usual meanings.  Equation (\ref{atrium:monodomain}) is
 advanced in time via the forward euler method with a timestep of \ms{0.05}.  For
 simulations with isotropic conductivity between nodes a 7-node approximation of
-the differential operator is used.  When anisoptropy is present, a 27-node
+the differential operator is used.  When anisoptropy is present, a 19-node
 approximation is used.
 
 \subsection{Tissue Anisotropy}
@@ -213,6 +247,14 @@ output every \ms{2.5}\ of simulated time.
 Simulation of \unit{1}{s}\ of atrial activity took XXXX hours.
 A parallel fraction of XXXX was attained, indicating that almost all of the
 workload was effectively distributed over the 8 cores.
+
+\section{Validation of the Model}
+
+\subsection{Activation Maps}
+
+\subsection{Comparisons with Real Studies}
+
+\subsection{Comparisons with Existing Models}
 
 \section{Mutation in KCNQ1: A Simulation Study}
 
@@ -472,7 +514,7 @@ The dynamical behaviours of the system were observed for \unit{5}{s}\ or until
 all electrical activity ceased after the re-entry self terminated.
 Frames from the simulation and spiral tip traces are shown in
 Figure~\ref{atrium:iks:twodframes}.
-The lifespan of re-entrant waves in the WT case was seen to be \unit{1.8}{s},
+The lifespan of re-entrant waves in the WT case was seen to be \unit{2.8}{s},
 whilst in both the HT10 and HT25 cases the re-entry persisted for the duration
 of the simulation (\unit{5}{s}).
 In the WT case the spiral tip showed a large degree of meander
@@ -486,6 +528,20 @@ In contrast in both HT10 and HT25 cases the meander is confined to a relatively
 small area after after the initial transitory period.
 The spiral wave tip precesses around a stationary point in a flower petal
 pattern, indicative of a highly stable re-entrant wave.
+
+\begin{figure}
+\includegraphics{figures/atrium/iks/2Dplots}
+\caption[2D Re-entry under S140G conditions]{
+\label{atrium:iks:twodframes}
+Snapshots of electrical activity extracted at \unit{1}{s}\ (I), \unit{1.5}{s}\
+(II) and \unit{2.5}{s}\ (III) after spiral wave initiation, with accompanying
+tip trace shown in (IV) for WT (top), HT10 (middle) and HT25 (bottom).  In the
+electrical activity plots red is fully depolarized, blue is the resting
+potential.  The WT spiral occupies much more of the tissue and has a very large
+meander, compared with the HT10 and HT25 cases, which show a very stable spiral
+after the initial transient behaviour.
+}
+\end{figure}
 
 Representative APs were extracted from a point in the tissue and used in
 dominant frequency analysis, shown in Figure~\ref{atrium:iks:twodfreq}.
@@ -503,11 +559,36 @@ The width of the peaks for the two mutant cases are smaller, indicating a
 greater stability compared to the more dispersed frequencies seen in the WT
 case.
 
+\begin{figure}
+\includegraphics{figures/atrium/iks/figures/05_2D_freq}
+\caption[Frequency of extracted APs from 2D sheets with S140G mutation]{
+\label{atrium:iks:twodfreq}
+Representative AP traces (top panels) and dominant frequency analysis (bottom
+panels) for WT (left), HT10 (centre) and HT25 (right).  Traces extracted from a
+point \mm{6}\ from top and left of the 2D sheets every \ms{2.5} of elapsed time.
+}
+\end{figure}
+
 The minimal stimulus substrate size was computed as shown in
 Figure~\ref{atrium:iks:svw}.
 The mutation induced remodelling dramatically reduced the size of the SVW, from
 \mm{99.1}\ in WT conditions to \mm{12.3}\ in HT25 conditions, a reduction of
 87.5\%.
+
+\begin{figure}
+\includegraphics{figures/atrium/iks/07_svw}
+\caption[Spatial Vulnerability Window with S140G mutation]{
+\label{atrium:iks:svw}
+\textbf{A} Unsuccessful attempt at initiating figure-of-eight re-entry just
+before (I) and after (II) re-entry would occur.
+\textbf{B} Successful initiation of figure-of-eight re-entry just before (I) and
+just after (II) re-entry is initiated.
+\textbf{C} Spatial vulnerability window for WT (black), HT10 (red) and HT25
+(pink) tissue.
+Spatial vulnerability window is the minimum length of tissue that produces
+figure-of-eight re-entry.
+}
+\end{figure}
 
 \subsubsection{Modelling the S140G mutation in the Whole Atrium}
 
@@ -533,11 +614,27 @@ scroll wave into erratic propagations and short-lived wavelets.
 This erratic behaviour then persisted until the end of simulation at
 \unit{6}{s}.
 
+\begin{figure}
+\includegraphics{figures/atrium/iks/3D_Fig}
+\caption[Snapshots of membrane potential over the whole atrium with S140G
+mutation]{
+\label{atrium:iks:threed}
+Snapshots of the membrane potential for WT (top panels) and HT10 (bottom
+panels) taken at \unit{1}{s} (I), \unit{2}{s} (II), \unit{3}{s} (III) and
+\unit{4}{s} (IV) of simulated time.
+In the plots, red shows full depolarized tissue, whilst blue tissue is at rest.
+By \unit{2}{s} the activity shown in panel bottom,II has started to break up, compared with
+the more stable ave shown in the upper panel, just about to self-terminate in
+panel top,IV, as the excitation wavefront hits the non-conducting atrio-ventricular
+ring.
+}
+\end{figure}
+
 Representative AP profiles were extracted from several points throughout the
 atrial model and used in dominant frequency analysis.
 The dominant frequency in the HT10 case was found to be much higher,
 approximately \unit{10}{Hz}, than in the WT case, less than \unit{3}{Hz}.
-This is shown in Figure~\ref{atrium:iks:threeddf}.
+%This is shown in Figure~\ref{atrium:iks:threeddf}.
 
 \subsubsection{Discussion and Conclusions of the S140G Study}
 

@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="575.3667"
+   height="294.72461"
+   id="svg2"
+   sodipodi:version="0.32"
+   inkscape:version="0.46"
+   version="1.0"
+   sodipodi:docname="07_svw.svg"
+   inkscape:output_extension="org.inkscape.output.svg.inkscape">
+  <defs
+     id="defs4">
+    <inkscape:perspective
+       sodipodi:type="inkscape:persp3d"
+       inkscape:vp_x="0 : 526.18109 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_z="744.09448 : 526.18109 : 1"
+       inkscape:persp3d-origin="372.04724 : 350.78739 : 1"
+       id="perspective10" />
+    <inkscape:perspective
+       id="perspective2481"
+       inkscape:persp3d-origin="372.04724 : 350.78739 : 1"
+       inkscape:vp_z="744.09448 : 526.18109 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_x="0 : 526.18109 : 1"
+       sodipodi:type="inkscape:persp3d" />
+    <inkscape:perspective
+       id="perspective2531"
+       inkscape:persp3d-origin="372.04724 : 350.78739 : 1"
+       inkscape:vp_z="744.09448 : 526.18109 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_x="0 : 526.18109 : 1"
+       sodipodi:type="inkscape:persp3d" />
+    <inkscape:perspective
+       id="perspective2581"
+       inkscape:persp3d-origin="372.04724 : 350.78739 : 1"
+       inkscape:vp_z="744.09448 : 526.18109 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_x="0 : 526.18109 : 1"
+       sodipodi:type="inkscape:persp3d" />
+    <inkscape:perspective
+       id="perspective2631"
+       inkscape:persp3d-origin="372.04724 : 350.78739 : 1"
+       inkscape:vp_z="744.09448 : 526.18109 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_x="0 : 526.18109 : 1"
+       sodipodi:type="inkscape:persp3d" />
+    <inkscape:perspective
+       id="perspective2697"
+       inkscape:persp3d-origin="360 : 240 : 1"
+       inkscape:vp_z="720 : 360 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_x="0 : 360 : 1"
+       sodipodi:type="inkscape:persp3d" />
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     gridtolerance="10000"
+     guidetolerance="10"
+     objecttolerance="10"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.4142136"
+     inkscape:cx="272.97926"
+     inkscape:cy="78.94203"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     units="mm"
+     inkscape:window-width="1280"
+     inkscape:window-height="954"
+     inkscape:window-x="0"
+     inkscape:window-y="25" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-24.80315,-28.153336)">
+    <image
+       y="28.153336"
+       x="24.80315"
+       id="image2483"
+       height="141.92538"
+       width="141.73228"
+       sodipodi:absref="/home/jon/thesis/figures/atrium/iks/07_SVW/noreentry01.jpg"
+       xlink:href="07_SVW/noreentry01.jpg" />
+    <image
+       y="28.346436"
+       x="177.16536"
+       id="image2533"
+       height="141.73228"
+       width="141.73228"
+       sodipodi:absref="/home/jon/thesis/figures/atrium/iks/07_SVW/noreentry02.jpg"
+       xlink:href="07_SVW/noreentry02.jpg" />
+    <image
+       y="180.70863"
+       x="24.80315"
+       id="image2583"
+       height="141.73228"
+       width="141.73228"
+       sodipodi:absref="/home/jon/thesis/figures/atrium/iks/07_SVW/reentry01.jpg"
+       xlink:href="07_SVW/reentry01.jpg" />
+    <image
+       y="180.70863"
+       x="177.16536"
+       id="image2633"
+       height="141.73228"
+       width="141.73228"
+       sodipodi:absref="/home/jon/thesis/figures/atrium/iks/07_SVW/reentry02.jpg"
+       xlink:href="07_SVW/reentry02.jpg" />
+    <g
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;letter-spacing:normal;word-spacing:normal;text-anchor:start;fill:none;fill-opacity:1;stroke:#000000;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10.43299961;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="content"
+       transform="matrix(1.2982634,0,0,-1.2982634,262.68628,392.41943)"
+       xml:space="preserve"
+       stroke-miterlimit="10.433"
+       fill-rule="even-odd"
+       font-style="normal"
+       font-variant="normal"
+       font-weight="normal"
+       font-stretch="normal"
+       font-size-adjust="none"
+       letter-spacing="normal"
+       word-spacing="normal">
+<line
+   style="stroke-width:0.5"
+   x1="104.15"
+   y1="70"
+   x2="101"
+   y2="70"
+   id="line2644" />
+<text
+   style="font-size:20px;fill:#000000;stroke:none;font-family:'Times-Roman,Times,serif'"
+   transform="matrix(0.5,0,0,-0.5,87.5,66.665)"
+   font-size="20px"
+   id="text2646"> 0</text>
+
+<line
+   style="stroke-width:0.5"
+   x1="104.15"
+   y1="108.95"
+   x2="101"
+   y2="108.95"
+   id="line2648" />
+<text
+   style="font-size:20px;fill:#000000;stroke:none;font-family:'Times-Roman,Times,serif'"
+   transform="matrix(0.5,0,0,-0.5,82.5,105.61)"
+   font-size="20px"
+   id="text2650"> 20</text>
+
+<line
+   style="stroke-width:0.5"
+   x1="104.15"
+   y1="147.89999"
+   x2="101"
+   y2="147.89999"
+   id="line2652" />
+<text
+   style="font-size:20px;fill:#000000;stroke:none;font-family:'Times-Roman,Times,serif'"
+   transform="matrix(0.5,0,0,-0.5,82.5,144.57)"
+   font-size="20px"
+   id="text2654"> 40</text>
+
+<line
+   style="stroke-width:0.5"
+   x1="104.15"
+   y1="186.8"
+   x2="101"
+   y2="186.8"
+   id="line2656" />
+<text
+   style="font-size:20px;fill:#000000;stroke:none;font-family:'Times-Roman,Times,serif'"
+   transform="matrix(0.5,0,0,-0.5,82.5,183.46)"
+   font-size="20px"
+   id="text2658"> 60</text>
+
+<line
+   style="stroke-width:0.5"
+   x1="104.15"
+   y1="225.75"
+   x2="101"
+   y2="225.75"
+   id="line2660" />
+<text
+   style="font-size:20px;fill:#000000;stroke:none;font-family:'Times-Roman,Times,serif'"
+   transform="matrix(0.5,0,0,-0.5,82.5,222.41)"
+   font-size="20px"
+   id="text2662"> 80</text>
+
+<line
+   style="stroke-width:0.5"
+   x1="104.15"
+   y1="264.70001"
+   x2="101"
+   y2="264.70001"
+   id="line2664" />
+<text
+   style="font-size:20px;fill:#000000;stroke:none;font-family:'Times-Roman,Times,serif'"
+   transform="matrix(0.5,0,0,-0.5,77.5,261.36)"
+   font-size="20px"
+   id="text2666"> 100</text>
+
+<text
+   style="font-size:20px;fill:#000000;stroke:none;font-family:'Times-Roman,Times,serif'"
+   transform="matrix(0.5,0,0,-0.5,135.28,56.665)"
+   font-size="20px"
+   id="text2668">WT</text>
+
+<text
+   style="font-size:20px;fill:#000000;stroke:none;font-family:'Times-Roman,Times,serif'"
+   transform="matrix(0.5,0,0,-0.5,170.29,56.665)"
+   font-size="20px"
+   id="text2670">HT10</text>
+
+<text
+   style="font-size:20px;fill:#000000;stroke:none;font-family:'Times-Roman,Times,serif'"
+   transform="matrix(0.5,0,0,-0.5,209.14,56.665)"
+   font-size="20px"
+   id="text2672">HT25</text>
+
+<polyline
+   style="stroke-width:0.5"
+   points="104.15,264.7 104.15,70 259.7,70 "
+   id="polyline2674" />
+<text
+   style="font-size:20px;fill:#000000;stroke:none;font-family:'Times-Roman,Times,serif'"
+   transform="matrix(0,0.5,0.5,0,63.335,96.129)"
+   font-size="20px"
+   id="text2676">Spatial Vulnerablity Window (mm)</text>
+
+<polygon
+   style="fill:#000000;fill-rule:nonzero;stroke-width:0"
+   points="127.5,70 158.65,70 158.65,263 127.5,263 127.5,70 "
+   id="polygon2678" />
+<polygon
+   style="stroke-width:0.75"
+   points="127.5,70 158.6,70 158.6,262.95 127.5,262.95 127.5,70 "
+   id="polygon2680" />
+<polygon
+   style="fill:#ff0000;fill-rule:nonzero;stroke:#ff0000;stroke-width:0"
+   points="166.35,70 197.55,70 197.55,99.051 166.35,99.051 166.35,70 "
+   id="polygon2682" />
+<polygon
+   style="stroke:#ff0000;stroke-width:0.75"
+   points="166.35,70 197.5,70 197.5,99 166.35,99 166.35,70 "
+   id="polygon2684" />
+<polyline
+   style="fill:#ff7f7f;fill-rule:nonzero;stroke:#ff7f7f;stroke-width:0"
+   points="205.25,70 205.25,94 236.4,94 236.4,70 "
+   id="polyline2686" />
+<polygon
+   style="stroke:#ff0000;stroke-width:0.75"
+   points="205.25,70 236.35,70 236.35,93.949 205.25,93.949 205.25,70 "
+   id="polygon2688" />
+<polyline
+   style="stroke-width:0.5"
+   points="104.15,264.7 104.15,70 259.7,70 "
+   id="polyline2690" />
+</g>    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Sans;-inkscape-font-specification:Sans"
+       x="28.033957"
+       y="59.132263"
+       id="text2754"><tspan
+         sodipodi:role="line"
+         id="tspan2756"
+         x="28.033957"
+         y="59.132263">A,I</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Sans;-inkscape-font-specification:Sans"
+       x="180.39616"
+       y="59.132263"
+       id="text2758"><tspan
+         sodipodi:role="line"
+         id="tspan2760"
+         x="180.39616"
+         y="59.132263">A,II</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Sans;-inkscape-font-specification:Sans"
+       x="24.420675"
+       y="211.9303"
+       id="text2762"><tspan
+         sodipodi:role="line"
+         id="tspan2764"
+         x="24.420675"
+         y="211.9303">B,I</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Sans;-inkscape-font-specification:Sans"
+       x="176.78288"
+       y="211.9303"
+       id="text2766"><tspan
+         sodipodi:role="line"
+         id="tspan2768"
+         x="176.78288"
+         y="211.9303">B,II</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Sans;-inkscape-font-specification:Sans"
+       x="324.80316"
+       y="60.025318"
+       id="text2770"><tspan
+         sodipodi:role="line"
+         id="tspan2772"
+         x="324.80316"
+         y="60.025318">C</tspan></text>
+  </g>
+</svg>
