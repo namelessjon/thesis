@@ -250,11 +250,101 @@ workload was effectively distributed over the 8 cores.
 
 \section{Validation of the Model}
 
+To verify the model, it was used to simulate a normal propagation, initiated
+from the sino-atrial node.
+The fully detailed model was used.
+The laplacian was precomputed to include all the information on tissue
+anisotropy from the fibre orientation which accompanied the geometry.
+The bulk diffusivity, $D$, of the tissue was set to $0.15$.
+The anisotropy ratio for transverse to longitudinal condution was set to 1:9.
+The activity at each node was represented by the Courtemanche et al. model with
+voltage and ion concentration dependent parameters pre-computed and tabulated.
+A timestep of \ms{0.02}\ was used to integrate both the cellular model at each
+node and the diffusion of electrical activity between the nodes.
+To initiate excitation a \unit{2}{nA}\ current was delivered for \ms{2} to cells
+corresponding to the sino-atrial node of the model.
+The excitation was then allowed to propagate without interference.
+After the propagation was allowed to run its course, activation maps were
+constructed.
+
 \subsection{Activation Maps}
+
+Snapshots of the electrical excitation are shown in
+Figure~\ref{atrium:validation:main}\ and Figure~\ref{atrium:validation:valves}.
+Excitation is initiated in the sino-atrial node.
+The excitation wave is rapidly conducted along the muscle bundles which comprise
+the crista terminalis and the pectinate muscles towards the base of the atrium
+and the atrio-ventricular ring.
+The influence of the crista terminalis and the pectinate muscle bundles is
+clearly obvious on the epicardial surface of the right atrium.
+The presence of the muscle bundles on the endocardial surface causes earlier
+activation of the epicardial surface.
+The left atrium is activated first by the Bachmann bundle.
+After this excitation spreads down and around the left atrial wall to the
+atrio-ventricular ring and the left atrial apendage.
+Complete activation of the right and left atria takes approximately \ms{125}.
+After the activation there is an extended plateau phase, which lasts for
+approximately \ms{100}\.
+During this plateau phase the whole atrium has a very uniform potential.
+Repolarization begins at the sino-atrial node, following a very similar pattern
+to the spread of excitation, with the region to first depolarise being that
+which was first excited.
+The repolarisation appears to be less effected by the fibre structure of the
+atrial model, with repolarised tissue spreading uniformly over the surface of
+the right atrium.
+
+Need a paragraph here with more detailed timings.
 
 \subsection{Comparisons with Real Studies}
 
+Lemary 
+
+Bossinu
+
+Hansson
+
+Markides, once I get LA activation.
+
 \subsection{Comparisons with Existing Models}
+
+There are several existing three dimensional models of conduction in the whole
+human atrium~\ref{harild2000,zemlin2001,vigmond2001,seemann2006}.
+They represent a range of electrophysiological detail, fibre structure and
+computational complexity.
+The model of Harild and Herenriqez~\ref{harild2000}\ has a detailed fibre
+structure, but this is coupled with homogeneous electrophysiology.
+In addition, the model has a relatively coarse space step, with an average
+inter-element distance of \mm{0.55}\.
+The Zemlin~\ref{zemlin2001}\ model was also based on the visible human dataset.
+They used a reduced formulation of the Courtemanche et al. model which has 6
+variables.
+They included atrial wall muscle fibres based on dissection of anatomical
+specimens.
+There was no internal fibre structure such as the bachmann bundle however.
+It is a very efficient model.
+The Vigmond~\ref{vigmond2001}\ is an idealised model of an unusual construction.
+It is topologically, rather than anatomically, correct and formulated as a
+series of shells, made up of interconnected fibres.
+The fibre based construction allows for efficient solutions.
+The Seemann~\ref{seemann2006}\ is closely related to the model proposed in this
+chapter--it would be accurate to say that this model is a simplification of the
+model by Seemann et al.
+The Seemann et al. model features an autoactive sino-atrial node complex.
+It uses a full formulation of the Courtemanche et al model, without lookup
+tables.
+It features regions of differing bulk conductivity.
+It is much more computationally demanding than the model proposed in this
+chapter.
+
+The model of the whole atrium proposed in this chapter represents a compromise
+between electrophysiological detail and computational efficiency.
+It includes differential electrophysiology and fibre orientation.
+It is solvable in tractable times even on a desktop workstation.
+The additional incorporation of an MPI, rather than OpenMP, based implementation
+would allow much more distributed execution, allowing long term simulations to
+be performed.
+
+
 
 \section{Mutation in KCNQ1: A Simulation Study}
 
