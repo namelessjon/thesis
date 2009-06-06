@@ -227,11 +227,11 @@ the active nodes.
 This reduces the memory requirements for storing the state variables from
 approximately \unit{2.9}{GB}\ to \unit{256}{MB}.
 A further simplification may be obtained by decomposing the geometry into a
-linear array, containing the 7 or 27 neighbours of the active nodes to be used
+linear array, containing the 6 or 18 neighbours of the active nodes to be used
 in the diffusion tensor approximation.
 The geometry and state information can therefore be represented by one linear
-array of cellular states, one linear array used as a `map' and optionally, one
-linear array representing the components of $\mathbf{D}$.
+array of cellular states, one linear array used as a `map' and one
+linear array representing the components of the laplacian.
 This linear data structure is very easy to parallelize on a shared memory
 system.
 
@@ -243,8 +243,8 @@ The linear array of active nodes was divided equally between the 8 cores, with
 each core solving (\ref{atrium:crn}) for all nodes its assigned section of the
 array.
 A snapshot of the trans-membrane potentials at each of the active node sites was
-output every \ms{2.5}\ of simulated time.
-Simulation of \unit{1}{s}\ of atrial activity took XXXX hours.
+output every \ms{1}\ of simulated time.
+Simulation of \unit{1}{s}\ of atrial activity took 3.4 hours.
 A parallel fraction of XXXX was attained, indicating that almost all of the
 workload was effectively distributed over the 8 cores.
 
