@@ -1,0 +1,361 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="566.92914"
+   height="531.49603"
+   id="svg2"
+   sodipodi:version="0.32"
+   inkscape:version="0.46"
+   version="1.0"
+   sodipodi:docname="front_activation.svg"
+   inkscape:output_extension="org.inkscape.output.svg.inkscape"
+   inkscape:export-filename="/home/jon/thesis/figures/atrium/validation/front_activation.png"
+   inkscape:export-xdpi="600"
+   inkscape:export-ydpi="600">
+  <defs
+     id="defs4">
+    <inkscape:perspective
+       sodipodi:type="inkscape:persp3d"
+       inkscape:vp_x="0 : 526.18109 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_z="744.09448 : 526.18109 : 1"
+       inkscape:persp3d-origin="372.04724 : 350.78739 : 1"
+       id="perspective10" />
+    <inkscape:perspective
+       id="perspective2481"
+       inkscape:persp3d-origin="372.04724 : 350.78739 : 1"
+       inkscape:vp_z="744.09448 : 526.18109 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_x="0 : 526.18109 : 1"
+       sodipodi:type="inkscape:persp3d" />
+    <inkscape:perspective
+       id="perspective2548"
+       inkscape:persp3d-origin="372.04724 : 350.78739 : 1"
+       inkscape:vp_z="744.09448 : 526.18109 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_x="0 : 526.18109 : 1"
+       sodipodi:type="inkscape:persp3d" />
+    <inkscape:perspective
+       id="perspective2615"
+       inkscape:persp3d-origin="372.04724 : 350.78739 : 1"
+       inkscape:vp_z="744.09448 : 526.18109 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_x="0 : 526.18109 : 1"
+       sodipodi:type="inkscape:persp3d" />
+    <inkscape:perspective
+       id="perspective2682"
+       inkscape:persp3d-origin="372.04724 : 350.78739 : 1"
+       inkscape:vp_z="744.09448 : 526.18109 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_x="0 : 526.18109 : 1"
+       sodipodi:type="inkscape:persp3d" />
+    <inkscape:perspective
+       id="perspective2749"
+       inkscape:persp3d-origin="372.04724 : 350.78739 : 1"
+       inkscape:vp_z="744.09448 : 526.18109 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_x="0 : 526.18109 : 1"
+       sodipodi:type="inkscape:persp3d" />
+    <inkscape:perspective
+       id="perspective2901"
+       inkscape:persp3d-origin="372.04724 : 350.78739 : 1"
+       inkscape:vp_z="744.09448 : 526.18109 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_x="0 : 526.18109 : 1"
+       sodipodi:type="inkscape:persp3d" />
+    <inkscape:perspective
+       id="perspective2968"
+       inkscape:persp3d-origin="372.04724 : 350.78739 : 1"
+       inkscape:vp_z="744.09448 : 526.18109 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_x="0 : 526.18109 : 1"
+       sodipodi:type="inkscape:persp3d" />
+    <inkscape:perspective
+       id="perspective3035"
+       inkscape:persp3d-origin="372.04724 : 350.78739 : 1"
+       inkscape:vp_z="744.09448 : 526.18109 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_x="0 : 526.18109 : 1"
+       sodipodi:type="inkscape:persp3d" />
+    <inkscape:perspective
+       id="perspective3136"
+       inkscape:persp3d-origin="372.04724 : 350.78739 : 1"
+       inkscape:vp_z="744.09448 : 526.18109 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_x="0 : 526.18109 : 1"
+       sodipodi:type="inkscape:persp3d" />
+    <inkscape:perspective
+       id="perspective3207"
+       inkscape:persp3d-origin="372.04724 : 350.78739 : 1"
+       inkscape:vp_z="744.09448 : 526.18109 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_x="0 : 526.18109 : 1"
+       sodipodi:type="inkscape:persp3d" />
+    <inkscape:perspective
+       id="perspective3274"
+       inkscape:persp3d-origin="372.04724 : 350.78739 : 1"
+       inkscape:vp_z="744.09448 : 526.18109 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_x="0 : 526.18109 : 1"
+       sodipodi:type="inkscape:persp3d" />
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     gridtolerance="10000"
+     guidetolerance="10"
+     objecttolerance="10"
+     inkscape:pageopacity="1"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.4"
+     inkscape:cx="276.87054"
+     inkscape:cy="307.64658"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     units="cm"
+     inkscape:window-width="1280"
+     inkscape:window-height="951"
+     inkscape:window-x="0"
+     inkscape:window-y="0" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <image
+       y="-3.5443645e-05"
+       x="0"
+       id="image2483"
+       height="177.16536"
+       width="176.35268"
+       sodipodi:absref="/media/KINGSTON/Atrium/front_het0.18_010.png"
+       xlink:href="/media/KINGSTON/Atrium/front_het0.18_010.png" />
+    <image
+       y="-3.5443645e-05"
+       x="177.16536"
+       id="image2550"
+       height="177.16536"
+       width="173.56606"
+       sodipodi:absref="/media/KINGSTON/Atrium/front_het0.18_015.png"
+       xlink:href="/media/KINGSTON/Atrium/front_het0.18_015.png" />
+    <image
+       y="-3.5443645e-05"
+       x="354.33072"
+       id="image2617"
+       height="177.16536"
+       width="173.95148"
+       sodipodi:absref="/media/KINGSTON/Atrium/front_het0.18_020.png"
+       xlink:href="/media/KINGSTON/Atrium/front_het0.18_020.png" />
+    <image
+       y="177.16531"
+       x="0"
+       id="image2684"
+       height="177.16536"
+       width="173.54974"
+       sodipodi:absref="/media/KINGSTON/Atrium/front_het0.18_025.png"
+       xlink:href="/media/KINGSTON/Atrium/front_het0.18_025.png" />
+    <image
+       y="177.16531"
+       x="177.16536"
+       id="image2751"
+       height="177.16536"
+       width="175.95741"
+       sodipodi:absref="/media/KINGSTON/Atrium/front_het0.18_040.png"
+       xlink:href="/media/KINGSTON/Atrium/front_het0.18_040.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600"
+       inkscape:export-filename="/home/jon/thesis/figures/atrium/validation/front_activation.png" />
+    <image
+       y="177.16531"
+       x="354.33072"
+       id="image2903"
+       height="177.16536"
+       width="174.76582"
+       sodipodi:absref="/media/KINGSTON/Atrium/front_het0.18_080.png"
+       xlink:href="/media/KINGSTON/Atrium/front_het0.18_080.png" />
+    <image
+       y="354.33069"
+       x="0"
+       id="image2970"
+       height="177.16536"
+       width="174.35957"
+       sodipodi:absref="/media/KINGSTON/Atrium/front_het0.18_180.png"
+       xlink:href="/media/KINGSTON/Atrium/front_het0.18_180.png" />
+    <image
+       y="354.33069"
+       x="177.16536"
+       id="image3037"
+       height="177.16536"
+       width="173.16614"
+       sodipodi:absref="/media/KINGSTON/Atrium/front_het0.18_200.png"
+       xlink:href="/media/KINGSTON/Atrium/front_het0.18_200.png" />
+    <image
+       y="354.33069"
+       x="354.33072"
+       id="image3138"
+       height="177.16536"
+       width="176.36188"
+       sodipodi:absref="/media/KINGSTON/Atrium/front_het0.18_220.png"
+       xlink:href="/media/KINGSTON/Atrium/front_het0.18_220.png" />
+    <text
+       xml:space="preserve"
+       style="font-size:30px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Times New Roman;-inkscape-font-specification:Times New Roman"
+       x="-0.8203125"
+       y="16.982468"
+       id="text3142"><tspan
+         sodipodi:role="line"
+         id="tspan3144"
+         x="-0.8203125"
+         y="16.982468"
+         style="font-size:20px">(i)</tspan></text>
+    <image
+       y="-374.9209"
+       x="543.29907"
+       id="image3276"
+       height="205"
+       width="10"
+       sodipodi:absref="/media/KINGSTON/Atrium/activation_scale_bare.png"
+       xlink:href="/media/KINGSTON/Atrium/activation_scale_bare.png"
+       transform="scale(1,-1)" />
+    <text
+       xml:space="preserve"
+       style="font-size:30px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Times New Roman;-inkscape-font-specification:Times New Roman"
+       x="532.14288"
+       y="167.21031"
+       id="text3280"><tspan
+         sodipodi:role="line"
+         id="tspan3282"
+         x="532.14288"
+         y="167.21031">20</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:30px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Times New Roman;-inkscape-font-specification:Times New Roman"
+       x="528.57141"
+       y="396.49603"
+       id="text3284"><tspan
+         sodipodi:role="line"
+         id="tspan3286"
+         x="528.57141"
+         y="396.49603">-80</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:30px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Times New Roman;-inkscape-font-specification:Times New Roman"
+       x="-294.93982"
+       y="540.71008"
+       id="text3288"
+       transform="matrix(0,-1,1,0,0,0)"><tspan
+         sodipodi:role="line"
+         id="tspan3290"
+         x="-294.93982"
+         y="540.71008">mV</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:30px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Times New Roman;-inkscape-font-specification:Times New Roman"
+       x="176.34505"
+       y="16.982468"
+       id="text3292"><tspan
+         sodipodi:role="line"
+         id="tspan3294"
+         x="176.34505"
+         y="16.982468"
+         style="font-size:20px">(ii)</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:30px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Times New Roman;-inkscape-font-specification:Times New Roman"
+       x="353.51041"
+       y="16.982468"
+       id="text3296"><tspan
+         sodipodi:role="line"
+         id="tspan3298"
+         x="353.51041"
+         y="16.982468"
+         style="font-size:20px">(iii)</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:30px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Times New Roman;-inkscape-font-specification:Times New Roman"
+       x="-0.8203125"
+       y="194.14783"
+       id="text3300"><tspan
+         sodipodi:role="line"
+         id="tspan3302"
+         x="-0.8203125"
+         y="194.14783"
+         style="font-size:20px">(iv)</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:30px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Times New Roman;-inkscape-font-specification:Times New Roman"
+       x="176.34505"
+       y="194.14783"
+       id="text3304"><tspan
+         sodipodi:role="line"
+         id="tspan3306"
+         x="176.34505"
+         y="194.14783"
+         style="font-size:20px">(v)</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:30px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Times New Roman;-inkscape-font-specification:Times New Roman"
+       x="353.51041"
+       y="194.14783"
+       id="text3308"><tspan
+         sodipodi:role="line"
+         id="tspan3310"
+         x="353.51041"
+         y="194.14783"
+         style="font-size:20px">(vi)</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:30px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Times New Roman;-inkscape-font-specification:Times New Roman"
+       x="-0.8203125"
+       y="371.27411"
+       id="text3312"><tspan
+         sodipodi:role="line"
+         id="tspan3314"
+         x="-0.8203125"
+         y="371.27411"
+         style="font-size:20px">(vii)</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:30px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Times New Roman;-inkscape-font-specification:Times New Roman"
+       x="176.34505"
+       y="371.31317"
+       id="text3316"><tspan
+         sodipodi:role="line"
+         id="tspan3318"
+         x="176.34505"
+         y="371.31317"
+         style="font-size:20px">(viii)</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:30px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Times New Roman;-inkscape-font-specification:Times New Roman"
+       x="353.51041"
+       y="371.31317"
+       id="text3320"><tspan
+         sodipodi:role="line"
+         id="tspan3322"
+         x="353.51041"
+         y="371.31317"
+         style="font-size:20px">(ix)</tspan></text>
+  </g>
+</svg>
