@@ -50,15 +50,17 @@ If (\ref{bsp:maxwell}) is substituted into (\ref{bsp:ohm2}) then we obtain
 \label{bsp:poisson}
 \nabla^{2}\phi = \frac{\nabla \cdot \mathbf{J}^{i}}{\sigma}
 \end{equation}
-which can be recognised as Possion's equation.
+which can be recognised as Poisson's equation.
 In an infinite homogeneous conducting medium, a solution to Poisson's equation
-for the field at any given point, $\phi\left(x\right)$, is~\cite{Plonsey1963}
+for the field at any given point, $\phi$, is~\cite{Plonsey1963}
 \begin{equation}
 \label{bsp:infinite}
-\phi\left(\mathbf{x}\right) = \frac{1}{4 \pi \sigma} \int \frac{- \nabla \cdot
-\mathbf{J}^{i} }{\mathbf{r}} dV
+\phi = \frac{1}{4 \pi \sigma} \int \frac{- \nabla \cdot
+\mathbf{J}^{i} }{r} dV
 \end{equation}
-where $\mathbf{r}$ is a vector from source point $\mathbf{x'}$ to field point $\mathbf{x}$.
+where $r$ is the (scalar) distance from the point of integration to the point at
+which the field is being evaluated.
+
 To account for the influence of the finite dimensions of the torso we can use
 either a FEM or a BEM (See Chapter XXXX for a discussion
 of the history of the two methods).
@@ -71,5 +73,44 @@ which states that for a volume, $V$, bounded by a surface, $S$, that
 \end{equation}
 where $\phi$ and $\psi$ are scalar functions of position.
 If $\phi$ is the electrical potential and $\psi$ is set as $\frac{1}{r}$ where
-$r$ is $|\mathbf{r}|$, the same $\mathbf{r}$ as in (\ref{bsp:infinite}).
+$r$ is $|\mathbf{r'}-\mathbf{r}|$.
+Here, $\mathbf{r'}$ is a vector to an arbitrary point in the volume $V$ at which
+we wish to evaluate the field and $\mathbf{r}$ is a vector to an elemental
+volume, $dv$, somewhere within the volume $V$.
+Using (\ref{bsp:poisson}) we have
+\begin{equation}
+\label{bsp:greenandpoisson}
+\int_{V}
+    \left(
+        \phi \nabla^{2}\left(\frac{1}{r}\right) -
+        \frac{1}{r} \nabla^{2}\frac{\left(\nabla \cdot \mathbf{J}^{i} \right)}{\sigma}
+    \right)
+dV =
+\int_{S}
+    \left(
+        \phi \nabla \left(\frac{1}{r}\right) -
+        \left(\frac{1}{r}\right) \nabla \phi
+    \right)
+\cdot d\mathbf{S}
+\end{equation}
+
+The del operator in (\ref{bsp:poisson}) operates on the unprimed (source) coordinates.
+Now,
+\begin{equation}
+\label{bsp:oneoverr}
+\nabla^{2}\left(\frac{1}{r}\right) =
+\nabla^{2}\left(\frac{1}{|\mathbf{r'}-\mathbf{r}|}\right) =
+-4\pi\delta\left(\mathbf{r'}-\mathbf{r}\right)
+\end{equation}
+where $\delta$ represents the dirac delta function.  The surface $S$ is the body
+surface and so on $S$ $\nabla\phi \cdot d\mathbf{S} = 0$ to a very good
+approximation.  (\ref{bsp:poisson}) becomes, after substitution and
+rearrangement,
+\begin{equation}
+\label{bsp:substituted}
+\phi\left(\mathbf{r'}\right) =
+\frac{1}{4 \pi \sigma}\int_{V} \frac{\nabla \cdot \mathbf{J}^{i}}{r}dv - 
+\frac{1}{4 \pi}\int_{S} \phi\left(\mathbf{r}\right)
+\nabla\left(\frac{1}{r}\right) \cdot \d\mathbf{S}
+\end{equation}
 
