@@ -22,17 +22,17 @@ The situation must solve therefore becomes a quasi-static volume conductor
 problem, which involves only tissue conductances.
 The current flow in the torso, $\mathbf{J}$, is given by Ohm's law
 \begin{equation}
-\label{bsp:ohm}
+\label{eqn:bsp:ohm}
 \mathbf{J} = \sigma\mathbf{E} + \mathbf{J}^{i}
 \end{equation}
 where $\mathbf{E}$ is the electric field, $\sigma$ is the tissue conductivity
 and $\mathbf{J}^{i}$ is an impressed, or applied, current.
 The applied current term is included to allow for the presence of active sources and
 is non-zero only at the locations of active sources, i.e. the heart.
-Since the total current in (\ref{bsp:ohm}) is solenoidal (the net flow into or
+Since the total current in (\ref{eqn:bsp:ohm}) is solenoidal (the net flow into or
 out of any closed region is zero),
 \begin{equation}
-\label{bsp:ohm2}
+\label{eqn:bsp:ohm2}
 \nabla \cdot \mathbf{J} = 0 = \sigma \nabla \cdot \mathbf{E} + \nabla \cdot \mathbf{J}^{i}
 %= 0 = \sigma \bigtriangledown \cdot \mathbf{E} +
 %    \bigtriangledown \cdot \mathbf{J}^{i}
@@ -41,24 +41,24 @@ must be true.
 As we are solving the quasi-static problem, $\mathbf{E}$ can be
 found simply from the gradient of the scalar potential, $\phi$, as
 \begin{equation}
-\label{bsp:maxwell}
+\label{eqn:bsp:maxwell}
 \mathbf{E} = - \nabla\phi
 \end{equation}
 
-If (\ref{bsp:maxwell}) is substituted into (\ref{bsp:ohm2}) then we obtain
+If (\ref{eqn:bsp:maxwell}) is substituted into (\ref{eqn:bsp:ohm2}) then we obtain
 \begin{equation}
-\label{bsp:poisson}
+\label{eqn:bsp:poisson}
 \nabla^{2}\phi = \frac{\nabla \cdot \mathbf{J}^{i}}{\sigma}
 \end{equation}
 which can be recognised as Poisson's equation.
 In an infinite homogeneous conducting medium, a solution to Poisson's equation
 for the field at any given point, $\phi$, is~\cite{Plonsey1963}
 \begin{equation}
-\label{bsp:infinite}
+\label{eqn:bsp:infinite}
 \phi = \frac{1}{4 \pi \sigma} \int \frac{- \nabla \cdot
-\mathbf{J}^{i} }{r} dV
+\mathbf{J}^{i} }{r} dv
 \end{equation}
-where $r$ is the (scalar) distance from the point of integration to the point at
+where $r$ is the (scalar) distance from the elemental volume $dv$ to the point at
 which the field is being evaluated.
 
 To account for the influence of the finite dimensions of the torso we can use
@@ -67,8 +67,8 @@ of the history of the two methods).
 The derivation for the BEM method is based on Green's Theorem~\cite{Barr1966},
 which states that for a volume, $V$, bounded by a surface, $S$, that
 \begin{equation}
-\label{bsp:green}
-\int_{V} \left(\phi \nabla^{2}\psi - \psi \nabla^{2}\phi  \right) dV =
+\label{eqn:bsp:green}
+\int_{V} \left(\phi \nabla^{2}\psi - \psi \nabla^{2}\phi  \right) dv =
 \int_{S} \left( \phi \nabla \psi - \psi \nabla \phi \right) \cdot d\mathbf{S}
 \end{equation}
 where $\phi$ and $\psi$ are scalar functions of position.
@@ -77,15 +77,15 @@ $r$ is $|\mathbf{r'}-\mathbf{r}|$.
 Here, $\mathbf{r'}$ is a vector to an arbitrary point in the volume $V$ at which
 we wish to evaluate the field and $\mathbf{r}$ is a vector to an elemental
 volume, $dv$, somewhere within the volume $V$.
-Using (\ref{bsp:poisson}) we have
+Using (\ref{eqn:bsp:poisson}) we have
 \begin{equation}
-\label{bsp:greenandpoisson}
+\label{eqn:bsp:greenandpoisson}
 \int_{V}
     \left(
         \phi \nabla^{2}\left(\frac{1}{r}\right) -
         \frac{1}{r} \nabla^{2}\frac{\left(\nabla \cdot \mathbf{J}^{i} \right)}{\sigma}
     \right)
-dV =
+dv =
 \int_{S}
     \left(
         \phi \nabla \left(\frac{1}{r}\right) -
@@ -94,23 +94,224 @@ dV =
 \cdot d\mathbf{S}
 \end{equation}
 
-The del operator in (\ref{bsp:poisson}) operates on the unprimed (source) coordinates.
+The del operator in (\ref{eqn:bsp:greenandpoisson}) operates on the unprimed (source) coordinates.
 Now,
 \begin{equation}
-\label{bsp:oneoverr}
+\label{eqn:bsp:oneoverr}
 \nabla^{2}\left(\frac{1}{r}\right) =
 \nabla^{2}\left(\frac{1}{|\mathbf{r'}-\mathbf{r}|}\right) =
 -4\pi\delta\left(\mathbf{r'}-\mathbf{r}\right)
 \end{equation}
 where $\delta$ represents the dirac delta function.  The surface $S$ is the body
-surface and so on $S$ $\nabla\phi \cdot d\mathbf{S} = 0$ to a very good
-approximation.  (\ref{bsp:poisson}) becomes, after substitution and
+surface and so on $S$, $\nabla\phi \cdot d\mathbf{S} = 0$ to a very good
+approximation.  (\ref{eqn:bsp:greenandpoisson}) becomes, after substitution and
 rearrangement,
 \begin{equation}
-\label{bsp:substituted}
+\label{eqn:bsp:substituted}
 \phi\left(\mathbf{r'}\right) =
 \frac{1}{4 \pi \sigma}\int_{V} \frac{\nabla \cdot \mathbf{J}^{i}}{r}dv - 
 \frac{1}{4 \pi}\int_{S} \phi\left(\mathbf{r}\right)
-\nabla\left(\frac{1}{r}\right) \cdot \d\mathbf{S}
+\nabla\left(\frac{1}{r}\right) \cdot d\mathbf{S}
 \end{equation}
+
+By noting that
+\begin{equation}
+\label{eqn:bsp:solidanglesubs}
+-\nabla\left(\frac{1}{r}\right) \cdot d\mathbf{S} =
+-\frac{\left(\mathbf{r'}-\mathbf{r}\right)}{|\mathbf{r'}-\mathbf{r}|^{3}} \cdot d\mathbf{S} =
+d\Omega
+\end{equation}
+where $d\Omega$ is a differential element of solid angle,
+(\ref{eqn:bsp:substituted}) becomes
+\begin{equation}
+\label{eqn:bsp:substitutedomega}
+\phi\left(\mathbf{r'}\right) =
+\frac{1}{4 \pi \sigma}\int_{V} \frac{\nabla \cdot \mathbf{J}^{i}}{r}dv +
+\frac{1}{4 \pi}\int_{S} \phi\left(\mathbf{r}\right)d\Omega
+\end{equation}
+The first term on the right hand side can be recognised as the infinite medium
+potential (\ref{eqn:bsp:infinite}) and the second term consists of contributions
+from the torso surface.
+To discretise (\ref{eqn:bsp:substitutedomega}) we can consider $S$ to be made up of
+$n$ triangles, leading to
+\begin{equation}
+\label{eqn:bsp:discrete}
+\phi\left(\mathbf{r'}\right) \approx
+\frac{1}{4 \pi \sigma}\int_{V} \frac{\nabla \cdot \mathbf{J}^{i}}{r}dv +
+\frac{1}{4 \pi}\sum_{j=1}^n \phi_{j}\Delta\Omega_{j}
+\end{equation}
+where $\phi_{j}$ is the potential on the j\textsuperscript{th}\ surface element
+and $\Delta\Omega_{j}$ is the increment of solid angle of the
+j\textsuperscript{th}\ element when viewed from $\mathbf{r'}$.
+To find a solution, Barr et al. noted that $\phi\left(\mathbf{r'}\right)$ is the
+potential at an arbitrary point inside $V$.
+If these points are chosen to be at the centres of the triangles just inside
+the surface $S$ then since $\nabla\phi \cdot d\mathbf{S} = 0$ we can get an
+expression for the potential on the i\textsuperscript{th}\ triangle, $\phi_{i}$,
+\begin{equation}
+\label{eqn:bsp:discretei}
+\phi_{i} =
+\frac{1}{4 \pi \sigma}\int_{V} \frac{\nabla \cdot \mathbf{J}^{i}}{r}dv +
+\frac{1}{4 \pi}\sum_{j=1}^n \phi_{j}\Delta\Omega_{ji}
+\end{equation}
+where $\Delta\Omega_{ji}$ is the solid angle of the j\textsuperscript{th}\
+triangle seen from the i\textsuperscript{th}\ triangle.
+In the summation in (\ref{eqn:bsp:discretei}) there is one term which corresponds to
+the case where $i = j$.
+In this case, $\Delta\Omega_{ii} = 2\pi$ as from a point just inside $i$, $i$
+will obscure an angle of $2\pi$.
+Equation (\ref{eqn:bsp:discretei}) then becomes, after rearrangement,
+\begin{equation}
+\label{eqn:bsp:discretefinal}
+\frac{\phi_{i}}{2} + \sum_{j=1,j \neq i}^n \left(-\frac{\Delta\Omega_{ji}}{4\pi} \right)\phi_{j} =
+\frac{1}{4 \pi \sigma}\int_{V} \frac{\nabla \cdot \mathbf{J}^{i}}{r}dv
+\end{equation}
+which represents a set of $n$ simultaneous equations for the potentials on the
+surface elements of the torso.
+Taking
+\begin{equation}
+\label{eqn:bsp:b}
+B_i = \frac{1}{4 \pi \sigma}\int_{V} \frac{\nabla \cdot \mathbf{J}^{i}}{r}dv
+\end{equation}
+equation (\label{eqn:bsp:discretefinal}) can be written in matrix form as
+\begin{equation}
+\label{eqn:bsp:matrix}
+\mathbf{A}\mathbf{\phi} = \mathbf{B}
+\end{equation}
+where $\mathbf{A}$ is a matrix which depends entirely on the geometry of the
+torso surface with a typical term of $\displaystyle A_ij =
+-\frac{\Delta\Omega_ji}{4\pi}$ and $A_ii = 0.5$, $\mathbf{\phi}$ is a column
+vector of the potentials of the $n$ triangles and $\mathbf{B}$ is a column
+vector of the infinite medium potentials at the centres of the triangles of the
+surface.
+
+If the surface $S$ was discretised with sufficient accuracy then $\mathbf{A}$
+will necessarily be singular, due to the physical nature of the problem.
+This was noted by Salu~\ref{Salu1980}\ who proposed a solution which takes
+advantage of the physical properties of the system (an alternative method of
+removing the singularity of the system was proposed by Lynn and Timlake, the
+deflation method).
+Salu noted that, experimentally, the potential $\phi$ can only be determined up to
+an additive constant.
+Therefore $\phi$ can be taken as $0$ at arbitrarily chosen point, without
+effecting the general solution.
+Assigning $\phi_1 = 0$ in (\ref{eqn:bsp:matrix}) leads to
+\begin{equation}
+\label{eqn:bsp:salufirst}
+\sum_{j=2}^n A_ij \phi_j = B_i \quad\quad  i = 1,\cdots, n
+\end{equation}
+which is a set of $n$ equations in $n-1$ unknowns.
+These equations should have exactly one solution.
+If an exact solution exists, this implies two things: (a)
+(\ref{eqn:bsp:salufirst}) is a set of $n$ consistent equations in $n-1$ unknowns
+and (b) the rank of the sub-matrix $A_ij: i=2,\cdots,n j=2,\cdots,n$ is $n-1$.
+Hence there are $n$ nontrivial $\lambda_i$ such that the rows of $\textbf{A}$
+fulfil
+\begin{equation}
+\label{eqn:bsp:salulambda}
+\sum_{i=1}^n \lambda_i A_ij  = 0 \quad\quad  j = 2,\cdots, n
+\end{equation}
+The $\lambda_i$s may be determined up to a proportional factor.
+For (\ref{eqn:bsp:matrix}) to be consistent, it is also required that
+\begin{equation}
+\label{eqn:bsp:salulambdaB}
+\sum_{i=1}^n \lambda_i B_i  = 0
+\end{equation}
+Salu notes that (\ref{eqn:bsp:salulambdaB}) might not hold for a number of
+reasons, including numerical inaccuracies in the discretisation of surface or
+errors in the calculation of the $B_i$s.
+This would lead to a difference between $\phi_{\text{calculated}}$ and
+$\phi_{\text{real}}$.
+Considering once more the physical properties of the system, $B_i$ as an
+electrostatic potential could only be determined up to some additive constant,
+$\alpha$.
+Equation (\ref{eqn:bsp:salulambda}) then becomes
+\begin{equation}
+\label{eqn:bsp:salulambdaalpha}
+\sum_{i=1}^n \lambda_i \left(B_i+\alpha\right)  = 0
+\end{equation}
+
+This can be incorporated into (\ref{eqn:bsp:salufirst}) to get a set of $n$
+equations
+\begin{equation}
+\label{eqn:bsp:salufinal}
+\sum_{j=2}^n A_ij \phi_j = B_i + \alpha \quad\quad  i = 1,\cdots, n
+\end{equation}
+Equation (\ref{eqn:bsp:salufinal}) is now numerically consistent and is
+equivalent to (\ref{eqn:bsp:matrix}).
+Whenever (\ref{eqn:bsp:salulambdaB}) is not fulfilled, due to numerical errors
+in the discritisation and creation of $\textbf{A}$ or in the calculation of
+$\textbf{B}$, the addition of the $\alpha$ term ensures that
+(\ref{eqn:bsp:salufinal}) has a consistent solution.
+It is important to note that consistent does not mean necessarily mean accurate
+or correct.
+The addition of the $\alpha$ term merely ensures that a solution will exist.
+Due care must still be taken with the construction of each $A_ij$ term and
+accuracy can be improved via choosing a finer discretisation for the body
+surface mesh.
+
+An efficient solution to the problem of solving the equations and for $\alpha$
+was given by Salu.
+To do this, we let $\phi_j^* \left(j=2,\cdots,n\right)$ be a solution to the
+$n-1$ equations
+\begin{equation}
+\label{eqn:bsp:saluphijstar}
+\sum_{j=2}^n A_ij \phi_j^* = B_i \quad\quad  i = 2,\cdots, n
+\end{equation}
+and let $\phi_j^1 \left(j=2,\cdots,n\right)$ be a solution to the $n-1$
+equations
+\begin{equation}
+\label{eqn:bsp:saluphijone}
+\sum_{j=2}^n A_ij \phi_j^1 = 1 \quad\quad  i = 2,\cdots, n
+\end{equation}
+where the $1$ represents a column vector of 1s.
+The two vectors $\phi_j^*$ and $\phi_j^1$ both multiply the same matrix,
+$\mathbf{A}$ so it need only be inverted once to solve both
+(\ref{eqn:bsp:saluphijstar}) and (\ref{eqn:bsp:saluphijone}).
+Letting $\phi_j \left(j=2,\cdots,n\right)$ be a solution to the set of $n-1$
+equations
+\begin{equation}
+\label{eqn:bsp:saluphij}
+\sum_{j=2}^n A_ij \phi_j = B_i + \alpha \quad\quad  i = 2,\cdots, n
+\end{equation}
+where $\alpha$ is the same alpha introduced in (\ref{eqn:bsp:salulambdaalpha}).
+From equations (\ref{eqn:bsp:saluphijstar})--(\ref{eqn:bsp:saluphij}), the
+solution to the set of equations will be
+\begin{eqnarray}
+\label{eqn:bsp:salusolution}
+\phi_j&=&\phi_j^* + \alpha\phi_j^1 \quad\quad  j = 2,\cdots, n \nonumber\\
+\phi_1&=&0
+\end{eqnarray}
+
+Substituting (\ref{eqn:bsp:salusolution}) into the first equation of
+(\ref{eqn:bsp:salufinal}) will give
+\begin{equation}
+\label{eqn:bsp:salualphastep1}
+\sum_{j=2}^n A_1j \left(\phi_j^* + \alpha\phi_j^1\right) = B_i + \alpha
+\end{equation}
+or after re-arranging to solve for $\alpha$
+\begin{equation}
+\label{eqn:bsp:salualphastep2}
+\alpha = 
+    \frac{
+        \left(\sum_{j=2}^n A_1j \phi_j^*\right)-B_i
+        }{
+        1-eft(\sum_{j=2}^n A_1j \phi_j^1
+        }
+\end{equation}
+Equation (\ref{eqn:bsp:salualphastep2}) can be used along with
+(\ref{eqn:bsp:saluphijstar})--(\ref{eqn:bsp:saluphij}) to solve
+(\ref{eqn:bsp:matrix}) to find the body surface potential.
+
+\section{The Atrial Dipole}
+
+In the previous section, the method for solving Maxwell's equations to determine
+the body surface potential was derived.
+The $\mathbf{B}$ term in the equation (\ref{eqn:bsp:matrix}) is the infinite
+homogeneous medium potential for a number of impressed current sources
+$\mathbf{J}^i$.
+The model of atrial electrophysiological activity developed in the previous
+chapter provides an output of the trans-membrane potentials, $V_m$.
+To relate the values of $V_m$ to $\mathbf{J}^i$ we go back to dipole theory and
+a definition of 
 
