@@ -372,9 +372,9 @@ $\mathbf{J}^i = -\sigma_i\nabla V_m$.
 \section{Torso Geometry}
 
 The torso geometry used in this study is shown in Figure~\ref{fig:bsp:torso}.
-It is based on the geometry used by Weixue and Ling~\ref{Weixue1996}\ which was
-derived from CT images of the human torso.
-The original geometry consisted of 412 vertices which were linked by 820
+It was created by Weixue and Ling~\ref{Weixue1996}.
+The geometry was derived from CT images of the human torso.
+The geometry consists of 412 vertices which were linked by 820
 triangular elements.
 The triangular elements were subdivided into 3280 triangles and 1642 vertices
 using the Blender~\ref{Blender}\ 3D modelling package, but this was found to
@@ -386,7 +386,11 @@ than 0.01\%.
 
 The atrial model constructed in the previous chapter was embedded within the
 torso using the descriptions of Ho and S\'{a}nchez-Quintana~\ref{HoQuintana2008}
-with the ventricles from the original torso used as a guide.
+with the ventricular messhes from the original torso used as an additional guide.
+Using the z-x-z convention for Euler angles, the orientation of the atrium
+(after centring) was $\left(110,195,140\right)$.
+Following rotation, a translation of $\left(0.01,-0.08,-0.22\right)$ was
+applied to the atrium .
 Several of the triangular elements were picked as the sites of the ECG
 electrodes.
 The complete torso model with the embedded atrium and electrode locations is
@@ -428,10 +432,16 @@ matrix.
 Generating the body surface potential took one core of horace approximately 70
 minutes for \unit{2}{s}\ of atrial activity.
 
-\section{Simulating the Normal Atrial Depolarisation}
+\section{Simulating Sinus Rhythm}
 
-Using the 3D atrial model developed in the previous chapter with full fibre
-orientation description, an anisotropy ratio of 1:9, heterogeneous cell
-electrophysiology and paced at the sinus node with a frequency of \unit{2}{Hz}\
-the body surface potential and associated ECGs were generated for sinus rhythm.
+To simulate the P-wave body surface potential and ECG for the atrium in sinus
+rhythm, the atrial model developed in the previous chapter was used.
+The simulation of the electrical activity involved the full fibre orientation
+description with an anisotropy ratio of 1:9.
+There was heterogeneous cell electrophysiology.
+The atrium was paced at the site corresponding to the sinus node at a frequency
+of \unit{1}{Hz}\ for \unit{2}{s}.
+The output from this simulation was used to generate the body surface potential,
+and from that, the ECG.
+
 
