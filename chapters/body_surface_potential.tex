@@ -64,7 +64,8 @@ which the field is being evaluated.
 To account for the influence of the finite dimensions of the torso we can use
 either a FEM or a BEM (See Chapter XXXX for a discussion
 of the history of the two methods).
-The derivation for the BEM method is based on Green's Theorem~\cite{Barr1966},
+The derivation for the BEM method is based on Green's
+Theorem~\cite{Barr1966,Gulranji1980,Clayton2002},
 which states that for a volume, $V$, bounded by a surface, $S$, that
 \begin{equation}
 \label{eqn:bsp:green}
@@ -109,7 +110,7 @@ rearrangement,
 \begin{equation}
 \label{eqn:bsp:substituted}
 \phi\left(\mathbf{r'}\right) =
-\frac{1}{4 \pi \sigma}\int_{V} \frac{\nabla \cdot \mathbf{J}^{i}}{r}dv - 
+\frac{1}{4 \pi \sigma}\int_{V} \frac{-\nabla \cdot \mathbf{J}^{i}}{r}dv - 
 \frac{1}{4 \pi}\int_{S} \phi\left(\mathbf{r}\right)
 \nabla\left(\frac{1}{r}\right) \cdot d\mathbf{S}
 \end{equation}
@@ -117,8 +118,8 @@ rearrangement,
 By noting that
 \begin{equation}
 \label{eqn:bsp:solidanglesubs}
--\nabla\left(\frac{1}{r}\right) \cdot d\mathbf{S} =
--\frac{\left(\mathbf{r'}-\mathbf{r}\right)}{|\mathbf{r'}-\mathbf{r}|^{3}} \cdot d\mathbf{S} =
+\nabla\left(\frac{1}{r}\right) \cdot d\mathbf{S} =
+\frac{\left(\mathbf{r'}-\mathbf{r}\right)}{|\mathbf{r'}-\mathbf{r}|^{3}} \cdot d\mathbf{S} =
 d\Omega
 \end{equation}
 where $d\Omega$ is a differential element of solid angle,
@@ -126,7 +127,7 @@ where $d\Omega$ is a differential element of solid angle,
 \begin{equation}
 \label{eqn:bsp:substitutedomega}
 \phi\left(\mathbf{r'}\right) =
-\frac{1}{4 \pi \sigma}\int_{V} \frac{\nabla \cdot \mathbf{J}^{i}}{r}dv +
+\frac{1}{4 \pi \sigma}\int_{V} \frac{-\nabla \cdot \mathbf{J}^{i}}{r}dv -
 \frac{1}{4 \pi}\int_{S} \phi\left(\mathbf{r}\right)d\Omega
 \end{equation}
 The first term on the right hand side can be recognised as the infinite medium
@@ -137,7 +138,7 @@ $n$ triangles, leading to
 \begin{equation}
 \label{eqn:bsp:discrete}
 \phi\left(\mathbf{r'}\right) \approx
-\frac{1}{4 \pi \sigma}\int_{V} \frac{\nabla \cdot \mathbf{J}^{i}}{r}dv +
+\frac{1}{4 \pi \sigma}\int_{V} \frac{-\nabla \cdot \mathbf{J}^{i}}{r}dv -
 \frac{1}{4 \pi}\sum_{j=1}^n \phi_{j}\Delta\Omega_{j}
 \end{equation}
 where $\phi_{j}$ is the potential on the j\textsuperscript{th}\ surface element
@@ -151,27 +152,30 @@ expression for the potential on the i\textsuperscript{th}\ triangle, $\phi_{i}$,
 \begin{equation}
 \label{eqn:bsp:discretei}
 \phi_{i} =
-\frac{1}{4 \pi \sigma}\int_{V} \frac{\nabla \cdot \mathbf{J}^{i}}{r}dv +
-\frac{1}{4 \pi}\sum_{j=1}^n \phi_{j}\Delta\Omega_{ji}
+\frac{1}{4 \pi \sigma}\int_{V} \frac{-\nabla \cdot \mathbf{J}^{i}}{r}dv -
+\frac{1}{4 \pi}\sum_{j=1}^n \phi_{j}\Delta\Omega_{ij}
 \end{equation}
-where $\Delta\Omega_{ji}$ is the solid angle of the j\textsuperscript{th}\
+where $\Delta\Omega_{ij}$ is the solid angle of the j\textsuperscript{th}\
 triangle seen from the i\textsuperscript{th}\ triangle.
 In the summation in (\ref{eqn:bsp:discretei}) there is one term which corresponds to
 the case where $i = j$.
-In this case, $\Delta\Omega_{ii} = 2\pi$ as from a point just inside $i$, $i$
-will obscure an angle of $2\pi$.
+In this case, $\Delta\Omega_{ii} = -2\pi$ as from a point just inside $i$, $i$
+will obscure an angle of $-2\pi$.  (As a consequence of the vector definition of
+solid angle, the solid angle obscured at any point within is negative)
 Equation (\ref{eqn:bsp:discretei}) then becomes, after rearrangement,
 \begin{equation}
 \label{eqn:bsp:discretefinal}
-\frac{\phi_{i}}{2} + \sum_{j=1,j \neq i}^n \left(-\frac{\Delta\Omega_{ji}}{4\pi} \right)\phi_{j} =
-\frac{1}{4 \pi \sigma}\int_{V} \frac{\nabla \cdot \mathbf{J}^{i}}{r}dv
+\frac{\phi_{i}}{2} + \sum_{j=1,j \neq i}^n \left(\frac{\Delta\Omega_{ij}}{4\pi} \right)\phi_{j} =
+\frac{1}{4 \pi \sigma}\int_{V} \frac{-\nabla \cdot \mathbf{J}^{i}}{r}dv
 \end{equation}
 which represents a set of $n$ simultaneous equations for the potentials on the
 surface elements of the torso.
-Taking
+Using an alternate formulation of (\ref{eqn:bsp:infinite})~\cite{Plonsey1989} in
+which $\mathbf{J}^i$ can be considered a dipole density
 \begin{equation}
 \label{eqn:bsp:b}
-B_i = \frac{1}{4 \pi \sigma}\int_{V} \frac{\nabla \cdot \mathbf{J}^{i}}{r}dv
+B_i = \frac{1}{4 \pi \sigma}\int_{V} \frac{\mathbf{J}^{i}\cdot
+\left(\mathbf{r'}-\mathbf{r}\right)}{r^3}dv
 \end{equation}
 equation (\label{eqn:bsp:discretefinal}) can be written in matrix form as
 \begin{equation}
@@ -320,8 +324,50 @@ homogeneous medium potential for a number of impressed current sources
 $\mathbf{J}^i$.
 The model of atrial electrophysiological activity developed in the previous
 chapter provides an output of the trans-membrane potentials, $V_m$.
-To relate the values of $V_m$ to $\mathbf{J}^i$ we go back to dipole theory and
-a definition of 
+To relate the values of $V_m$ to $\mathbf{J}^i$ we consider the bidomain
+model~\ref{Tung,otherguy}.
+As previously discussed, the bidomain model considers the cardiac tissue as
+comprising two `syncytica' occupying the whole of cardiac tissue and seperated
+by the cell membrane.
+These are the intra- and extra-cellular spaces.
+This leads to the following two relationships
+\begin{align}
+\label{eqn:bsp:bidomaini}
+\mathbf{J}_i & = -\sigma_i \nabla \phi_i \\
+\label{eqn:bsp:bidomaine}
+\mathbf{J}_e & = -\sigma_e \nabla \phi_e
+\end{align}
+where $\mathbf{J}$ is a current density, $\sigma$ is the conductivity, $\phi$
+is the potential and the subscripts `i' and `e' denote the intra- and
+extra-cellular spaces, respectively.
+Charge moving from one space to another must cross the cell membrane and is
+conserved, leading to the following relationship for $I_m$, the membrane current per unit
+volume
+\begin{equation}
+\label{eqn:bsp:im}
+I_m = -\nabla\cdot\mathbf{J}_e = \nabla\cdot\mathbf{J}_i
+\end{equation}
+By definition the transmembrane potential, $V_m$ is
+\begin{equation}
+\label{eqn:bsp:tmp}
+V_m = \phi_i - \phi_e
+\end{equation}
+Combining these two equations leads to
+\begin{equation}
+\label{eqn:bsp:poissonrep}
+\nabla\cdot\sigma_i\nabla V_m = -\nabla\cdot\sigma\nabla\phi_e
+\end{equation}
+where $\sigma = \sigma_i + \sigma_e$, the bulk conductivity of the cardiac
+tissue.
+Equation (\ref{eqn:bsp:poissonrep}) is of the form of poisson's equation.
+The equation can be interpreted to indicate that the term on the left hand side
+is the source of the extracellular potentials.
+By comparing (\ref{eqn:bsp:poissonrep}) with (\ref{eqn:bsp:poisson}) it is
+obvious that
+\begin{equation}
+\label{eqn:bsp:ji}
+$\mathbf{J}^i = -\sigma_i\nabla V_m$.
+\end{equation}
 
 \section{Torso Geometry}
 
@@ -331,7 +377,8 @@ derived from CT images of the human torso.
 The original geometry consisted of 412 vertices which were linked by 820
 triangular elements.
 The triangular elements were subdivided into 3280 triangles and 1642 vertices
-using the Blender~\ref{Blender}\ 3D modelling package.
+using the Blender~\ref{Blender}\ 3D modelling package, but this was found to
+have no discernible influence on the generated ECG.
 Initial studies using a spherical geometry with a similar number of triangle and
 the analytical formula for the potential within a conducting sphere suggest that
 the errors~\ref{FergusonStroink1994} induced through the descritisation are less
@@ -355,14 +402,18 @@ estimate the solid angle subtended by each triangular element.
 A subroutine written in C was used to read in the gzip or xz compressed
 data files corresponding to each snapshot in time (\ms{1}) generated by the
 atrial model.
-To reduce the computational time and memory requirements the atrial geometry was
+The impressed current density at each node of the tissue was calculated using
+(\ref{eqn:bsp:ji}).
+To reduce computational time and memory requirements, the atrial geometry was
 divided into 10x10x10 node blocks, around 4000 of which actually had active
 nodes within.
-The dipole values of each node were aggregated within these blocks to form one
-`large' dipole which was assumed to be positioned at the centre of mass of the
-block.
-Decreasing the block size to 5x5x5 nodes had a negligible effect on the final
-ECG.
+The dipoles generated by each active node were aggregated and considered to act
+at the centroid of the block determined from the distribution of active nodes
+within the block.
+These `large' dipoles were then used as the source terms in
+(\ref{eqn:bsp:infinite}).
+Decreasing the block size to 5x5x5 nodes had a negligible effect on the computed
+body surface potential.
 A uniform conductance of $0.2\,\Omega \text{m}^{-1}$~\ref{ClaytonHolden2002,Seger2004} was assumed for the torso.
 From these dipoles, the $\mathbf{B}$ was calculated.
 
@@ -374,9 +425,13 @@ calculations.
 The DGETRS sub-routine was then used to solve (\ref{eqn:bsp:saluphijone}) and
 (\ref{eqn:bsp:saluphijstar}) for each time snapshot using this factorised
 matrix.
-Generating the body surface potential took one core of horace approximately 100
+Generating the body surface potential took one core of horace approximately 70
 minutes for \unit{2}{s}\ of atrial activity.
 
 \section{Simulating the Normal Atrial Depolarisation}
 
+Using the 3D atrial model developed in the previous chapter with full fibre
+orientation description, an anisotropy ratio of 1:9, heterogeneous cell
+electrophysiology and paced at the sinus node with a frequency of \unit{2}{Hz}\
+the body surface potential and associated ECGs were generated for sinus rhythm.
 
