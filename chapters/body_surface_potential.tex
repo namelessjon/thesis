@@ -374,11 +374,15 @@ obvious that
 The torso geometry used in this study is shown in Figure~\ref{fig:bsp:torso}.
 It was created by Weixue and Ling~\ref{Weixue1996}.
 The geometry was derived from CT images of the human torso.
-The geometry consists of 412 vertices which were linked by 820
-triangular elements.
-The triangular elements were subdivided into 3280 triangles and 1642 vertices
-using the Blender~\ref{Blender}\ 3D modelling package, but this was found to
-have no discernible influence on the generated ECG.
+The geometry consists of 412 vertices which were linked by 820 triangular
+elements for the thorax and 297 vertices for the for the lungs which were linked
+by 586 triangles.
+These meshes were subdivided using the Blender~\ref{Blender}\ graphical package
+into meshes consisting of 13120 elements for the torso and 2344 elements for the
+lungs.
+This smoothing had no discernible influence on the shape of the
+electrocardiogram, but increased the clarity of body surface potential maps
+considerably.
 Initial studies using a spherical geometry with a similar number of triangle and
 the analytical formula for the potential within a conducting sphere suggest that
 the errors~\ref{FergusonStroink1994} induced through the descritisation are less
@@ -386,15 +390,16 @@ than 0.01\%.
 
 The atrial model constructed in the previous chapter was embedded within the
 torso using the descriptions of Ho and S\'{a}nchez-Quintana~\ref{HoQuintana2008}
-with the ventricular messhes from the original torso used as an additional guide.
+with the ventricular meshes from the original torso used as an additional guide.
 Using the z-x-z convention for Euler angles, the orientation of the atrium
 (after centring) was $\left(110,195,140\right)$.
-Following rotation, a translation of $\left(0.01,-0.08,-0.22\right)$ was
+Following rotation, a translation of $\left(0.00,-0.08,-0.23\right)$ was
 applied to the atrium .
 Several of the triangular elements were picked as the sites of the ECG
 electrodes.
 The complete torso model with the embedded atrium and electrode locations is
 shown in Figure~\ref{fig:bsp:torsoatrium}.
+A uniform conductance of $0.2\,\Omega \text{m}^{-1}$~\ref{ClaytonHolden2002,Seger2004} was assumed for the torso.
 
 \section{Computational Implementation}
 
@@ -416,21 +421,31 @@ at the centroid of the block determined from the distribution of active nodes
 within the block.
 These `large' dipoles were then used as the source terms in
 (\ref{eqn:bsp:infinite}).
+To reduce computation time, the equations were formed into 3 sets of coefficient
+matrices, corresponding to the x, y and z components of the radius vector.
+These were then multiplied by the relevant dipole components and the results
+summed to calculate the potential in the centre of each element.
 Decreasing the block size to 5x5x5 nodes had a negligible effect on the computed
 body surface potential.
-A uniform conductance of $0.2\,\Omega \text{m}^{-1}$~\ref{ClaytonHolden2002,Seger2004} was assumed for the torso.
-From these dipoles, the $\mathbf{B}$ was calculated.
+From these dipoles, the $\mathbf{B}$ matrix was calculated.
 
 To solve the resulting set of equations, the LAPACK~\ref{lapack} library was
 used.
-The $\mathbf{A}$ matrix was factorized using the DGETRF sub-routine.
+The $\mathbf{A}$ matrix was factorized using the SGETRF sub-routine.
+Numerical experiments determined that only single precision arithmetic was
+required.
+Solutions calculated using double and single precision showed differences only at
+the limits of single precision accuracy--approximately 7 significant figures.
 Since the torso is static this need only be done once, at the start of the
 calculations.
-The DGETRS sub-routine was then used to solve (\ref{eqn:bsp:saluphijone}) and
+The SGETRS sub-routine was then used to solve (\ref{eqn:bsp:saluphijone}) and
 (\ref{eqn:bsp:saluphijstar}) for each time snapshot using this factorised
 matrix.
-Generating the body surface potential took one core of horace approximately 70
-minutes for \unit{2}{s}\ of atrial activity.
+Generating the body surface potential took one core of horace approximately 60
+minutes for \unit{2}{s}\ of atrial activity using the original mesh.
+Using the fully refined mesh required approximately 150 minutes for the same
+computation.
+
 
 \section{Simulating Sinus Rhythm}
 
@@ -438,7 +453,9 @@ To simulate the P-wave body surface potential and ECG for the atrium in sinus
 rhythm, the atrial model developed in the previous chapter was used.
 The simulation of the electrical activity involved the full fibre orientation
 description with an anisotropy ratio of 1:9.
-There was heterogeneous cell electrophysiology.
+There was heterogeneous cell electrophysiology used, with differential
+electropphysiology for the atrial myocyte, pectinate muscle and crista
+terminalis cells..
 The atrium was paced at the site corresponding to the sinus node at a frequency
 of \unit{1}{Hz}\ for \unit{2}{s}.
 The output from this simulation was used to generate the body surface potential,
