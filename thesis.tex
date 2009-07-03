@@ -8,7 +8,37 @@
 \usepackage{amsmath}
 \usepackage{algorithm}
 \usepackage{algorithmic}
+\usepackage{fancyhdr}
+
+
+
+
+% - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+% Size of text:
+\textheight     24cm        % == A4 height is 297mm (\paperheight)
+\textwidth      15cm        % == A4 width is  210mm (\paperwidth)
+
+% - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+% Margin Settings:
+\oddsidemargin   15mm       % == 40mm binding space, as per university regs
+\evensidemargin  20mm        % == thesis is single sided
+\topmargin       0mm        % == dont leave space at top
+\headheight      5mm        % == space for running header
+\headsep         5mm        % == space before page starts
+\footskip       10mm        % == space between body and footnote
+
+
+% double spaced, with fancy headers
+\pagestyle{fancy}
 \doublespacing
+%\renewcommand{\sectionmark}[1]{\markright{\thesection.\ #1}}
+\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
+\renewcommand{\sectionmark}[1]{\markright{\thesection.\ #1}}
+
+
+
+
+
 
 
 \newcommand{\unit}[2]{\ensuremath{#1\,\text{#2}}}
