@@ -441,6 +441,10 @@ calculations.
 The SGETRS sub-routine was then used to solve (\ref{eqn:bsp:saluphijone}) and
 (\ref{eqn:bsp:saluphijstar}) for each time snapshot using this factorised
 matrix.
+The zero potential, required for the consistency criterion of Salu, was chosen
+to be at element 1 of the mesh.
+This element is located at the top of the mesh, as indicated in
+Figure~\ref{fig:bsp:torsoatrium}.
 Generating the body surface potential took one core of horace approximately 60
 minutes for \unit{2}{s}\ of atrial activity using the original mesh.
 Using the fully refined mesh required approximately 150 minutes for the same
@@ -455,10 +459,113 @@ The simulation of the electrical activity involved the full fibre orientation
 description with an anisotropy ratio of 1:9.
 There was heterogeneous cell electrophysiology used, with differential
 electropphysiology for the atrial myocyte, pectinate muscle and crista
-terminalis cells..
+terminalis cells.
 The atrium was paced at the site corresponding to the sinus node at a frequency
 of \unit{1}{Hz}\ for \unit{2}{s}.
-The output from this simulation was used to generate the body surface potential,
+The output from this simulation was used to generate the body surface potential
 and from that, the ECG.
+The generated ECG signal was been passed through a digital low-pass filter at
+\unit{150}{Hz}, corresponding to the diagnostic mode typically used in a
+clinical setting.
+The body surface potential was calculated both with and without the presence of
+lungs via setting the internal conductivity of the lungs to
+\unit{0.05}{Sm-1}\ for lungs, or \unit{0.2}{Sm-1}\ (i.e. the torso
+conductivity) for no lungs.
 
+\subsection{Simulated Body Surface Potential Maps}
 
+The evolution of the body surface potential without lungs is shown in
+Figure~\ref{bsp:fig:transp_lungs_bsp}.
+The potential distribution starts off very close to uniform in frame (i) at
+\ms{10}\ after initial excitation.
+Only excitation and repolarisation wavefronts generate dipoles and in the
+initial milliseconds the excitation wavefront is very small.
+In \ref{bsp:fig:transp_lungs_bsp}(iv) (\ms{25} after initial stimulus) a peak is
+beginning to appear over the lower right lung, caused by the rapid conduction
+along the crista terminalis.
+By frames (v) and (vi), the regions of different potential are much more
+regularly distributed.
+The excitation wavefront is moving towards the left leg.
+The line of zero potential is visibly sweeping over the torso and gives an
+indication of the location orthogonal to the excitation wavefront.
+
+The three frames (vii--ix) corresponding the to the plateau and beginnings of the
+repolarisation show a much more diffuse arrangement of potentials.
+The distribution is approximately the mirror image of that seen during
+depolarisation, with the predominantly positive regions over the right shoulder.
+The diffuse pattern of potentials is caused by the slower repolarisation of
+atrial myocytes compared to their depolarisation.
+It does not show a disturbance from the smooth pattern as seen for
+depolarisation in frame (iv) as the repolarisation is less influenced by the
+underlying fibre structure.
+
+The evolution of the body surface potential with lungs is shown in
+Figure~\ref{bsp:fig:lungs_bsp}.
+The potential distribution is initially almost uniform in frame (i) at
+\ms{10}\ after initial excitation.
+In \ref{bsp:fig:lungs_bsp}(iv) (\ms{25} after initial stimulus) a peak is
+beginning to appear over the lower right lung, caused by the rapid conduction
+along the crista terminalis but this peak is less pronounced than in the
+calculations that have the lungs present.
+By frames (v) and (vi), the potential is much more regularly distributed with
+the simple boundary layer of zero potential.
+In contrast to the simulation without lungs, the region of predominantly negative potential seems
+to be higher on the torso and more centrally located, with a corresponding shift
+in the location of the region of positive potential.
+In addition, it appears that the lungs act to give a slight amplification
+effect, increasing the ranges of potential seen~\ref{Gulranjani1983}.
+
+The three frames (vii--ix) corresponding the to the plateau and beginnings of the
+repolarisation show a much more diffuse arrangement of potentials.
+The distribution is approximately the mirror image of that seen during
+depolarisation, with the predominantly positive regions over the right shoulder.
+This region is higher and more centered than is seen in the simulation without
+lungs, as seen for the depolarisation patterns.
+
+\subsection{Simulated Electrocardiograms}
+
+The ECG corresponding to the simulations without lungs is shown in
+Figure~\ref{bsp:fig:transp_lungs_ecg}.
+The maximum and minimum potential differences observed in the leads are
+\mv{+0.38}\ and \mv{-0.32}\ seen in lead I and lead aVR, respectively.
+The P-wave is upright in leads I, II, aVF, and $\text{V}_{\text{3--6}}$.
+It is predominatly upright in aVL, but mildly biphasic.
+It is biphasic in leads III, $\text{V}_{\text{1}}$ and $\text{V}_{\text{2}}$.
+It is inverted in lead aVR.
+The P-wave has a width of \ms{100}\ in lead II.
+
+The atrial repolarisation wave, the $\text{T}_{\text{a}}$ wave, is easily
+visible in all leads except leads III, aVL and $\text{V}_{\text{2}}$.
+In all the leads in which it appears, it is inverted compared to the P-wave in
+that lead and has a lower (less than 50\% in all leads) amplitude.
+It appears to start immediately after the P-wave in all leads.
+The $\text{T}_{\text{a}}$ is broader than the P-wave, corresponding to the lower
+speed of repolarisation.
+
+The ECG corresponding to the simulations with lungs is shown in
+Figure~\ref{bsp:fig:lungs_ecg}.
+The maximum and minimum potential differences observed in the leads are
+\mv{+0.37}\ and \mv{-0.30}\ seen in lead II and lead $\text{V}_{\text{1}}$, respectively.
+The P-wave is upright in leads I, II, III, aVF, and $\text{V}_{\text{3--6}}$.
+It is biphasic in leads aVL, $\text{V}_{\text{1}}$ and $\text{V}_{\text{2}}$.
+It is inverted in lead aVR.
+The P-wave has a width of \ms{100}\ in lead II.
+
+The atrial repolarisation wave, the $\text{T}_{\text{a}}$ wave, is easily
+visible in all leads except lead aVL and $\text{V}_{\text{2}}$.
+In all the leads in which it appears, it is inverted compared to the P-wave in
+that lead and has a lower (less than 50\% in all leads) amplitude.
+It appears to start immediately after the P-wave in all leads.
+The $\text{T}_{\text{a}}$ is broader than the P-wave in all leads.
+
+In general, the leads show greater extremes of potential in the simulations
+where the lungs are present.
+This is most pronounced in lead III, which has approximately twice the maximum
+amplitude of the same lead without lungs.
+The trend is not uniformly true.
+The maximum potential difference observed in lead I is \mv{0.24}\ without lungs,
+and \mv{0.16}\ with lungs.
+The aVL lead shows a similar reduction between the two simulations.
+The phase of the signal, that is whether it is rising or falling, does not seem
+to be influenced by the presence or absence of
+lungs~\ref{Rudy2006,Gulrajani1983}.
