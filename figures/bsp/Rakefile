@@ -1,0 +1,25 @@
+# Rakefile for hzhangpg02.ph.man.ac.uk
+# Rakefile
+# Jonathan D. Stott <jonathan.stott@gmail.com>
+load 'rakelib/ecg.rake'
+require 'rake/clean'
+
+# ECG stuff
+PLOT_TEMPLATE = File.join('templates', 'ecg_plot.erb')
+
+#ecg_plots 'ecg_no_lungs'
+
+[150].each do |freq|
+  filtered_ecg 'ecg_no_lungs', freq
+end
+
+#ecg_plots 'ecg_lungs'
+
+[150].each do |freq|
+  filtered_ecg 'ecg_lungs', freq
+end
+
+desc 'Generate all figures'
+task :all => [:ecgs]
+
+task :default => :all
