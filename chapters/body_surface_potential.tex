@@ -378,29 +378,52 @@ The geometry was derived from CT images of the human torso.
 The geometry consists of 412 vertices which were linked by 820 triangular
 elements for the thorax and 297 vertices for the for the lungs which were linked
 by 586 triangles.
+In addition, a geometric representation of the ventricular blood masses was
+constructed based on the ventricular mesh from the Weixue and Ling geometry.
+This mesh had 295 vertices and 582 elements.
+The blood masses of the atria were approximated by a pair of spheres, situated
+in the centre of the atrial chambers.
+The spheres for the left and right atria each had 162 vertices linked by 320
+triangular elements.
 These meshes were subdivided using the Blender~\ref{Blender}\ graphical package
-into meshes consisting of 13120 elements for the torso and 2344 elements for the
-lungs.
-This smoothing had no discernible influence on the shape of the
-electrocardiogram, but increased the clarity of body surface potential maps
-considerably.
+into meshes consisting of 13120 elements for the torso, 2344 elements for the
+lungs and 2328 for the ventricular blood masses.
+Subdividing the meshes in this way did not influence the final form of the ECG
+significantly, but did improve the clarity of visualisation of the body surface
+potential.
 Initial studies using a spherical geometry with a similar number of triangle and
 the analytical formula for the potential within a conducting sphere suggest that
 the errors~\ref{FergusonStroink1994} induced through the descritisation are less
 than 0.01\%.
 
-The atrial model constructed in the previous chapter was embedded within the
+The atrial model constructed in the previous chapter was positioned within the
 torso using the descriptions of Ho and S\'{a}nchez-Quintana~\ref{HoQuintana2008}
 with the ventricular meshes from the original torso used as an additional guide.
-Using the z-x-z convention for Euler angles, the orientation of the atrium
-(after centring) was $\left(110,195,140\right)$.
-Following rotation, a translation of $\left(0.00,-0.08,-0.23\right)$ was
-applied to the atrium .
+First, the model was centred in the atrial co-ordinate system.
+Using the z-x-z convention for Euler angles, the atrium rotated by
+$\left(110, 210, 120\right)$.
+Following rotation, a translation of $\left(-0.002, -0.08, -0.222\right)$ was
+applied to the atrium.
 Several of the triangular elements were picked as the sites of the ECG
 electrodes.
 The complete torso model with the embedded atrium and electrode locations is
 shown in Figure~\ref{fig:bsp:torsoatrium}.
-A uniform conductance of $0.2\,\Omega \text{m}^{-1}$~\ref{ClaytonHolden2002,Seger2004} was assumed for the torso.
+Conductances used for the various compartments of the torso are shown in
+Table~\ref{tbl:bsp:conductances}.
+\begin{table}
+    \caption[Conductances of torso compartments]{
+        Conductances used for the various compartments of the torso for solving
+        the boundary element method~\ref{Seger2004}.
+    }
+    \begin{tabular}{ l  c }
+    \label{tbl:bsp:conductances}
+     Tissue & Conductivity ($\text{Sm}^{\text{-1}}$)  \\
+     \hline
+     Torso & 0.2 \\
+     Lungs & 0.08 \\
+     Blood & 0.6 \\
+    \end{tabular}
+\end{table}
 
 \section{Computational Implementation}
 
@@ -448,7 +471,7 @@ This element is located at the top of the mesh, as indicated in
 Figure~\ref{fig:bsp:torsoatrium}.
 Generating the body surface potential took one core of horace approximately 60
 minutes for \unit{2}{s}\ of atrial activity using the original mesh.
-Using the fully refined mesh required approximately 150 minutes for the same
+Using the fully refined mesh required approximately 190 minutes for the same
 computation.
 
 
@@ -469,9 +492,9 @@ The generated ECG signal was been passed through a digital low-pass filter at
 \unit{150}{Hz}, corresponding to the diagnostic mode typically used in a
 clinical setting.
 The body surface potential was calculated both with and without the presence of
-lungs via setting the internal conductivity of the lungs to
-\unit{0.05}{Sm-1}\ for lungs, or \unit{0.2}{Sm-1}\ (i.e. the torso
-conductivity) for no lungs.
+internal inhomogeneities by setting the internal conductivity of the relevant
+compartment to the value in Table~\ref{tbl:bsp:conductances}\ to include that
+compartment, or to the torso conductivity to remove its influence.
 
 \subsection{Simulated Body Surface Potential Maps}
 
