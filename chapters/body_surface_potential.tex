@@ -790,3 +790,52 @@ That is to say, the differences in patterns of potential observed in the body
 surface potential plots do not seem to be translated into differences in the
 ECG.
 This is most likely due to the limited leads of the standard twelve lead ECG.
+
+\section{Limitations of the Model}
+
+Whilst the presented model of the human atrium and torso provides a relatively
+good reproduction of the features of the body surface potential distribution and
+ECG, it does omit several factors that could be considered.
+There were also compromises made due to the `assembled' nature of the model.
+It is possible that a `better' orientation for the atrium could be found, due to
+the scarcity of antomical landmarks present in the torso for the study to guide
+its placement.
+The model of the blood masses, particularly those of the atria could be improved
+to more realistically model the shape, perhaps by basing the outer surface of
+the blood masses off a mesh extracted from the epicardial surface.
+The size and shape of the ventricular bloodmasses, whilst extracted from the
+internal surfaces of the ventricular mesh associated with the torso, do not
+exactly correspond to the sizes of the atrial valve openings.
+In addition, the presence of the lungs presented a constraint on the location of
+the atria, due to a requirement that the atrium should reside wholely within the
+main torso cavity--an orientation that had previously been considered `good' had
+to be discarded when lungs were introduced.
+
+The model considers only a few internal inhomogeneities, the lungs and the blood
+masses.
+Other inhomogeneities such as the skeletal muscle layers and subcutaneous fat
+have not been included, although previous simulation studies suggest their
+influence is small~\ref{Klepfer1997}.
+In addition, the anisotropic nature of cardiac muscle was only considered during
+the calculations of the electrical propagation, it was not considered during the
+computation of the dipole sources of the heart.
+What influence this has is unknown, as only one computational study of the
+atrial excitation appears to have considered it~\ref{Seger2004}\ and then not in
+isolation.
+
+The model considers coupling only in one direction; the heart potential
+distribution drives the torso potential distribution.
+A more complete study might consider coupling in the other direction as well.
+This would require significant changes to the model, necessitating a bidomain
+approximation to be used for the propagation and a finite difference or finite
+element formulation used for the torso.
+
+Finally, the model is completely static.
+There is no consideration of the contractile nature of the myocardium.
+This would have influence both on the pattern of propagation and the distance
+between dipole locations and the boundary elements.
+The contractile cycle would also influence the spatial distribution of the
+blood masses.
+This would significantly increase the amount of computational power required to
+solve the problem, but would not be impossible with the current generation of
+computers.
