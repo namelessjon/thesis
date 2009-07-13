@@ -21,6 +21,7 @@ end
 
 def plot(template_name, context)
   template = create_gnuplot_script(template_name, context)
+  puts template
   gnuplot(template)
 end
 
