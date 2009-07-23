@@ -12,16 +12,21 @@ task :all => [:ecgs, :bsps]
 
 task :default => :all
 
-BSP_ROOT = "/media/My Passport/bsps/refined_atrial_meshes"
+BSP_ROOT = "/media/My Passport/bsps/rotation_zxz"
+A = 215
+B = 160
+G = 185
 
 %w{all blood lungs thorax}.each do |c|
   dir = "bsp_#{c}"
   directory dir
 
+  name = "%s_%d_%d_%d" % [c, A, B, G]
+
 
   %w{0010 0015 0020 0025 0040 0060 0180 0200 0220}.each do |snapshot|
-    fn = "refined_#{c}.#{snapshot}.png"
-    file File.join(dir, fn) => [File.join(BSP_ROOT, c, 'pngs', fn), dir] do |t|
+    fn = "#{c}.#{snapshot}.png"
+    file File.join(dir, fn) => [File.join(BSP_ROOT, name, 'iso_pngs', "#{name}.#{snapshot}.png"), dir] do |t|
       cp t.prerequisites.first, t.name
       sh "mogrify -crop 500x500+70+70 '#{t.name}'"
     end
@@ -29,7 +34,7 @@ BSP_ROOT = "/media/My Passport/bsps/refined_atrial_meshes"
     task :bsps => File.join(dir, fn)
   end
 
-  file "ecg_#{c}.dat" => File.join(BSP_ROOT, c, "#{c}.dat") do |t|
+  file "ecg_#{c}.dat" => File.join(BSP_ROOT, name, "#{name}.dat") do |t|
     cp t.prerequisites.first, t.name
   end
 
