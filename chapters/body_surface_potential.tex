@@ -184,8 +184,8 @@ equation (\label{eqn:bsp:discretefinal}) can be written in matrix form as
 \mathbf{A}\mathbf{\phi} = \mathbf{B}
 \end{equation}
 where $\mathbf{A}$ is a matrix which depends entirely on the geometry of the
-torso surface with a typical term of $\displaystyle A_ij =
--\frac{\Delta\Omega_ji}{4\pi}$ and $A_ii = 0.5$, $\mathbf{\phi}$ is a column
+torso surface with a typical term of $\displaystyle A_{ij} =
+-\frac{\Delta\Omega_{ji}}{4\pi}$ and $A_{ii} = 0.5$, $\mathbf{\phi}$ is a column
 vector of the potentials of the $n$ triangles and $\mathbf{B}$ is a column
 vector of the infinite medium potentials at the centres of the triangles of the
 surface.
@@ -211,18 +211,18 @@ effecting the general solution.
 Assigning $\phi_1 = 0$ in (\ref{eqn:bsp:matrix}) leads to
 \begin{equation}
 \label{eqn:bsp:salufirst}
-\sum_{j=2}^n A_ij \phi_j = B_i \quad\quad  i = 1,\cdots, n
+\sum_{j=2}^n A_{ij} \phi_j = B_i \quad\quad  i = 1,\cdots, n
 \end{equation}
 which is a set of $n$ equations in $n-1$ unknowns.
 These equations should have exactly one solution.
 If an exact solution exists, this implies two things: (a)
 (\ref{eqn:bsp:salufirst}) is a set of $n$ consistent equations in $n-1$ unknowns
-and (b) the rank of the sub-matrix $A_ij: i=2,\cdots,n j=2,\cdots,n$ is $n-1$.
+and (b) the rank of the sub-matrix $A_{ij}: i=2,\cdots,n j=2,\cdots,n$ is $n-1$.
 Hence there are $n$ nontrivial $\lambda_i$ such that the rows of $\textbf{A}$
 fulfil
 \begin{equation}
 \label{eqn:bsp:salulambda}
-\sum_{i=1}^n \lambda_i A_ij  = 0 \quad\quad  j = 2,\cdots, n
+\sum_{i=1}^n \lambda_i A_{ij}  = 0 \quad\quad  j = 2,\cdots, n
 \end{equation}
 The $\lambda_i$s may be determined up to a proportional factor.
 For (\ref{eqn:bsp:matrix}) to be consistent, it is also required that
@@ -248,7 +248,7 @@ This can be incorporated into (\ref{eqn:bsp:salufirst}) to get a set of $n$
 equations
 \begin{equation}
 \label{eqn:bsp:salufinal}
-\sum_{j=2}^n A_ij \phi_j = B_i + \alpha \quad\quad  i = 1,\cdots, n
+\sum_{j=2}^n A_{ij} \phi_j = B_i + \alpha \quad\quad  i = 1,\cdots, n
 \end{equation}
 Equation (\ref{eqn:bsp:salufinal}) is now numerically consistent and is
 equivalent to (\ref{eqn:bsp:matrix}).
@@ -269,13 +269,13 @@ To do this, we let $\phi_j^* \left(j=2,\cdots,n\right)$ be a solution to the
 $n-1$ equations
 \begin{equation}
 \label{eqn:bsp:saluphijstar}
-\sum_{j=2}^n A_ij \phi_j^* = B_i \quad\quad  i = 2,\cdots, n
+\sum_{j=2}^n A_{ij} \phi_j^* = B_i \quad\quad  i = 2,\cdots, n
 \end{equation}
 and let $\phi_j^1 \left(j=2,\cdots,n\right)$ be a solution to the $n-1$
 equations
 \begin{equation}
 \label{eqn:bsp:saluphijone}
-\sum_{j=2}^n A_ij \phi_j^1 = 1 \quad\quad  i = 2,\cdots, n
+\sum_{j=2}^n A_{ij} \phi_j^1 = 1 \quad\quad  i = 2,\cdots, n
 \end{equation}
 where the $1$ represents a column vector of 1s.
 The two vectors $\phi_j^*$ and $\phi_j^1$ both multiply the same matrix,
@@ -285,7 +285,7 @@ Letting $\phi_j \left(j=2,\cdots,n\right)$ be a solution to the set of $n-1$
 equations
 \begin{equation}
 \label{eqn:bsp:saluphij}
-\sum_{j=2}^n A_ij \phi_j = B_i + \alpha \quad\quad  i = 2,\cdots, n
+\sum_{j=2}^n A_{ij} \phi_j = B_i + \alpha \quad\quad  i = 2,\cdots, n
 \end{equation}
 where $\alpha$ is the same alpha introduced in (\ref{eqn:bsp:salulambdaalpha}).
 From equations (\ref{eqn:bsp:saluphijstar})--(\ref{eqn:bsp:saluphij}), the
@@ -300,16 +300,16 @@ Substituting (\ref{eqn:bsp:salusolution}) into the first equation of
 (\ref{eqn:bsp:salufinal}) will give
 \begin{equation}
 \label{eqn:bsp:salualphastep1}
-\sum_{j=2}^n A_1j \left(\phi_j^* + \alpha\phi_j^1\right) = B_i + \alpha
+\sum_{j=2}^n A_{1j} \left(\phi_j^* + \alpha\phi_j^1\right) = B_i + \alpha
 \end{equation}
 or after re-arranging to solve for $\alpha$
 \begin{equation}
 \label{eqn:bsp:salualphastep2}
 \alpha = 
     \frac{
-        \left(\sum_{j=2}^n A_1j \phi_j^*\right)-B_i
+        \left(\sum_{j=2}^n A_{1j} \phi_j^*\right)-B_i
         }{
-        1-eft(\sum_{j=2}^n A_1j \phi_j^1
+        1-\left(\sum_{j=2}^n A_{1j} \phi_j^1\right)
         }
 \end{equation}
 Equation (\ref{eqn:bsp:salualphastep2}) can be used along with
