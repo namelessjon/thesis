@@ -400,9 +400,10 @@ The atrial model constructed in the previous chapter was positioned within the
 torso using the descriptions of Ho and S\'{a}nchez-Quintana~\ref{HoQuintana2008}
 with the ventricular meshes from the original torso used as an additional guide.
 First, the model was centred in the atrial co-ordinate system.
-Using the z-x-z convention for Euler angles, the atrium was rotated by
-$\left(110, 210, 120\right)$.
-Following rotation, a translation of $\left(-0.002, -0.08, -0.222\right)$ was
+Using the z-x-z convention for Euler angles~\ref{eulerref} acting on the heart
+(rather than the co-ordinate system of the heart), the atrium was rotated by
+$\left(215, 160, 185\right)$.
+Following rotation, a translation of $\left(-0.005, -0.08, -0.215\right)$ was
 applied to the atrium.
 Several of the triangular elements were picked as the sites of the ECG
 electrodes.
@@ -498,17 +499,29 @@ compartment, or to the torso conductivity to remove its influence.
 
 \subsection{Simulated Body Surface Potential Maps}
 
+The Body Surface Potential Maps (BSPM) were constructed from the output of the
+simulations.
+Rather than visualize the raw potentials, the Wilson's central terminal was
+determined from the potentials on the elements chosen for the three limb leads.
+This was then used as the reference potential for the BSPMs presented in this
+section.
+The use of the Wilson's central terminal allows for more direct comparison with
+experimental recordings from electrode vests, which often use the Wilson's
+central terminal for their reference potential~\ref{Taccardi1966,Mirvis1980}.
+In the following descriptions, the distribution is described using the using the
+coordinate system of the body rather than of the image.
+
 \begin{figure}
 \includegraphics{figures/bsp/bsp_thorax}
 \caption[Body Surface Potential snapshots, homogeneous torso]{
 \label{bsp:fig:homo_bsp}
-Simulated body surface potential plots during sinus rhythm with a homogeneous
+Simulated BPSM during sinus rhythm with a homogeneous
 torso.
 The torso begins approximately isopotential before a distinct pattern of
-potential, with an area of negative potential over the right shoulder and an
-area of positive potential above the left hip.
+potential, with an area of negative potential over the upper right lung and an
+area of positive potential on the left side.
 This pattern then reverses during repolarisation.
-The maximum potential observed is $0.317$ and the minimum is $-0.467$.
+The maximum potential observed is \mv{0.219}\ and the minimum is \mv{-0.456}.
 Snapshots shown for \ms{10}\ (i), \ms{15}\ (ii), \ms{20}\ (iii), \ms{25}\ (iv),
 \ms{40}\ (v), \ms{60}\ (vi), \ms{180}\ (vii), \ms{200}\ (viii) and \ms{220}\
 (ix)
@@ -523,14 +536,13 @@ The potential distribution starts off very close to uniform in frame (i) at
 \ms{10}\ after initial excitation.
 Only excitation and repolarisation wavefronts generate dipoles and in the
 initial milliseconds the excitation wavefront is very small.
-In \ref{bsp:fig:homo_bsp}(iv) (\ms{25} after initial stimulus) a peak is
-beginning to appear over the lower right lung, caused by the rapid conduction
-along the crista terminalis.
+In \ref{bsp:fig:homo_bsp}(iv) (\ms{25} after initial stimulus) there is an area
+of positive potential beginning to appear over the lower right lung, caused by
+the rapid conduction along the crista terminalis.
 By frames (v) and (vi), the regions of different potential are much more
-regularly distributed.
+regularly distributed with a predominately negative region centred on the upper
+right lung and a positive region over the lower and left of the torso.
 The excitation wavefront is moving towards the left leg.
-The line of zero potential is visibly sweeping over the torso and gives an
-indication of the location orthogonal to the excitation wavefront.
 
 The three frames (vii--ix) corresponding the to the plateau and beginnings of the
 repolarisation show a much more diffuse arrangement of potentials.
@@ -550,12 +562,12 @@ underlying fibre structure.
 Simulated body surface potential plots during sinus rhythm with lungs assigned
 conductivity from Table~\ref{tbl:bsp:conductances}.
 The torso begins approximately isopotential before a distinct pattern of
-potential, with an area of negative potential over the right shoulder and an
-area of positive potential above the left hip.
-The area of negative potential is shifted rightwards and up compared to the
-simulation without inhomogeneity in the torso.
+potential, with an area of negative potential over the upper right lung and
+area of positive potential on the left hand side.
+The area of negative potential is smaller than that seen on during the
+homogeneous torso simulations.
 This pattern then reverses during repolarisation.
-The maximum potential observed is $0.413$ and the minimum is $-0.509$.
+The maximum potential observed is \mv{0.278}\ and the minimum is \mv{-0.449}.
 Snapshots shown for \ms{10}\ (i), \ms{15}\ (ii), \ms{20}\ (iii), \ms{25}\ (iv),
 \ms{40}\ (v), \ms{60}\ (vi), \ms{180}\ (vii), \ms{200}\ (viii) and \ms{220}\
 (ix)
@@ -568,11 +580,10 @@ In \ref{bsp:fig:lungs_bsp}(iv) (\ms{25} after initial stimulus) a peak is
 beginning to appear over the lower right lung, caused by the rapid conduction
 along the crista terminalis but this peak is less pronounced than in the
 calculations lacking the lungs.
-By frames (v) and (vi), the potential is much more regularly distributed with
-the simple boundary layer of zero potential.
-In contrast to the simulation without lungs, the region of predominantly negative potential seems
-to be higher on the torso and more centrally located, with a corresponding shift
-in the location of the region of positive potential.
+By frames (v) and (vi), the potential is much more regularly distributed.
+In contrast to the simulation without lungs, the region of predominantly
+negative potential seems to be higher on the torso and smaller than that seen
+without lungs, as is the positive area on the lower left side.
 In addition, it appears that the lungs act to give a slight amplification
 effect, increasing the ranges of potential seen~\ref{Gulranjani1983}.
 
@@ -580,9 +591,8 @@ The three frames (vii--ix) corresponding the to the plateau and beginnings of th
 repolarisation show a much more diffuse arrangement of potentials.
 The distribution is approximately the mirror image of that seen during
 depolarisation, with the predominantly positive regions over the right shoulder.
-This region is higher and more centered than is seen in the simulation without
-lungs, as seen for the depolarisation patterns.
-
+The effects of the lungs are almost unnoticeable when compared to the
+simulations in the homogeneous torso.
 
 \begin{figure}
 \includegraphics{figures/bsp/bsp_blood}
@@ -596,7 +606,7 @@ area of positive potential above the left hip.
 The pattern of potentials is similar to that observed in the simulation with a
 homogeneous torso, but it has a smaller magnitude.
 This pattern then reverses during repolarisation.
-The maximum potential observed is $0.307$ and the minimum is $-0.457$.
+The maximum potential observed is \mv{0.217}\ and the minimum is \mv{-0.439}.
 Snapshots shown for \ms{10}\ (i), \ms{15}\ (ii), \ms{20}\ (iii), \ms{25}\ (iv),
 \ms{40}\ (v), \ms{60}\ (vi), \ms{180}\ (vii), \ms{200}\ (viii) and \ms{220}\
 (ix)
@@ -607,16 +617,17 @@ The evolution of the body surface potential with blood masses present is shown i
 Figure~\ref{bsp:fig:blood_bsp}.
 The potential distribution is initially almost uniform, when  in frame (i) at
 \ms{10}\ after initial excitation.
-In \ref{bsp:fig:blood_bsp}(iv) a peak is beginning to appear over the lower
-right lung, caused by the rapid conduction along the crista terminalis.
+In \ref{bsp:fig:blood_bsp}(iv) a positive potential is beginning to appear over
+the lower right lung, caused by the rapid conduction along the crista
+terminalis.
 In contrast to the simulations with the lungs present, or in the homogeneous
-torso, this is a relatively isolated peak with the surrounding tissue having a
-lesser potential.
+torso, this appears to have a relatively well defined peak compared with the
+more diffuse potential seen in those simulations.
 The corresponding negative potential area is more widely spread than in those
 cases, extending further down the torso.
 By frames (v) and (vi), the pattern of potential observed on the body surface is
 very close to that seen in the homogeneous torso, although the maxima and minima
-are lower in the frames where the blood masses are included.
+are less extreme in the frames where the blood masses are included.
 
 The three frames (vii--ix) corresponding the to the plateau and beginnings of the
 repolarisation show a much more diffuse arrangement of potentials.
@@ -631,10 +642,10 @@ homogeneous calculations.
 Simulated body surface potential plots during sinus rhythm with all
 inhomogeneties assigned conductivities from Table~\ref{tbl:bsp:conductances}.
 The torso begins approximately isopotential before a distinct pattern of
-potential, with an area of negative potential over the right shoulder and an
-area of positive potential above the left hip.
+potential, with an area of negative potential over the upper right lung and an
+area of positive potential on the left side.
 This pattern then reverses during repolarisation.
-The maximum potential observed is $0.395$ and the minimum is $-0.495$.
+The maximum potential observed is \mv{0.233}\ and the minimum is \mv{-0.441}.
 Snapshots shown for \ms{10}\ (i), \ms{15}\ (ii), \ms{20}\ (iii), \ms{25}\ (iv),
 \ms{40}\ (v), \ms{60}\ (vi), \ms{180}\ (vii), \ms{200}\ (viii) and \ms{220}\
 (ix)
@@ -649,11 +660,11 @@ This is closer to the potential distribution shown in the simulations with just
 blood masses included than those where lungs are present or where there a
 homogeneous torso.
 In contrast to this, frames (v) and (vi) show a distribution of potential much
-closer to that seen in the simulations where lungs are present.
-This is reduced in amplitude due to the influences of the blood masses.
+closer to that seen in the simulations where lungs are present, with a smaller
+area of negative potential.
 The final stages of evolution of the P-wave body surface potential, shown in
-frames (vii--ix) show a diffuse pattern, similar to that seen in the simulations
-with just the lungs present.
+frames (vii--ix) show a diffuse pattern, similar to that seen in all the other
+simulations.
 
 \subsection{Simulated Electrocardiograms}
 \begin{figure}
