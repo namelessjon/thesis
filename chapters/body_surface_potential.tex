@@ -416,13 +416,15 @@ Table~\ref{tbl:bsp:conductances}.
         Conductances used for the various compartments of the torso for solving
         the boundary element method~\ref{Seger2004}.
     }
-    \begin{tabular}{ l  c }
-    \label{tbl:bsp:conductances}
-     Tissue & Conductivity ($\text{Sm}^{\text{-1}}$)  \\
-     \hline
-     Torso & 0.2 \\
-     Lungs & 0.08 \\
-     Blood & 0.6 \\
+    \begin{tabular}{l r}
+     \toprule
+     Tissue & Conductivity \\
+     \midrule
+     Torso & $0.2\,\text{Sm}^{\text{-1}}$ \\
+     Lungs & $0.08\,\text{Sm}^{\text{-1}}$ \\
+     Blood & $0.6\,\text{Sm}^{\text{-1}}$ \\
+     \bottomrule
+     \label{tbl:bsp:conductances}
     \end{tabular}
 \end{table}
 
@@ -805,7 +807,7 @@ It appears to start immediately after the P-wave in all leads.
 The $\text{T}_{\text{a}}$ is broader than the P-wave in all leads.
 
 A summary table of the maxima or minima of the leads is shown in
-Table~\ref{bsp:tbl:ecg}.
+Table~\ref{tbl:bsp:ecg}.
 The influence of inhomogeneities on the ECG is perhaps not what would be
 expected from the BSPMs.
 Whilst the difference between the greatest maximum and the lowest minimum
@@ -813,6 +815,42 @@ observed in the leads for the lungs is larger than the difference observed in
 the homogeneous torso in agreement with the maximum and minimum potentials
 observed on the BSPM, the leads in general have less extreme maxima.
 The converse is true for simulations where the blood masses are present.
+
+
+\begin{table}
+    \caption[Maximum and minimum potentials observed in ECG leads]{
+        Maximum and minimum potentials observed in the twelve leads of the ECG
+        for differing inhomogeneities considered.
+        Torso corresponds to the homogeneous case, lungs to the case where the
+        lungs are given a conductivity from Table~\ref{tbl:bsp:conductances},
+        blood to case where the blood masses were assigned the conductivity from
+        Table~\ref{tbl:bsp:conductances} and all, for when both lungs and blood
+        masses were assigned differing conductivities.
+        For upright and inverted leads, only one potential is given, the maximum
+        or minimum potential observed, respectively.
+        For biphasic leads, both the maximum and minimum potentials are given.
+        All values in mV.
+    }
+    \begin{tabular}{ l r r r r }
+    \toprule
+    Lead & Torso & Lungs & Blood & All \\
+    \midrule
+    I                       & $+0.309$ & $+0.239$ & $+0.287$ & $+0.220$ \\
+    II                      & $+0.311$ & $+0.306$ & $+0.294$ & $+0.279$ \\
+    III                     & $+0.063$ / $-0.119$ & $+0.104$ / $-0.077$ & $+0.061$ / $-0.134$ & $+0.091$ / $-0.098$ \\
+    aVR                     & $-0.310$ & $-0.268$ & $-0.290$ & $-0.249$ \\
+    aVL                     & $+0.206$ & $+0.150$ & $+0.206$ & $+0.155$ \\
+    aVF                     & $+0.170$ & $+0.202$ & $+0.153$ & $+0.174$ \\
+    $\text{V}_{\text{1}}$   & $-0.359$ & $-0.390$ & $-0.358$ & $-0.385$ \\
+    $\text{V}_{\text{2}}$   & $+0.074$ / $-0.080$ & $-0.106$ & $+0.051$ / $-0.074$ & $-0.129$ \\
+    $\text{V}_{\text{3}}$   & $+0.152$ & $+0.133$ & $+0.156$ & $+0.138$ \\
+    $\text{V}_{\text{4}}$   & $+0.169$ & $+0.165$ & $+0.174$ & $+0.159$ \\
+    $\text{V}_{\text{5}}$   & $+0.182$ & $+0.173$ & $+0.186$ & $+0.180$ \\
+    $\text{V}_{\text{6}}$   & $+0.186$ & $+0.169$ & $+0.181$ & $+0.156$ \\
+    \bottomrule
+    \label{tbl:bsp:ecg}
+    \end{tabular}
+\end{table}
 
 The phase of the signal, that is whether it is rising or falling, does not seem
 to be influenced by the presence or absence of
