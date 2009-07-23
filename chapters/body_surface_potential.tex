@@ -667,6 +667,21 @@ frames (vii--ix) show a diffuse pattern, similar to that seen in all the other
 simulations.
 
 \subsection{Simulated Electrocardiograms}
+
+In this section, electrocardiograms derived from the BSP distribution are
+presented for sinus rhythm.
+All of the leads show a minor artifact during the first
+$2\text{--}4\,\text{ms}$, due to the stimulation protocol employed.
+Disregarding this, the following classifications are used~\ref{kistler2006}.
+A positive, or upright, P-wave is one that attains a potential of
+$\geq$\mv{0.05}\ and remains above the 0 potential baseline for duration of the
+P-wave.
+A negative, or inverted, P-wave is one that attains a potential of
+$\leq$\mv{-0.05}\ and remains below the baseline for the duration of the P-wave.
+A biphasic P-wave is one that is both positive and negative, following the
+previous two definitions.
+
+
 \begin{figure}
 \includegraphics{figures/bsp/ecg_thorax_150Hz}
 \caption[12 lead P-wave ECG during sinus rhythm with homogeneous torso]{
@@ -681,20 +696,20 @@ diagnostic modes on clinical ECG machines.
 
 The ECG derived from the body surface potential simulations with a homogeneous
 torso is shown in Figure~\ref{bsp:fig:ecg_thorax}.
-The P-wave has a duration of \ms{106}\ in lead II and an amplitude of \mv{0.31}.
+The P-wave has a duration of \ms{112}\ in lead II and an amplitude of \mv{0.311}.
 The maximum and minimum potential differences observed in the leads are
-\mv{+0.31}\ and \mv{-0.45}\ seen in lead I and lead $\text{V}_{1}$, respectively.
-The P-wave is upright in leads I, II, III, aVF, and $\text{V}_{\text{3--6}}$.
-It is predominatly upright in aVL, but mildly biphasic.
-It is biphasic in leads $\text{V}_{\text{1}}$ and $\text{V}_{\text{2}}$.
-It is inverted in lead aVR.
+\mv{+0.311}\ and \mv{-0.359}\ seen in lead II and lead $\text{V}_{1}$, respectively.
+The P-wave is upright in leads I, II, aVL, aVF and $\text{V}_{\text{3--6}}$.
+It is biphasic in leads III and $\text{V}_{\text{2}}$.
+It is inverted in leads aVR and $\text{V}_{\text{1}}$, although there is an small
+initial upper deflection in $\text{V}_{\text{1}}$.
 
-The atrial repolarisation wave, the $\text{T}_{\text{a}}$ wave, is easily
-visible in all leads except the aVL lead.
+The atrial repolarisation wave, the $\text{T}_{\text{P}}$ wave, is easily
+visible in all leads except leads III and $\text{V}_{\text{2}}$.
 In all the leads in which it appears, it is inverted compared to the P-wave in
 that lead and has a lower (less than 50\% in all leads) amplitude.
 It appears to start immediately after the P-wave in all leads.
-The $\text{T}_{\text{a}}$ is broader than the P-wave, corresponding to the lower
+The $\text{T}_{\text{P}}$ is broader than the P-wave, corresponding to the lower
 speed of repolarisation.
 
 \begin{figure}
@@ -712,19 +727,23 @@ diagnostic modes on clinical ECG machines.
 
 The ECG corresponding to the simulations with inhomogeneous lungs is shown in
 Figure~\ref{bsp:fig:ecg_lungs}.
-The P-wave has a duration of \ms{106}\ in lead II and an amplitude of \mv{+0.35}.
+The P-wave has a duration of \ms{124}\ in lead II and an amplitude of \mv{+0.306}.
 The maximum and minimum potential differences observed in the leads are
-\mv{+0.35}\ and \mv{-0.49}\ seen in lead II and lead $\text{V}_{\text{1}}$, respectively.
-The P-wave is upright in leads I, II, III, aVF, and $\text{V}_{\text{3--6}}$.
-It is biphasic in leads aVL, $\text{V}_{\text{1}}$ and $\text{V}_{\text{2}}$.
-It is inverted in lead aVR.
+\mv{+0.306}\ and \mv{-0.390}\ seen in lead II and lead $\text{V}_{\text{1}}$, respectively.
+The P-wave is upright in leads I, II, aVL, aVF and $\text{V}_{\text{3--6}}$.
+It is biphasic in lead III.
+It is inverted in leads aVR and $\text{V}_{\text{1--2}}$, although there are
+many of fluctuations visible in lead $\text{V}_{\text{2}}$.
+None of this crossed the critical value of \mv{0.05}\ however.
+In general the amplitudes of the signals in the leads appears to be lower than
+in the simulations without lungs.
 
-The atrial repolarisation wave, the $\text{T}_{\text{a}}$ wave, is easily
-visible in all leads except lead aVL.
+The atrial repolarisation wave, the $\text{T}_{\text{P}}$ wave, is easily
+visible in all leads except leads III and $\text{V}_{\text{2}}$.
 In all the leads in which it appears, it is inverted compared to the P-wave in
 that lead and has a lower (less than 50\% in all leads) amplitude.
 It appears to start immediately after the P-wave in all leads.
-The $\text{T}_{\text{a}}$ is broader than the P-wave in all leads.
+The $\text{T}_{\text{P}}$ is broader than the P-wave in all leads.
 
 
 \begin{figure}
@@ -742,12 +761,12 @@ diagnostic modes on clinical ECG machines.
 
 The ECG corresponding to the simulations with inhomogeneous blood masses is shown in
 Figure~\ref{bsp:fig:ecg_blood}.
-The P-wave has a duration of \ms{94}\ in lead II and an amplitude of \mv{+0.28}.
+The P-wave has a duration of \ms{126}\ in lead II and an amplitude of \mv{+0.294}.
 The maximum and minimum potential differences observed in the leads are
-\mv{+0.28}\ and \mv{-0.44}\ seen in lead II and lead $\text{V}_{\text{1}}$, respectively.
-The P-wave is upright in leads I, II, III, aVF, and $\text{V}_{\text{3--6}}$.
-It is biphasic in leads aVL, $\text{V}_{\text{1}}$ and $\text{V}_{\text{2}}$.
-It is inverted in lead aVR.
+\mv{+0.294}\ and \mv{-0.359}\ seen in lead II and lead $\text{V}_{\text{1}}$, respectively.
+The P-wave is upright in leads I, II, aVL, aVF, and $\text{V}_{\text{3--6}}$.
+It is biphasic in leads III and $\text{V}_{\text{2}}$.
+It is inverted in lead aVR and $\text{V}_{\text{1}}$.
 
 The atrial repolarisation wave, the $\text{T}_{\text{a}}$ wave, is easily
 visible in all leads except lead aVL.
@@ -769,14 +788,14 @@ diagnostic modes on clinical ECG machines.
 }
 \end{figure}
 
-The ECG corresponding to the simulations with inhomogeneous blood masses is shown in
+The ECG corresponding to the simulations with all inhomogeneities considered is shown in
 Figure~\ref{bsp:fig:ecg_all}.
-The P-wave has a duration of \ms{97}\ in lead II and an amplitude of \mv{+0.31}.
+The P-wave has a duration of \ms{120}\ in lead II and an amplitude of \mv{+0.279}.
 The maximum and minimum potential differences observed in the leads are
-\mv{+0.31}\ and \mv{-0.48}\ seen in lead II and lead $\text{V}_{\text{1}}$, respectively.
-The P-wave is upright in leads I, II, III, aVF, and $\text{V}_{\text{3--6}}$.
-It is biphasic in leads aVL, $\text{V}_{\text{1}}$ and $\text{V}_{\text{2}}$.
-It is inverted in lead aVR.
+\mv{+0.279}\ and \mv{-0.385}\ seen in lead II and lead $\text{V}_{\text{1}}$, respectively.
+The P-wave is upright in leads I, II, aVL, aVF, and $\text{V}_{\text{3--6}}$.
+It is biphasic in lead III.
+It is inverted in leads aVR and $\text{V}_{\text{1--2}}$.
 
 The atrial repolarisation wave, the $\text{T}_{\text{a}}$ wave, is easily
 visible in all leads except lead aVL.
@@ -785,22 +804,27 @@ that lead and has a lower (less than 50\% in all leads) amplitude.
 It appears to start immediately after the P-wave in all leads.
 The $\text{T}_{\text{a}}$ is broader than the P-wave in all leads.
 
-
-The presence of inhomogeneities mirrors that observed in the body surface
-potential plots.
-The presence of lungs tends to amplify the potential differences observed,
-whilst the presence of blood masses reduces them.
-This is not universally true, however.
-The maximum amplitude of Lead I is reduced by the inclusion of the lungs whilst
-being almost unaffected by the inclusion of blood masses.
+A summary table of the maxima or minima of the leads is shown in
+Table~\ref{bsp:tbl:ecg}.
+The influence of inhomogeneities on the ECG is perhaps not what would be
+expected from the BSPMs.
+Whilst the difference between the greatest maximum and the lowest minimum
+observed in the leads for the lungs is larger than the difference observed in
+the homogeneous torso in agreement with the maximum and minimum potentials
+observed on the BSPM, the leads in general have less extreme maxima.
+The converse is true for simulations where the blood masses are present.
 
 The phase of the signal, that is whether it is rising or falling, does not seem
 to be influenced by the presence or absence of
-inhomogeneities~\ref{Rudy2006,Gulrajani1983}.
-That is to say, the differences in patterns of potential observed in the body
-surface potential plots do not seem to be translated into differences in the
-ECG.
-This is most likely due to the limited leads of the standard twelve lead ECG.
+inhomogeneities~\ref{Rudy2006,Gulrajani1983}, only the amplitude There are
+exceptions, notably in the $\text{V}_{\text{2}}$ lead, which is either negative
+or biphasic depending on the inhomogeneities considered.  Lead III also has
+distinctly different proportions of the trace above and below the baseline
+depending on the inhomogeneities considered.  This has been noted in other
+studies~\ref{vanDam2005}.  It is again likely to be due to the movement of
+regions of maximum and minimum potential caused by the inhomogeneities.  It is
+possibly more visible with the atria due to the thiner walls and thus lower
+mass.
 
 \subsection{Comparisons with Clinical Studies and Information}
 
