@@ -1,0 +1,389 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="531.49603"
+   height="602.36218"
+   id="svg2"
+   sodipodi:version="0.32"
+   inkscape:version="0.46"
+   version="1.0"
+   sodipodi:docname="mirvis_compare.svg"
+   inkscape:output_extension="org.inkscape.output.svg.inkscape"
+   inkscape:export-filename="/home/jon/thesis/figures/bsp/mirvis_compare.png"
+   inkscape:export-xdpi="300"
+   inkscape:export-ydpi="300">
+  <defs
+     id="defs4">
+    <inkscape:perspective
+       sodipodi:type="inkscape:persp3d"
+       inkscape:vp_x="0 : 526.18109 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_z="744.09448 : 526.18109 : 1"
+       inkscape:persp3d-origin="372.04724 : 350.78739 : 1"
+       id="perspective10" />
+    <inkscape:perspective
+       id="perspective2484"
+       inkscape:persp3d-origin="372.04724 : 350.78739 : 1"
+       inkscape:vp_z="744.09448 : 526.18109 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_x="0 : 526.18109 : 1"
+       sodipodi:type="inkscape:persp3d" />
+    <inkscape:perspective
+       id="perspective2571"
+       inkscape:persp3d-origin="372.04724 : 350.78739 : 1"
+       inkscape:vp_z="744.09448 : 526.18109 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_x="0 : 526.18109 : 1"
+       sodipodi:type="inkscape:persp3d" />
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     gridtolerance="10000"
+     guidetolerance="10"
+     objecttolerance="10"
+     inkscape:pageopacity="1"
+     inkscape:pageshadow="2"
+     inkscape:zoom="2"
+     inkscape:cx="250.73702"
+     inkscape:cy="519.30011"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer2"
+     showgrid="false"
+     units="cm"
+     inkscape:window-width="1280"
+     inkscape:window-height="951"
+     inkscape:window-x="0"
+     inkscape:window-y="0" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <image
+       x="0.000000"
+       y="0.000000"
+       id="mine_0004"
+       height="60.236000"
+       width="265.748020"
+       sodipodi:absref="/home/jon/thesis/figures/bsp/flat/flat.0004.png"
+       xlink:href="flat/flat.0004.png"
+       sodipodi:insensitive="true" />
+    <image
+       x="265.748020"
+       y="0.000000"
+       id="mirvis_0004"
+       height="60.236000"
+       width="265.748020"
+       sodipodi:absref="/home/jon/thesis/figures/bsp/flat_mirvis/mirvis_p_0004.png"
+       xlink:href="flat_mirvis/mirvis_p_0004.png"
+       sodipodi:insensitive="true" />
+    <image
+       x="0.000000"
+       y="60.236000"
+       id="mine_0016"
+       height="60.236000"
+       width="265.748020"
+       sodipodi:absref="/home/jon/thesis/figures/bsp/flat/flat.0016.png"
+       xlink:href="flat/flat.0016.png"
+       sodipodi:insensitive="true" />
+    <image
+       x="265.748020"
+       y="60.236000"
+       id="mirvis_0016"
+       height="60.236000"
+       width="265.748020"
+       sodipodi:absref="/home/jon/thesis/figures/bsp/flat_mirvis/mirvis_p_0016.png"
+       xlink:href="flat_mirvis/mirvis_p_0016.png"
+       sodipodi:insensitive="true" />
+    <image
+       x="0.000000"
+       y="120.472000"
+       id="mine_0024"
+       height="60.236000"
+       width="265.748020"
+       sodipodi:absref="/home/jon/thesis/figures/bsp/flat/flat.0024.png"
+       xlink:href="flat/flat.0024.png"
+       sodipodi:insensitive="true" />
+    <image
+       x="265.748020"
+       y="120.472000"
+       id="mirvis_0024"
+       height="60.236000"
+       width="265.748020"
+       sodipodi:absref="/home/jon/thesis/figures/bsp/flat_mirvis/mirvis_p_0024.png"
+       xlink:href="flat_mirvis/mirvis_p_0024.png"
+       sodipodi:insensitive="true" />
+    <image
+       x="0.000000"
+       y="180.708000"
+       id="mine_0036"
+       height="60.236000"
+       width="265.748020"
+       sodipodi:absref="/home/jon/thesis/figures/bsp/flat/flat.0036.png"
+       xlink:href="flat/flat.0036.png"
+       sodipodi:insensitive="true" />
+    <image
+       x="265.748020"
+       y="180.708000"
+       id="mirvis_0036"
+       height="60.236000"
+       width="265.748020"
+       sodipodi:absref="/home/jon/thesis/figures/bsp/flat_mirvis/mirvis_p_0036.png"
+       xlink:href="flat_mirvis/mirvis_p_0036.png"
+       sodipodi:insensitive="true" />
+    <image
+       x="0.000000"
+       y="240.944000"
+       id="mine_0048"
+       height="60.236000"
+       width="265.748020"
+       sodipodi:absref="/home/jon/thesis/figures/bsp/flat/flat.0048.png"
+       xlink:href="flat/flat.0048.png"
+       sodipodi:insensitive="true" />
+    <image
+       x="265.748020"
+       y="240.944000"
+       id="mirvis_0048"
+       height="60.236000"
+       width="265.748020"
+       sodipodi:absref="/home/jon/thesis/figures/bsp/flat_mirvis/mirvis_p_0048.png"
+       xlink:href="flat_mirvis/mirvis_p_0048.png"
+       sodipodi:insensitive="true" />
+    <image
+       x="0.000000"
+       y="301.180000"
+       id="mine_0068"
+       height="60.236000"
+       width="265.748020"
+       sodipodi:absref="/home/jon/thesis/figures/bsp/flat/flat.0068.png"
+       xlink:href="flat/flat.0068.png"
+       sodipodi:insensitive="true" />
+    <image
+       x="265.748020"
+       y="301.180000"
+       id="mirvis_0068"
+       height="60.236000"
+       width="265.748020"
+       sodipodi:absref="/home/jon/thesis/figures/bsp/flat_mirvis/mirvis_p_0068.png"
+       xlink:href="flat_mirvis/mirvis_p_0068.png"
+       sodipodi:insensitive="true" />
+    <image
+       x="0.000000"
+       y="361.416000"
+       id="mine_0080"
+       height="60.236000"
+       width="265.748020"
+       sodipodi:absref="/home/jon/thesis/figures/bsp/flat/flat.0080.png"
+       xlink:href="flat/flat.0080.png"
+       sodipodi:insensitive="true" />
+    <image
+       x="265.748020"
+       y="361.416000"
+       id="mirvis_0080"
+       height="60.236000"
+       width="265.748020"
+       sodipodi:absref="/home/jon/thesis/figures/bsp/flat_mirvis/mirvis_p_0080.png"
+       xlink:href="flat_mirvis/mirvis_p_0080.png"
+       sodipodi:insensitive="true" />
+    <image
+       x="0.000000"
+       y="421.652000"
+       id="mine_0090"
+       height="60.236000"
+       width="265.748020"
+       sodipodi:absref="/home/jon/thesis/figures/bsp/flat/flat.0090.png"
+       xlink:href="flat/flat.0090.png"
+       sodipodi:insensitive="true" />
+    <image
+       x="265.748020"
+       y="421.652000"
+       id="mirvis_0090"
+       height="60.236000"
+       width="265.748020"
+       sodipodi:absref="/home/jon/thesis/figures/bsp/flat_mirvis/mirvis_p_0090.png"
+       xlink:href="flat_mirvis/mirvis_p_0090.png"
+       sodipodi:insensitive="true" />
+    <image
+       x="0.000000"
+       y="481.888000"
+       id="mine_0110"
+       height="60.236000"
+       width="265.748020"
+       sodipodi:absref="/home/jon/thesis/figures/bsp/flat/flat.0110.png"
+       xlink:href="flat/flat.0110.png"
+       sodipodi:insensitive="true" />
+    <image
+       x="265.748020"
+       y="481.888000"
+       id="mirvis_0110"
+       height="60.236000"
+       width="265.748020"
+       sodipodi:absref="/home/jon/thesis/figures/bsp/flat_mirvis/mirvis_p_0110.png"
+       xlink:href="flat_mirvis/mirvis_p_0110.png"
+       sodipodi:insensitive="true" />
+    <image
+       x="0.000000"
+       y="542.124000"
+       id="mine_0128"
+       height="60.236000"
+       width="265.748020"
+       sodipodi:absref="/home/jon/thesis/figures/bsp/flat/flat.0128.png"
+       xlink:href="flat/flat.0128.png"
+       sodipodi:insensitive="true" />
+    <image
+       x="265.748020"
+       y="542.124000"
+       id="mirvis_0128"
+       height="60.236000"
+       width="265.748020"
+       sodipodi:absref="/home/jon/thesis/figures/bsp/flat_mirvis/mirvis_p_0128.png"
+       xlink:href="flat_mirvis/mirvis_p_0128.png"
+       sodipodi:insensitive="true" />
+    <text
+       xml:space="preserve"
+       style="font-size:20;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Sans;-inkscape-font-specification:Sans"
+       x="0.5"
+       y="16.862183"
+       id="text2401"><tspan
+         sodipodi:role="line"
+         id="tspan2403"
+         x="0.5"
+         y="16.862183" /></text>
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer2"
+     inkscape:label="text">
+    <text
+       xml:space="preserve"
+       style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Sans;-inkscape-font-specification:Sans"
+       x="1.000000"
+       y="16.362183"
+       id="label_0004"><tspan
+         sodipodi:role="line"
+         id="tspan2408"
+         x="1.000000"
+         y="16.362183"
+         style="font-size:20px">4 ms</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Sans;-inkscape-font-specification:Sans"
+       x="1.000000"
+       y="76.598183"
+       id="label_0016"><tspan
+         sodipodi:role="line"
+         id="tspan36"
+         x="1.000000"
+         y="76.598183"
+         style="font-size:20px">16 ms</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Sans;-inkscape-font-specification:Sans"
+       x="1.000000"
+       y="136.834183"
+       id="label_0024"><tspan
+         sodipodi:role="line"
+         id="tspan39"
+         x="1.000000"
+         y="136.834183"
+         style="font-size:20px">24 ms</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Sans;-inkscape-font-specification:Sans"
+       x="1.000000"
+       y="197.070183"
+       id="label_0036"><tspan
+         sodipodi:role="line"
+         id="tspan42"
+         x="1.000000"
+         y="197.070183"
+         style="font-size:20px">36 ms</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Sans;-inkscape-font-specification:Sans"
+       x="1.000000"
+       y="257.306183"
+       id="label_0048"><tspan
+         sodipodi:role="line"
+         id="tspan45"
+         x="1.000000"
+         y="257.306183"
+         style="font-size:20px">48 ms</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Sans;-inkscape-font-specification:Sans"
+       x="1.000000"
+       y="317.542183"
+       id="label_0068"><tspan
+         sodipodi:role="line"
+         id="tspan48"
+         x="1.000000"
+         y="317.542183"
+         style="font-size:20px">68 ms</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Sans;-inkscape-font-specification:Sans"
+       x="1.000000"
+       y="377.778183"
+       id="label_0080"><tspan
+         sodipodi:role="line"
+         id="tspan51"
+         x="1.000000"
+         y="377.778183"
+         style="font-size:20px">80 ms</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Sans;-inkscape-font-specification:Sans"
+       x="1.000000"
+       y="438.014183"
+       id="label_0090"><tspan
+         sodipodi:role="line"
+         id="tspan54"
+         x="1.000000"
+         y="438.014183"
+         style="font-size:20px">90 ms</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Sans;-inkscape-font-specification:Sans"
+       x="1.000000"
+       y="498.250183"
+       id="label_0110"><tspan
+         sodipodi:role="line"
+         id="tspan57"
+         x="1.000000"
+         y="498.250183"
+         style="font-size:20px">110 ms</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Sans;-inkscape-font-specification:Sans"
+       x="1.000000"
+       y="558.486183"
+       id="label_0128"><tspan
+         sodipodi:role="line"
+         id="tspan60"
+         x="1.000000"
+         y="558.486183"
+         style="font-size:20px">128 ms</tspan></text>
+  </g>
+</svg>

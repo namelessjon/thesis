@@ -8,7 +8,7 @@ require 'rake/clean'
 PLOT_TEMPLATE = File.join('templates', 'ecg_plot.erb')
 
 desc 'Generate all figures'
-task :all => [:ecgs, :bsps]
+task :all => [:ecgs, :bsps, :flats]
 
 task :default => :all
 
@@ -41,4 +41,28 @@ G = 185
   [150].each do |freq|
     filtered_ecg "ecg_#{c}", freq
   end
+
+
+end
+  
+flat_dir = "flat"
+directory flat_dir
+FLAT_START = 8
+FLAT_SEQ   = [4, 16, 24, 36, 48, 68, 80, 90, 110, 128]
+PNGS       = FLAT_SEQ.map { |n| ["%04d" % (n), "%04d" % (FLAT_START+n)] }
+LEADS      = [ [505, 239], [541, 239], [566, 246], [586, 252], [607, 252], [625, 252]]
+CIRCLES    = LEADS.map { |x,y| "-draw 'circle #{x},#{y} #{x-3},#{y}'" } # circle of r = 3
+
+PNGS.each do |mirvis,mine|
+
+  dest = File.join(flat_dir, "flat.#{mirvis}.png")
+  name = name = "%s_%d_%d_%d" % ['all', A, B, G]
+  src  = File.join(BSP_ROOT, name, 'flat_png', "#{name}.#{mine}.png")
+
+  file dest => [src, flat_dir] do |t|
+    cp t.prerequisites.first, t.name
+    sh "mogrify #{CIRCLES.join(' ')} -crop 495x105+276+209 '#{t.name}'"
+  end
+
+  task :flats => dest
 end
