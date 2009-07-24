@@ -66,7 +66,7 @@ To account for the influence of the finite dimensions of the torso we can use
 either a FEM or a BEM (See Chapter XXXX for a discussion
 of the history of the two methods).
 The derivation for the BEM method is based on Green's
-Theorem~\cite{Barr1966,Gulranji1980,Clayton2002},
+Theorem~\cite{Barr1966,Gulrajani1989,Clayton2002},
 which states that for a volume, $V$, bounded by a surface, $S$, that
 \begin{equation}
 \label{eqn:bsp:green}
@@ -192,15 +192,15 @@ surface.
 Equation (\ref{eqn:bsp:matrix}) can be extended to allow for multiple
 inhomogeneities, derivations for which can be found
 in~\cite{Barr1966,Geselowitz1968,Geselowitz1970}.
-Studies by Klepfer et al.~\ref{Klepfer1997}\ and Ramanathan and
-Rudy~\ref{Ramanathan2001}\ suggest that including such inhomogeneous regions has
+Studies by Klepfer et al.~\cite{Klepfer1997}\ and Ramanathan and
+Rudy~\cite{Ramanathan2001}\ suggest that including such inhomogeneous regions has
 an influence on the magnitudes of the components of the body surface potential
 and ECG but little influence on their shape.
 For this reason, a homogeneous torso model was used.
 
 If the surface $S$ was discretised with sufficient accuracy then $\mathbf{A}$
 will necessarily be singular, due to the physical nature of the problem.
-This was noted by Salu~\ref{Salu1980}\ who proposed a solution which takes
+This was noted by Salu~\cite{Salu1980}\ who proposed a solution which takes
 advantage of the physical properties of the system (an alternative method of
 removing the singularity of the system was proposed by Lynn and Timlake, the
 deflation method).
@@ -326,7 +326,7 @@ $\mathbf{J}^i$.
 The model of atrial electrophysiological activity developed in the previous
 chapter provides an output of the trans-membrane potentials, $V_m$.
 To relate the values of $V_m$ to $\mathbf{J}^i$ we consider the bidomain
-model~\ref{Tung,otherguy}.
+model~\cite{Tung,otherguy,Geselowitz1989}.
 As previously discussed, the bidomain model considers the cardiac tissue as
 comprising two `syncytica' occupying the whole of cardiac tissue and seperated
 by the cell membrane.
@@ -373,7 +373,7 @@ obvious that
 \section{Torso Geometry}
 
 The torso geometry used in this study is shown in Figure~\ref{fig:bsp:torso}.
-It was created by Weixue and Ling~\ref{Weixue1996}.
+It was created by Weixue and Ling~\cite{Weixue1996}.
 The geometry was derived from CT images of the human torso.
 The geometry consists of 412 vertices which were linked by 820 triangular
 elements for the thorax and 297 vertices for the for the lungs which were linked
@@ -385,7 +385,7 @@ The blood masses of the atria were approximated by a pair of spheres, situated
 in the centre of the atrial chambers.
 The spheres for the left and right atria each had 162 vertices linked by 320
 triangular elements.
-These meshes were subdivided using the Blender~\ref{Blender}\ graphical package
+These meshes were subdivided using the Blender~\cite{Blender}\ graphical package
 into meshes consisting of 13120 elements for the torso, 2344 elements for the
 lungs and 2328 for the ventricular blood masses.
 Subdividing the meshes in this way did not influence the final form of the ECG
@@ -393,14 +393,14 @@ significantly, but did improve the clarity of visualisation of the body surface
 potential.
 Initial studies using a spherical geometry with a similar number of triangle and
 the analytical formula for the potential within a conducting sphere suggest that
-the errors~\ref{FergusonStroink1994} induced through the descritisation are less
+the errors~\cite{Ferguson1997} induced through the descritisation are less
 than 0.01\%.
 
 The atrial model constructed in the previous chapter was positioned within the
-torso using the descriptions of Ho and S\'{a}nchez-Quintana~\ref{HoQuintana2008}
+torso using the descriptions of Ho and S\'{a}nchez-Quintana~\cite{Ho2009}
 with the ventricular meshes from the original torso used as an additional guide.
 First, the model was centred in the atrial co-ordinate system.
-Using the z-x-z convention for Euler angles~\ref{eulerref} acting on the heart
+Using the z-x-z convention for Euler angles~\cite{eulerref} acting on the heart
 (rather than the co-ordinate system of the heart), the atrium was rotated by
 $\left(215, 160, 185\right)$.
 Following rotation, a translation of $\left(-0.005, -0.08, -0.215\right)$ was
@@ -414,7 +414,7 @@ Table~\ref{tbl:bsp:conductances}.
 \begin{table}[h]
     \caption[Conductances of torso compartments]{
         Conductances used for the various compartments of the torso for solving
-        the boundary element method~\ref{Seger2004}.
+        the boundary element method~\cite{Seger2004}.
     }
     \begin{tabular}{l r}
      \toprule
@@ -433,7 +433,7 @@ Table~\ref{tbl:bsp:conductances}.
 The program which solved the equations and generated the potentials at each of
 the elements of the geometry was written in the Fortran 95 programming language.
 The $\mathbf{A}$ matrix from (\ref{eqn:bsp:matrix}) was constructed using the
-method proposed by van Oosterom and Strackee~\ref{OosteromStrackee1983}\ to
+method proposed by van Oosterom and Strackee~\cite{Oosterom1983}\ to
 estimate the solid angle subtended by each triangular element.
 A subroutine written in C was used to read in the gzip or xz compressed
 data files corresponding to each snapshot in time (\ms{1}) generated by the
@@ -456,7 +456,7 @@ Decreasing the block size to 5x5x5 nodes had a negligible effect on the computed
 body surface potential.
 From these dipoles, the $\mathbf{B}$ matrix was calculated.
 
-To solve the resulting set of equations, the LAPACK~\ref{lapack} library was
+To solve the resulting set of equations, the LAPACK~\cite{lapack} library was
 used.
 The $\mathbf{A}$ matrix was factorized using the SGETRF sub-routine.
 Numerical experiments determined that only single precision arithmetic was
@@ -509,7 +509,7 @@ This was then used as the reference potential for the BSPMs presented in this
 section.
 The use of the Wilson's central terminal allows for more direct comparison with
 experimental recordings from electrode vests, which often use the Wilson's
-central terminal for their reference potential~\ref{Taccardi1966,Mirvis1980}.
+central terminal for their reference potential~\cite{Taccardi1966,Mirvis1980}.
 In the following descriptions, the distribution is described using the using the
 coordinate system of the body rather than of the image.
 
@@ -587,7 +587,7 @@ In contrast to the simulation without lungs, the region of predominantly
 negative potential seems to be higher on the torso and smaller than that seen
 without lungs, as is the positive area on the lower left side.
 In addition, it appears that the lungs act to give a slight amplification
-effect, increasing the ranges of potential seen~\ref{Gulranjani1983}.
+effect, increasing the ranges of potential seen~\cite{Gulrajani1983}.
 
 The three frames (vii--ix) corresponding the to the plateau and beginnings of the
 repolarisation show a much more diffuse arrangement of potentials.
@@ -674,7 +674,7 @@ In this section, electrocardiograms derived from the BSP distribution are
 presented for sinus rhythm.
 All of the leads show a minor artifact during the first
 $2\text{--}4\,\text{ms}$, due to the stimulation protocol employed.
-Disregarding this, the following classifications are used~\ref{kistler2006}.
+Disregarding this, the following classifications are used~\cite{kistler2006}.
 A positive, or upright, P-wave is one that attains a potential of
 $\geq$\mv{0.05}\ and remains above the 0 potential baseline for duration of the
 P-wave.
@@ -854,12 +854,12 @@ The converse is true for simulations where the blood masses are present.
 
 The phase of the signal, that is whether it is rising or falling, does not seem
 to be influenced by the presence or absence of
-inhomogeneities~\ref{Rudy2006,Gulrajani1983}, only the amplitude.
+inhomogeneities~\cite{Rudy2006,Gulrajani1983}, only the amplitude.
 There are exceptions, notably in the $\text{V}_{\text{2}}$ lead, which is either
 negative or biphasic depending on the inhomogeneities considered.
 Lead III also has distinctly different proportions of the trace above and below
 the baseline depending on the inhomogeneities considered.
-This has been noted in other studies~\ref{vanDam2005}.
+This has been noted in other studies~\cite{vanDam2005}.
 It is again likely to be due to the movement of regions of maximum and minimum
 potential caused by the inhomogeneities.
 It is possibly more visible with the atria due to the thiner walls and thus
@@ -894,7 +894,7 @@ QRS-complex which most 12 lead systems are scaled to view.
 There is also the lack of the QRS complex, which often obscures the
 $\text{T}_{\text{P}}$ wave.
 
-Macfarlane and Lawrie~\ref{MacfarlaneLawrie1989}\ give the P-wave duration in
+Macfarlane and Lawrie~\cite{MacFarlane1989}\ give the P-wave duration in
 lead II for males and females in various age groups.
 Due to the hybrid nature of the model, it is hard to know which group gives the
 most accurate comparison.
@@ -908,11 +908,12 @@ They report the maximum P-wave potential in lead II to be approximately
 The maximum potential observed in the fully heterogeneous case is \mv{0.28}.
 This pattern is repeated for the maximally and minimally observed potentials in
 all leads.
-This is expected~\ref{Rudy2006,Gulrajani1983,Klepfer1997}\ as internal
+This is expected~\cite{Rudy2006,Gulrajani1983,Gulrajani1989,Klepfer1997}\ as internal
 inhomogeneities tend to reduce the observed potentials as they `smear' the
 electrical signal out over the torso.
 
-
+Clinical BSPM data for the P-wave has been taken by
+Taccardi~\cite{Taccardi1966}\ and Mirvis~\cite{Mirvis1980}.
 
 \subsection{Comparisons with other Modelling Studies}
 
@@ -940,15 +941,15 @@ The model considers only a few internal inhomogeneities, the lungs and the blood
 masses.
 Other inhomogeneities such as the skeletal muscle layers and subcutaneous fat
 have not been included, although previous simulation studies suggest their
-influence is small~\ref{Klepfer1997}.
+influence is small~\cite{Klepfer1997}.
 However the smaller mass of the atria might make their influence more
-significant~\ref{vanDam2005}\ and so this factor might need further
+significant~\cite{vanDam2005}\ and so this factor might need further
 investigation.
 In addition, the anisotropic nature of cardiac muscle was only considered during
 the calculations of the electrical propagation, it was not considered during the
 computation of the dipole sources of the heart.
 What influence this has is unknown, as only one computational study of the
-atrial excitation appears to have considered it~\ref{Seger2004}\ and then not in
+atrial excitation appears to have considered it~\cite{Seger2004}\ and then not in
 isolation.
 
 The model considers coupling only in one direction; the heart potential

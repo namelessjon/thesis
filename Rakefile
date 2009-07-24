@@ -30,7 +30,7 @@ PAPER = "thesis"
 PDF = "#{PAPER}.pdf"
 
 # location of the bibliography file
-BIBLIOGRAPHY = "refs.bib"
+BIBLIOGRAPHY = "refs_full.bib"
 
 # sources for project code
 SRCDIR = "src"
