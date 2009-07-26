@@ -367,7 +367,7 @@ obvious that
 
 \section{Torso Geometry}
 
-The torso geometry used in this study is shown in Figure~\ref{fig:bsp:torso}.
+The torso geometry used in this study is shown in Figure~\ref{fig:bsp:torso},A.
 It was created by Weixue and Ling~\cite{Lu1993,Weixue1996}\ and has been
 used in numerous simulations.
 The geometry was derived from CT images of the human torso.
@@ -392,6 +392,19 @@ the analytical formula for the potential within a conducting sphere suggest that
 the errors~\cite{Ferguson1997} induced through the descritisation are less
 than 0.01\%.
 
+\begin{figure}
+\includegraphics{figures/bsp/thorax_layout}
+\caption[Torso showing embedded atrium and lead locations]{
+\label{bsp:fig:torso}
+\textbf{A} Torso geometry used in this study.
+The torso geometry, shown unrefined for clarity is shown as a wireframe.
+The lungs are shown in blue, the blood masses in red.
+The atrium is visible above the bloodmasses.
+\textbf{B} Solid torso geometry showing the locations used for the simulated
+electrodes.
+}
+\end{figure}
+
 The atrial model constructed in the previous chapter was positioned within the
 torso using the descriptions of Ho and S\'{a}nchez-Quintana~\cite{Ho2009}
 with the ventricular meshes from the original torso used as an additional guide.
@@ -403,8 +416,7 @@ Following rotation, a translation of $\left(-0.005, -0.08, -0.215\right)$ was
 applied to the atrium.
 Several of the triangular elements were picked as the sites of the ECG
 electrodes.
-The complete torso model with the embedded atrium and electrode locations is
-shown in Figure~\ref{fig:bsp:torsoatrium}.
+The electrode locations are shown in Figure~\ref{fig:bsp:torso},B.
 Conductances used for the various compartments of the torso are shown in
 Table~\ref{tbl:bsp:conductances}.
 \begin{table}[h]
@@ -466,8 +478,7 @@ The SGETRS sub-routine was then used to solve (\ref{eqn:bsp:saluphijone}) and
 matrix.
 The zero potential, required for the consistency criterion of Salu, was chosen
 to be at element 1 of the mesh.
-This element is located at the top of the mesh, as indicated in
-Figure~\ref{fig:bsp:torsoatrium}.
+This element is located at the top of the mesh, at the `neck'.
 Generating the body surface potential took one core of horace approximately 60
 minutes for \unit{2}{s}\ of atrial activity using the original mesh.
 Using the fully refined mesh required approximately 190 minutes for the same
