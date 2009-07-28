@@ -220,10 +220,12 @@ Several of the techniques used are presented here.
 
 \subsubsection{The Compiler}
 
-The toolkit has been compiled using the GNU C compiler (gcc)~\cite{gcc}, the
-Intel C compiler (icc)~\cite{icc} and the Sun microsystems .  All three have
-OpenMP implementations available and all three are capable of performing a
-number of optimisations, controlled via flags.  The most important aspect of the
+The library has been compiled using the GNU C compiler (gcc)~\cite{gcc}, the
+Intel C compiler (icc)~\cite{icc} and the Sun microsystems compiler.
+All three have OpenMP implementations available and all three are capable of
+performing a number of optimisations, controlled via flags.
+The most important
+aspect of the
 optimisations is that they should not alter the behaviour of the floating point
 handling, as this could have significant impact on the final result computed.
 Despite this caveat, the results of applying certain optimisation flags can be
@@ -233,7 +235,7 @@ quite significant.
 
 Moving beyond the compiler, one of the simplest forms of optimisation is to only
 calculate each value once, if at all possible.  This can be done in a number of
-ways and the toolkit developed here implements two such methods for saving
+ways and the library developed here implements two such methods for saving
 computational time.
 
 State saving is one of the most direct ways of caching computed values.  At a
@@ -276,7 +278,7 @@ through their use for single cell simulations.
 
 \subsubsection{Binary Searches}
 
-Several of the experimental protocols provided by the toolkit are intended to
+Several of the experimental protocols provided by the library are intended to
 determine the value of a parameter which causes a particular condition to be
 fulfilled, such as a successful excitation of the cellular model after
 progressively shortening stimulus intervals.  This value we will call the
@@ -323,18 +325,20 @@ if the test is unsuccessful, the critical value is obviously above the current
 guess, and so the low guess is set to the current guess.  The simulation is then
 repeated with the average of the new high and low guess.  Using this algorithm,
 the search space is halved with each iteration, swiftly finding the critical
-value.  For example, to find a parameter somewhere in the range of 0--1000~ms to
-the nearest millisecond requires just 10 iterations of the binary search
-algorithm, but might take hundreds of iterations with sequential searching.
+value.
+For example, to find a parameter to an accuracy of \ms{1}\ in a range of
+\ms{250}\ statistically requires 125 sequential iterations.
+To find that same parameter using binary iterations requires just 8.
 
-One important thing that must be considered when using binary searches is that
-there is only one critical value in the range considered or else the algorithm
-will give unpredictable results.  In practice, this limitation is often quite
-easy to work within.
+An important limitation of the binary search method is that there must only be
+one critical value.
+If there are two such values within the range, the result of the algorithm is
+unpredictable.
+In practice, this constraint is quite easy to work within.
 
 \subsubsection{Adaptive Step}
 
-Adaptive step mechanisms are employed in the toolkit when there is a need to
+Adaptive step mechanisms are employed in the library when there is a need to
 provide output over a wide range of times, when the slope of the graph is not
 constant over the range to be graphed.  This is very common in the modelling of
 cardiac cells, which often show an exponential dependence of various parameters
