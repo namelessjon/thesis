@@ -197,18 +197,26 @@ task, in general 8 cores of horace were found to be sufficient for running most
 jobs and in compiling for MPI some of the flexibility would be lost from the
 library.
 
-\subsection{Optimisation}
+\subsection{Performance Optimisation}
 
-The toolkit uses several techniques to optimize the computations performed,
-reducing the number of processing cycles required to compute the results needed
-for publication.  These optimisations are generally built around the principle
-of ``No code is faster than no code'', although it might be more accurate to say
-``No code execution is faster than no code executed''.  To explain this idea
-another way, it is that no combination of compiler flags can compete with a
-sensible choice of algorithm which minimizes the number of computational steps
-to be performed or the amount of data to be written to a file.  This is not to
-say that the compiler is are unimportant, but that it is merely the start of
-optimisations, rather than the final step.
+Optimisation is the process of improving a given quantity.
+In the context of performance, this involves reducing the running time whilst
+preserving the accuracy of the solution.
+The benefits of this should be obvious.
+Code which runs faster lets results be gathered sooner or allows more cases to
+be considered.
+Optimisation can be of particular benefit to a library, which is intended to
+facilitate code re-use; the benefit of a little work can be garnered many
+times.
+
+In general, all performance optimisation techniques involve reducing the number
+of operations required to compute the final result.
+This can take a number of forms.
+The simplest one is the choice of the compiler and the compile flags used, both
+of which can have a significant influence on the total computation time.
+However, moving beyond the compiler, a choice of algorithm can also be important
+in reducing the time taken.
+Several of the techniques used are presented here.
 
 \subsubsection{The Compiler}
 
