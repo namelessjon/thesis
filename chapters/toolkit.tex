@@ -70,20 +70,25 @@ and bidomain equations can be found in the introduction.
 \multiput(0,10)(20, 0){7}{\usebox{\cell}}
 \multiput(10,14)(20, 0){6}{\usebox{\resistor}}
 \end{picture}
-\caption[Schematic diagram of a 1D strand]{\label{toolkit:strand}
-Schematic diagram of a 1D strand.  The strand is 7 nodes long.  The electrical
-activity at each node is represented by a mathematical model of the
-trans-membrane currents.  The cell is coupled to its neighbours through
-resistances.}
+\caption[Schematic diagram of a 1D strand]{\label{fig:toolkit:strand}
+Schematic diagram of a 1D strand.
+The strand is 7 nodes long, with each node represented by the blue square.
+The electrical activity at each node is represented by a mathematical model of
+the trans-membrane currents.
+The cell is coupled to its neighbours through resistances, the black rectangles.
+}
 \end{figure}
 
 The 1D strand model is used for several experimental protocols, as
-a computationally cheaper alternative to a full tissue model.  The 1D strand
-model consists of a number of nodes, typically 200 or 300, which are coupled
-electrically at the ends of the cells as shown in figure~\ref{toolkit:strand}.  The electrical activity at each node is
-modelled via a cellular electrophysiology model and electrical conduction between the
-nodes is handled via a 1D formulation of the monodomain equations using a 3-node
-approximation of the laplacian, with no flux boundary conditions.
+a computationally cheaper alternative to a full tissue model.
+The 1D strand model consists of a number of nodes, typically 200 or 300, which
+are coupled electrically at the ends of the cells as shown in
+Figure~\ref{fig:toolkit:strand}.
+The electrical activity at each node is modelled via a cellular
+electrophysiology model.
+Electrical conduction between the nodes is handled via a 1D formulation of the
+monodomain equations using a 3-node approximation of the Laplacian, with no
+flux boundary conditions.
 
 
 
@@ -108,11 +113,15 @@ approximation of the laplacian, with no flux boundary conditions.
     }
 }
 \end{picture}
-\caption[Schematic diagram of a 2D sheet]{\label{toolkit:sheet}
-Schematic diagram of a 2D strand.  The strand is $7\times7$ nodes in size.  The electrical
-activity at each node is represented by a mathematical model of the
-trans-membrane currents.  The cell is coupled to its neighbours along the
-cardinal directions through resistances.}
+\caption[Schematic diagram of a 2D sheet]{\label{fig:toolkit:sheet}
+Schematic diagram of a 2D strand.
+The strand is $7\times7$ nodes in size, with each node represented by a blue
+square.
+The electrical activity at each node is represented by a mathematical model of
+the trans-membrane currents.
+The cell is coupled to its neighbours along the cardinal directions through
+resistances, the smaller black rectangles.
+}
 \end{figure}
 
 The 2D sheet model is used for several experimental protocols, as well as more
@@ -121,7 +130,7 @@ nodes, coupled electrically along the cardinal directions of the grid.  The
 electrical activity at each node is modelled via a cellular electrophysiology
 model.  Conduction of the electrical excitation between the nodes uses the
 monodomain equations with no flux boundary conditions applied at all tissue
-boundaries and a 5-node approximation of the laplacian.  The square sheet model,
+boundaries and a 5-node approximation of the Laplacian.  The square sheet model,
 used in several of the numerical experimental protocols described later, is
 typically $375\times375$ nodes, representing 140,625 cellular models.  Two dimensional
 idealizations of physiological preparations can have many more nodes, to on the
