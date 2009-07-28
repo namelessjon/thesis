@@ -142,18 +142,45 @@ advantages beyond merely having eight rather than one cores worth of
 computational cycles working on solving the equations.  Splitting the work over
 multiple cores can also increase the amount of cache available, allowing for
 more efficient operation of the solvers.
+There are two libraries widely available for parallelization,
+OpenMP~\cite{OpenMP}\ and the Message Passing Interface~\cite{MPI} (MPI).
+They are based around different paradigms for parallelism.
 
-For the toolkit, the OpenMP~\cite{OpenMP} parallelization library was chosen.
-This implements the shared memory parallelism paradigm.  Using the shared memory
-paradigm is simpler, due to the lack of explicit communication calls, and can be
-faster, as there is merely memory access involved, rather than communication
-over an network or other interconnect.  Finally, a program written using OpenMP
-can, with some care, also be compiled serially if an OpenMP compiler is not
-available.  Whilst a program implemented using a non-shared memory paradigm,
-such as using the MPI library, would allow it to be executed on potentially more
-processors which would potentially offer faster run times, in practice the eight
-core shared memory system Horace provides as a compute node was general found to
-be sufficient for the task.
+The OpenMP library is based around the `shared memory' paradigm.
+Under the shared memory paradigm, there is only one process and this has access
+to all of the memory used in the program.
+The parallelism is achieved through the use of threads which divide up the work
+between themselves.
+This makes the implementation quite simple, but also limits the maximum number
+of computer cores which can be assigned to work on any individual execution of
+the problem.
+
+MPI is based around the `message passing' paradigm.
+The message passing paradigm involves multiple separate processes which use
+communication via the messages they pass between themselves to work.
+Each process has its own memory, and the only way for information in one process
+to reach another process is by explicitly passing it through messages.
+Because the processes each have their own memory, there is no requirement that
+the processes are on the same computer.
+This allows (theoretically) any number of cores to be applied to solving the
+problem.
+However, the explicit nature of message passing can make implementing a program
+harder and in addition, there can be significant lag due to the physical
+separation of the computers which can reduce efficiency.
+
+For the parallelism involved in the library, the OpenMP parallelism library was
+chosen.
+This choice was made for a number of reasons.
+Implementations of OpenMP can be found on many systems, with gcc, icc and the
+Sun compiler all having an OpenMP implementation.
+This makes the library suitable for use on both HPC systems and on modern
+multiple core desktops.
+In addition, for those systems on which running in parallel is not desirable,
+the same code can be compiled serially.
+Whilst an MPI implementation would allow more processors to be used to execute a
+task, in general 8 cores of horace were found to be sufficient for running most
+jobs and in compiling for MPI some of the flexibility would be lost from the
+library.
 
 \subsection{Optimisation}
 
