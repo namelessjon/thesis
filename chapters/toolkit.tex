@@ -257,24 +257,47 @@ technique with a cell that has a number of stochastic components could
 potentially affect the quality of the results.
 
 The second way in which caching can be employed is in the creation of `lookup
-tables'.  A lookup table is a pre-computed table of the values an expression can
-take.  When the expression would normally be evaluated, the table is used
+tables'.
+A lookup table is a pre-computed table of the values an expression can
+take.
+When the expression would normally be evaluated, the table is used
 instead, replacing what might be a complicated expression with a single array
-lookup.  For lookup tables to be efficient to pre-compute, the tabulated
-expression should depend on only one variable and should be sufficiently
-`complex' expression, such as one involving the computation of mathematical logs
-or exponentials.  The expression should depend on only one variable as the
-pre-computed table has to be indexed over each variable the computation depends
-on and even dependence on just two variables would increase the number of table
-entries required by thousands or millions.  The requirement for complexity is a
-little more obvious, as any optimisation can only save as much time as the
-original series of operations took.  With these limitations in mind, it is still
-possible to find many candidates for pre-computation in typical cardiac cell
-models, most notably the activation and inactivations of voltage dependent
-gates.  This technique is typically only worthwhile performing in the case of
-tissue simulations where the benefits can be shared amongst all the cells since
-pre-computation can be quite expensive, destroying any efficiency gains made
-through their use for single cell simulations.
+lookup.
+
+To efficiently pre-compute values for a lookup table, two things must be true.
+The tabulated expression must depend on only one variable.
+The tabulated expression must also be sufficiently `complex' or time consuming
+to compute.
+The requirement for complexity is perhaps the most obvious one.
+The most time that a lookup table can save is the cost of the original
+computation, so for significant savings in computational time, expensive
+calculations should be preferred.
+Good candidates for this are expressions which involve the computation of
+mathematical logs and exponentials.
+The requirement for dependence on only one variable is due to the nature of the
+table.
+It must be indexed by the steps in the dependent variable or variables.
+If there are $N$ steps in a dependent variable to be tabulated, adding
+dependence on a second variable requires pre-computing and storing
+$N\,\times\,N$ values.
+The value of $N$ varies, but is typically at least 1000.
+
+With these limitations in mind, there are still a number of expressions that can
+be tabulated in the typical electrophysiological cell model.
+If the Rush-Larsen method has been used to integrate gating variables then the
+expressions for both steady state and time constant of the gate can typically be
+tabulated.
+Currents with a complex, but wholly voltage dependent form, such as \ii{K1}\ in
+the Courtemanche et al. human atrial cell model can have the current calculation
+tabulated.
+Other calculations in a cell model must be evaluated on a case-by-case basis.
+
+The use of lookup tables can significantly speed up code execution.
+It can also influence the results, due to the discretisation involved in the
+computations.
+However even a small number of steps, sufficient to discretise with a
+resolution of \mv{0.1}, typically indroduces a $leq$~0.1\% error.
+Meanwhile, a 5x or greater speedup is not impossible.
 
 \subsubsection{Binary Searches}
 
