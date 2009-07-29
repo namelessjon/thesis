@@ -601,25 +601,34 @@ tested.
 
 \subsection{Conduction Velocity Restitution}
 
-Measurement of CV (or solitary wave velocity) itself is performed both
-experimentally and numerically, as is the minimum conduction interval, which is
-the shortest interval between an S1 and an S2 stimulus which still travels the
-length of the strand.  This is similar to the ERP, but can also be influenced by
-factors which affect the inter-cellular coupling as well as heterogeneity in the
-strand.  The CV\emph{r} provides both the solitary wave velocity, the CV for a large S2
-interval and the minimum stimulus interval, when the S2 interval gets too short
-for an excitation wavefront to be fully propagated.
+The CV is the rate of propagation of the excitation wave.
+It is determined by the difference in excitation times at two points divided by
+the distance between them.
+It is measured both in both experimental and numerical studies and is therefore
+useful in validating experimental results.
+A related measurement is the minimum conduction interval.
+The minimum conduction interval is the shortest interval between an S1 and S2
+stimulus which still propagates successfully.
+It is similar to the ERP, but can also be influenced by inter-cellular coupling
+and heterogeneity in the strand.
+The CV\emph{r} is found via stimulating the strand at successively shorter
+intervals and noting the changes in the measured CV.
+The minimum stimulus interval is found via noting when the curve ends.
+
 
 The CV\emph{r} is found in a 1D strand model, set up as described previously.
-The strand is 300 units long with a space step of \mm{0.1}.  Stimuli are
-delivered to a 4 unit (\mm{0.4}) length at one end of the strand at a strength
-above threshold.  The strand is first given $N$\ S1 stimuli at rate which allows
-the strand to recover between their application.  The S2 stimulus is then
-delivered $\Delta t$\ seconds later. The conduction velocity is estimated from
-the time taken to propagate between two points 100 nodes from each of the ends
-of the strand, to minimize the influence of boundary effects.  The S2 time is
-then stepped via an adaptive step, until a second excitation wave does not
-propagate the length of the strand.
+The strand is 300 units long with a space step of \mm{0.1}.
+Stimuli above the stimulus threshold are delivered to a 4 unit (\mm{0.4}) length
+at one end of the strand.
+The strand is first given $N$ S1 stimuli.
+Typically an S1 interval of \ms{1000}\ is used with 10 S1 pulses.
+The S2 stimulus is then delivered \ms{S2} seconds later.
+The CV is estimated from the difference in excitation times, defined as the
+instant at which the node is excited above \mv{-60}, at 2 nodes which are
+located 100 nodes apart.
+This minimizes any possible influence from boundary conditions.
+The S2 time is then stepped via an adaptive step, until a second excitation wave
+does not propagate the length of the strand.
 
 
 \subsection{Spiral Wave Life Span}
