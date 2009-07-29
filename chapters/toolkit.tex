@@ -519,39 +519,50 @@ S2 interval would fall within the $N^{\text{th}}$ AP.
 
 \subsection{Vulnerable Window}
 
-The VW is principally a tool of numeric experimentation, based around a 1D ring
-model of cardiac arrhythmia.  The VW is defined as the time period after a
-stimulation during which a second stimulus elicits unidirectional propagation
-along the strand.  In the case of a ring this causes retrograde propagation
-which cycles endlessly.  If the stimulus is given too early, then the tissue
-will still be refractory and no propagation of excitation will ensue.  If it is
-given too late, then propagation will occur in both directions, which in the
-ring case, results in the two excitation wavefronts annihilating each other.
+The VW measurement is based around a 1D ring model of cardiac tissue.
+It is used to quantify the vulnerability of cardiac tissue to the genesis of
+arrhythmia via re-entrant activity.
+The VW is defined as the time period in the refractory tail of a propagating
+excitation wave that results in unidirectional conduction block.
+In the case of a ring model of the tissue this causes retrograde propagation,
+which forms a re-entrant excitation which cycles endlessly.
+If the stimulus is given too early, then the tissue will still be refractory in
+both directions and no propagation of excitation will ensue.
+If it is given too late, then propagation will occur in both directions, which
+in the ring case, results in the two excitation wavefronts annihilating each
+other.
 Normal pacing could then resume.
+These three cases are illustrated in Figure~\ref{fig:toolkit:vw}.
 
-The VW is found in a 1D strand model, set up as described previously.  The
-strand is 200 units long and with a space step of \mm{0.1}.  The first stimulus is
-given to a 3 unit (\mm{0.3}) section at one end of the strand.  The test stimulus
-is given to a 4 unit (\mm{0.4}) section, usually centred in the middle of the
-strand. The VW is bounded on the lower side at the time when a stimulus any
-earlier would result in no propagation from a test stimulus, and on the upper
-side at the time when a stimulus any later would result in bidirectional
-propagation from a test stimulus.  These three cases (no, unidirectional,
-bidirectional) propagation are illustrated in figure TODO.
 
-By counting the number of APs which cross the two ends of the strand--2, 3 and
-4, respectively, for the three cases in figure TODO--the result of the test
-stimulus can be determined.  The two boundaries of the VW are found via binary
-search, with a lower guess of \ms{0} and an upper guess of \ms{1000}.  First, the
-upper bound of the VW is determined by searching for the delay when 3 APs
-crossing the ends becomes 4.  The lower bound is then found by looking for the
-delay at which 3 APs crossing the ends of the strand become 2.  A minor
-optimisation is performed when looking for the upper bound, in that the lower
-bound's high and low guesses are updated at the same time, reducing the total
-space which must be searched in the second half of the program.  Before the test
-stimulus is administered, the strand may be pre-paced a number of times.  In
-this case the strand state is saved as the middle of the strand is depolarized
-and then restored for each binary division.
+
+
+The VW is found in a 1D strand model, set up as described previously.
+The use of a open-ended strand, not a connected ring, makes pacing the strand
+easier, but does not effect the results.
+The strand is 300 units long and with a space step of \mm{0.1}.
+The strand is first given $N$ S1 conditioning stimuli which are administered to a
+3 node (\mm{0.3}) section at the start of the strand.
+Typically an S1 interval of \ms{1000}\ is used with 10 S1 pulses.
+The test S2 stimulus is administered to a 4 node (\mm{0.4}) section, normally
+centred in the middle of the strand, \ms{S2}\ after the $N^{\text{th}}$
+conditioning excitation wave has passed the S2 stimulus site.
+To reduce the computation time, the state is saved at this point.
+The low guess for the binary iteration is chosen as \ms{0}\ and the high guess
+as the S1 interval.
+To judge the success of the S2 stimulus, the ends of the strands are watched for
+successful excitation.
+If there are no excitation waves crossing the ends after the $N^{\text{th}}$
+excitation wave has passed, then it is in the region of total conduction block.
+If one excitation wave crosses the end, it is in region of unidirectional block.
+When two excitation waves cross the end, it is in the region of bidirectional
+conduction.
+The timing of the S2 stimulus is controlled via binary search, first to find the
+boundary of total conduction block and unidirectional block and then to find the
+boundary between unidirectional block and bidirectional conduction.
+A minor optimisation above the usual binary search algorithm is possible in this
+case, as a search for one boundary can be used to refine the range for the
+second boundary too.
 
 \subsection{Threshold of Excitation}
 
