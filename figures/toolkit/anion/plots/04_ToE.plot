@@ -1,5 +1,5 @@
 # plot for I-V curves and current traces
-set terminal postscript enhanced eps color size 15cm,8cm "Times-Roman" 20
+set terminal postscript enhanced eps color size 15cm,7cm "Times-Roman" 20
 set output "figures/04_ToE.eps"
 set border 3
 

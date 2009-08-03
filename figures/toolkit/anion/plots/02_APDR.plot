@@ -1,5 +1,5 @@
 # plot for APDR traces
-set terminal postscript enhanced eps color size 15cm,8cm "Times-Roman" 20
+set terminal postscript enhanced eps color size 15cm,7cm "Times-Roman" 20
 set output "figures/02_APDR.eps"
 set border 3
 
