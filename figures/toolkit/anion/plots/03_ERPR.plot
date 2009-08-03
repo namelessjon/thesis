@@ -11,14 +11,14 @@ set style line 3 lw 3 lt 2 lc rgb "red"
 set xtics nomirror out
 set ytics nomirror out
 unset key
-set xrange [300:700]
 
 set multiplot layout 1,2 rowsfirst
 
 # plot the APDr curves
 set label 1 "A" at graph -0.3,1 font "Times-Roman,30"
-set xlabel "S2 Interval (ms)"
+set xlabel "S1 Interval (ms)"
 set ylabel "ERP (ms)"
+set xrange [300:700]
 set yrange [50:350]
 set xtics 300,200
 plot    "03_ERPR/erpr_CRN98con.dat" w l ls 1, \
@@ -26,14 +26,15 @@ plot    "03_ERPR/erpr_CRN98con.dat" w l ls 1, \
 
 # plot ERPr curves
 set label 1 "B"
-set xrange [5:25]
-set yrange [0:4]
-set ylabel "VW (ms)"
-set xlabel ""
-set xtics ("Con" 10, "I_{Cl}" 20 ) scale 0
-set boxwidth 8
-plot    "03_ERPR/vw_processed.dat" u 1:2 w boxes fs solid ls 1, \
-        "03_ERPR/vw_processed.dat" u 3:4 w boxes fs solid ls 2
+set xlabel "S2 Interval (ms)"
+set ylabel "Conduction Velocity (mm ms^{-1})"
+set yrange [0.2:0.3]
+set xrange [250:1000]
+set xtics 250,250
+set ytics 0.02
+set format y "%3.2f"
+plot    "03_ERPR/CRN98_con_cv.dat" w l ls 1, \
+        "03_ERPR/CRN98_icl_cv.dat" w l ls 2
 
 unset multiplot
 
