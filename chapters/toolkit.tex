@@ -647,7 +647,7 @@ tissue is first stimulated along one edge via a stimulus current applied to a
 row of nodes extending the length of the tissue and 3 nodes (\mm{0.3}) in width.
 The planar wave is then allowed to propagate over the tissue.  Some time after
 the first wave is initiated, a second stimulus is applied.  The second stimulus
-is applied to half the tissue, bisecting the first wave's propagation front.
+is applied to half the tissue, bisecting the propagation front of the first wave.
 The second stimulus is a voltage clamp, with all the included tissue clamped to
 a `high' potential, typically \mv{+0} for a millisecond.  The
 generated spiral is then allowed to evolve until it self-terminates, the spiral
@@ -659,16 +659,20 @@ The spiral wave tip traces are calculated via a standard contour based
 algorithm, comparing the \mv{-60} contour line on snapshots of the electrical
 activity \ms{2.5} apart.
 
-\subsection{Spatial Vulnerability Window}
+\subsection{Spatial Vulnerability of Cardiac Tissue}
 
-The SVW is examined both experimentally and numerically.  It is used together
-with the (Temporal) VW for quantifying a mutation or condition's potential for
-arrhymogenesis.  It is defined as the smallest area of tissue in a 2D sheet,
-which when given a threshold stimulus in the wake of a conditioning pulse causes
-at least one `figure of eight' re-entry.  A figure of eight re-entry occurs when
-the excitation waves from the tips of the test area propagate back through the
-centre of the area, resulting in a pair of contra-rotating spiral waves at each
-end of the region.
+The spatial vulnerability (SV) of cardiac tissue is defined as the smallest
+length of tissue which, when given a stimulus at the threshold level in the wake
+of a propagating wave, gives rise to at least one `figure of eight' re-entry.
+A figure of eight re-entry occurs when the excitation waves from the ends of the
+test length propagate back through the centre of the length.
+This results in a pair of contra-rotating spiral waves, one at each end of the
+test length.
+The SV is useful for quantifying a mutation or condition's potential for
+arrhythmogenesis by giving an indication of the size of ectopic focus required
+to excite the tissue.
+A small SV indicates that the tissue could be very likely to have arrhythmic
+episodes.
 
 The sheet model used for the determination of the SVW can vary in size, as the
 SVW can vary substantially, depending on the electrophysiology being simulated
