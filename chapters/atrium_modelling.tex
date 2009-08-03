@@ -1,21 +1,20 @@
 \chapter{Modelling the Whole Atrium}
 
 In the previous chapter a modelling library suitable for simulation of single
-cell and over 1D and 2D models of cardiac tissue was developed.
-Single cell models are the base on which 1D and 2D models stand and 1D and 2D
-models provide valuable insight into the behaviours of cardiac tissue in health
+cell, 1D and 2D cardiac tissue was developed.
+This library was used to investigate aspects of atrial electrical activity.
+These models provide valuable insight into the behaviours of cardiac tissue in health
 and disease.
-It does not need to be said that the atrium is not 1D or 2D construct but is
-instead a complex 3D structure.
+However, these simple models ignore the complex 3D structure of the atria.
 This complexity can be seen internally, in that the atrium is comprised of several
-separate tissue types with distinct electrophysiological behaviours and has
-regions of differing conductivity.
+distinctive tissue types with different cellular electrophysiological properties
+and inter-cellular electrical coupling.
 It can also be seen in the gross physical structure, the atrium has a complex
 topology with both holes for the venous and arterial openings, as well as
 openings for the valves.
 The simpler, often idealized, models constructed in the previous chapter
 ignore (and in many cases, are incapable of showing) many of these complexities.
-To provide insight into the atrium function on the whole organ level we must
+To provide insight into the atrium function on the whole organ level one must
 therefore simulate the atrium as an organ.
 A 3D model of the atrium requires a representation of the atrial geometry to
 provide the topology of the atrium.
@@ -24,26 +23,29 @@ electrophysiologically distinct tissue types are also required as are
 descriptions of the complex conductivities.
 
 
-\section{Atrial Geometry}
+\section{Anatomical Atrial Geometry}
 \label{atrium:sec:geometry}
 
-The atrial geometry used in the simulation studies presented here was based on
-the visible human project female dataset.  The visible human dataset was
-created from a pair of cadavers, set into wax and sliced into \mm{1}\ and
-\mm{0.33}\ for the male and female bodies, respectively.  The geometric model
-used here was extracted from the female dataset and so has a resolution of
-\mm{0.33}.  The extracted geometry is segmented into different tissue types,
+The anatomical atrial geometry used in the simulation studies presented here was based on
+the visible human project female dataset.
+The visible human dataset was created from a pair of cadavers, set into wax and
+sliced into \mm{1}\ and \mm{0.33}\ for the male and female bodies, respectively.
+The geometric model used here was extracted from the female dataset and so has a
+spatial resolution of \mm{0.33}.
+The extracted anatomical geometry is segmented into different tissue types,
 with distinct classifications for left and right atrium, the pectinate muscles,
 the crista terminalis, the Bachmann bundle and the sino-atrial node, as shown in
-Figure~\ref{atrium:geometry}.  The geometry has been used in numerous previous
-simulation studies.  It was discretised via a finite differences approach, which
+Figure~\ref{atrium:geometry}.
+The geometry has been used in numerous previous simulation studies.
+It was discretised via a finite differences approach, which
 allows the whole atrium to be embedded in a block of $298\times269\times235$
-nodes.  This gives it a total size of approximately 19 million total nodes,
-although only approximately 1.6 million of those nodes correspond to excitable
-cells.  The geometry also has simple fibre orientation in the pectinate muscles,
-crista terminalis and Bachmann bundle.  The fibres are considered to always run
-parallel to the local axis of the tissue bundle, as determined by principle
-component analysis~\cite{Seemann2006}.
+nodes.
+This gives it a size of approximately 19 million nodes, although only
+approximately 1.6 million of those nodes correspond to atrial cells.
+The anatomical model also considers fibre orientation in the pectinate muscles,
+crista terminalis and Bachmann bundle, which always run parallel to the local
+axis of the tissue bundle, as determined by principle component
+analysis~\cite{Seemann2006}.
 Representations of the fibre structure are shown in Figure~\ref{atrium:fibres}.
 
 \begin{figure}
@@ -79,10 +81,10 @@ well defined fibre orientation.
 The electrical activity at each of the nodes was described by the equations of
 the Courtemanche--Ramirez--Nattel (CRN) of the human atrial
 myocyte~\cite{crn98}.  This model, as previously described, is a second
-generation model. It has 21 state parameters, representing ionic gating activations
+generation model. It has 21 state variables, representing ionic gating activations
 and inactivations and intracellular concentrations of ionic species.  In the
 model, the total current, \ii{ion} is made up of the contributions of numerous
-channels
+ion channels and exchangers.
 \begin{equation}
 \label{atrium:crn}
 \ii{ion} = \ii{Na} + \ii{K1} + \ii{to} + \ii{Kur} + \ii{Ks} + \ii{Kr} +
@@ -95,9 +97,10 @@ has a detailed calcium handling system which can influence the action potential
 via its influence on the intracellular calcium concentration.
 
 In some atrial simulations it was desirable to incorporate details of
-electrophysiological heterogeneity to represent the difference in electrical
-behaviour between atrial myocytes and the other cellular types present in the
-geometry, the pectinate muscles and crista terminalis.  The parameters used for
+electrophysiological heterogeneity to represent the regional difference in
+electrical activity of atrial myocytes and the other cellular types present in
+the geometry, such as the pectinate muscles and crista terminalis.
+The parameters used for
 heterogeneity were based on measurements taken by Feng et al.~\cite{feng1998}
 of the canine atrium.  These were converted to parameters for the CRN model by
 Seemann et al.~\cite{Seemann2004} and have been used in several simulation
@@ -112,15 +115,14 @@ crista terminalis (CT) cells, compared to the normal Courtemanche et al. (CRN)
 parameters.
 }
 \begin{center}
-\begin{tabular}{|r|ccc|}
-\hline
+\begin{tabular}{r c c c}
+\toprule
  & CRN & PM & CT \\
-\hline
-\hline
+\midrule
 \g{to,max} & 0.1652 & 0.1652 & 0.2215 \\
 \g{Ca,L,max} & 0.1238 & 0.1238 & 0.2067 \\
 \g{Kr,max} & 0.0294 & 0.0294 & 0.0294 \\
-\hline
+\bottomrule
 \end{tabular}
 \end{center}
 \end{table}
