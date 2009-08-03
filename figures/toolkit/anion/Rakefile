@@ -1,0 +1,48 @@
+def plot(name)
+  # read in the file
+  file = File.open("plots/#{name}.plot") {|f| f.read}
+
+  # determine which figures it makes.
+  figures = determine_figures(file)
+
+  # just assume the deps are the files in the subdirectory
+  deps = FileList["#{name}/**/*.dat", "#{name}/*.csv"]
+
+  # make tasks for each of the figures
+  figures.each do |figure|
+
+    # first, the eps figure
+    file figure => ["plots/#{name}.plot", 'figures'] + deps do
+      sh "gnuplot 'plots/#{name}.plot'"
+    end
+
+    # next the pdf
+    pdf_task(figure)
+  end
+end
+
+def determine_figures(file_contents)
+  figures = []
+  file_contents.scan(/^set output "([^"]+)"/) do |fig|
+    figures << fig
+  end
+  figures.flatten
+end
+
+def pdf_task(figure)
+  pdf = figure.pathmap("%X.pdf")
+
+  file pdf => figure do
+    sh "epstopdf '#{figure}'"
+  end
+
+  task :make_figures => pdf
+end
+
+task :default => :make_figures
+
+directory 'figures'
+
+FileList["plots/**/*.plot"].pathmap('%n').each do |figure|
+  plot figure
+end
