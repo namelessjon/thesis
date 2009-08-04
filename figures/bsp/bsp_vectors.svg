@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
+
 <svg
    xmlns:dc="http://purl.org/dc/elements/1.1/"
    xmlns:cc="http://creativecommons.org/ns#"
@@ -12,7 +13,7 @@
    height="531.49603"
    id="svg2"
    sodipodi:version="0.32"
-   inkscape:version="0.46"
+   inkscape:version="0.46+devel"
    sodipodi:docname="bsp_vectors.svg"
    version="1.0"
    inkscape:output_extension="org.inkscape.output.svg.inkscape"
@@ -71,6 +72,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -81,7 +83,7 @@
     <path
        sodipodi:nodetypes="ccccccccc"
        id="path3175"
-       d="M 29.892672,339.84157 C 2.679801,271.1097 86.187507,222.34808 92.467417,149.03407 C 97.633027,88.728654 44.545743,126.00905 55.012233,60.331914 C 64.202967,2.660141 153.39723,5.346412 220.38276,5.346412 C 290.34402,5.346412 383.65998,22.147543 415.05946,66.44142 C 472.57735,147.57947 421.72508,193.30187 427.61923,245.14432 C 435.99242,319.98569 530.49141,330.18775 505.07124,399.4092 C 477.65884,474.05571 411.16124,512.52007 289.46158,526.18133 C 180.61009,538.40033 60.108853,416.15897 29.892672,339.84157 z"
+       d="M 29.892672,339.84157 C 2.679801,271.1097 93.187507,244.34808 99.467417,171.03407 104.63303,106.72865 44.545743,126.00905 55.012233,60.331914 64.202967,2.660141 153.39723,5.346412 220.38276,5.346412 c 69.96126,0 163.27722,16.801131 194.6767,61.095008 57.51789,81.13805 6.66562,126.86045 12.55977,178.7029 8.37319,74.84137 102.87218,85.04343 77.45201,154.26488 -27.4124,74.64651 -93.91,113.11087 -215.60966,126.77213 C 180.61009,538.40033 60.108853,416.15897 29.892672,339.84157 z"
        style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:3.54330709;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none" />
     <path
        sodipodi:nodetypes="czzzzz"
@@ -192,14 +194,15 @@
          style="font-weight:bold;-inkscape-font-specification:Sans Bold;font-size:18">r'-r</tspan></text>
     <text
        xml:space="preserve"
-       style="font-size:14px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Sans;-inkscape-font-specification:Sans"
-       x="141.16978"
-       y="415.35178"
+       style="font-size:14px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans;-inkscape-font-specification:Sans"
+       x="138.16978"
+       y="416.35178"
        id="text5047"><tspan
          sodipodi:role="line"
          id="tspan5049"
-         x="141.16978"
-         y="415.35178">O</tspan></text>
+         x="138.16978"
+         y="416.35178"
+         style="font-size:18px">O</tspan></text>
     <g
        id="g2587">
       <text
