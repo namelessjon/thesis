@@ -815,6 +815,30 @@ resting potential.
 }
 \end{figure}
 
+
+\begin{table}
+\caption[Calculated parameters for anion and control cells]{
+\label{tbl:toolkit:anion_params}
+Various calculated parameters for control (original CRN cell) and anion (CRN
+cell modified to include $\text{Cl}^{\text{-}}$-carrying current).
+The duration of the action potential at 50\% and 90\%
+repolarisation, \apd[50]\ and \apd\ respectively.
+The maximum observed upstroke velocity of the action potential,
+$\frac{dV}{dt}_max$.
+The temporal vulnerability window to unidirectional conduction block, VW.
+}
+\begin{center}
+\begin{tabular}{r c c c c }
+\toprule
+Case & \apd\ (ms) & \apd[50]\ (ms) & $\frac{dV}{dt}_max$ ($\text{mV}\,\text{ms}^{\text{-1}}$) & VW (ms)  \\
+\midrule
+Control & 299.6 & 180.1 & 217.1 & 3.22 \\
+Anion & 297.3 & 158.1 & 210.6 & 3.94 \\
+\bottomrule
+\end{tabular}
+\end{center}
+\end{table}
+
 The computed APD\emph{r}\ curves under the control and anion conditions are shown
 in Figure~\ref{fig:tookit:anion:ap},A and \ref{fig:tookit:anion:apdr},B, for the
 restitution curves of APD at 50\% (\apdr[50]) and 90\% (\apdr) of repolarization,
@@ -871,7 +895,8 @@ control case.
 
 The temporal VW increased with the addition of the anion current from \ms{3.22}
 in control to \ms{3.94}\ in anion case, a 22\% increase in the size of the
-region of unidirectional conduction block.
+region of unidirectional conduction block, shown in
+Table~\ref{tbl:toolkit:anion_params}.
 The CV\emph{r}\ curves, shown in
 Figure~\ref{fig:toolkit:anion:erpr},B, suggest that tissue with the anion sensitive current
 shows faster CV at normal physiological stimulus intervals (corresponding to
