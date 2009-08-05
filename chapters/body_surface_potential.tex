@@ -60,12 +60,32 @@ for the field at any given point, $\phi$, is~\cite{Plonsey1963}
 \end{equation}
 where $r$ is the (scalar) distance from the elemental volume $dv$ to the point at
 which the field is being evaluated.
+This is shown in Figure~\ref{fig:bsp:vectors}.
+The distance $r$ is the magnitude of the vector $\mathbf{r'}-\mathbf{r}$.
 
 
 \begin{figure}
 \includegraphics{figures/bsp/bsp_vectors}
 \caption[Diagram of the vectors and surfaces involved in the BEM]{
 \label{fig:bsp:vectors}
+Vectors and surfaces involved in the boundary element method.
+The origin is at point $O$.
+There are three surfaces shown in the diagram: $\text{S}_{1}$, $\text{S}_{2}$ and
+$\text{S}_{3}$.
+Each surface has an internal, $\sigma^{-}$ and an external, $\sigma^{+}$,
+conductivity.
+The $\text{S}_{1}$ surface is the boundary of the region and contains all other
+surfaces and dipole sources.
+The external conductivity of $\text{S}_{1}$, $\sigma^{+}_{1}$, is therefore zero.
+The vector $d\mathbf{S}$ represents an infinitesimal element of the boundary
+surface.
+
+The dipole sources are all contained with in the region labelled `source
+region'.
+The vector $\mathbf{r}$ is a vector to a volume element $dv$ in the source
+region.
+The vector $\mathbf{r'}$ is a vector to an arbitrary point within the volume
+bounded by $\text{S}_{1}$.
 }
 \end{figure}
 
