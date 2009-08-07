@@ -1,0 +1,60 @@
+\chapter{Applications Of The Forward Problem}
+
+The ECG is the first tool cardiac doctors turn to when diagnosis of a problem is
+required.
+ECG machines can be found in almost every hospital in the world.
+A model of the atria and the surface potentials developed by the excitation of
+the model can be used to guide diagnosis of a variety of conditions.
+This can reduce the need for surgical procedures or suggest when they are
+essential.
+
+Whilst the inverse problem promises to reproduce the potentials on the heart
+from the potentials on the surface, the technique has limitations.
+For accurate solutions, patient specific geometries have to be constructed from
+MRI scans.
+There is also a need for complex lead systems, sometimes featuring more than two
+hundred leads.
+Also, many of the inverse techniques rely on `smooth' propagation patterns to
+reduce the uncertainties in the technique which may not be found in pathological
+cases.
+A device which can perform such calculations automatically is a long way off,
+both in terms of computational power required and complexities to resolve.
+
+By contrast, diagnostic guides based on a forward solution can be of use to any
+doctor.
+They can also be used to further validate simulation studies of genetic or
+diseased conditions, by comparison of the generated ECGs with those recorded
+from real patients.
+This chapter explores some of these predictions, using the model developed in
+the previous chapter.
+
+\section{Focal Atrial Tachycardia}
+
+Atrial Tachycardias are one of the more uncommon forms of supraventricular
+tachycardia.
+They tend to occur as a result of other cardiac or respiratory diseases.
+They are characterised by a high heart rate ($geq$ \unit{250}{bpm}) and
+typically have evidence of an abnormal cardiac axis or P-wave morphology.
+They are hard to treat with drugs, but radiofrequency ablation can be used with
+a high probability of success.
+Diagnosis of atrial tachycardia can be difficult due to a lack of data.
+Attempts to locate the sites of the ectopic focus are current topics of clinical
+research~\cite{kistler2006,Kahn2006,yamane2001}.
+This study shows how the model can provide more data for clinicians to study.
+
+\subsection{Model of Focal Atrial Tachycardia}
+
+To model focal atrial tachycardia, the model developed in the previous chapter
+is used.
+Instead of pacing from the cells corresponding to the sinus node, various sites
+around the atria are selected.
+These sites are shown in Figure~\ref{fig:forward:sites}.
+All the nodes which have active cells within 10 cells (\mm{3.3}) are excited via
+direct current injection of \unit{2}{nS}\ for \ms{2}.
+The resulting excitation wave is then allowed to propagate without interference
+and the BSPM and ECG calculated.
+The ECGs are classified by the P-wave morphology and the time of first
+deflection in each lead.
+
+
+
