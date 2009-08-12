@@ -1,46 +1,14 @@
-\documentclass[a4paper,12pt,titlepage]{report}
+\documentclass[12pt,PhD]{muthesis}
 \bibliographystyle{styles/vancouver}
 \usepackage{cite}
-\usepackage{fullpage}
-\usepackage{setspace}
 \usepackage{graphics}
 \usepackage{amstext}
 \usepackage{amsmath}
 \usepackage{algorithm}
 \usepackage{algorithmic}
-\usepackage{fancyhdr}
 \usepackage{booktabs}
-
-
-
-
-% - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-% Size of text:
-\textheight     24cm        % == A4 height is 297mm (\paperheight)
-\textwidth      15cm        % == A4 width is  210mm (\paperwidth)
-
-% - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-% Margin Settings:
-\oddsidemargin   15mm       % == 40mm binding space, as per university regs
-\evensidemargin  20mm        % == thesis is single sided
-\topmargin       0mm        % == dont leave space at top
-\headheight      15pt        % == space for running header
-\headsep         5mm        % == space before page starts
-\footskip       10mm        % == space between body and footnote
-
-
-% double spaced, with fancy headers
-\pagestyle{fancy}
-\doublespacing
-%\renewcommand{\sectionmark}[1]{\markright{\thesection.\ #1}}
-\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
-\renewcommand{\sectionmark}[1]{\markright{\thesection.\ #1}}
-
-
-
-
-
-
+\usepackage{url} % typeset URL's reasonably
+\usepackage{listings}
 
 \newcommand{\unit}[2]{\ensuremath{#1\,\text{#2}}}
 \newcommand{\cms}[1]{\ensuremath{#1\,\text{cms}^{\text{-1}}}}
@@ -100,28 +68,29 @@
 
 \begin{document}
 
-%    \title{TITLE}
-%    \author{Jonathan D. Stott\\
-%    \mbox{}\\
-%    The University Of Manchester, UK}
-%    \maketitle
+    \title{Multiscale Modelling in the Heart:\\From single cell to the body
+    surface}
+    \author{Jonathan D. Stott}
+    \principaladviser{Henggui Zhang}
+    \school{School of Physics and Astronomy}
 
-%    \begin{abstract}
-%    ABSTRACT
-%    \end{abstract}
-
-%    \tableofcontents
-%    \newpage
-
-%    \listoffigures
-%    \newpage
+    \beforeabstract
+    \prefacesection{Abstract}
+%\input{abstract}
+    Stuff happened
+    \afterabstract
+    \prefacesection{Acknowledgements}
+    I would like to thank...
+    \afterpreface
+    
 
 %    \include{chapters/introduction}
 %    \include{chapters/toolkit}
 %    \include{chapters/atrium_modelling}
-    \include{chapters/body_surface_potential}
+%    \include{chapters/body_surface_potential}
+    \include{chapters/the_forward_problem}
 
 %    \bibliography{refs}
-\bibliography{refs_full}
+    \bibliography{refs_full}
 
 \end{document}
