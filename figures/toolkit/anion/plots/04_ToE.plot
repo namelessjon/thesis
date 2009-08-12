@@ -1,5 +1,5 @@
 # plot for I-V curves and current traces
-set terminal postscript enhanced eps color size 15cm,7cm "Times-Roman" 20
+set terminal postscript enhanced eps color size 12cm,6cm "Times-Roman" 18
 set output "figures/04_ToE.eps"
 set border 3
 
@@ -16,7 +16,7 @@ set xrange [250:1000]
 set multiplot layout 1,2 rowsfirst
 
 # plot the APDr curves
-set label 1 "A" at graph -0.3,1 font "Times-Roman,30"
+set label 1 "A" at graph -0.3,1 font "Times-Roman,24"
 set xlabel "S2 Interval (ms)"
 set ylabel "Threshold Of Excitation (nS)"
 set xtics 250,250

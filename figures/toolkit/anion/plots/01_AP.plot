@@ -1,5 +1,5 @@
 # plot for AP curves
-set terminal postscript enhanced eps color size 12cm,9cm "Times-Roman" 20
+set terminal postscript enhanced eps color size 9cm,7cm "Times-Roman" 18
 set output "figures/01_AP.eps"
 set border 3
 
