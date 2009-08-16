@@ -28,12 +28,92 @@ from real patients.
 This chapter explores some of these predictions, using the model developed in
 the previous chapter.
 
+\section{Inverted P-Waves at Night}
+
+Recently an observation was made~\cite{BoyettPrivate}\ in patients under 24 hour
+ECG monitoring.
+It was noted that some patients exhibited inverted P-waves at night.
+That is to say, if the patient showed a upright P-wave in leads II and aVF
+during the day, then at night the P-wave would be downwards in leads II and aVF.
+This phenomena has not been reported in the literature.
+
+There is evidence~\cite{Shibata2001,Boineau1988} that the pacemaker is not a
+small and discrete area of the atrium, but is instead distributed along the
+length of the crista terminalis.
+The presence of certain drugs and hormones, most notably astylcholin, can cause
+the site of the leading pacemaker to move down the pace maker complex.
+Astylcholin is released by what is know as increased `vagal tone'.
+This has been observed to happen at night.
+It was hypothesised that a pacemaker shift induced by this increased vagal tone
+might lead to the observed P-wave inversion.
+
+\subsection{Methods}
+
+In the absence of a model for the distributed pacemaker complex in the human
+heart, the direct effects of astylcholin could not be investigated.
+Instead, using the model presented in the previous chapter, several sites were
+located along the crista terminalis.
+These sites had a radius of 15 nodes (or approximately \mm{5}--although this
+varied depending on the thickness of the atrial wall at the pacing site), and
+therefore were approximately the same size as the sino-atrial node.
+These sites are shown in Figure~\ref{fig:forward:ct_sites}.
+Each of these sites was stimulated via the same protocol used to stimulate the
+sinus node in the original model and then the electrical excitation waves were
+allowed to propagate without interference.
+
+ECGs were computed from the patterns of electrical excitation in the atrium.
+These were compared to the sinus rhythm ECGs computed in the previous chapter.
+In addition, using a so called `inverse Dower' method after Edenbrandt and
+Pahlm~\cite{Edenbrandt1988}, the orthogonal components of the ECG were computed
+and used to construct representations of the heart
+vector~\cite{Frank1956,MacFarlane1989a} ECG (VECG).
+To perform the inverse dower transformation, a matrix which was optimized for
+the P-wave (shown in Table~\ref{tbl:forward:idparams}) was
+used~\cite{Guillem2007}.
+
+
+\begin{table}
+\caption[Inverse Dower Factors]{
+\label{tbl:forward:idparams}
+Factors to construct the Frank VECG from the standard 12 lead ECG set.
+Parameters optimised to accurately reproduce the P-wave heart
+vector~\cite{Guillem2007}.
+Each of the 8 leads are multiplied by the given parameters to provide the
+orthogonal Frank lead.
+}
+\begin{center}
+\begin{tabular}{c c c c c c c c c}
+\toprule
+& $\text{V}_{\text{1}}$ &$\text{V}_{\text{1}}$ & $\text{V}_{\text{1}}$ & $\text{V}_{\text{1}}$ & $\text{V}_{\text{1}}$ & $\text{V}_{\text{1}}$ & I && II \\
+\midrule
+X & $-0.266$ & $\:0.027$ &  $\:0.065$ & $\:0.131$ & $\:0.203$ & $\:0.220$ & $\:0.370$ & $-0.154$ \\
+Y & $\:0.088$ &  $-0.088$ & $\:0.003$ & $\:0.042$ & $\:0.047$ & $\:0.067$ & $-0.131$ & $\:0.717$ \\
+Z & $-0.319$ & $-0.198$ & $-0.167$ & $-0.099$ & $\:0.009$ & $\:0.060$ & $\:0.184$ & $\:0.114$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+\end{table}
+
+\subsection{Results}
+
+
+
+
+
+\subsection{Limitations}
+
+Edenbrandt and Pahlm verses Uijen, optimised sets.  Perhaps Hyttinen paper.
+Optimised for ST segment, not P-wave.
+The original inverse dower matrix, as presented by Edenbrandt and
+Pahlm~\cite{Edenbrandt1988}\ was used to perform the transformations, as used in
+previous studies~\cite{Carlson2005,Holmqvist2007,Havmoller2007}
+
 \section{Focal Atrial Tachycardia}
 
-Atrial Tachycardias are one of the more uncommon forms of supraventricular
-tachycardia.
+Atrial Tachycardias are one of the rarer forms of supraventricular
+tachycardia, accounting 
 They tend to occur as a result of other cardiac or respiratory diseases.
-They are characterised by a high heart rate ($geq$ \unit{250}{bpm}) and
+They are characterised by a high heart rate ($\geq$ \unit{250}{bpm}) and
 typically have evidence of an abnormal cardiac axis or P-wave morphology.
 They are hard to treat with drugs, but radiofrequency ablation can be used with
 a high probability of success.
