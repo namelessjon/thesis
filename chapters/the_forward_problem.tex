@@ -33,8 +33,8 @@ the previous chapter.
 Recently an observation was made~\cite{BoyettPrivate}\ in patients under 24 hour
 ECG monitoring.
 It was noted that some patients exhibited inverted P-waves at night.
-That is to say, if the patient showed a upright P-wave in leads II and aVF
-during the day, then at night the P-wave would be downwards in leads II and aVF.
+That is to say, if the patient showed a positive P-wave in leads II and aVF
+during the day, then at night the P-wave would be negative in leads II and aVF.
 This phenomena has not been reported in the literature.
 
 There is evidence~\cite{Shibata2001,Boineau1988} that the pacemaker is not a
@@ -67,7 +67,7 @@ In addition, using a so called `inverse Dower' method after Edenbrandt and
 Pahlm~\cite{Edenbrandt1988}, the orthogonal components of the ECG were computed
 and used to construct representations of the heart
 vector~\cite{Frank1956,MacFarlane1989a} ECG (VECG).
-To perform the inverse dower transformation, a matrix which was optimized for
+To perform the inverse dower transformation, a matrix that has been optimized for
 the P-wave (shown in Table~\ref{tbl:forward:idparams}) was
 used~\cite{Guillem2007}.
 
@@ -84,7 +84,8 @@ orthogonal Frank lead.
 \begin{center}
 \begin{tabular}{c c c c c c c c c}
 \toprule
-& $\text{V}_{\text{1}}$ &$\text{V}_{\text{1}}$ & $\text{V}_{\text{1}}$ & $\text{V}_{\text{1}}$ & $\text{V}_{\text{1}}$ & $\text{V}_{\text{1}}$ & I && II \\
+& $\text{V}_{\text{1}}$ &$\text{V}_{\text{2}}$ & $\text{V}_{\text{3}}$ &
+$\text{V}_{\text{4}}$ & $\text{V}_{\text{5}}$ & $\text{V}_{\text{6}}$ & I & II \\
 \midrule
 X & $-0.266$ & $\:0.027$ &  $\:0.065$ & $\:0.131$ & $\:0.203$ & $\:0.220$ & $\:0.370$ & $-0.154$ \\
 Y & $\:0.088$ &  $-0.088$ & $\:0.003$ & $\:0.042$ & $\:0.047$ & $\:0.067$ & $-0.131$ & $\:0.717$ \\
@@ -95,6 +96,82 @@ Z & $-0.319$ & $-0.198$ & $-0.167$ & $-0.099$ & $\:0.009$ & $\:0.060$ & $\:0.184
 \end{table}
 
 \subsection{Results}
+
+The ECGs from the three pacing locations along the CT are shown in
+Figure~\ref{fig:forward:inverse:ecgs} and summary of the lead deflections are
+presented in Table~\ref{tbl:forward:inverse:ecgs}, along with the ECG generated
+from pacing at the sinus node for comparison.
+It is immediately obvious that even the small movement to site A for pacing
+causes an inversion in the P-wave in lead aVF, from positive to negative.
+Whilst pacing from this site, the P-wave in lead II is still not negative and is
+instead biphasic.
+
+\begin{table}
+\caption[Lead classification under pacing from different locations]{
+\label{tbl:forward:inverse:ecgs}
+Lead classification after pacing from different locations.
+Leads are classified based on the criteria used by
+Kistler~et~al.~\cite{Kistler2006}.
+A positive P-wave is denoted by a $+$ sign, a negative P-wave by a $-$ sign and
+a biphasic one by $\sim$.
+Site denotes the pacing site, where SAN is the sinus node and Sites A--C are as
+indicated in Figure~\ref{fig:forward:ct_sites}.
+}
+\begin{center}
+\begin{tabular}{c c c c c c c c c c c c c}
+\toprule
+Site & I & II & III & aVR & aVL & aVF & $\text{V}_{\text{1}}$ &$\text{V}_{\text{2}}$ & $\text{V}_{\text{3}}$ & $\text{V}_{\text{4}}$ & $\text{V}_{\text{5}}$ & $\text{V}_{\text{6}}$\\
+\midrule
+SAN & $+$ & $+$ & $\sim$ & $-$ & $+$ & $+$ & $-$ & $-$ & $+$ & $+$ & $+$ & $+$ \\
+A   & $+$ & $\sim$ & $-$ & $-$ & $+$ & $-$ & $\sim$ & $+$ & $+$ & $+$ & $+$ & $+$ \\
+B   & $+$ & $\sim$ & $-$ & $-$ & $+$ & $-$ & $\sim$ & $+$ & $+$ & $+$ & $+$ & $+$ \\
+C   & $+$ & $-$ & $-$ & $\sim$ & $+$ & $-$ & $\sim$ & $\sim$ & $+$ & $+$ & $+$ & $+$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+\end{table}
+
+The sinus node ECG has already been described in some detail (Section XXX), and
+so only a brief summary will be presented here.
+The P-wave is upright in leads II and lead aVF.
+The first precordial lead, $\text{V}_{\text{1}}$ is predominately negative, as
+the electrical excitation is moving away from the electrode as the
+depolarisation wave travels downwards from the sinus node at the top.
+The last three precordial leads ($\text{V}_{\text{4--6}}$) are positive, as the
+bulk of the electrical activity is towards them as the atrium depolarises from
+right to left.
+
+Pacing from site A, the P-Wave is positive in leads I, aVL and
+$\text{V}_{\text{2--6}}$, it is negative in leads III, aVR and aVF and biphasic
+in leads II and $\text{V}_{\text{1}}$.
+The largest positive potential is observed in lead aVL, \mv{0.207}\ and the
+largest negative potential is observed in lead III, \mv{-0.265}.
+The $\text{T}_{\text{P}}$ waves are clearly visible in all leads except lead II
+and $\text{V}_{\text{1}}$.
+Lead $\text{V}_{\text{1}}$ is initially positive, as the excitation travels up
+the crista terminalis towards the sinus node, before it becomes negative in the
+latter half of the P-wave, as the left atrium starts to depolarise down from the
+Bachmann's bundle.
+Because the bulk direction of repolarisation is still from right to left, the
+final three precordial ($\text{V}_{\text{4--6}}$) leads are still positive.
+
+
+Pacing from site B, the P-Wave is positive in leads I, aVL and
+$\text{V}_{\text{2--6}}$, it is negative in leads III, aVR and aVF and biphasic
+in leads II and $\text{V}_{\text{1}}$.
+The largest positive potential is observed in lead aVL, \mv{0.236}\ and the
+largest negative potential is observed in lead III, \mv{-0.295}.
+The $\text{T}_{\text{P}}$ waves are clearly visible in all leads except lead II
+and $\text{V}_{\text{1}}$.
+Lead $\text{V}_{\text{1}}$ is initially positive, as the excitation travels up
+the crista terminalis towards the sinus node, before it becomes negative in the
+latter half of the P-wave, as the left atrium starts to depolarise down from the
+Bachmann's bundle.
+Because the bulk direction of repolarisation is still from right to left, the
+final three precordial ($\text{V}_{\text{4--6}}$) leads are still positive.
+
+
+
 
 
 
@@ -119,7 +196,7 @@ They are hard to treat with drugs, but radiofrequency ablation can be used with
 a high probability of success.
 Diagnosis of atrial tachycardia can be difficult due to a lack of data.
 Attempts to locate the sites of the ectopic focus are current topics of clinical
-research~\cite{kistler2006,Kahn2006,yamane2001}.
+research~\cite{Kistler2006,Kahn2006,Yamane2001}.
 This study shows how the model can provide more data for clinicians to study.
 
 \subsection{Model of Focal Atrial Tachycardia}
