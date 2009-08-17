@@ -1,5 +1,5 @@
 # plot for I-V curves and current traces
-set terminal postscript enhanced eps color size 17cm,15cm "Times-Roman" 20
+set terminal postscript enhanced eps color size 14.5cm,14.5cm "Helvetica" 18
 set output "figures/03_REST.eps"
 set border 3
 
@@ -16,7 +16,7 @@ set xrange [0:1000]
 set multiplot layout 2,2 rowsfirst
 
 # plot the APDr curves
-set label 1 "A" at graph -0.25,1 font "Times-Roman,30"
+set label 1 "A" at graph -0.25,1 font "Helvetica,30"
 set xlabel "DI (ms)"
 set ylabel "APD_{90} (ms)"
 plot    "03_REST/apdr/apdr_control.dat" w l ls 1, \

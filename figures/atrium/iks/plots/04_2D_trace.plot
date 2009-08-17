@@ -1,5 +1,5 @@
 # plot for tip traces
-set terminal postscript enhanced eps color size 3cm,3cm "Times-Roman" 20
+set terminal postscript enhanced eps color size 3cm,3cm "Helvetica" 20
 
 # setup line styles to use
 set style line 1 lw 3 lt 1 pt 7 ps 0.5 lc "black"

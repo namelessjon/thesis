@@ -1,5 +1,5 @@
 # plot for I-V curves and current traces
-set terminal postscript enhanced eps color size 17cm,19cm "Times-Roman" 20
+set terminal postscript enhanced eps color size 14.5cm,16cm "Helvetica" 18
 set output "figures/01_IV.eps"
 set border 0
 set multiplot layout 3,2 rowsfirst
@@ -9,7 +9,7 @@ set style line 3 lw 3 lt 1 lc rgb "red"
 set style line 4 lw 3 lt 1 lc rgb "red" pt 6
 set style line 5 lw 5 lt 1 lc "black"
 # fill first graph with something for the moment
-set label 1 "A" at graph 0.05,0.95 font "Times-Roman,30"
+set label 1 "A" at graph 0.05,0.95 font "Helvetica,30"
 unset xtics
 unset ytics
 plot sin(x)

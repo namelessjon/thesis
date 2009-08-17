@@ -1,5 +1,5 @@
 # 2D ap profiles and power spectrums
-set terminal postscript enhanced eps color size 17cm,5.66cm "Times-Roman" 20
+set terminal postscript enhanced eps color size 14.5cm,4.5cm "Helvetica" 18
 
 # setup line styles to use
 set style line 1 lw 3 lt 1 lc "black"
@@ -25,7 +25,7 @@ set yrange [-85:15]
 set xlabel "t (ms)"
 set ylabel "mV"
 
-set label 1 "A" at graph -0.4,1.15 font "Times-Roman,20"
+set label 1 "A" at graph -0.4,1.15 font "Helvetica,20"
 plot    "05_2D_freq/2D_ap_profiles.dat" u 5:6 w l ls 1
 set label 1 "C"
 plot    "05_2D_freq/2D_ap_profiles.dat" u 1:2 w l ls 2
