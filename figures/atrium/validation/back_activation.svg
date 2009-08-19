@@ -9,8 +9,8 @@
    xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="566.92914"
-   height="354.33069"
+   width="513.77954"
+   height="283.46457"
    id="svg2"
    sodipodi:version="0.32"
    inkscape:version="0.46"
@@ -85,6 +85,20 @@
        inkscape:vp_y="0 : 1000 : 0"
        inkscape:vp_x="0 : 526.18109 : 1"
        sodipodi:type="inkscape:persp3d" />
+    <inkscape:perspective
+       id="perspective2936"
+       inkscape:persp3d-origin="372.04724 : 350.78739 : 1"
+       inkscape:vp_z="744.09448 : 526.18109 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_x="0 : 526.18109 : 1"
+       sodipodi:type="inkscape:persp3d" />
+    <inkscape:perspective
+       id="perspective3105"
+       inkscape:persp3d-origin="372.04724 : 350.78739 : 1"
+       inkscape:vp_z="744.09448 : 526.18109 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_x="0 : 526.18109 : 1"
+       sodipodi:type="inkscape:persp3d" />
   </defs>
   <sodipodi:namedview
      id="base"
@@ -97,12 +111,12 @@
      inkscape:pageopacity="1"
      inkscape:pageshadow="2"
      inkscape:zoom="1.4"
-     inkscape:cx="277.29095"
-     inkscape:cy="151.71605"
-     inkscape:document-units="px"
+     inkscape:cx="313.96758"
+     inkscape:cy="188.06332"
+     inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
-     units="cm"
+     units="mm"
      inkscape:window-width="1280"
      inkscape:window-height="951"
      inkscape:window-x="0"
@@ -119,163 +133,177 @@
     </rdf:RDF>
   </metadata>
   <g
+     inkscape:groupmode="layer"
+     id="layer2"
+     inkscape:label="images">
+    <image
+       y="2.2903912"
+       x="0"
+       id="back_het_010"
+       height="139.44189"
+       width="151.29922"
+       sodipodi:absref="/home/jon/thesis/figures/atrium/validation/excitation_back/back_het0.18_010.png"
+       xlink:href="excitation_back/back_het0.18_010.png"
+       sodipodi:insensitive="true" />
+    <image
+       y="2.2903912"
+       x="151.29922"
+       id="back_het_015"
+       height="139.44189"
+       width="151.29922"
+       sodipodi:absref="/home/jon/thesis/figures/atrium/validation/excitation_back/back_het0.18_015.png"
+       xlink:href="excitation_back/back_het0.18_015.png"
+       sodipodi:insensitive="true" />
+    <image
+       y="2.2903912"
+       x="302.59844"
+       id="back_het_020"
+       height="139.44189"
+       width="151.29922"
+       sodipodi:absref="/home/jon/thesis/figures/atrium/validation/excitation_back/back_het0.18_020.png"
+       xlink:href="excitation_back/back_het0.18_020.png"
+       sodipodi:insensitive="true" />
+    <image
+       y="141.7322812"
+       x="0"
+       id="back_het_025"
+       height="139.44189"
+       width="151.29922"
+       sodipodi:absref="/home/jon/thesis/figures/atrium/validation/excitation_back/back_het0.18_025.png"
+       xlink:href="excitation_back/back_het0.18_025.png"
+       sodipodi:insensitive="true" />
+    <image
+       y="141.7322812"
+       x="151.29922"
+       id="back_het_040"
+       height="139.44189"
+       width="151.29922"
+       sodipodi:absref="/home/jon/thesis/figures/atrium/validation/excitation_back/back_het0.18_040.png"
+       xlink:href="excitation_back/back_het0.18_040.png"
+       sodipodi:insensitive="true" />
+    <image
+       y="141.7322812"
+       x="302.59844"
+       id="back_het_060"
+       height="139.44189"
+       width="151.29922"
+       sodipodi:absref="/home/jon/thesis/figures/atrium/validation/excitation_back/back_het0.18_060.png"
+       xlink:href="excitation_back/back_het0.18_060.png"
+       sodipodi:insensitive="true" />
+  </g>
+  <g
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1">
-    <image
-       y="13.884404"
-       x="0"
-       id="image2466"
-       height="163.28093"
-       width="177.16536"
-       sodipodi:absref="/media/KINGSTON/Atrium/back_het0.18_010.png"
-       xlink:href="/media/KINGSTON/Atrium/back_het0.18_010.png" />
-    <image
-       y="15.906468"
-       x="177.16536"
-       id="image2533"
-       height="161.25887"
-       width="177.16536"
-       sodipodi:absref="/media/KINGSTON/Atrium/back_het0.18_015.png"
-       xlink:href="/media/KINGSTON/Atrium/back_het0.18_015.png" />
-    <image
-       y="16.055593"
-       x="354.33072"
-       id="image2600"
-       height="161.10974"
-       width="177.16536"
-       sodipodi:absref="/media/KINGSTON/Atrium/back_het0.18_020.png"
-       xlink:href="/media/KINGSTON/Atrium/back_het0.18_020.png" />
-    <image
-       y="188.34296"
-       x="0"
-       id="image2667"
-       height="165.98773"
-       width="177.16536"
-       sodipodi:absref="/media/KINGSTON/Atrium/back_het0.18_025.png"
-       xlink:href="/media/KINGSTON/Atrium/back_het0.18_025.png" />
-    <image
-       y="190.96326"
-       x="177.16536"
-       id="image2734"
-       height="163.36743"
-       width="177.16536"
-       sodipodi:absref="/media/KINGSTON/Atrium/back_het0.18_040.png"
-       xlink:href="/media/KINGSTON/Atrium/back_het0.18_040.png" />
-    <image
-       y="189.42206"
-       x="354.33072"
-       id="image2801"
-       height="164.90863"
-       width="177.16536"
-       sodipodi:absref="/media/KINGSTON/Atrium/back_het0.18_060.png"
-       xlink:href="/media/KINGSTON/Atrium/back_het0.18_060.png" />
     <text
        xml:space="preserve"
        style="font-size:30px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Times New Roman;-inkscape-font-specification:Times New Roman"
-       x="-0.8203125"
+       x="2.7229946"
        y="16.982479"
        id="text2805"><tspan
          sodipodi:role="line"
          id="tspan2807"
-         x="-0.8203125"
+         x="2.7229946"
          y="16.982479"
-         style="font-size:20px">(i)</tspan></text>
+         style="font-size:18">(i)</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:30px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Times New Roman;-inkscape-font-specification:Times New Roman"
-       x="176.34505"
+       x="155.08521"
        y="16.982479"
        id="text2809"><tspan
          sodipodi:role="line"
          id="tspan2811"
-         x="176.34505"
+         x="155.08521"
          y="16.982479"
-         style="font-size:20px">(ii)</tspan></text>
+         style="font-size:18">(ii)</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:30px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Times New Roman;-inkscape-font-specification:Times New Roman"
-       x="-0.8203125"
-       y="194.14783"
+       x="2.7229946"
+       y="162.14783"
        id="text2813"><tspan
          sodipodi:role="line"
          id="tspan2815"
-         x="-0.8203125"
-         y="194.14783"
-         style="font-size:20px">(iv)</tspan></text>
+         x="2.7229946"
+         y="162.14783"
+         style="font-size:18">(iv)</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:30px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Times New Roman;-inkscape-font-specification:Times New Roman"
-       x="353.51041"
+       x="305.44742"
        y="16.982479"
        id="text2817"><tspan
          sodipodi:role="line"
          id="tspan2819"
-         x="353.51041"
+         x="305.44742"
          y="16.982479"
-         style="font-size:20px">(iii)</tspan></text>
+         style="font-size:18">(iii)</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:30px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Times New Roman;-inkscape-font-specification:Times New Roman"
-       x="176.34505"
-       y="194.14783"
+       x="155.08521"
+       y="162.14783"
        id="text2821"><tspan
          sodipodi:role="line"
          id="tspan2823"
-         x="176.34505"
-         y="194.14783"
-         style="font-size:20px">(v)</tspan></text>
+         x="155.08521"
+         y="162.14783"
+         style="font-size:18">(v)</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:30px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Times New Roman;-inkscape-font-specification:Times New Roman"
-       x="353.51041"
-       y="194.14783"
+       x="305.44742"
+       y="162.14783"
        id="text2825"
        inkscape:export-xdpi="600"
        inkscape:export-ydpi="600"><tspan
          sodipodi:role="line"
          id="tspan2827"
-         x="353.51041"
-         y="194.14783"
-         style="font-size:20px">(vi)</tspan></text>
-    <image
-       y="79.687828"
-       x="545"
-       id="image2959"
-       height="205"
-       width="10"
-       sodipodi:absref="/media/KINGSTON/Atrium/back_voltage_scale_bare.png"
-       xlink:href="/media/KINGSTON/Atrium/back_voltage_scale_bare.png" />
+         x="305.44742"
+         y="162.14783"
+         style="font-size:18">(vi)</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:30px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Times New Roman;-inkscape-font-specification:Times New Roman"
-       x="534.28571"
-       y="72.187828"
+       x="479.87921"
+       y="31.473541"
        id="text2963"><tspan
          sodipodi:role="line"
          id="tspan2965"
-         x="534.28571"
-         y="72.187828">20</tspan></text>
+         x="479.87921"
+         y="31.473541"
+         style="font-size:18px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Sans;-inkscape-font-specification:Sans">20</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:30px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Times New Roman;-inkscape-font-specification:Times New Roman"
-       x="525"
-       y="307.9021"
+       x="474.70413"
+       y="267.18781"
        id="text2967"><tspan
          sodipodi:role="line"
          id="tspan2969"
-         x="525"
-         y="307.9021">-80</tspan></text>
+         x="474.70413"
+         y="267.18781"
+         style="font-size:18px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Sans;-inkscape-font-specification:Sans">-80</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:30px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Times New Roman;-inkscape-font-specification:Times New Roman"
-       x="-193.48874"
-       y="538.56726"
+       x="-158.44933"
+       y="479.28156"
        id="text2971"
        transform="matrix(0,-1,1,0,0,0)"><tspan
          sodipodi:role="line"
          id="tspan2973"
-         x="-193.48874"
-         y="538.56726">mV</tspan></text>
+         x="-158.44933"
+         y="479.28156"
+         style="font-size:18px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Sans;-inkscape-font-specification:Sans">mV</tspan></text>
+    <image
+       y="36.479218"
+       x="483.2533"
+       id="image3107"
+       height="212.59842"
+       width="17.716536"
+       sodipodi:absref="/home/jon/thesis/figures/atrium/validation/excitation_back/back_voltage_scale_bare.png"
+       xlink:href="excitation_back/back_voltage_scale_bare.png" />
   </g>
 </svg>
