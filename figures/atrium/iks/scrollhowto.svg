@@ -9,8 +9,8 @@
    xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="602.36218"
-   height="150.59055"
+   width="513.77954"
+   height="113.38583"
    id="svg2"
    sodipodi:version="0.32"
    inkscape:version="0.46"
@@ -57,6 +57,34 @@
        inkscape:vp_y="0 : 1000 : 0"
        inkscape:vp_x="0 : 526.18109 : 1"
        sodipodi:type="inkscape:persp3d" />
+    <inkscape:perspective
+       id="perspective3247"
+       inkscape:persp3d-origin="372.04724 : 350.78739 : 1"
+       inkscape:vp_z="744.09448 : 526.18109 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_x="0 : 526.18109 : 1"
+       sodipodi:type="inkscape:persp3d" />
+    <inkscape:perspective
+       id="perspective3314"
+       inkscape:persp3d-origin="372.04724 : 350.78739 : 1"
+       inkscape:vp_z="744.09448 : 526.18109 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_x="0 : 526.18109 : 1"
+       sodipodi:type="inkscape:persp3d" />
+    <inkscape:perspective
+       id="perspective3381"
+       inkscape:persp3d-origin="372.04724 : 350.78739 : 1"
+       inkscape:vp_z="744.09448 : 526.18109 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_x="0 : 526.18109 : 1"
+       sodipodi:type="inkscape:persp3d" />
+    <inkscape:perspective
+       id="perspective3448"
+       inkscape:persp3d-origin="372.04724 : 350.78739 : 1"
+       inkscape:vp_z="744.09448 : 526.18109 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_x="0 : 526.18109 : 1"
+       sodipodi:type="inkscape:persp3d" />
   </defs>
   <sodipodi:namedview
      id="base"
@@ -66,15 +94,15 @@
      gridtolerance="10000"
      guidetolerance="10"
      objecttolerance="10"
-     inkscape:pageopacity="0.0"
+     inkscape:pageopacity="1"
      inkscape:pageshadow="2"
      inkscape:zoom="1.7045455"
-     inkscape:cx="313.25678"
-     inkscape:cy="64.83762"
-     inkscape:document-units="px"
+     inkscape:cx="265.09887"
+     inkscape:cy="38.451673"
+     inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
-     units="cm"
+     units="mm"
      inkscape:window-width="1280"
      inkscape:window-height="951"
      inkscape:window-x="0"
@@ -95,76 +123,80 @@
      inkscape:groupmode="layer"
      id="layer1">
     <image
-       id="image2449"
-       height="150"
-       width="150"
-       sodipodi:absref="/home/jon/cardiac/documents/PhysicaD_IKs/3D Run TiffsIKs_run1/court0025.tiff"
-       xlink:href="/home/jon/cardiac/documents/PhysicaD_IKs/3D Run TiffsIKs_run1/court0025.tiff"
-       y="0"
-       x="0" />
+       y="1.4691849"
+       x="0"
+       id="image3249"
+       height="111.91665"
+       width="124.01575"
+       sodipodi:absref="/home/jon/thesis/figures/atrium/iks/09_howto/howto_01.png"
+       xlink:href="09_howto/howto_01.png" />
     <image
-       y="0"
-       x="150"
-       id="image2550"
-       height="150"
-       width="150"
-       sodipodi:absref="/home/jon/cardiac/documents/PhysicaD_IKs/3D Run TiffsIKs_run1/court0100.tiff"
-       xlink:href="/home/jon/cardiac/documents/PhysicaD_IKs/3D Run TiffsIKs_run1/court0100.tiff" />
+       y="1.4691849"
+       x="128.00444"
+       id="image3316"
+       height="111.91665"
+       width="124.01575"
+       sodipodi:absref="/home/jon/thesis/figures/atrium/iks/09_howto/howto_02.png"
+       xlink:href="09_howto/howto_02.png" />
     <image
-       x="300"
-       id="image2702"
-       height="150"
-       width="150"
-       sodipodi:absref="/home/jon/cardiac/documents/PhysicaD_IKs/3D Run TiffsIKs_run1/court0175.tiff"
-       xlink:href="/home/jon/cardiac/documents/PhysicaD_IKs/3D Run TiffsIKs_run1/court0175.tiff"
-       y="0" />
+       y="1.4691849"
+       x="256.00888"
+       id="image3383"
+       height="111.91665"
+       width="124.01575"
+       sodipodi:absref="/home/jon/thesis/figures/atrium/iks/09_howto/howto_03.png"
+       xlink:href="09_howto/howto_03.png" />
     <image
-       y="0"
-       x="450"
-       id="image2871"
-       height="150"
-       width="150"
-       sodipodi:absref="/home/jon/cardiac/documents/PhysicaD_IKs/3D Run TiffsIKs_run1/court0250.tiff"
-       xlink:href="/home/jon/cardiac/documents/PhysicaD_IKs/3D Run TiffsIKs_run1/court0250.tiff" />
+       y="1.4691849"
+       x="384.01334"
+       id="image3450"
+       height="111.91665"
+       width="124.01575"
+       sodipodi:absref="/home/jon/thesis/figures/atrium/iks/09_howto/howto_04.png"
+       xlink:href="09_howto/howto_04.png" />
     <text
        xml:space="preserve"
        style="font-size:30px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Times New Roman;-inkscape-font-specification:Times New Roman"
-       x="12.32"
-       y="26.217209"
+       x="3.4026821"
+       y="14.591255"
        id="text2875"><tspan
          sodipodi:role="line"
          id="tspan2877"
-         x="12.32"
-         y="26.217209">A</tspan></text>
+         x="3.4026821"
+         y="14.591255"
+         style="font-size:18px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Sans;-inkscape-font-specification:Sans">A</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:30px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Times New Roman;-inkscape-font-specification:Times New Roman"
-       x="170.72"
-       y="24.457212"
+       x="129.78221"
+       y="14.591255"
        id="text2879"><tspan
          sodipodi:role="line"
          id="tspan2881"
-         x="170.72"
-         y="24.457212">B</tspan></text>
+         x="129.78221"
+         y="14.591255"
+         style="font-size:18px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Sans;-inkscape-font-specification:Sans">B</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:30px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Times New Roman;-inkscape-font-specification:Times New Roman"
-       x="319.73334"
-       y="24.457212"
+       x="258.54004"
+       y="14.82856"
        id="text2883"><tspan
          sodipodi:role="line"
          id="tspan2885"
-         x="319.73334"
-         y="24.457212">C</tspan></text>
+         x="258.54004"
+         y="14.82856"
+         style="font-size:18px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Sans;-inkscape-font-specification:Sans">C</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:30px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Times New Roman;-inkscape-font-specification:Times New Roman"
-       x="469.33334"
-       y="25.04388"
+       x="385.7897"
+       y="14.591255"
        id="text2887"><tspan
          sodipodi:role="line"
          id="tspan2889"
-         x="469.33334"
-         y="25.04388">D</tspan></text>
+         x="385.7897"
+         y="14.591255"
+         style="font-size:18px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Sans;-inkscape-font-specification:Sans">D</tspan></text>
   </g>
 </svg>

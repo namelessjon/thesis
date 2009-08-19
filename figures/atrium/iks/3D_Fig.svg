@@ -9,8 +9,8 @@
    xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="602.36218"
-   height="354.33069"
+   width="513.77954"
+   height="230.31496"
    id="svg2"
    sodipodi:version="0.32"
    inkscape:version="0.46"
@@ -85,6 +85,62 @@
        inkscape:vp_y="0 : 1000 : 0"
        inkscape:vp_x="0 : 526.18109 : 1"
        sodipodi:type="inkscape:persp3d" />
+    <inkscape:perspective
+       id="perspective2555"
+       inkscape:persp3d-origin="372.04724 : 350.78739 : 1"
+       inkscape:vp_z="744.09448 : 526.18109 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_x="0 : 526.18109 : 1"
+       sodipodi:type="inkscape:persp3d" />
+    <inkscape:perspective
+       id="perspective2622"
+       inkscape:persp3d-origin="372.04724 : 350.78739 : 1"
+       inkscape:vp_z="744.09448 : 526.18109 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_x="0 : 526.18109 : 1"
+       sodipodi:type="inkscape:persp3d" />
+    <inkscape:perspective
+       id="perspective2689"
+       inkscape:persp3d-origin="372.04724 : 350.78739 : 1"
+       inkscape:vp_z="744.09448 : 526.18109 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_x="0 : 526.18109 : 1"
+       sodipodi:type="inkscape:persp3d" />
+    <inkscape:perspective
+       id="perspective2756"
+       inkscape:persp3d-origin="372.04724 : 350.78739 : 1"
+       inkscape:vp_z="744.09448 : 526.18109 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_x="0 : 526.18109 : 1"
+       sodipodi:type="inkscape:persp3d" />
+    <inkscape:perspective
+       id="perspective2823"
+       inkscape:persp3d-origin="372.04724 : 350.78739 : 1"
+       inkscape:vp_z="744.09448 : 526.18109 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_x="0 : 526.18109 : 1"
+       sodipodi:type="inkscape:persp3d" />
+    <inkscape:perspective
+       id="perspective2890"
+       inkscape:persp3d-origin="372.04724 : 350.78739 : 1"
+       inkscape:vp_z="744.09448 : 526.18109 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_x="0 : 526.18109 : 1"
+       sodipodi:type="inkscape:persp3d" />
+    <inkscape:perspective
+       id="perspective2957"
+       inkscape:persp3d-origin="372.04724 : 350.78739 : 1"
+       inkscape:vp_z="744.09448 : 526.18109 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_x="0 : 526.18109 : 1"
+       sodipodi:type="inkscape:persp3d" />
+    <inkscape:perspective
+       id="perspective3024"
+       inkscape:persp3d-origin="372.04724 : 350.78739 : 1"
+       inkscape:vp_z="744.09448 : 526.18109 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_x="0 : 526.18109 : 1"
+       sodipodi:type="inkscape:persp3d" />
   </defs>
   <sodipodi:namedview
      id="base"
@@ -97,16 +153,18 @@
      inkscape:pageopacity="1"
      inkscape:pageshadow="2"
      inkscape:zoom="1.4"
-     inkscape:cx="380.07726"
-     inkscape:cy="134.5875"
-     inkscape:document-units="px"
+     inkscape:cx="282.22012"
+     inkscape:cy="212.15812"
+     inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
-     units="cm"
+     units="mm"
      inkscape:window-width="1280"
-     inkscape:window-height="954"
+     inkscape:window-height="951"
      inkscape:window-x="0"
-     inkscape:window-y="25" />
+     inkscape:window-y="0"
+     showborder="true"
+     borderlayer="true" />
   <metadata
      id="metadata7">
     <rdf:RDF>
@@ -122,137 +180,135 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1">
-    <image
-       y="-177.16533"
-       x="63.779526"
-       id="image2466"
-       height="134.64568"
-       width="134.64568"
-       sodipodi:absref="/media/s140g/PhysicaD_IKs/AF0_Control_3D_images/court400.tiff"
-       xlink:href="/media/s140g/PhysicaD_IKs/AF0_Control_3D_images/court400.tiff"
-       transform="scale(1,-1)" />
-    <image
-       y="-177.16533"
-       x="198.4252"
-       id="image2516"
-       height="134.64568"
-       width="134.64568"
-       sodipodi:absref="/media/s140g/PhysicaD_IKs/AF0_Control_3D_images/court800.tiff"
-       xlink:href="/media/s140g/PhysicaD_IKs/AF0_Control_3D_images/court800.tiff"
-       transform="scale(1,-1)" />
-    <image
-       y="-177.16533"
-       x="333.07086"
-       id="image2566"
-       height="134.64568"
-       width="134.64568"
-       sodipodi:absref="/media/s140g/PhysicaD_IKs/AF0_Control_3D_images/court1200.tiff"
-       xlink:href="/media/s140g/PhysicaD_IKs/AF0_Control_3D_images/court1200.tiff"
-       transform="scale(1,-1)" />
-    <image
-       y="-177.16533"
-       x="467.71652"
-       id="image2616"
-       height="134.64568"
-       width="134.64568"
-       sodipodi:absref="/media/s140g/PhysicaD_IKs/AF0_Control_3D_images/court1600.tiff"
-       xlink:href="/media/s140g/PhysicaD_IKs/AF0_Control_3D_images/court1600.tiff"
-       transform="scale(1,-1)" />
-    <image
-       y="-333.07086"
-       x="63.779526"
-       id="image2683"
-       height="134.64568"
-       width="134.64568"
-       sodipodi:absref="/media/s140g/PhysicaD_IKs/3D_images_10%_Change_IKs,leak/court0400.tiff"
-       xlink:href="/media/s140g/PhysicaD_IKs/3D_images_10%_Change_IKs,leak/court0400.tiff"
-       transform="scale(1,-1)" />
-    <image
-       y="-333.07086"
-       x="198.4252"
-       id="image2733"
-       height="134.64568"
-       width="134.64568"
-       sodipodi:absref="/media/s140g/PhysicaD_IKs/3D_images_10%_Change_IKs,leak/court0800.tiff"
-       xlink:href="/media/s140g/PhysicaD_IKs/3D_images_10%_Change_IKs,leak/court0800.tiff"
-       transform="scale(1,-1)" />
-    <image
-       y="-333.07086"
-       x="333.07086"
-       id="image2800"
-       height="134.64568"
-       width="134.64568"
-       sodipodi:absref="/media/s140g/PhysicaD_IKs/3D_images_10%_Change_IKs,leak/court1200.tiff"
-       xlink:href="/media/s140g/PhysicaD_IKs/3D_images_10%_Change_IKs,leak/court1200.tiff"
-       transform="scale(1,-1)" />
-    <image
-       y="-333.07086"
-       x="467.71652"
-       id="image2850"
-       height="134.64568"
-       width="134.64568"
-       sodipodi:absref="/media/s140g/PhysicaD_IKs/3D_images_10%_Change_IKs,leak/court1600.tiff"
-       xlink:href="/media/s140g/PhysicaD_IKs/3D_images_10%_Change_IKs,leak/court1600.tiff"
-       transform="scale(1,-1)" />
     <text
        xml:space="preserve"
        style="font-size:24px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Sans;-inkscape-font-specification:Sans"
-       x="7.8571429"
-       y="238.61642"
+       x="-1.7666016"
+       y="141.35052"
        id="text2854"><tspan
          sodipodi:role="line"
          id="tspan2856"
-         x="7.8571429"
-         y="238.61642">HT10</tspan></text>
+         x="-1.7666016"
+         y="141.35052"
+         style="font-size:18px">HT10</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:24px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Sans;-inkscape-font-specification:Sans"
-       x="15.714286"
-       y="86.473549"
+       x="-0.59765625"
+       y="34.814007"
        id="text2858"><tspan
          sodipodi:role="line"
          id="tspan2860"
-         x="15.714286"
-         y="86.473549">WT</tspan></text>
+         x="-0.59765625"
+         y="34.814007"
+         style="font-size:18px">WT</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:40px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Sans;-inkscape-font-specification:Sans"
-       x="112.42968"
-       y="41.861622"
+       x="76.810593"
+       y="15.343469"
        id="text2862"><tspan
          sodipodi:role="line"
          id="tspan2864"
-         x="112.42968"
-         y="41.861622">I</tspan></text>
+         x="76.810593"
+         y="15.343469"
+         style="font-size:18px">I (1 s)</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:40px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Sans;-inkscape-font-specification:Sans"
-       x="247.07533"
-       y="41.861622"
+       x="191.08543"
+       y="15.343469"
        id="text2866"><tspan
          sodipodi:role="line"
          id="tspan2868"
-         x="247.07533"
-         y="41.861622">II</tspan></text>
+         x="191.08543"
+         y="15.343469"
+         style="font-size:18px">II (2 s)</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:40px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Sans;-inkscape-font-specification:Sans"
-       x="381.72101"
-       y="41.861622"
+       x="305.36029"
+       y="15.343469"
        id="text2870"><tspan
          sodipodi:role="line"
          id="tspan2872"
-         x="381.72101"
-         y="41.861622">III</tspan></text>
+         x="305.36029"
+         y="15.343469"
+         style="font-size:18px">III (3 s)</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:40px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Sans;-inkscape-font-specification:Sans"
-       x="516.3667"
-       y="41.861622"
+       x="421.44568"
+       y="15.343469"
        id="text2874"><tspan
          sodipodi:role="line"
          id="tspan2876"
-         x="516.3667"
-         y="41.861622">IV</tspan></text>
+         x="421.44568"
+         y="15.343469"
+         style="font-size:18px">IV (4 s)</tspan></text>
+    <image
+       y="21.691936"
+       x="46.062992"
+       id="image2557"
+       height="102.32379"
+       width="113.38583"
+       sodipodi:absref="/home/jon/thesis/figures/atrium/iks/08_3D/control_0400.png"
+       xlink:href="08_3D/control_0400.png" />
+    <image
+       y="21.691936"
+       x="162.99213"
+       id="image2624"
+       height="102.32379"
+       width="113.38583"
+       sodipodi:absref="/home/jon/thesis/figures/atrium/iks/08_3D/control_0800.png"
+       xlink:href="08_3D/control_0800.png" />
+    <image
+       y="21.691936"
+       x="279.92126"
+       id="image2691"
+       height="102.32379"
+       width="113.38583"
+       sodipodi:absref="/home/jon/thesis/figures/atrium/iks/08_3D/control_1200.png"
+       xlink:href="08_3D/control_1200.png" />
+    <image
+       y="21.691936"
+       x="396.8504"
+       id="image2758"
+       height="102.32379"
+       width="113.38583"
+       sodipodi:absref="/home/jon/thesis/figures/atrium/iks/08_3D/control_1600.png"
+       xlink:href="08_3D/control_1600.png" />
+    <image
+       y="127.99115"
+       x="46.062992"
+       id="image2825"
+       height="102.32379"
+       width="113.38583"
+       sodipodi:absref="/home/jon/thesis/figures/atrium/iks/08_3D/s140g10_0400.png"
+       xlink:href="08_3D/s140g10_0400.png" />
+    <image
+       y="127.99115"
+       x="162.99213"
+       id="image2892"
+       height="102.32379"
+       width="113.38583"
+       sodipodi:absref="/home/jon/thesis/figures/atrium/iks/08_3D/s140g10_0800.png"
+       xlink:href="08_3D/s140g10_0800.png" />
+    <image
+       y="127.99115"
+       x="279.92126"
+       id="image2959"
+       height="102.32379"
+       width="113.38583"
+       sodipodi:absref="/home/jon/thesis/figures/atrium/iks/08_3D/s140g10_1200.png"
+       xlink:href="08_3D/s140g10_1200.png" />
+    <image
+       y="127.99115"
+       x="396.8504"
+       id="image3026"
+       height="102.32379"
+       width="113.38583"
+       sodipodi:absref="/home/jon/thesis/figures/atrium/iks/08_3D/s140g10_1600.png"
+       xlink:href="08_3D/s140g10_1600.png" />
   </g>
 </svg>
