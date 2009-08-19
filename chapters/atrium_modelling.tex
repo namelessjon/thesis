@@ -227,6 +227,43 @@ D_{\perp} & 0 & 0\\
 \end{equation}
 which is the diffusion tensor for isotropic conduction.
 
+The fibre orientations for the anatomical geometry used in this study are
+defined in two files.
+These two files contain the theta and phi components of the fibre vectors
+between $0$ and $\pi$, discretised in 255 steps.
+The relationship between the angles theta and phi and the unit vector of fibre
+direction, $\mathbf{f}$, are shown in
+Figure~\ref{fig:atrium:structure:unit_vector}.
+\begin{figure}
+\begin{center}
+\includegraphics{figures/atrium/structure/unit_vector}
+\end{center}
+\caption[Relationship of $\theta$, $\phi$ and $\mathbf{f}$]{
+\label{fig:atrium:structure:unit_vector}
+The relationship of the angles $\theta$ and $\phi$ with the unit vector of fibre
+orientation, $\mathbf{f}$.
+The angle $\theta$ is the angle between the $z$ axis and $\mathbf{f}$.
+The angle $\phi$ is the angle of rotation of $\mathbf{f}$ around the $z$ axis in
+the $x\text{--}y$ plane.
+}
+\end{figure}
+To convert theta and phi to the unit vector $\mathbf{f}$ we
+use~\cite{Misner1973},
+\begin{subequations}\label{eqn:atrium:structure:anglestof}
+\begin{align}
+f_x &= \cos\phi \sin\theta \label{eqn:atrium:structure:anglestofx}\\
+f_y &= \sin\phi \sin\theta\label{eqn:atrium:structure:anglestofy}\\
+f_z &= \cos\theta\label{eqn:atrium:structure:anglestofz}
+\end{align}
+\end{subequations}
+where $\theta$ and $\phi$ are as indicated in
+Figure~\ref{fig:atrium:structure:unit_vector}\ and $f_x$, $f_y$, $f_z$ are the
+$x$--, $y$--, $z$-- components of the vector $\mathbf{f}$.
+
+
+
+
+
 \subsection{Computational Implementation}
 
 The atrial geometry used in these studies is quite large, consisting of almost
