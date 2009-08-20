@@ -511,6 +511,24 @@ minutes for \unit{2}{s}\ of atrial activity using the original mesh.
 Using the fully refined mesh required approximately 190 minutes for the same
 computation.
 
+After computation of the potentials at all points on the body surface, the
+results were post-processed to extract the ECG.
+These data were stored in a JSON~\cite{json}\ formatted file which contained
+arrays representing the voltage of each of the 12 leads, the time step between
+each point and, optionally, information on the parameters used by the BSP
+algorithm.
+JSON offers a lightweight alternative to XML, whilst still being highly readable
+without the aid of computer translation.
+The high-precision ECG signals, typically at a frequency of \unit{1}{kHz}\
+were been passed through a digital low-pass filter at \unit{150}{Hz},
+corresponding to the diagnostic mode typically used in a clinical setting to
+produce the ECG traces.
+Using the three limb leads (LA, LL, RA) the WCT was computed and used to
+contruct isopotential maps.
+Whilst the algorithm employed offers a natural zero potential, the use of the
+WCT allows for direct comparison with clinical studies which almost exclusively
+employ the WCT for this purpose~\cite{Taccardi1966,Mirvis1980}
+
 
 \section{Simulating Sinus Rhythm}
 
@@ -523,11 +541,6 @@ electropphysiology for the atrial myocyte, pectinate muscle and crista
 terminalis cells.
 The atrium was paced at the site corresponding to the sinus node at a frequency
 of \unit{1}{Hz}\ for \unit{2}{s}.
-The output from this simulation was used to generate the body surface potential
-and from that, the ECG.
-The generated ECG signal was been passed through a digital low-pass filter at
-\unit{150}{Hz}, corresponding to the diagnostic mode typically used in a
-clinical setting.
 The body surface potential was calculated both with and without the presence of
 internal inhomogeneities by setting the internal conductivity of the relevant
 compartment to the value in Table~\ref{tbl:bsp:conductances}\ to include that
@@ -537,15 +550,10 @@ compartment, or to the torso conductivity to remove its influence.
 
 The Body Surface Potential Maps (BSPM) were constructed from the output of the
 simulations.
-Rather than visualize the raw potentials, the Wilson's central terminal was
-determined from the potentials on the elements chosen for the three limb leads.
-This was then used as the reference potential for the BSPMs presented in this
-section.
-The use of the Wilson's central terminal allows for more direct comparison with
-experimental recordings from electrode vests, which often use the Wilson's
-central terminal for their reference potential~\cite{Taccardi1966,Mirvis1980}.
 In the following descriptions, the distribution is described using the using the
 coordinate system of the body rather than of the image.
+Note that the raw signals are presented here, that is to say, there is no
+filtering performed on the signals in the time domain.
 
 \begin{figure}
 \includegraphics{figures/bsp/bsp_thorax}
