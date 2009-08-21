@@ -1173,12 +1173,37 @@ Simulations were performed for all three cases: control, AF1 and AF2.
 However the results for AF1 and AF2 were qualitatively similar, although
 AF1 showed a much more profound effect on \apd\ reduction.
 
-Incorporating the heterogeneity and AFER data causes significant
-differences in \apd\ to manifest, as shown in Figure~\ref{fig:apdr}. The
-effects of AFER are not uniform across the different cell types of the
-atrium and it increases the difference in \apd\ between normal atrial
+Incorporating the heterogeneity and AFER data causes significant differences in
+\apd\ and AP morphology to manifest, as shown in
+Figure~\ref{fig:toolkit:afer:apd},A.
+The effects of AFER are not uniform across the different cell types of the
+atrium.
+In addition, the 
+
+
+and it increases the difference in \apd\ between normal atrial
 myocytes and the CT cells, increasing from \ms{20.1} in control to \ms{28.1}
 in AF1 and \ms{33.4} in AF2.
+
+\begin{figure}
+\centering
+\includegraphics{figures/toolkit/afer/figures/01_APD}
+\caption[AFER AP Plots And APD differences]{
+\label{fig:toolkit:afer:apd}
+\textbf{A}.
+Action potential profiles after pacing at \unit{1}{Hz}.
+Results are shown for AM/PM cells (solid lines) and CT cells (dashed lines).
+Control parameter traces are black, AF1 (Bosch) are red and AF2 (Workman) traces
+blue.
+The CT cells have a longer APD in all cases and show an elevated plateau
+potential.
+\textbf{B}.
+APD differences between AM/PM cells and CT cells after pacing at \unit{1}{Hz}.
+Colour scheme as for panel \textbf{A}.
+There is almost no difference in $\delta$\apd\ between control and AF1 CT cells,
+but $\delta$\apd\ increased markedly when AF2 parameters are used.
+}
+\end{figure}
 
 The APD\emph{r} curves, shown in Figure~\ref{fig:apdr}, are flatter over much
 of the range of diastolic intervals for AF1 and AF2 as compared to
@@ -1191,7 +1216,7 @@ slopes was 0.1, compared with 0.4 in AF1 and 0.5 in AF2 tissue.
 
 \begin{figure}
 \centering
-\includegraphics{figures/toolkit/afer/figures/01_APDR}
+\includegraphics{figures/toolkit/afer/figures/02_APDR}
 \caption[AFER APDr curves]{APDr curves for control CT (A), control AM/PM (B), AF1 CT (C),
 AF1 AM/PM (D), AF2 CT (E), AF2 AM/PM (F). In all cases the CT action
 potentials are above the AM/PM action potentials over the whole of the
