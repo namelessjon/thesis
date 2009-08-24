@@ -12,10 +12,10 @@ task :all => [:ecgs, :bsps, :flats]
 
 task :default => :all
 
-BSP_ROOT = "/media/My Passport/bsps/rotation_zxz"
+BSP_ROOT = "/media/My Passport/bsps/new_rot_test"
 A = 215
 B = 160
-G = 185
+G = 155
 
 %w{all blood lungs thorax}.each do |c|
   dir = "bsp_#{c}"
@@ -50,18 +50,18 @@ directory flat_dir
 FLAT_START = 8
 FLAT_SEQ   = [4, 16, 24, 36, 48, 68, 80, 90, 110, 128]
 PNGS       = FLAT_SEQ.map { |n| ["%04d" % (n), "%04d" % (FLAT_START+n)] }
-LEADS      = [ [505, 239], [541, 239], [566, 246], [586, 252], [607, 252], [625, 252]]
+LEADS      = [ [497, 239], [533, 239], [556, 246], [577, 252], [599, 252], [616, 252]]
 CIRCLES    = LEADS.map { |x,y| "-draw 'circle #{x},#{y} #{x-3},#{y}'" } # circle of r = 3
 
-PNGS.each do |mirvis,mine|
+PNGS.each do |mirvis, mine|
 
   dest = File.join(flat_dir, "flat.#{mirvis}.png")
-  name = name = "%s_%d_%d_%d" % ['all', A, B, G]
-  src  = File.join(BSP_ROOT, name, 'flat_png', "#{name}.#{mine}.png")
+  name = "%s_%d" % ['all', G]
+  src  = File.join(BSP_ROOT, name, 'flat_pngs', "#{name}_flat.#{mine}.png")
 
   file dest => [src, flat_dir] do |t|
     cp t.prerequisites.first, t.name
-    sh "mogrify #{CIRCLES.join(' ')} -crop 495x105+276+209 '#{t.name}'"
+    sh "mogrify #{CIRCLES.join(' ')} -crop 496x106+269+209 '#{t.name}'"
   end
 
   task :flats => dest
