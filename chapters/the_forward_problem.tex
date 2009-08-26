@@ -509,10 +509,12 @@ This can be accomplished without the need for costly clinical trials.
 \section{Focal Atrial Tachycardia}
 
 Atrial Tachycardias are one of the rarer forms of supraventricular
-tachycardia, accounting 
+tachycardia.
+They account for approximately 10\% of diagnosed supraventricular tachycardias/
 They tend to occur as a result of other cardiac or respiratory diseases.
-They are characterised by a high heart rate ($\geq$ \unit{250}{bpm}) and
-typically have evidence of an abnormal cardiac axis or P-wave morphology.
+They are characterised by a high heart rate ($\leq$ \unit{250}{bpm}) and
+typically have evidence of an abnormal cardiac axis or P-wave
+morphology~\cite{MacFarlaneSinus1989}.
 They are hard to treat with drugs, but radiofrequency ablation can be used with
 a high probability of success.
 Diagnosis of atrial tachycardia can be difficult due to a lack of data.
@@ -526,13 +528,13 @@ To model focal atrial tachycardia, the model developed in the previous chapter
 is used.
 Instead of pacing from the cells corresponding to the sinus node, various sites
 around the atria are selected.
-These sites are shown in Figure~\ref{fig:forward:sites}.
+These sites are shown in figure~\ref{fig:forward:fat:sites}.
+Their antatomic locations are summarised in table~\ref{tbl:forward:fat:sites}.
 All the nodes which have active cells within 10 cells (\mm{3.3}) are excited via
 direct current injection of \unit{2}{nS}\ for \ms{2}.
 The resulting excitation wave is then allowed to propagate without interference
-and the BSPM and ECG calculated.
-The ECGs are classified by the P-wave morphology and the time of first
-deflection in each lead.
-
+and the BSPM, ECG and derived VECG calculated.
+The algorithm developed by Kistler~et~al.~\cite{Kistler2006}\ is applied to the
+12 lead ECG and the origin of the focal point tachycardia estimated.
 
 
