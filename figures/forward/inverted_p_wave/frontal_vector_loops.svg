@@ -15,8 +15,11 @@
    sodipodi:version="0.32"
    inkscape:version="0.46+devel"
    version="1.0"
-   sodipodi:docname="New document 17"
-   inkscape:output_extension="org.inkscape.output.svg.inkscape">
+   sodipodi:docname="frontal_vector_loops.svg"
+   inkscape:output_extension="org.inkscape.output.svg.inkscape"
+   inkscape:export-filename="/home/jon/thesis/figures/forward/inverted_p_wave/frontal_vector_loops.png"
+   inkscape:export-xdpi="300"
+   inkscape:export-ydpi="300">
   <defs
      id="defs2489">
     <inkscape:perspective
@@ -63,7 +66,7 @@
      inkscape:pageopacity="1"
      inkscape:pageshadow="2"
      inkscape:zoom="1.3819157"
-     inkscape:cx="256.88977"
+     inkscape:cx="165.71199"
      inkscape:cy="256.88977"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
@@ -6942,5 +6945,56 @@
        id="path7411"
        style="fill:none;stroke:#000000;stroke-width:1.32485294;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none"
        d="m 257.55141,513.11633 255.56491,0 0,-255.56336 -255.56491,0 0,255.56336 z" />
+    <flowRoot
+       xml:space="preserve"
+       id="flowRoot12019"
+       style="font-size:12px"><flowRegion
+         id="flowRegion12021"><rect
+           id="rect12023"
+           width="23.156261"
+           height="23.879894"
+           x="4.3417988"
+           y="5.7890654" /></flowRegion><flowPara
+         id="flowPara12025"
+         style="font-size:18">(s)</flowPara></flowRoot>    <text
+       xml:space="preserve"
+       style="font-size:18px"
+       x="0.45241189"
+       y="15.662806"
+       id="text12027"><tspan
+         sodipodi:role="line"
+         id="tspan12029"
+         x="0.45241189"
+         y="15.662806">(s)</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:18px"
+       x="259.53333"
+       y="15.662806"
+       id="text12031"><tspan
+         sodipodi:role="line"
+         id="tspan12033"
+         x="259.53333"
+         y="15.662806">(a)</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:18px"
+       x="0.45241189"
+       y="273.32239"
+       id="text12035"><tspan
+         sodipodi:role="line"
+         id="tspan12037"
+         x="0.45241189"
+         y="273.32239">(b)</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:18px"
+       x="259.53333"
+       y="273.30481"
+       id="text12039"><tspan
+         sodipodi:role="line"
+         id="tspan12041"
+         x="259.53333"
+         y="273.30481">(c)</tspan></text>
   </g>
 </svg>
