@@ -12,56 +12,55 @@ task :all => [:ecgs, :bsps, :flats]
 
 task :default => :all
 
-BSP_ROOT = "/media/My Passport/bsps/new_rot_test"
-A = 215
-B = 160
-G = 155
+BSP_ROOT = "/media/My Passport/bsps/new_angle_315_135_310"
+A = 315
+B = 135
+G = 310
 
-%w{all blood lungs thorax}.each do |c|
+%w{all blood lungs torso}.each do |c|
   dir = "bsp_#{c}"
   directory dir
 
-  name = "%s_%d_%d_%d" % [c, A, B, G]
+  name = "%s_sinus_%d_%d_%d" % [c, A, B, G]
 
 
   %w{0010 0015 0020 0025 0040 0060 0180 0200 0220}.each do |snapshot|
     fn = "#{c}.#{snapshot}.png"
-    file File.join(dir, fn) => [File.join(BSP_ROOT, name, 'iso_pngs', "#{name}.#{snapshot}.png"), dir] do |t|
+    file File.join(dir, fn) => [File.join(BSP_ROOT, name, 'iso_png', "#{c}_sinus.#{snapshot}.png"), dir] do |t|
       cp t.prerequisites.first, t.name
-      sh "mogrify -crop 500x500+70+70 '#{t.name}'"
+      sh "mogrify -crop 500x500+276+7 '#{t.name}'"
     end
 
     task :bsps => File.join(dir, fn)
   end
 
-  file "ecg_#{c}.dat" => File.join(BSP_ROOT, name, "#{name}.dat") do |t|
+  file "ecg_#{c}.pdf" => File.join(BSP_ROOT, name, "#{name}_100Hz_joined.pdf") do |t|
     cp t.prerequisites.first, t.name
   end
 
-  [150].each do |freq|
-    filtered_ecg "ecg_#{c}", freq
-  end
+  task :ecgs => "ecg_#{c}.pdf"
 
 
 end
   
 flat_dir = "flat"
 directory flat_dir
-FLAT_START = 8
+FLAT_START = 10
 FLAT_SEQ   = [4, 16, 24, 36, 48, 68, 80, 90, 110, 128]
 PNGS       = FLAT_SEQ.map { |n| ["%04d" % (n), "%04d" % (FLAT_START+n)] }
-LEADS      = [ [497, 239], [533, 239], [556, 246], [577, 252], [599, 252], [616, 252]]
-CIRCLES    = LEADS.map { |x,y| "-draw 'circle #{x},#{y} #{x-3},#{y}'" } # circle of r = 3
+LEADS      = [ [464, 60], [534, 60], [584, 74], [625, 85], [666, 85], [703, 85]]
+CIRCLES    = LEADS.map { |x,y| "-draw 'circle #{x},#{y} #{x+6},#{y}'" } # circle of r = 6
 
 PNGS.each do |mirvis, mine|
 
   dest = File.join(flat_dir, "flat.#{mirvis}.png")
-  name = "%s_%d" % ['all', G]
-  src  = File.join(BSP_ROOT, name, 'flat_pngs', "#{name}_flat.#{mine}.png")
+  name = "%s_sinus_%d_%d_%d" % ['all', A, B, G]
+  src  = File.join(BSP_ROOT, name, 'flat_png', "all_sinus.#{mine}.png")
 
   file dest => [src, flat_dir] do |t|
     cp t.prerequisites.first, t.name
-    sh "mogrify #{CIRCLES.join(' ')} -crop 496x106+269+209 '#{t.name}'"
+    sh "mogrify -crop 997x210+16+148 '#{t.name}'"
+    sh "mogrify #{CIRCLES.join(' ')} '#{t.name}'"
   end
 
   task :flats => dest

@@ -520,9 +520,9 @@ algorithm.
 JSON offers a lightweight alternative to XML, whilst still being highly readable
 without the aid of computer translation.
 The high-precision ECG signals, typically at a frequency of \unit{1}{kHz}\
-were been passed through a digital low-pass filter at \unit{150}{Hz},
-corresponding to the diagnostic mode typically used in a clinical setting to
-produce the ECG traces.
+were been passed through a digital low-pass filter at \unit{100}{Hz},
+corresponding to the typical frequency response of a clinical ECG unit, from
+\unit{0.5}{Hz}\ to \unit{100}{Hz}.
 Using the three limb leads (LA, LL, RA) the WCT was computed and used to
 contruct isopotential maps.
 Whilst the algorithm employed offers a natural zero potential, the use of the
@@ -552,11 +552,11 @@ The Body Surface Potential Maps (BSPM) were constructed from the output of the
 simulations.
 In the following descriptions, the distribution is described using the using the
 coordinate system of the body rather than of the image.
-Note that the raw signals are presented here, that is to say, there is no
+Note that the raw signals are presented here, that is to say there is no
 filtering performed on the signals in the time domain.
 
 \begin{figure}
-\includegraphics{figures/bsp/bsp_thorax}
+\includegraphics{figures/bsp/bsp_torso}
 \caption[Body Surface Potential snapshots, homogeneous torso]{
 \label{bsp:fig:homo_bsp}
 Simulated BPSM during sinus rhythm with a homogeneous
@@ -727,13 +727,13 @@ previous two definitions.
 
 
 \begin{figure}
-\includegraphics{figures/bsp/ecg_thorax_150Hz}
+\includegraphics{figures/bsp/ecg_torso}
 \caption[12 lead P-wave ECG during sinus rhythm with homogeneous torso]{
 \label{bsp:fig:ecg_thorax}
 Simulated P-Wave ECG traces during sinus rhythm with homogeneous torso.
 One complete action potential cycle is shown.
 The stimulus is initiated at $t = 0$ in all traces.
-All traces have been smoothed with a \unit{150}{Hz}\ low-pass filter, common to
+All traces have been smoothed with a \unit{100}{Hz}\ low-pass filter, common to
 diagnostic modes on clinical ECG machines.
 }
 \end{figure}
@@ -757,14 +757,14 @@ The $\text{T}_{\text{P}}$ is broader than the P-wave, corresponding to the lower
 speed of repolarisation.
 
 \begin{figure}
-\includegraphics{figures/bsp/ecg_lungs_150Hz}
+\includegraphics{figures/bsp/ecg_lungs}
 \caption[12 lead ECG during sinus rhythm, lungs present.]{
 \label{bsp:fig:ecg_lungs}
 Simulated P-Wave ECG traces during sinus rhythm with inhomogeneous torso.
 Lungs assigned conductivity from Table~\ref{tbl:bsp:conductances}.
 One complete action potential cycle is shown.
 The stimulus is initiated at $t = 0$ in all traces.
-All traces have been smoothed with a \unit{150}{Hz}\ low-pass filter, common to
+All traces have been smoothed with a \unit{100}{Hz}\ low-pass filter, common to
 diagnostic modes on clinical ECG machines.
 }
 \end{figure}
@@ -791,14 +791,14 @@ The $\text{T}_{\text{P}}$ is broader than the P-wave in all leads.
 
 
 \begin{figure}
-\includegraphics{figures/bsp/ecg_blood_150Hz}
+\includegraphics{figures/bsp/ecg_blood}
 \caption[12 lead ECG during sinus rhythm, bloodmasses present.]{
 \label{bsp:fig:ecg_blood}
 Simulated P-Wave ECG traces during sinus rhythm with inhomogeneous torso.
 Blood masses assigned conductivity from Table~\ref{tbl:bsp:conductances}.
 One complete action potential cycle is shown.
 The stimulus is initiated at $t = 0$ in all traces.
-All traces have been smoothed with a \unit{150}{Hz}\ low-pass filter, common to
+All traces have been smoothed with a \unit{100}{Hz}\ low-pass filter, common to
 diagnostic modes on clinical ECG machines.
 }
 \end{figure}
@@ -820,14 +820,14 @@ It appears to start immediately after the P-wave in all leads.
 The $\text{T}_{\text{P}}$ is broader than the P-wave in all leads.
 
 \begin{figure}
-\includegraphics{figures/bsp/ecg_all_150Hz}
+\includegraphics{figures/bsp/ecg_all}
 \caption[12 lead ECG during sinus rhythm, all internal inhomogeneities present.]{
 \label{bsp:fig:ecg_all}
 Simulated P-Wave ECG traces during sinus rhythm with inhomogeneous torso.
 Lungs and blood masses assigned conductivity from Table~\ref{tbl:bsp:conductances}.
 One complete action potential cycle is shown.
 The stimulus is initiated at $t = 0$ in all traces.
-All traces have been smoothed with a \unit{150}{Hz}\ low-pass filter, common to
+All traces have been smoothed with a \unit{100}{Hz}\ low-pass filter, common to
 diagnostic modes on clinical ECG machines.
 }
 \end{figure}
