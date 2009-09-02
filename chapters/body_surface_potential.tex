@@ -9,7 +9,7 @@ insertion of a catheter electrode or other, more involved, surgical procedures.
 Instead they must rely on external tools such as the echocardiogram and the
 electrocardiogram (ECG).
 To reproduce the ECG with mathematical models, it is necessary to solve what is known as
-the ``forward problem''.
+the `forward problem'.
 
 \section{The Forward Problem}
 
@@ -445,7 +445,7 @@ Several of the triangular elements were picked as the sites of the ECG
 electrodes.
 The electrode locations are shown in figure~\ref{fig:bsp:torso},B.
 Conductances used for the various compartments of the torso are shown in
-Table~\ref{tbl:bsp:conductances}.
+table~\ref{tbl:bsp:conductances}.
 \begin{table}[h]
     \caption[Conductances of torso compartments]{
         Conductances used for the various compartments of the torso for solving
@@ -543,7 +543,7 @@ The atrium was paced at the site corresponding to the sinus node at a frequency
 of \unit{1}{Hz}\ for \unit{2}{s}.
 The body surface potential was calculated both with and without the presence of
 internal inhomogeneities by setting the internal conductivity of the relevant
-compartment to the value in Table~\ref{tbl:bsp:conductances}\ to include that
+compartment to the value in table~\ref{tbl:bsp:conductances}\ to include that
 compartment, or to the torso conductivity to remove its influence.
 
 \subsection{Simulated Body Surface Potential Maps}
@@ -561,6 +561,8 @@ filtering performed on the signals in the time domain.
 \label{bsp:fig:homo_bsp}
 Simulated BPSM during sinus rhythm with a homogeneous
 torso.
+Blue represents negative potentials, and red positive ones, relative to the zero
+defined by the wilson's central terminal.
 The torso begins approximately isopotential before a distinct pattern of
 potential, with an area of negative potential over the upper right lung and an
 area of positive potential on the lower torso.
@@ -583,11 +585,12 @@ Only excitation and repolarisation wavefronts generate dipoles and in the
 initial milliseconds the excitation wavefront is very small.
 In \ref{bsp:fig:homo_bsp}(iv) (\ms{25} after initial stimulus) there is an area
 of positive potential beginning to appear over the lower right lung, caused by
-the rapid conduction along the crista terminalis.
+the spread of excitation over the pectinate muscles.
 By frames (v) and (vi), the regions of different potential are much more
 regularly distributed with a predominately negative region centred on the upper
-right lung and a positive region over the lower and left of the torso.
-The excitation wavefront is moving towards the left leg.
+right lung and a positive region over the lower torso, centered further to the
+right than the left.
+The excitation wavefront is moving towards the legs.
 
 The three frames (vii--ix) corresponding the to the plateau and beginnings of the
 repolarisation show a much more diffuse arrangement of potentials.
@@ -605,14 +608,17 @@ underlying fibre structure.
 \caption[Body Surface Potential snapshots, with lungs]{
 \label{bsp:fig:lungs_bsp}
 Simulated body surface potential plots during sinus rhythm with lungs assigned
-conductivity from Table~\ref{tbl:bsp:conductances}.
+conductivity from table~\ref{tbl:bsp:conductances}.
+Blue represents negative potentials, and red positive ones, relative to the zero
+defined by the wilson's central terminal.
 The torso begins approximately isopotential before a distinct pattern of
 potential, with an area of negative potential over the upper right lung and
-area of positive potential on the left hand side.
-The area of negative potential is smaller than that seen on during the
-homogeneous torso simulations.
-This pattern then reverses during repolarisation.
-The maximum potential observed is \mv{0.278}\ and the minimum is \mv{-0.449}.
+area of positive potential on lower half of the torso.
+The positive peak is higher than that observed without lungs and the negative
+region appears to be larger.
+The positive--negative pattern then reverses during repolarisation, with the
+upper torso having a positive potential.
+The maximum potential observed is \mv{0.379}\ and the minimum is \mv{-0.475}.
 Snapshots shown for \ms{10}\ (i), \ms{15}\ (ii), \ms{20}\ (iii), \ms{25}\ (iv),
 \ms{40}\ (v), \ms{60}\ (vi), \ms{180}\ (vii), \ms{200}\ (viii) and \ms{220}\
 (ix)
@@ -622,14 +628,15 @@ Snapshots shown for \ms{10}\ (i), \ms{15}\ (ii), \ms{20}\ (iii), \ms{25}\ (iv),
 The evolution of the body surface potential with lungs is shown in
 figure~\ref{bsp:fig:lungs_bsp}.
 In \ref{bsp:fig:lungs_bsp}(iv) (\ms{25} after initial stimulus) a peak is
-beginning to appear over the lower right lung, caused by the rapid conduction
-along the crista terminalis but this peak is less pronounced than in the
-calculations lacking the lungs.
+beginning to appear over the lower right lung, caused as excitation starts to
+spread through the crista terminalis and pectinate muscles.
 By frames (v) and (vi), the potential is much more regularly distributed.
 In contrast to the simulation without lungs, the region of predominantly
-negative potential seems to be higher on the torso and smaller than that seen
-without lungs, as is the positive area on the lower left side.
-In addition, it appears that the lungs act to give a slight amplification
+negative potential seems to be larger in spatial extent than that which is
+observed without lungs.
+The corresponding positive peak does not seem to be any more extended, but it
+does have a greater magnitude.
+It appears that the lungs act to give a slight amplification
 effect, increasing the ranges of potential seen~\cite{Gulrajani1983}.
 
 The three frames (vii--ix) corresponding the to the plateau and beginnings of the
@@ -644,14 +651,16 @@ simulations in the homogeneous torso.
 \caption[Body Surface Potential snapshots, with blood masses]{
 \label{bsp:fig:blood_bsp}
 Simulated body surface potential plots during sinus rhythm with blood masses assigned
-conductivity from Table~\ref{tbl:bsp:conductances}.
+conductivity from table~\ref{tbl:bsp:conductances}.
+Blue represents negative potentials, and red positive ones, relative to the zero
+defined by the wilson's central terminal.
 The torso begins approximately isopotential before a distinct pattern of
 potential, with an area of negative potential over the right shoulder and an
-area of positive potential above the left hip.
+area of positive potential below.
 The pattern of potentials is similar to that observed in the simulation with a
 homogeneous torso, but it has a smaller magnitude.
 This pattern then reverses during repolarisation.
-The maximum potential observed is \mv{0.217}\ and the minimum is \mv{-0.439}.
+The maximum potential observed is \mv{0.304}\ and the minimum is \mv{-0.406}.
 Snapshots shown for \ms{10}\ (i), \ms{15}\ (ii), \ms{20}\ (iii), \ms{25}\ (iv),
 \ms{40}\ (v), \ms{60}\ (vi), \ms{180}\ (vii), \ms{200}\ (viii) and \ms{220}\
 (ix)
@@ -664,7 +673,7 @@ The potential distribution is initially almost uniform, when  in frame (i) at
 \ms{10}\ after initial excitation.
 In \ref{bsp:fig:blood_bsp}(iv) a positive potential is beginning to appear over
 the lower right lung, caused by the rapid conduction along the crista
-terminalis.
+terminalis and associated structures.
 In contrast to the simulations with the lungs present, or in the homogeneous
 torso, this appears to have a relatively well defined peak compared with the
 more diffuse potential seen in those simulations.
@@ -673,6 +682,10 @@ cases, extending further down the torso.
 By frames (v) and (vi), the pattern of potential observed on the body surface is
 very close to that seen in the homogeneous torso, although the maxima and minima
 are less extreme in the frames where the blood masses are included.
+The blood masses also seem to act as a focus, with the peak visible in frame (v)
+much smaller in spatial extent than the peak which is observed in the
+corresponding frames both in the homogeneous torso and in the torso with lungs.
+This effect is much less noticeable by frame (vi) however.
 
 The three frames (vii--ix) corresponding the to the plateau and beginnings of the
 repolarisation show a much more diffuse arrangement of potentials.
@@ -685,12 +698,14 @@ homogeneous calculations.
 \caption[Body Surface Potential snapshots, with all inhomogeneities]{
 \label{bsp:fig:all_bsp}
 Simulated body surface potential plots during sinus rhythm with all
-inhomogeneties assigned conductivities from Table~\ref{tbl:bsp:conductances}.
+inhomogeneties assigned conductivities from table~\ref{tbl:bsp:conductances}.
+Blue represents negative potentials, and red positive ones, relative to the zero
+defined by the wilson's central terminal.
 The torso begins approximately isopotential before a distinct pattern of
 potential, with an area of negative potential over the upper right lung and an
-area of positive potential on the left side.
+area of positive potential below it.
 This pattern then reverses during repolarisation.
-The maximum potential observed is \mv{0.233}\ and the minimum is \mv{-0.441}.
+The maximum potential observed is \mv{0.359}\ and the minimum is \mv{-0.465}.
 Snapshots shown for \ms{10}\ (i), \ms{15}\ (ii), \ms{20}\ (iii), \ms{25}\ (iv),
 \ms{40}\ (v), \ms{60}\ (vi), \ms{180}\ (vii), \ms{200}\ (viii) and \ms{220}\
 (ix)
@@ -705,8 +720,8 @@ This is closer to the potential distribution shown in the simulations with just
 blood masses included than those where lungs are present or where there a
 homogeneous torso.
 In contrast to this, frames (v) and (vi) show a distribution of potential much
-closer to that seen in the simulations where lungs are present, with a smaller
-area of negative potential.
+closer to that seen in the simulations where lungs are present, with a larger
+area of negative potential than is observed in the homogeneous torso.
 The final stages of evolution of the P-wave body surface potential, shown in
 frames (vii--ix) show a diffuse pattern, similar to that seen in all the other
 simulations.
@@ -730,27 +745,28 @@ previous two definitions.
 \begin{figure}
 \includegraphics{figures/bsp/ecg_torso}
 \caption[12 lead P-wave ECG during sinus rhythm with homogeneous torso]{
-\label{bsp:fig:ecg_thorax}
+\label{bsp:fig:ecg_torso}
 Simulated P-Wave ECG traces during sinus rhythm with homogeneous torso.
 One complete action potential cycle is shown.
 The stimulus is initiated at $t = 0$ in all traces.
-All traces have been smoothed with a \unit{100}{Hz}\ low-pass filter, common to
-diagnostic modes on clinical ECG machines.
+All traces have been smoothed with a \unit{100}{Hz}\ low-pass filter, to
+simulate the typical frequency response of clinical ECG units.
 }
 \end{figure}
 
 The ECG derived from the body surface potential simulations with a homogeneous
-torso is shown in figure~\ref{bsp:fig:ecg_thorax}.
-The P-wave has a duration of \ms{112}\ in lead II and an amplitude of \mv{0.311}.
+torso is shown in figure~\ref{bsp:fig:ecg_torso}.
+The P-wave has a duration of \ms{foo}\ in lead II and an amplitude of \mv{0.466}.
 The maximum and minimum potential differences observed in the leads are
-\mv{+0.311}\ and \mv{-0.359}\ seen in lead II and lead $\text{V}_{1}$, respectively.
-The P-wave is upright in leads I, II, aVL, aVF and $\text{V}_{\text{3--6}}$.
-It is biphasic in leads III and $\text{V}_{\text{2}}$.
-It is inverted in leads aVR and $\text{V}_{\text{1}}$, although there is an small
-initial upper deflection in $\text{V}_{\text{1}}$.
+\mv{+0.446}\ and \mv{-0.275}\ seen in lead II and lead aVR, respectively.
+The P-wave is positive in leads I, II, III, aVF and $\text{V}_{\text{3--6}}$.
+It is positive--negative biphasic in $\text{V}_{\text{1}}$ and $\text{V}_{\text{2}}$.
+It is inverted in leads aVR and aVL.
 
 The atrial repolarisation wave, the $\text{T}_{\text{P}}$ wave, is easily
-visible in all leads except leads III and $\text{V}_{\text{2}}$.
+visible in most leads.
+It is very flat, almost to the point of invisibility, in leads I, aVL and
+$\text{V}_{\text{1--3}}$.
 In all the leads in which it appears, it is inverted compared to the P-wave in
 that lead and has a lower (less than 50\% in all leads) amplitude.
 It appears to start immediately after the P-wave in all leads.
@@ -762,29 +778,28 @@ speed of repolarisation.
 \caption[12 lead ECG during sinus rhythm, lungs present.]{
 \label{bsp:fig:ecg_lungs}
 Simulated P-Wave ECG traces during sinus rhythm with inhomogeneous torso.
-Lungs assigned conductivity from Table~\ref{tbl:bsp:conductances}.
+Lungs assigned conductivity from table~\ref{tbl:bsp:conductances}.
 One complete action potential cycle is shown.
 The stimulus is initiated at $t = 0$ in all traces.
-All traces have been smoothed with a \unit{100}{Hz}\ low-pass filter, common to
-diagnostic modes on clinical ECG machines.
+All traces have been smoothed with a \unit{100}{Hz}\ low-pass filter.
+This is to closer emulate the frequency response of a typical clinical ECG unit.
 }
 \end{figure}
 
 The ECG corresponding to the simulations with inhomogeneous lungs is shown in
 figure~\ref{bsp:fig:ecg_lungs}.
-The P-wave has a duration of \ms{124}\ in lead II and an amplitude of \mv{+0.306}.
+The P-wave has a duration of \ms{foo}\ in lead II and an amplitude of \mv{+0.535}.
 The maximum and minimum potential differences observed in the leads are
-\mv{+0.306}\ and \mv{-0.390}\ seen in lead II and lead $\text{V}_{\text{1}}$, respectively.
-The P-wave is upright in leads I, II, aVL, aVF and $\text{V}_{\text{3--6}}$.
-It is biphasic in lead III.
-It is inverted in leads aVR and $\text{V}_{\text{1--2}}$, although there are
-many of fluctuations visible in lead $\text{V}_{\text{2}}$.
-None of this crossed the critical value of \mv{0.05}\ however.
-In general the amplitudes of the signals in the leads appears to be lower than
-in the simulations without lungs.
+\mv{+0.535}\ and \mv{-0.319}\ seen in lead II and lead $\text{V}_{\text{1}}$, respectively.
+The P-wave is positive in leads I, II, III, aVF and $\text{V}_{\text{3--6}}$.
+It is positive--negative biphasic in $\text{V}_{\text{1}}$ and $\text{V}_{\text{2}}$.
+It is inverted in leads aVR and aVL.
+In general, the presence of the lungs appears to amplify the signal compared to
+the simulations without lungs.
 
 The atrial repolarisation wave, the $\text{T}_{\text{P}}$ wave, is easily
-visible in all leads except leads III and $\text{V}_{\text{2}}$.
+visible in most leads, though in the leads which did not attain very high
+potentials (I, aVL, $\text{V}_{\text{1--3}}$) it is very flat.
 In all the leads in which it appears, it is inverted compared to the P-wave in
 that lead and has a lower (less than 50\% in all leads) amplitude.
 It appears to start immediately after the P-wave in all leads.
@@ -796,25 +811,29 @@ The $\text{T}_{\text{P}}$ is broader than the P-wave in all leads.
 \caption[12 lead ECG during sinus rhythm, bloodmasses present.]{
 \label{bsp:fig:ecg_blood}
 Simulated P-Wave ECG traces during sinus rhythm with inhomogeneous torso.
-Blood masses assigned conductivity from Table~\ref{tbl:bsp:conductances}.
+Blood masses assigned conductivity from table~\ref{tbl:bsp:conductances}.
 One complete action potential cycle is shown.
 The stimulus is initiated at $t = 0$ in all traces.
-All traces have been smoothed with a \unit{100}{Hz}\ low-pass filter, common to
-diagnostic modes on clinical ECG machines.
+All traces have been smoothed with a \unit{100}{Hz}\ low-pass filter.
+This is to closer emulate the frequency response of a typical clinical ECG unit.
 }
 \end{figure}
 
 The ECG corresponding to the simulations with inhomogeneous blood masses is shown in
 figure~\ref{bsp:fig:ecg_blood}.
-The P-wave has a duration of \ms{126}\ in lead II and an amplitude of \mv{+0.294}.
+The P-wave has a duration of \ms{foo}\ in lead II and an amplitude of \mv{+0.415}.
 The maximum and minimum potential differences observed in the leads are
-\mv{+0.294}\ and \mv{-0.359}\ seen in lead II and lead $\text{V}_{\text{1}}$, respectively.
-The P-wave is upright in leads I, II, aVL, aVF, and $\text{V}_{\text{3--6}}$.
-It is biphasic in leads III and $\text{V}_{\text{2}}$.
-It is inverted in lead aVR and $\text{V}_{\text{1}}$.
+\mv{+0.415}\ and \mv{-0.275}\ seen in lead II and lead $\text{V}_{\text{1}}$, respectively.
+The P-wave is positive in leads I, II, III, aVF and $\text{V}_{\text{3--6}}$.
+It is positive--negative biphasic in $\text{V}_{\text{1}}$ and $\text{V}_{\text{2}}$.
+It is inverted in leads aVR and aVL.
+The presence of the bloodmasses generally acts to reduce the amplitudes of the
+P-wave ECG.
 
 The atrial repolarisation wave, the $\text{T}_{\text{P}}$ wave, is easily
-visible in all leads except lead aVL.
+visible in most leads, though in the leads which did not attain very high
+potentials (I, aVL, $\text{V}_{\text{1--3}}$) it is very flat--In lead
+$\text{V}_{\text{2}}$ it is so flat it is almost impossible to see.
 In all the leads in which it appears, it is inverted compared to the P-wave in
 that lead and has a lower (less than 50\% in all leads) amplitude.
 It appears to start immediately after the P-wave in all leads.
@@ -825,39 +844,39 @@ The $\text{T}_{\text{P}}$ is broader than the P-wave in all leads.
 \caption[12 lead ECG during sinus rhythm, all internal inhomogeneities present.]{
 \label{bsp:fig:ecg_all}
 Simulated P-Wave ECG traces during sinus rhythm with inhomogeneous torso.
-Lungs and blood masses assigned conductivity from Table~\ref{tbl:bsp:conductances}.
+Lungs and blood masses assigned conductivity from table~\ref{tbl:bsp:conductances}.
 One complete action potential cycle is shown.
 The stimulus is initiated at $t = 0$ in all traces.
-All traces have been smoothed with a \unit{100}{Hz}\ low-pass filter, common to
-diagnostic modes on clinical ECG machines.
+All traces have been smoothed with a \unit{100}{Hz}\ low-pass filter, a typical
+upper limit of frequency response in clinical ECG machines.
 }
 \end{figure}
 
 The ECG corresponding to the simulations with all inhomogeneities considered is shown in
 figure~\ref{bsp:fig:ecg_all}.
-The P-wave has a duration of \ms{116}\ in lead II and an amplitude of \mv{+0.279}.
+The P-wave has a duration of \ms{foo}\ in lead II and an amplitude of \mv{+0.497}.
 The maximum and minimum potential differences observed in the leads are
-\mv{+0.279}\ and \mv{-0.385}\ seen in lead II and lead $\text{V}_{\text{1}}$, respectively.
-The P-wave is upright in leads I, II, aVL, aVF, and $\text{V}_{\text{3--6}}$.
-It is biphasic in lead III.
-It is inverted in leads aVR and $\text{V}_{\text{1--2}}$.
+\mv{+0.497}\ and \mv{-0.325}\ seen in lead II and lead $\text{V}_{\text{1}}$, respectively.
+The P-wave is positive in leads I, II, III, aVF and $\text{V}_{\text{3--6}}$.
+It is positive--negative biphasic in $\text{V}_{\text{1}}$ and $\text{V}_{\text{2}}$.
+It is inverted in leads aVR and aVL.
+When the blood masses and the lungs are both present, the resulting ECG is a
+mixture of the effects of both sets of inhomogeneities.
+This results in an ECG which generally has lesser amplitudes than those observed
+in the simulations where only the lungs are present, though greater than the
+magnitudes where there is just the torso.
 
 The atrial repolarisation wave, the $\text{T}_{\text{P}}$ wave, is easily
-visible in all leads except lead aVL.
+visible in most leads, though in the leads which did not attain very high
+potentials (I, aVL, $\text{V}_{\text{1--3}}$) it is very flat--In lead
+$\text{V}_{\text{2}}$ it is so flat it is almost impossible to see.
 In all the leads in which it appears, it is inverted compared to the P-wave in
 that lead and has a lower (less than 50\% in all leads) amplitude.
 It appears to start immediately after the P-wave in all leads.
 The $\text{T}_{\text{P}}$ is broader than the P-wave in all leads.
 
 A summary table of the maxima or minima of the leads is shown in
-Table~\ref{tbl:bsp:ecg}.
-The influence of inhomogeneities on the ECG is perhaps not what would be
-expected from the BSPMs.
-Whilst the difference between the greatest maximum and the lowest minimum
-observed in the leads for the lungs is larger than the difference observed in
-the homogeneous torso in agreement with the maximum and minimum potentials
-observed on the BSPM, the leads in general have less extreme maxima.
-The converse is true for simulations where the blood masses are present.
+table~\ref{tbl:bsp:ecg}.
 
 
 \begin{table}
@@ -865,9 +884,9 @@ The converse is true for simulations where the blood masses are present.
         Maximum and minimum potentials observed in the twelve leads of the ECG
         for differing inhomogeneities considered.
         Torso corresponds to the homogeneous case, lungs to the case where the
-        lungs are given a conductivity from Table~\ref{tbl:bsp:conductances},
+        lungs are given a conductivity from table~\ref{tbl:bsp:conductances},
         blood to case where the blood masses were assigned the conductivity from
-        Table~\ref{tbl:bsp:conductances} and all, for when both lungs and blood
+        table~\ref{tbl:bsp:conductances} and all, for when both lungs and blood
         masses were assigned differing conductivities.
         For upright and inverted leads, only one potential is given, the maximum
         or minimum potential observed, respectively.
@@ -878,18 +897,18 @@ The converse is true for simulations where the blood masses are present.
     \toprule
     Lead & Torso & Lungs & Blood & All \\
     \midrule
-    I                       & $+0.309$ & $+0.239$ & $+0.287$ & $+0.220$ \\
-    II                      & $+0.311$ & $+0.306$ & $+0.294$ & $+0.279$ \\
-    III                     & $+0.063$ / $-0.119$ & $+0.104$ / $-0.077$ & $+0.061$ / $-0.134$ & $+0.091$ / $-0.098$ \\
-    aVR                     & $-0.310$ & $-0.268$ & $-0.290$ & $-0.249$ \\
-    aVL                     & $+0.206$ & $+0.150$ & $+0.206$ & $+0.155$ \\
-    aVF                     & $+0.170$ & $+0.202$ & $+0.153$ & $+0.174$ \\
-    $\text{V}_{\text{1}}$   & $-0.359$ & $-0.390$ & $-0.358$ & $-0.385$ \\
-    $\text{V}_{\text{2}}$   & $+0.074$ / $-0.080$ & $-0.106$ & $+0.051$ / $-0.074$ & $-0.129$ \\
-    $\text{V}_{\text{3}}$   & $+0.152$ & $+0.133$ & $+0.156$ & $+0.138$ \\
-    $\text{V}_{\text{4}}$   & $+0.169$ & $+0.165$ & $+0.174$ & $+0.159$ \\
-    $\text{V}_{\text{5}}$   & $+0.182$ & $+0.173$ & $+0.186$ & $+0.180$ \\
-    $\text{V}_{\text{6}}$   & $+0.186$ & $+0.169$ & $+0.181$ & $+0.156$ \\
+    I                       & $+0.139$ & $+0.117$ & $+0.113$ & $+0.097$ \\
+    II                      & $+0.446$ & $+0.535$ & $+0.415$ & $+0.497$ \\
+    III                     & $+0.341$ & $+0.435$ & $+0.328$ & $+0.414$ \\
+    aVR                     & $-0.275$ & $-0.317$ & $-0.251$ & $-0.290$ \\
+    aVL                     & $-0.118$ & $-0.167$ & $-0.121$ & $-0.165$ \\
+    aVF                     & $+0.394$ & $+0.485$ & $+0.372$ & $+0.455$ \\
+    $\text{V}_{\text{1}}$   & $+0.208/-0.265$ & $+0.227/-0.319$ & $+0.211/-0.275$ & $+0.233/-0.325$ \\
+    $\text{V}_{\text{2}}$   & $+0.095/-0.125$ & $+0.093/-0.166$ & $+0.068/-0.142$ & $+0.075/-0.180$ \\
+    $\text{V}_{\text{3}}$   & $+0.109$ & $+0.113$ & $+0.076$ & $+0.080$ \\
+    $\text{V}_{\text{4}}$   & $+0.123$ & $+0.129$ & $+0.108$ & $+0.108$ \\
+    $\text{V}_{\text{5}}$   & $+0.127$ & $+0.125$ & $+0.116$ & $+0.113$ \\
+    $\text{V}_{\text{6}}$   & $+0.133$ & $+0.128$ & $+0.122$ & $+0.116$ \\
     \bottomrule
     \label{tbl:bsp:ecg}
     \end{tabular}
@@ -898,31 +917,24 @@ The converse is true for simulations where the blood masses are present.
 The phase of the signal, that is whether it is rising or falling, does not seem
 to be influenced by the presence or absence of
 inhomogeneities~\cite{Rudy2006,Gulrajani1983}, only the amplitude.
-There are exceptions, notably in the $\text{V}_{\text{2}}$ lead, which is either
-negative or biphasic depending on the inhomogeneities considered.
-Lead III also has distinctly different proportions of the trace above and below
-the baseline depending on the inhomogeneities considered.
-This has been noted in other studies~\cite{vanDam2005}.
-It is again likely to be due to the movement of regions of maximum and minimum
-potential caused by the inhomogeneities.
-It is possibly more visible with the atria due to the thiner walls and thus
-lower mass.
+However, the influence of the inhomogeneities in each lead is not equal, with
+some leads being increased and others decreased.
+This suggests that the inhomogeneities might have greater importance in the
+atria, possibly due to the lower mass of atrial tissue and its thinner walls.
 
 \subsection{Comparisons with Clinical Studies and Information}
 
-The book ``Understanding the ECG'' describes a normal P-wave as being upright in
-leads I, II, aVF and $\text{V}_{\text{4--6}}$, as being inverted in aVR and as
-being biphasic in III, aVL and $\text{V}_{\text{1--3}}$.
-The P-Wave waveforms generated by the combined atrial and torso model are
-clearly close to this.
-The three Eindhoven leads are in close agreement, as are leads aVR and aVF.
-Considering the precordial leads, one can see that the latter three are in good
-agreement, whilst the first three show a clear gradation from negative to
-positive.
-Whether is is due to some subtle flaw in the propagation sequence of the atrial
-model, or due to the regions of potential that have developed on the surface
-being too focused due to an unconsidered heterogeneity which would further
-spread the potential is hard to determine.
+Opinions vary on what is considered a `normal'
+P-Wave ECG~\cite{Lipman1994,Conover1996,Hampton1997}.
+All sources agree that the P-wave should be positive in leads I, II, aVF and
+$\text{V}_{\text{4--6}}$ and negative in aVR which the model shows.
+Lead III is considered normal if it is positive or biphasic.
+None of the three sources agree on the orientation of a normal P-wave in aVL,
+but a negative P-wave is considered acceptable.
+Leads $\text{V}_{\text{1--3}}$ are considered normal if they are positive in
+some of the sources, but others suggest they should, or can be biphasic.
+The generated ECGs therefore seem to lie within the normal limits for their
+basic phase relationships.
 
 Another notable feature is the presence of the $\text{T}_{\text{P}}$ in many of
 the leads, which is not normally observed in clinical ECG recordings.
@@ -948,9 +960,9 @@ $103\,\pm\,14.2\,\text{ms}$ figure reported for males of age 18--29, the age of
 the torso.
 They report the maximum P-wave potential in lead II to be approximately
 \mv{0.23}.
-The maximum potential observed in the fully heterogeneous case is \mv{0.28}.
-This pattern is repeated for the maximally and minimally observed potentials in
-all leads.
+The maximum potential observed in the fully heterogeneous case is \mv{0.414}.
+In general, the amplitudes in all leads fall outside the maxima observed in the
+clinical data.
 This is expected~\cite{Rudy2006,Gulrajani1983,Gulrajani1989,Klepfer1997}\ as internal
 inhomogeneities tend to reduce the observed potentials as they `smear' the
 electrical signal out over the torso.
@@ -959,22 +971,27 @@ Clinical BSPM data for the P-wave has been taken by
 Taccardi~\cite{Taccardi1966}\ and Mirvis~\cite{Mirvis1980}.
 A comparison of the data taken by Mirvis is shown in
 figure~\ref{bsp:fig:mirvis_compare}.
+They presented a `typical case' from their study of 40 individuals.
 The BSPM generated by the combined atrial and torso model shows quite good
 agreement with the experimental BSPM recorded by Mirvis.
-Both sets of data show a solitary maximum point which emerges approximately in
-in the centre of the chest and then moves off to the left (torso co-ordinates),
-with an area of negative potential which appears over the right chest.
-By the time of the peak of the P-wave (\ms{48--68}), there is a positive peak
-lying over leads $\text{V}_{\text{4--6}}$, which remains there until the P-wave
-starts to end (\ms{80--90}).
-During the latter stages of the P-wave, there is a negative potential over the
-centre of the chest and the first and second precordial leads.
-The agreement is not perfect, however.
-The potentials attained in the model are much higher than those noted by Mirvis
-or Taccardi.
-In addition the distribution of the potentials, particularly in frames
-\ms{24--48}\ appears to suggest that the cardiac axis of the model would ideally
-be rotated to lie in a more frontal direction.
+The BSPM stares off almost isopotential with a single positive peak.
+This then grows in both physical extent and magnitude, moving towards the middle
+of the precordial leads.
+At \ms{48}\ there are two distinct negative and positive regions, with a single
+peak.
+This peak then moves off to the left, over the precordial leads.
+As the P-wave ends, there is a single negative peak, sitting over leads 1 and 2.
+Apart from the obvious, that of amplitude differences, the Mirvis study does
+differ slightly from the model.
+In general the model's peaks are slightly to the left of those which Mirvis
+observed.
+In addition, the Mirvis BSPM seems to suggest a P-wave axis which is rotated
+slightly, with the zero line sloping upwards from right to left (in the body's
+sense), rather than the almost horizontal line observed in the plots from the
+model.
+However, the essential properties of the Mirvis data are reproduced.
+The positive and negative regions are single peaked and a very similar evolution
+of potentials is observed.
 
 \begin{figure}
 \includegraphics{figures/bsp/mirvis_compare}
@@ -1033,7 +1050,7 @@ Their P-wave duration and BSPM show a very similar distribution of potentials to
 that observed in this chapter.
 They report that the maximum and minimum potentials observed are approximately
 \mv{0.25}\ and \mv{-0.25} respectively--similar in magnitude to those observed
-in this model.
+in this model, although closer to the normal limits.
 The use of a cellular automaton model would make simulation of Ischemia, genetic
 mutation or atrial fibrillation induced remodelling problematic.
 
@@ -1051,7 +1068,7 @@ Membrane kinetics within this volume use a modified version of the Courtemanche
 et al.~\cite{CRN98}\ model, modified to have a shorter \apd\ which was
 optemized based on recorded potentials from the patient who provided the MRI
 geometry.
-They do not present BSPMs from their simulations, though their optemized results
+They do not present BSPMs from their simulations, though their optimized results
 show very close agreement with the recorded clinical ECGs from the study.
 
 Van Dam et al.~\cite{vanDam2005}\ also use the EDL for their BSP calculations.
@@ -1061,6 +1078,7 @@ They used the model to investigate the effects of including or removing internal
 inhomogeneities.
 They noticed different effects (both qualitatively and quantitatively) on the
 ECG leads to the study in this chapter.
+This is most significant in the influence of the blood masses.
 The reasons for these differences are unclear due to the complexities of both of
 the involved models.
 One possible reason is the difference in the relative size of the atria to the various
@@ -1068,6 +1086,9 @@ inhomogeneities.
 The van Dam model has a much lower atrial tissue mass as it has walls of uniform
 thickness, whilst the anatomical model used in this chapter has non-uniform
 walls which are generally thicker than \mm{2}.
+In addition, the bloodmasses used in the van Dam model are two continuous
+regions of raised conductivity, whilst there are four such regions in the model
+developed here.
 However, they agree in the need for the inclusion of such inhomogeneities.
 
 \section{Limitations of the Model}
