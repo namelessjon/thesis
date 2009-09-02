@@ -60,7 +60,7 @@ for the field at any given point, $\phi$, is~\cite{Plonsey1963}
 \end{equation}
 where $r$ is the (scalar) distance from the elemental volume $dv$ to the point at
 which the field is being evaluated.
-This is shown in Figure~\ref{fig:bsp:vectors}.
+This is shown in figure~\ref{fig:bsp:vectors}.
 The distance $r$ is the magnitude of the vector $\mathbf{r'}-\mathbf{r}$.
 
 
@@ -394,7 +394,7 @@ obvious that
 
 \section{Torso Geometry}
 
-The torso geometry used in this study is shown in Figure~\ref{fig:bsp:torso},A.
+The torso geometry used in this study is shown in figure~\ref{fig:bsp:torso},A.
 It was created by Weixue and Ling~\cite{Lu1993,Weixue1996}\ and has been
 used in numerous simulations.
 The geometry was derived from CT images of the human torso.
@@ -443,7 +443,7 @@ Following rotation, a translation of $\left(-0.005, -0.08, -0.215\right)$ was
 applied to the atrium.
 Several of the triangular elements were picked as the sites of the ECG
 electrodes.
-The electrode locations are shown in Figure~\ref{fig:bsp:torso},B.
+The electrode locations are shown in figure~\ref{fig:bsp:torso},B.
 Conductances used for the various compartments of the torso are shown in
 Table~\ref{tbl:bsp:conductances}.
 \begin{table}[h]
@@ -563,9 +563,10 @@ Simulated BPSM during sinus rhythm with a homogeneous
 torso.
 The torso begins approximately isopotential before a distinct pattern of
 potential, with an area of negative potential over the upper right lung and an
-area of positive potential on the left side.
-This pattern then reverses during repolarisation.
-The maximum potential observed is \mv{0.219}\ and the minimum is \mv{-0.456}.
+area of positive potential on the lower torso.
+This pattern then reverses during repolarisation, although the magnitudes are
+much lower.
+The maximum potential observed is \mv{0.334}\ and the minimum is \mv{-0.412}.
 Snapshots shown for \ms{10}\ (i), \ms{15}\ (ii), \ms{20}\ (iii), \ms{25}\ (iv),
 \ms{40}\ (v), \ms{60}\ (vi), \ms{180}\ (vii), \ms{200}\ (viii) and \ms{220}\
 (ix)
@@ -573,9 +574,9 @@ Snapshots shown for \ms{10}\ (i), \ms{15}\ (ii), \ms{20}\ (iii), \ms{25}\ (iv),
 \end{figure}
 
 The evolution of the body surface potential on a homogeneous torso is shown in
-Figure~\ref{bsp:fig:homo_bsp}.
+figure~\ref{bsp:fig:homo_bsp}.
 The timings of the body surface potential snapshots correspond to the snapshots
-of membrane potential shown in Figure~\ref{fig:atrium:validation:main}.
+of membrane potential shown in figure~\ref{fig:atrium:validation:main}.
 The potential distribution starts off very close to uniform in frame (i) at
 \ms{10}\ after initial excitation.
 Only excitation and repolarisation wavefronts generate dipoles and in the
@@ -619,7 +620,7 @@ Snapshots shown for \ms{10}\ (i), \ms{15}\ (ii), \ms{20}\ (iii), \ms{25}\ (iv),
 \end{figure}
 
 The evolution of the body surface potential with lungs is shown in
-Figure~\ref{bsp:fig:lungs_bsp}.
+figure~\ref{bsp:fig:lungs_bsp}.
 In \ref{bsp:fig:lungs_bsp}(iv) (\ms{25} after initial stimulus) a peak is
 beginning to appear over the lower right lung, caused by the rapid conduction
 along the crista terminalis but this peak is less pronounced than in the
@@ -658,7 +659,7 @@ Snapshots shown for \ms{10}\ (i), \ms{15}\ (ii), \ms{20}\ (iii), \ms{25}\ (iv),
 \end{figure}
 
 The evolution of the body surface potential with blood masses present is shown in
-Figure~\ref{bsp:fig:blood_bsp}.
+figure~\ref{bsp:fig:blood_bsp}.
 The potential distribution is initially almost uniform, when  in frame (i) at
 \ms{10}\ after initial excitation.
 In \ref{bsp:fig:blood_bsp}(iv) a positive potential is beginning to appear over
@@ -697,7 +698,7 @@ Snapshots shown for \ms{10}\ (i), \ms{15}\ (ii), \ms{20}\ (iii), \ms{25}\ (iv),
 \end{figure}
 
 The evolution of the body surface potential with all inhomogeneities present is
-shown in Figure~\ref{bsp:fig:all_bsp}.
+shown in figure~\ref{bsp:fig:all_bsp}.
 In (iv) an isolated peak is beginning to appear over the lower
 right lung.
 This is closer to the potential distribution shown in the simulations with just
@@ -739,7 +740,7 @@ diagnostic modes on clinical ECG machines.
 \end{figure}
 
 The ECG derived from the body surface potential simulations with a homogeneous
-torso is shown in Figure~\ref{bsp:fig:ecg_thorax}.
+torso is shown in figure~\ref{bsp:fig:ecg_thorax}.
 The P-wave has a duration of \ms{112}\ in lead II and an amplitude of \mv{0.311}.
 The maximum and minimum potential differences observed in the leads are
 \mv{+0.311}\ and \mv{-0.359}\ seen in lead II and lead $\text{V}_{1}$, respectively.
@@ -770,7 +771,7 @@ diagnostic modes on clinical ECG machines.
 \end{figure}
 
 The ECG corresponding to the simulations with inhomogeneous lungs is shown in
-Figure~\ref{bsp:fig:ecg_lungs}.
+figure~\ref{bsp:fig:ecg_lungs}.
 The P-wave has a duration of \ms{124}\ in lead II and an amplitude of \mv{+0.306}.
 The maximum and minimum potential differences observed in the leads are
 \mv{+0.306}\ and \mv{-0.390}\ seen in lead II and lead $\text{V}_{\text{1}}$, respectively.
@@ -804,7 +805,7 @@ diagnostic modes on clinical ECG machines.
 \end{figure}
 
 The ECG corresponding to the simulations with inhomogeneous blood masses is shown in
-Figure~\ref{bsp:fig:ecg_blood}.
+figure~\ref{bsp:fig:ecg_blood}.
 The P-wave has a duration of \ms{126}\ in lead II and an amplitude of \mv{+0.294}.
 The maximum and minimum potential differences observed in the leads are
 \mv{+0.294}\ and \mv{-0.359}\ seen in lead II and lead $\text{V}_{\text{1}}$, respectively.
@@ -833,7 +834,7 @@ diagnostic modes on clinical ECG machines.
 \end{figure}
 
 The ECG corresponding to the simulations with all inhomogeneities considered is shown in
-Figure~\ref{bsp:fig:ecg_all}.
+figure~\ref{bsp:fig:ecg_all}.
 The P-wave has a duration of \ms{116}\ in lead II and an amplitude of \mv{+0.279}.
 The maximum and minimum potential differences observed in the leads are
 \mv{+0.279}\ and \mv{-0.385}\ seen in lead II and lead $\text{V}_{\text{1}}$, respectively.
@@ -957,7 +958,7 @@ electrical signal out over the torso.
 Clinical BSPM data for the P-wave has been taken by
 Taccardi~\cite{Taccardi1966}\ and Mirvis~\cite{Mirvis1980}.
 A comparison of the data taken by Mirvis is shown in
-Figure~\ref{bsp:fig:mirvis_compare}.
+figure~\ref{bsp:fig:mirvis_compare}.
 The BSPM generated by the combined atrial and torso model shows quite good
 agreement with the experimental BSPM recorded by Mirvis.
 Both sets of data show a solitary maximum point which emerges approximately in
@@ -990,7 +991,7 @@ Zero potential is the bold contour, other contours in \mv{0.01}\ intervals.
 All potentials relative to the Wilson's Central Terminal.
 The snapshots of the BSPM are from the indicated times, relative to the start of
 the P-wave.
-Right hand panels adapted from Mirvis~\cite{Mirvis1980}, Figures 2--4.
+Right hand panels adapted from Mirvis~\cite{Mirvis1980}, figures 2--4.
 }
 \end{figure}
 
