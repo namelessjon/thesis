@@ -40,6 +40,11 @@ G = 310
 
   task :ecgs => "ecg_#{c}.pdf"
 
+  file "ecg_#{c}.txt" => File.join(BSP_ROOT, name, "#{name}_100Hz.info") do |t|
+    cp t.prerequisites.first, t.name
+  end
+
+  task :info => "ecg_#{c}.txt"
 
 end
   

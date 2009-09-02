@@ -1,0 +1,17 @@
+# Frequency 100.0
+# lead  min      max        up       t_up    down     t_down
+  i    -0.0346   0.1169      true  32         false -1      
+  ii   -0.1435   0.5354      true  25          true  5      
+  iii  -0.1089   0.4353      true  20          true  195    
+  aVR  -0.3177   0.08905     true  198         true  28     
+  aVL  -0.1676   0.03718    false -1           true  37     
+  aVF  -0.1262   0.4853      true  24          true  185    
+  v1   -0.3193   0.2268      true  20          true  56     
+  v2   -0.1657   0.09313     true  29          true  56     
+  v3   -0.03203  0.1139      true  32         false -1      
+  v4   -0.05028  0.1289      true  32          true  266    
+  v5   -0.04394  0.1253      true  33         false -1      
+  v6   -0.04217  0.1276      true  34         false -1      
+  x    -0.05103  0.0997      true  57          true  25     
+  y    -0.1042   0.3745      true  26          true  191    
+  z    -0.06161  0.2069      true  56          true  28     
