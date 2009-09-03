@@ -28,6 +28,351 @@ from real patients.
 This chapter explores some of these predictions, using the model developed in
 the previous chapter.
 
+
+
+\section{Focal Atrial Tachycardia}
+
+Atrial Tachycardias are one of the rarer forms of supraventricular
+tachycardia.
+They account for approximately 10\% of diagnosed supraventricular tachycardias/
+They tend to occur as a result of other cardiac or respiratory diseases.
+They are characterised by a high heart rate ($\leq$ \unit{250}{bpm}) and
+typically have evidence of an abnormal cardiac axis or P-wave
+morphology~\cite{MacFarlaneSinus1989}.
+They are hard to treat with drugs, but radiofrequency ablation can be used with
+a high probability of success.
+Diagnosis of atrial tachycardia can be difficult due to a lack of data.
+Attempts to locate the sites of the ectopic focus are current topics of clinical
+research~\cite{Kistler2006,Kahn2006,Yamane2001}.
+This study shows how the model can provide more data for clinicians to study.
+
+\subsection{Model of Focal Atrial Tachycardia}
+
+To simulate focal atrial tachycardia, the model developed in Chapter 4 was used.
+The model was paced from a number of sites located around the atria, close to
+common foci of focal point tachycardia.
+The sinus node of the model was not stimulated.
+These sites are shown in figure~\ref{fig:forward:fat:sites}.
+Their anatomic locations are summarised in table~\ref{tbl:forward:fat:sites}.
+All the nodes which have active cells within 10 cells (\mm{3.3}) are excited via
+direct current injection of \unit{2}{nS}\ for \ms{2}.
+The resulting excitation wave is then allowed to propagate without interference
+and the BSPM, ECG and derived VECG calculated.
+The algorithm developed by Kistler~et~al.~\cite{Kistler2006}\ is applied to the
+12 lead ECG and the origin of the focal point tachycardia estimated.
+
+\begin{figure}
+\begin{center}
+\includegraphics{figures/forward/kistler/pacing_sites}
+\end{center}
+\caption[Pacing Sites Around The Atria]{
+\label{fig:forward:fat:sites}
+Pacing sites used for the study of the Kistler~et~al. algorithm.
+The pacing centres are indicated by red dots.
+Note that sites are often on the interior of the atria at the indicated
+locations, or embedded in the wall.
+
+(a) View of the pulmonary veins.
+(b) View of up through the valve openings.
+}
+\end{figure}
+
+\begin{table}
+\caption[Pacing Sites Around The Atria]{
+\label{tbl:forward:fat:sites}
+Anatomical locations of the pacing sites chosen for the study.
+Abbreviations: AA = atrial appended, PV = pulmonary vein, TA = tricuspid anulus,
+CS = coronary sinus, S = septum, CT = crista terminalis.
+L and R denote left and right, respectively.
+}
+\begin{center}
+\begin{tabular}{l l}
+\toprule
+Site &  Origin \\
+\midrule
+A & LPV \\
+B & LPV \\
+C & LPV \\
+D & RPV \\
+E & RAA \\
+F & CS \\
+G & LS \\
+H & CT \\
+\bottomrule
+\end{tabular}
+\end{center}
+\end{table}
+\subsection{Results}
+
+\subsubsection{Twelve Lead ECG}
+
+Pacing the atria from different sites results in a dramatic variability in the
+observed waveforms of the P-wave ECG.
+The ECGs corresponding to the stimuli are shown in
+figure~\ref{fig:forward:fat:ecgs}.
+The classifications of the waveforms are shown in
+table~\ref{tbl:forward:fat:ecgs}.
+Classifications consider only the P-wave, and not the $\text{T}_{\text{P}}$
+wave.
+In the case of more than two significant deflections, the largest two are
+chosen.
+The effect of any electrical flow is exaggerated by the large P-wave magnitudes
+previously noted and so it is likely that with correct magnitudes in the
+P-waves, these lesser deflections would not show.
+
+
+\begin{figure}
+\begin{center}
+\includegraphics{figures/forward/kistler/ecgs}
+\end{center}
+\caption[P-wave ECGs For Ectopic Focal Sites]{
+\label{fig:forward:fat:ecgs}
+Shown is one complete P-wave and $\text{T}_{\text{P}}$ wave, associated with
+each of the pacing sites A--H (table~\ref{tbl:forward:fat:sites}).
+Scalebars are shown for each figure.
+The vertical scale bar is \mv{0.2}, the horizontal \ms{100}.
+}
+
+\end{figure}
+
+\begin{table}
+\caption[Lead classification from pacing sites through the atria]{
+\label{tbl:forward:fat:ecgs}
+Lead classification after pacing from sites along the crista terminalis.
+Leads are classified based on the criteria used by
+Kistler~et~al.~\cite{Kistler2006}.
+A positive P-wave is denoted by a $+$ sign, a negative P-wave by a $-$ sign and
+a isoelectric (no significant positive or negative component) one by $\sim$.
+In the case of a biphasic wave, it is classified based on the polarity of the
+two component waves, separated by a slash.
+Site denotes the pacing site as illustrated in figure~\ref{fig:forward:fat:sites}.
+Site S denotes pacing from the sinus node, and is provided for comparison.
+}
+\begin{center}
+\begin{tabular}{c c c c c c c c c c c c c}
+\toprule
+Site & I & II & III & aVR & aVL & aVF & $\text{V}_{\text{1}}$ &$\text{V}_{\text{2}}$ & $\text{V}_{\text{3}}$ & $\text{V}_{\text{4}}$ & $\text{V}_{\text{5}}$ & $\text{V}_{\text{6}}$\\
+\midrule
+S & $+$ & $+$ & $+$ & $-$ & $-$ & $+$ & $+/-$ & $+/-$ & $+$ & $+$ & $+$ & $+$ \\
+A & $-$ & $+$ & $+$ & $-$ & $-$ & $+$ & $+/-$ & $+$ & $+$ & $+$ & $+$ & $+$ \\
+B & $-$ & $+$ & $+$ & $-$ & $-$ & $+$ & $+$ & $+$ & $+$ & $+$ & $+$ & $+$ \\
+C & $\sim$ & $-$ & $\sim$ & $+$ & $\sim$ & $\sim$ & $+$ & $+$ & $+$ & $-$ & $-$ & $-$ \\
+D & $+$ & $\sim$ & $-$ & $-$ & $+$ & $-$ & $+$ & $+$ & $+$ & $+$ & $+$ & $+$ \\
+E & $+$ & $+$ & $+$ & $-$ & $-$ & $+$ & $-$ & $-$ & $\sim$ & $+$ & $+$ & $+$ \\
+F & $+/-$ & $-$ & $-$ & $+$ & $+$ & $-$ & $-/+$ & $-/+$ & $-$ & $-$ & $-$ & $-$ \\
+G & $+$ & $-$ & $-$ & $+$ & $+$ & $-$ & $\sim/+$ & $-/+$ & $-$ & $-$ & $-$ & $-$ \\
+H & $+$ & $+$ & $-/+$ & $-$ & $+$ & $+$ & $+/-$ & $+/-$ & $+$ & $+$ & $+$ & $+$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+\end{table}
+
+Pacing from site A, shown in figure~\ref{fig:forward:fat:ecgs}(a), results in a
+P-wave which is positive in most leads.
+The P-wave is positive in leads II, III, aVF and $\text{V}_{\text{1--6}}$.
+It is negative in leads I, aVR and aVL.
+The sharp negative spike visible in $\text{V}_{\text{1, 2}}$ at approximately
+\ms{110}\ is caused by the faster conduction and loose
+connection to the main body of the atrial wall of the pectinate muscles.
+This causes brief high voltage `islands' to appear ahead of the main wavefront,
+which generate dipoles of opposing sign to the main wavefront.
+This isn't a problem under sinus rhythm, which shows a much more regular
+excitation of the pectinate muscles.
+In addition, the exication wave front has just started to loop back around the
+inferior vena cava, travelling away from the frontal precordial leads.
+Many of the limb leads show a quite ragged profile, and are slightly bifid.
+
+Pacing from site B, shown in figure~\ref{fig:forward:fat:ecgs}(b), results in a
+P-wave which is positive in most leads.
+The P-wave is positive in leads II, III, aVF and $\text{V}_{\text{1--6}}$.
+It is negative in leads I, aVR and aVL.
+All of the inferior leads (II, III and aVF) are smooth but highly bifid.
+This occurs as the P-wave depolarises first down the left atrium and then the
+right, away from the left limb lead electrode.
+After the initial depolarisation of the left atrium from the top and right,
+towards the left, much of the excitory activity is parallel to the lateral
+precordial leads ($\text{V}_{\text{4--6}}$).
+
+Pacing from site C, shown in figure~\ref{fig:forward:fat:ecgs}(c), results in a
+P-wave which is relatively flat.
+The P-wave is positive in aVR and $\text{V}_{\text{1--3}}$.
+It is negative in leads II and $\text{V}_{\text{4--6}}$.
+It is biphasic in leads I, III, aVL, aVF.
+The signal in all leads, though especially III, aVF and $\text{V}_{\text{4}}$ is
+highly variable.
+This is due to an uneven propagating wavefront, caused by the anatomical
+obstacles.
+
+Pacing from site D, shown in figure~\ref{fig:forward:fat:ecgs}(d), results in a
+P-wave which is mostly positive.
+The P-wave is positive in leads I, aVL and $\text{V}_{\text{1--6}}$.
+It is clearly bifid in all the leads it is positive in, except lead
+$\text{V}_{\text{1}}$.
+The P-wave is negative in leads III, aVR and aVF.
+It is bifid in both III and aVR.
+The ECG is biphasic in lead II.
+
+Site E is shown in figure~\ref{fig:forward:fat:ecgs}(e).
+The P-wave is positive in lead I, II, III, AVF and $\text{V}_{\text{5, 6}}$.
+The P-wave is negative in lead aVR, aVL and $\text{V}_{\text{1--3}}$.
+The P-wave is biphasic in lead $\text{V}_{\text{4}}$.
+It is bifid in the positive leads II, III and aVF and in the negative leads aVR,
+aVL and $\text{V}_{\text{1, 2}}$.
+The P-wave is smooth in most leads, aside from the bifidity.
+The electrical excitation is spreading down and slightly to the left of the
+body, leading to the very positive potentials observed in the inferior leads,
+and the positive potentials in leads $\text{V}_{\text{4--6}}$.
+The negative potentials in leads $\text{V}_{\text{1, 2}}$ suggest a spread of
+excitation anterior to posterior.
+
+Pacing from site F, figure~\ref{fig:forward:fat:ecgs}(f), produces predominately
+negative P-waves.
+The P-wave is positive in leads aVR and aVL.
+It is negative in leads II, III, aVT and $\text{V}_{\text{3--6}}$.
+It is biphasic in leads I, $\text{V}_{\text{1}}$ and $\text{V}_{\text{2}}$.
+The P-wave is generally quite clean in all the leads, although it shows
+significant oscillation at the end of the P-wave in leads II, III and aVF.
+This is likely causes as the excitation wave which is spreading up the right
+atrium encounters the complex anisotropy of the junctions between the crista
+terminalis and the pectinate muscles.
+
+
+Pacing from site G, shown in figure~\ref{fig:forward:fat:ecgs}(g), produces a
+predominately negative P-wave.
+The P-wave is positive in leads I, aVR and aVL.
+It is negative in leads II, III, aVF and leads $\text{V}_{\text{3--6}}$.
+It is biphasic in leads $\text{V}_{\text{1}}$ and $\text{V}_{\text{2}}$.
+The negative leads $\text{V}_{\text{3--6}}$ are indicative of a left atrial
+pacing site, with the excitation mostly spreading away from the left.
+The positive P-wave in leads aVR and aVL, combined with the negative P-waves in
+leads II, III and aVF, suggest the excitation is at the base of the heart and is
+spreading upwards.
+The lead traces are generally clean.
+
+Site H, figure~\ref{fig:forward:fat:ecgs}(h), produces jagged P-waves.
+The P-wave is positive in leads I, II, aVL and $\text{V}_{\text{4--6}}$.
+The P-wave is negative in lead aVR.
+The P-wave is $-/+$ biphasic in leads III, aVF and $\text{V}_{\text{3}}$.
+It is $+/-$ biphasic in leads $\text{V}_{\text{1}}$ and $\text{V}_{\text{2}}$.
+Leads II, $\text{V}_{\text{4}}$ and $\text{V}_{\text{5}}$ are bifid.
+In addition, leads aVF and $\text{V}_{\text{3}}$ are very bifid in appearance,
+although the trough becomes negative enough to classify them as biphasic.
+
+\subsubsection{Application of the Focus Location Algorithm}
+
+The algorithm developed by Kistler~et~al. was applied to the P-wave morphologies
+generated by the model.
+The algorithm is presented as a simple decision tree, initially concerning the
+morphology of lead $\text{V}_{\text{1}}$.
+The results of applying the algorithm and the actual anatomical locations are
+shown in table~\ref{tbl:forward:fat:kistler}.
+
+
+\begin{table}
+\caption[Classification of focal point tachycardia]{
+\label{tbl:forward:fat:kistler}
+Classification of the origin of focal point tachycardia according to the
+algorithm developed by Kistler~et~al. compared with the actual anatomic
+location.
+Where the algorithm presents multiple sites as a possibility, both are given.
+Abbreviations: AA = atrial appended, PV = pulmonary vein, TA = tricuspid anulus,
+CS = coronary sinus, S = septum, CT = crista terminalis.
+L and R denote left and right, respectively.
+}
+\begin{center}
+\begin{tabular}{l l l}
+\toprule
+Site & Predicted  & Origin \\
+\midrule
+A & CT & LPV \\
+B & LAA / LPV & LPV \\
+C & RPV & LPV \\
+D & RPV & RPV \\
+E & RAA / TA & RAA \\
+F & CS os / LS & CS \\
+G & CS os/ LS & LS \\
+H & CT & CT \\
+\bottomrule
+\end{tabular}
+\end{center}
+\end{table}
+
+\subsection{Discussion and Conclusion of Focal Atrial Tachycardia Study}
+
+The first thing that can be said about the results is that they generally show
+very good agreement with the focal tachycardia location algorithm developed by
+Kistler~et~al.
+The algorithm, when used on the P-wave ECGs produced by the model, correctly
+guesses the origin of the focal point tachycardia in six out of the eight
+cases considered.
+In addition, one of the errors (case C), is only mistaking between the left and
+right pulmonary veins.
+This is encouraging as it acts as a validation of both the model and the
+algorithm.
+
+The study also highlights some of the limitations of the model.
+The most significant of these is the large amplitudes of the P-waves, due to the
+nature of the inhomogeneities considered and the underlying cardiac model.
+Because of this larger amplitude, several fluctuations that perhaps should be
+considered minor are instead classified as full deflections due to the
+\mv{0.05}\ threshold.
+This is especially evident in case A which is incorrectly classified by the
+algorithm as originating from the crista terminalis.
+This is due to the presence of the negative spike in lead $\text{V}_{\text{1}}$.
+The spike has a magnitude of approximately \mv{0.1} which causes the lead to be
+classified as having a positive--negative morphology.
+The algorithm classifies all such P-waves as having a crista terminalis origin.
+If the spike were of a reduced amplitude, the positive $\text{V}_{\text{1}}$ and
+other lead morphologies leads to a classification of LAA or LPV, the correct
+answer.
+
+It is also possible that the size of the stimulus zone should be decreased.
+The effect of the localised and very rapid potential change along the border of
+the stimulus zone can generate a large spike at the start of the pacing cycle.
+This is due to the rapid ($ > 200\,\text{mVs}^{\text{-1}}$) upstroke of the
+Courtemanche~et~al myocyte model used as the basis of the anatomical atrial
+model.
+A smaller stimulus zone should reduce this artefact, which is sometimes
+difficult to separate from the `real' P-wave.
+
+It should be emphasised, however, that the large amplitudes of the P-wave was
+only an issue in case A.
+The location of the focal point tachycardia was correctly predicted by the
+algorithm in most cases.
+This prediction would not be affected by a reduction in amplitude of all the
+lead potentials.
+The model therefore correctly reproduces the phase information of the P-wave
+ECG, which is ultimately what the location algorithm depends on.
+
+The Kistler~et~al. algorithm appears to be the best algorithm one is aware of in
+the literature that uses the standard twelve lead ECG.
+It would be interesting to compare the predictive accuracy of the algorithm with
+one devised using the model and the so called `Atrial ECG' proposed by
+Ihara~et~al~\cite{Ihara2007}.
+Such a study would require a family of similar models to be developed, based on
+several torso and atrial geometrical models.
+
+No discussion of an algorithm of this nature would be complete without a
+discussion of inverse techniques.
+Inverse techniques have developed considerably over the previous two decades.
+Ramanathan~et~al.~\cite{Ramanathan2006}\ have developed a technique which they
+call Electrocardiographic Imaging (ECGI) and several groups have similar efforts
+as well.
+These techniques allow calculation of the epicardial potentials from external
+measurements.
+These inverse techniques require a significant amount of effort to set up,
+however.
+The ECGI techinique proposed by Ramanathan~et~al. uses a 224 electrode vest and
+requires the construction of a heart--torso geometry from CT scans.
+By contrast, algorithms devised for twelve lead sets can still be highly
+accurate and are available everywhere.
+
+The Kistler~et~al. model can correctly predict the location of ecotopic foci in
+the body surface potential model in seven of eight cases.
+This validates both the algorithm and the model.
+The model could therefore be used as the basis for further refinements to the
+algorithm, or the development of similar ones.
+
 \section{Inverted P-Waves at Night}
 
 Recently an observation was made~\cite{BoyettPrivate}\ concerning patients under
@@ -553,350 +898,6 @@ This study shows that the body surface potential model can be used for a study
 which involves conditions that begin to deviate from normality.
 It can therefore be used as a powerful tool for investigating the clinically
 observable consequences of changes to cardiac behaviour.
-
-
-\section{Focal Atrial Tachycardia}
-
-Atrial Tachycardias are one of the rarer forms of supraventricular
-tachycardia.
-They account for approximately 10\% of diagnosed supraventricular tachycardias/
-They tend to occur as a result of other cardiac or respiratory diseases.
-They are characterised by a high heart rate ($\leq$ \unit{250}{bpm}) and
-typically have evidence of an abnormal cardiac axis or P-wave
-morphology~\cite{MacFarlaneSinus1989}.
-They are hard to treat with drugs, but radiofrequency ablation can be used with
-a high probability of success.
-Diagnosis of atrial tachycardia can be difficult due to a lack of data.
-Attempts to locate the sites of the ectopic focus are current topics of clinical
-research~\cite{Kistler2006,Kahn2006,Yamane2001}.
-This study shows how the model can provide more data for clinicians to study.
-
-\subsection{Model of Focal Atrial Tachycardia}
-
-To simulate focal atrial tachycardia, the model developed in Chapter 4 was used.
-The model was paced from a number of sites located around the atria, close to
-common foci of focal point tachycardia.
-The sinus node of the model was not stimulated.
-These sites are shown in figure~\ref{fig:forward:fat:sites}.
-Their anatomic locations are summarised in table~\ref{tbl:forward:fat:sites}.
-All the nodes which have active cells within 10 cells (\mm{3.3}) are excited via
-direct current injection of \unit{2}{nS}\ for \ms{2}.
-The resulting excitation wave is then allowed to propagate without interference
-and the BSPM, ECG and derived VECG calculated.
-The algorithm developed by Kistler~et~al.~\cite{Kistler2006}\ is applied to the
-12 lead ECG and the origin of the focal point tachycardia estimated.
-
-\begin{figure}
-\begin{center}
-\includegraphics{figures/forward/kistler/pacing_sites}
-\end{center}
-\caption[Pacing Sites Around The Atria]{
-\label{fig:forward:fat:sites}
-Pacing sites used for the study of the Kistler~et~al. algorithm.
-The pacing centres are indicated by red dots.
-Note that sites are often on the interior of the atria at the indicated
-locations, or embedded in the wall.
-
-(a) View of the pulmonary veins.
-(b) View of up through the valve openings.
-}
-\end{figure}
-
-\begin{table}
-\caption[Pacing Sites Around The Atria]{
-\label{tbl:forward:fat:sites}
-Anatomical locations of the pacing sites chosen for the study.
-Abbreviations: AA = atrial appended, PV = pulmonary vein, TA = tricuspid anulus,
-CS = coronary sinus, S = septum, CT = crista terminalis.
-L and R denote left and right, respectively.
-}
-\begin{center}
-\begin{tabular}{l l}
-\toprule
-Site &  Origin \\
-\midrule
-A & LPV \\
-B & LPV \\
-C & LPV \\
-D & RPV \\
-E & RAA \\
-F & CS \\
-G & LS \\
-H & CT \\
-\bottomrule
-\end{tabular}
-\end{center}
-\end{table}
-\subsection{Results}
-
-\subsubsection{Twelve Lead ECG}
-
-Pacing the atria from different sites results in a dramatic variability in the
-observed waveforms of the P-wave ECG.
-The ECGs corresponding to the stimuli are shown in
-figure~\ref{fig:forward:fat:ecgs}.
-The classifications of the waveforms are shown in
-table~\ref{tbl:forward:fat:ecgs}.
-Classifications consider only the P-wave, and not the $\text{T}_{\text{P}}$
-wave.
-In the case of more than two significant deflections, the largest two are
-chosen.
-The effect of any electrical flow is exaggerated by the large P-wave magnitudes
-previously noted and so it is likely that with correct magnitudes in the
-P-waves, these lesser deflections would not show.
-
-
-\begin{figure}
-\begin{center}
-\includegraphics{figures/forward/kistler/ecgs}
-\end{center}
-\caption[P-wave ECGs For Ectopic Focal Sites]{
-\label{fig:forward:fat:ecgs}
-Shown is one complete P-wave and $\text{T}_{\text{P}}$ wave, associated with
-each of the pacing sites A--H (table~\ref{tbl:forward:fat:sites}).
-Scalebars are shown for each figure.
-The vertical scale bar is \mv{0.2}, the horizontal \ms{100}.
-}
-
-\end{figure}
-
-\begin{table}
-\caption[Lead classification from pacing sites through the atria]{
-\label{tbl:forward:fat:ecgs}
-Lead classification after pacing from sites along the crista terminalis.
-Leads are classified based on the criteria used by
-Kistler~et~al.~\cite{Kistler2006}.
-A positive P-wave is denoted by a $+$ sign, a negative P-wave by a $-$ sign and
-a isoelectric (no significant positive or negative component) one by $\sim$.
-In the case of a biphasic wave, it is classified based on the polarity of the
-two component waves, separated by a slash.
-Site denotes the pacing site as illustrated in figure~\ref{fig:forward:fat:sites}.
-Site S denotes pacing from the sinus node, and is provided for comparison.
-}
-\begin{center}
-\begin{tabular}{c c c c c c c c c c c c c}
-\toprule
-Site & I & II & III & aVR & aVL & aVF & $\text{V}_{\text{1}}$ &$\text{V}_{\text{2}}$ & $\text{V}_{\text{3}}$ & $\text{V}_{\text{4}}$ & $\text{V}_{\text{5}}$ & $\text{V}_{\text{6}}$\\
-\midrule
-S & $+$ & $+$ & $+$ & $-$ & $-$ & $+$ & $+/-$ & $+/-$ & $+$ & $+$ & $+$ & $+$ \\
-A & $-$ & $+$ & $+$ & $-$ & $-$ & $+$ & $+/-$ & $+$ & $+$ & $+$ & $+$ & $+$ \\
-B & $-$ & $+$ & $+$ & $-$ & $-$ & $+$ & $+$ & $+$ & $+$ & $+$ & $+$ & $+$ \\
-C & $\sim$ & $-$ & $\sim$ & $+$ & $\sim$ & $\sim$ & $+$ & $+$ & $+$ & $-$ & $-$ & $-$ \\
-D & $+$ & $\sim$ & $-$ & $-$ & $+$ & $-$ & $+$ & $+$ & $+$ & $+$ & $+$ & $+$ \\
-E & $+$ & $+$ & $+$ & $-$ & $-$ & $+$ & $-$ & $-$ & $\sim$ & $+$ & $+$ & $+$ \\
-F & $+/-$ & $-$ & $-$ & $+$ & $+$ & $-$ & $-/+$ & $-/+$ & $-$ & $-$ & $-$ & $-$ \\
-G & $+$ & $-$ & $-$ & $+$ & $+$ & $-$ & $\sim/+$ & $-/+$ & $-$ & $-$ & $-$ & $-$ \\
-H & $+$ & $+$ & $-/+$ & $-$ & $+$ & $+$ & $+/-$ & $+/-$ & $+$ & $+$ & $+$ & $+$ \\
-\bottomrule
-\end{tabular}
-\end{center}
-\end{table}
-
-Pacing from site A, shown in figure~\ref{fig:forward:fat:ecgs}(a), results in a
-P-wave which is positive in most leads.
-The P-wave is positive in leads II, III, aVF and $\text{V}_{\text{1--6}}$.
-It is negative in leads I, aVR and aVL.
-The sharp negative spike visible in $\text{V}_{\text{1, 2}}$ at approximately
-\ms{110}\ is caused by the faster conduction and loose
-connection to the main body of the atrial wall of the pectinate muscles.
-This causes brief high voltage `islands' to appear ahead of the main wavefront,
-which generate dipoles of opposing sign to the main wavefront.
-This isn't a problem under sinus rhythm, which shows a much more regular
-excitation of the pectinate muscles.
-In addition, the exication wave front has just started to loop back around the
-inferior vena cava, travelling away from the frontal precordial leads.
-Many of the limb leads show a quite ragged profile, and are slightly bifid.
-
-Pacing from site B, shown in figure~\ref{fig:forward:fat:ecgs}(b), results in a
-P-wave which is positive in most leads.
-The P-wave is positive in leads II, III, aVF and $\text{V}_{\text{1--6}}$.
-It is negative in leads I, aVR and aVL.
-All of the inferior leads (II, III and aVF) are smooth but highly bifid.
-This occurs as the P-wave depolarises first down the left atrium and then the
-right, away from the left limb lead electrode.
-After the initial depolarisation of the left atrium from the top and right,
-towards the left, much of the excitory activity is parallel to the lateral
-precordial leads ($\text{V}_{\text{4--6}}$).
-
-Pacing from site C, shown in figure~\ref{fig:forward:fat:ecgs}(c), results in a
-P-wave which is relatively flat.
-The P-wave is positive in aVR and $\text{V}_{\text{1--3}}$.
-It is negative in leads II and $\text{V}_{\text{4--6}}$.
-It is biphasic in leads I, III, aVL, aVF.
-The signal in all leads, though especially III, aVF and $\text{V}_{\text{4}}$ is
-highly variable.
-This is due to an uneven propagating wavefront, caused by the anatomical
-obstacles.
-
-Pacing from site D, shown in figure~\ref{fig:forward:fat:ecgs}(d), results in a
-P-wave which is mostly positive.
-The P-wave is positive in leads I, aVL and $\text{V}_{\text{1--6}}$.
-It is clearly bifid in all the leads it is positive in, except lead
-$\text{V}_{\text{1}}$.
-The P-wave is negative in leads III, aVR and aVF.
-It is bifid in both III and aVR.
-The ECG is biphasic in lead II.
-
-Site E is shown in figure~\ref{fig:forward:fat:ecgs}(e).
-The P-wave is positive in lead I, II, III, AVF and $\text{V}_{\text{5, 6}}$.
-The P-wave is negative in lead aVR, aVL and $\text{V}_{\text{1--3}}$.
-The P-wave is biphasic in lead $\text{V}_{\text{4}}$.
-It is bifid in the positive leads II, III and aVF and in the negative leads aVR,
-aVL and $\text{V}_{\text{1, 2}}$.
-The P-wave is smooth in most leads, aside from the bifidity.
-The electrical excitation is spreading down and slightly to the left of the
-body, leading to the very positive potentials observed in the inferior leads,
-and the positive potentials in leads $\text{V}_{\text{4--6}}$.
-The negative potentials in leads $\text{V}_{\text{1, 2}}$ suggest a spread of
-excitation anterior to posterior.
-
-Pacing from site F, figure~\ref{fig:forward:fat:ecgs}(f), produces predominately
-negative P-waves.
-The P-wave is positive in leads aVR and aVL.
-It is negative in leads II, III, aVT and $\text{V}_{\text{3--6}}$.
-It is biphasic in leads I, $\text{V}_{\text{1}}$ and $\text{V}_{\text{2}}$.
-The P-wave is generally quite clean in all the leads, although it shows
-significant oscillation at the end of the P-wave in leads II, III and aVF.
-This is likely causes as the excitation wave which is spreading up the right
-atrium encounters the complex anisotropy of the junctions between the crista
-terminalis and the pectinate muscles.
-
-
-Pacing from site G, shown in figure~\ref{fig:forward:fat:ecgs}(g), produces a
-predominately negative P-wave.
-The P-wave is positive in leads I, aVR and aVL.
-It is negative in leads II, III, aVF and leads $\text{V}_{\text{3--6}}$.
-It is biphasic in leads $\text{V}_{\text{1}}$ and $\text{V}_{\text{2}}$.
-The negative leads $\text{V}_{\text{3--6}}$ are indicative of a left atrial
-pacing site, with the excitation mostly spreading away from the left.
-The positive P-wave in leads aVR and aVL, combined with the negative P-waves in
-leads II, III and aVF, suggest the excitation is at the base of the heart and is
-spreading upwards.
-The lead traces are generally clean.
-
-Site H, figure~\ref{fig:forward:fat:ecgs}(h), produces jagged P-waves.
-The P-wave is positive in leads I, II, aVL and $\text{V}_{\text{4--6}}$.
-The P-wave is negative in lead aVR.
-The P-wave is $-/+$ biphasic in leads III, aVF and $\text{V}_{\text{3}}$.
-It is $+/-$ biphasic in leads $\text{V}_{\text{1}}$ and $\text{V}_{\text{2}}$.
-Leads II, $\text{V}_{\text{4}}$ and $\text{V}_{\text{5}}$ are bifid.
-In addition, leads aVF and $\text{V}_{\text{3}}$ are very bifid in appearance,
-although the trough becomes negative enough to classify them as biphasic.
-
-\subsubsection{Application of the Focus Location Algorithm}
-
-The algorithm developed by Kistler~et~al. was applied to the P-wave morphologies
-generated by the model.
-The algorithm is presented as a simple decision tree, initially concerning the
-morphology of lead $\text{V}_{\text{1}}$.
-The results of applying the algorithm and the actual anatomical locations are
-shown in table~\ref{tbl:forward:fat:kistler}.
-
-
-\begin{table}
-\caption[Classification of focal point tachycardia]{
-\label{tbl:forward:fat:kistler}
-Classification of the origin of focal point tachycardia according to the
-algorithm developed by Kistler~et~al. compared with the actual anatomic
-location.
-Where the algorithm presents multiple sites as a possibility, both are given.
-Abbreviations: AA = atrial appended, PV = pulmonary vein, TA = tricuspid anulus,
-CS = coronary sinus, S = septum, CT = crista terminalis.
-L and R denote left and right, respectively.
-}
-\begin{center}
-\begin{tabular}{l l l}
-\toprule
-Site & Predicted  & Origin \\
-\midrule
-A & CT & LPV \\
-B & LAA / LPV & LPV \\
-C & RPV & LPV \\
-D & RPV & RPV \\
-E & RAA / TA & RAA \\
-F & CS os / LS & CS \\
-G & CS os/ LS & LS \\
-H & CT & CT \\
-\bottomrule
-\end{tabular}
-\end{center}
-\end{table}
-
-\subsection{Discussion and Conclusion of Focal Atrial Tachycardia Study}
-
-The first thing that can be said about the results is that they generally show
-very good agreement with the focal tachycardia location algorithm developed by
-Kistler~et~al.
-The algorithm, when used on the P-wave ECGs produced by the model, correctly
-guesses the origin of the focal point tachycardia in six out of the eight
-cases considered.
-In addition, one of the errors (case C), is only mistaking between the left and
-right pulmonary veins.
-This is encouraging as it acts as a validation of both the model and the
-algorithm.
-
-The study also highlights some of the limitations of the model.
-The most significant of these is the large amplitudes of the P-waves, due to the
-nature of the inhomogeneities considered and the underlying cardiac model.
-Because of this larger amplitude, several fluctuations that perhaps should be
-considered minor are instead classified as full deflections due to the
-\mv{0.05}\ threshold.
-This is especially evident in case A which is incorrectly classified by the
-algorithm as originating from the crista terminalis.
-This is due to the presence of the negative spike in lead $\text{V}_{\text{1}}$.
-The spike has a magnitude of approximately \mv{0.1} which causes the lead to be
-classified as having a positive--negative morphology.
-The algorithm classifies all such P-waves as having a crista terminalis origin.
-If the spike were of a reduced amplitude, the positive $\text{V}_{\text{1}}$ and
-other lead morphologies leads to a classification of LAA or LPV, the correct
-answer.
-
-It is also possible that the size of the stimulus zone should be decreased.
-The effect of the localised and very rapid potential change along the border of
-the stimulus zone can generate a large spike at the start of the pacing cycle.
-This is due to the rapid ($ > 200\,\text{mVs}^{\text{-1}}$) upstroke of the
-Courtemanche~et~al myocyte model used as the basis of the anatomical atrial
-model.
-A smaller stimulus zone should reduce this artefact, which is sometimes
-difficult to separate from the `real' P-wave.
-
-It should be emphasised, however, that the large amplitudes of the P-wave was
-only an issue in case A.
-The location of the focal point tachycardia was correctly predicted by the
-algorithm in most cases.
-This prediction would not be affected by a reduction in amplitude of all the
-lead potentials.
-The model therefore correctly reproduces the phase information of the P-wave
-ECG, which is ultimately what the location algorithm depends on.
-
-The Kistler~et~al. algorithm appears to be the best algorithm one is aware of in
-the literature that uses the standard twelve lead ECG.
-It would be interesting to compare the predictive accuracy of the algorithm with
-one devised using the model and the so called `Atrial ECG' proposed by
-Ihara~et~al~\cite{Ihara2007}.
-Such a study would require a family of similar models to be developed, based on
-several torso and atrial geometrical models.
-
-No discussion of an algorithm of this nature would be complete without a
-discussion of inverse techniques.
-Inverse techniques have developed considerably over the previous two decades.
-Ramanathan~et~al.~\cite{Ramanathan2006}\ have developed a technique which they
-call Electrocardiographic Imaging (ECGI) and several groups have similar efforts
-as well.
-These techniques allow calculation of the epicardial potentials from external
-measurements.
-These inverse techniques require a significant amount of effort to set up,
-however.
-The ECGI techinique proposed by Ramanathan~et~al. uses a 224 electrode vest and
-requires the construction of a heart--torso geometry from CT scans.
-By contrast, algorithms devised for twelve lead sets can still be highly
-accurate and are available everywhere.
-
-The Kistler~et~al. model can correctly predict the location of ecotopic foci in
-the body surface potential model in seven of eight cases.
-This validates both the algorithm and the model.
-The model could therefore be used as the basis for further refinements to the
-algorithm, or the development of similar ones.
 
 \section{Discussion and Conclusion}
 
