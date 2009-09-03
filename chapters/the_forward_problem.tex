@@ -57,10 +57,22 @@ located along the crista terminalis.
 These sites had a radius of 10 nodes (or approximately \mm{3.3}--although this
 varied depending on the thickness of the atrial wall at the pacing site), and
 therefore were approximately the same size as the sino-atrial node.
-These sites are shown in figure~\ref{fig:forward:ct_sites}.
+These sites are shown in figure~\ref{fig:forward:inverse:ct_sites}.
 Each of these sites was stimulated via the same protocol used to stimulate the
 sinus node in the original model and then the electrical excitation waves were
 allowed to propagate without interference.
+
+\begin{figure}
+\begin{center}
+\includegraphics{figures/forward/inverted_p_wave/pacing_sites}
+\end{center}
+\caption[Pacing Sites Along The CT]{
+\label{fig:forward:inverse:ct_sites}
+Pacing sites used for the inverted P-wave study.
+The view is up through the valve openings.
+The pacing centres are indicated by red dots.
+}
+\end{figure}
 
 ECGs were computed from the patterns of electrical excitation in the atrium.
 These were compared to the sinus rhythm ECGs computed in the previous chapter.
@@ -361,6 +373,22 @@ The horizontal and vertical scales are centred at \mv{0}\ in the centre of the
 figure and extending out to $\pm$\mv{0.4}.}
 \end{figure}
 
+\begin{figure}
+\begin{center}
+\includegraphics{figures/forward/inverted_p_wave/transverse_vector_loops}
+\end{center}
+\caption[Transverse plane vector loops from pacing sites along the CT]{
+\label{fig:forward:inverse:vec_trans}
+Transverse plane vector loops, constructed from the derived vECG for pacing at the
+sinus node, (s) and the three pacing sites A--C (a--c).
+Shown is one complete P-wave and $\text{T}_{\text{P}}$ wave, pacing at a rate of
+\unit{60}{bpm}.
+Colour represents the passage of time, going from purple (\ms{0}) through blue
+(\ms{250}) to red (\ms{500}) after the initiation of the stimulus.
+The horizontal and vertical scales are centred at \mv{0}\ in the centre of the
+figure and extending out to $\pm$\mv{0.4}.}
+\end{figure}
+
 The derived vector ECG plots are shown for the frontal plane in
 figure~\ref{fig:forward:inverse:vec_front} and in the transverse plane in
 figure~\ref{fig:forward:inverse:vec_trans}.
@@ -477,7 +505,7 @@ hypothesised.
 As the pacing site moves away from the sinus node, the P-wave duration also
 increases.
 Especially for the lower crista terminalis sites (B \& C), the duration exceeds
-normal P-wave limits~\cite{Lemery2004,Macfarlane1989}.
+normal P-wave limits~\cite{Lemery2004,MacFarlane1989}.
 It is possible that a more detailed intra-atrial conduction system, including an
 inferior pathway would reduce total conduction time, and therefore P-wave
 duration in these cases.
@@ -558,6 +586,47 @@ and the BSPM, ECG and derived VECG calculated.
 The algorithm developed by Kistler~et~al.~\cite{Kistler2006}\ is applied to the
 12 lead ECG and the origin of the focal point tachycardia estimated.
 
+\begin{figure}
+\begin{center}
+\includegraphics{figures/forward/kistler/pacing_sites}
+\end{center}
+\caption[Pacing Sites Around The Atria]{
+\label{fig:forward:fat:sites}
+Pacing sites used for the study of the Kistler~et~al. algorithm.
+The pacing centres are indicated by red dots.
+Note that sites are often on the interior of the atria at the indicated
+locations, or embedded in the wall.
+
+(a) View of the pulmonary veins.
+(b) View of up through the valve openings.
+}
+\end{figure}
+
+\begin{table}
+\caption[Pacing Sites Around The Atria]{
+\label{tbl:forward:fat:sites}
+Anatomical locations of the pacing sites chosen for the study.
+Abbreviations: AA = atrial appended, PV = pulmonary vein, TA = tricuspid anulus,
+CS = coronary sinus, S = septum, CT = crista terminalis.
+L and R denote left and right, respectively.
+}
+\begin{center}
+\begin{tabular}{l l}
+\toprule
+Site &  Origin \\
+\midrule
+A & LPV \\
+B & LPV \\
+C & LPV \\
+D & RPV \\
+E & RAA \\
+F & CS \\
+G & LS \\
+H & CT \\
+\bottomrule
+\end{tabular}
+\end{center}
+\end{table}
 \subsection{Results}
 
 \subsubsection{Twelve Lead ECG}
@@ -576,6 +645,20 @@ The effect of any electrical flow is exaggerated by the large P-wave magnitudes
 previously noted and so it is likely that with correct magnitudes in the
 P-waves, these lesser deflections would not show.
 
+
+\begin{figure}
+\begin{center}
+\includegraphics{figures/forward/kistler/ecgs}
+\end{center}
+\caption[P-wave ECGs For Ectopic Focal Sites]{
+\label{fig:forward:fat:ecgs}
+Shown is one complete P-wave and $\text{T}_{\text{P}}$ wave, associated with
+each of the pacing sites A--H (table~\ref{tbl:forward:fat:sites}).
+Scalebars are shown for each figure.
+The vertical scale bar is \mv{0.2}, the horizontal \ms{100}.
+}
+
+\end{figure}
 
 \begin{table}
 \caption[Lead classification from pacing sites through the atria]{
@@ -710,7 +793,7 @@ The results of applying the algorithm and the actual anatomical locations are
 shown in table~\ref{tbl:forward:fat:kistler}.
 
 
-\begin{table}[h]
+\begin{table}
 \caption[Classification of focal point tachycardia]{
 \label{tbl:forward:fat:kistler}
 Classification of the origin of focal point tachycardia according to the
@@ -726,10 +809,10 @@ L and R denote left and right, respectively.
 \toprule
 Site & Predicted  & Origin \\
 \midrule
-A & CT & PV \\
-B & LAA / LPV & PV \\
-C & RPV & PV \\
-D & RPV & PV \\
+A & CT & LPV \\
+B & LAA / LPV & LPV \\
+C & RPV & LPV \\
+D & RPV & RPV \\
 E & RAA / TA & RAA \\
 F & CS os / LS & CS \\
 G & CS os/ LS & LS \\
@@ -745,8 +828,10 @@ The first thing that can be said about the results is that they generally show
 very good agreement with the focal tachycardia location algorithm developed by
 Kistler~et~al.
 The algorithm, when used on the P-wave ECGs produced by the model, correctly
-guesses the origin of the focal point tachycardia in seven out of the eight
+guesses the origin of the focal point tachycardia in six out of the eight
 cases considered.
+In addition, one of the errors (case C), is only mistaking between the left and
+right pulmonary veins.
 This is encouraging as it acts as a validation of both the model and the
 algorithm.
 
@@ -769,7 +854,7 @@ answer.
 It is also possible that the size of the stimulus zone should be decreased.
 The effect of the localised and very rapid potential change along the border of
 the stimulus zone can generate a large spike at the start of the pacing cycle.
-This is due to the rapid ($\gt200\3\text{mVs}^{\text{-1}}$) upstroke of the
+This is due to the rapid ($ > 200\,\text{mVs}^{\text{-1}}$) upstroke of the
 Courtemanche~et~al myocyte model used as the basis of the anatomical atrial
 model.
 A smaller stimulus zone should reduce this artefact, which is sometimes
