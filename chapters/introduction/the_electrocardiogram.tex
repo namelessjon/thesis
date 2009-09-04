@@ -49,10 +49,13 @@ the `positive' terminal have a higher potential than the `negative' one.
 
 The lead theory is based on the fundamental principles of linear volume
 conductors set out by Helmholtz in the middle of the nineteenth century.
+These principles only hold if the body can be treated as a linear volume
+conductor.
+This is a good approximation~\cite{REFS}.
+
 The first principle, that of superposition, states that the electric field
 resulting from several sources in the medium is equal to the sum of the fields
 which would be produced by each source considered alone.
-
 The second principle, that of reciprocity, concerns current flow in the
 medium.
 It states that the current flow between two electrodes evoked by a field source in the
@@ -66,9 +69,149 @@ The concept of the lead field comes out of these principles.
 To derive the lead field, we consider a unit current flowing in a lead.
 The resulting flow of current through the body will have a certain magnitude and
 direction at every point; it is a vector field.
-Calling the vector field evoked by the unit current \vec{J}.
+Calling the vector field evoked by the unit current $\vec{J}$.
 
 \subsection{The Twelve Lead Electrocardiogram}
+
+The twelve lead electrocardiograph is the initial basis of almost all cardiac
+diagnosis.
+It started out as the three einthoven leads.
+The electrodes are located (figure~\ref{fig:intro:ecg:leads}) on the left
+shoulder, L, the right shoulder, R, and the feet (typically the left leg), F.
+Lead I (\ref{eqn:intro:leads:i}) uses R as the negative terminal and L as the
+positive terminal.
+Lead II (\ref{eqn:intro:leads:ii}) is formed between R as the negative terminal
+and F as the positive terminal.
+Lead III (\ref{eqn:intro:leads:iii}) is formed between L as the negative terminal
+and F as the positive terminal.
+
+Wilson~\cite{Wilson1933}, in the 1930s, introduced an indifferent
+electrode,  constructed by averaging the potentials at the three limb
+electrodes (\ref{eqn:intro:leads:wct}).
+This is the Wilson's central terminal (WCT).
+They introduced three new `unipolar' leads, all of which use the WCT as the
+negative terminal.
+For the positive terminal, VL uses the L electrode, VR the R electrode and VF
+the F electrode.
+Later Goldberger~\cite{Goldberger1942}\ noted that be removing the electrode used
+as the positive terminal from the calculation of the central terminal for the
+negative electrode, the amplitude of the lead would be 50 per cent larger than
+that of the normal unipolar leads.
+These leads were termed the augmented unipolar leads, denoted by the prefix of
+an `a'.
+The aVL (\ref{eqn:intro:leads:avl}) leads uses L for the positive terminal and
+the average of R and F for the negative terminal.
+The aVR (\ref{eqn:intro:leads:avr}) leads uses R for the positive terminal and
+the average of L and F for the negative terminal.
+The aVF (\ref{eqn:intro:leads:avf}) leads uses F for the positive terminal and
+the average of R and L for the negative terminal.
+The set of leads consisting of I, II, III, aVL, aVR and aVF are known as the
+limb leads.
+The superior limb leads are I, aVL, aVR and the inferior are II, III, aVF.
+
+The precordial leads were introduced by Wilson~\cite{Wilson1944}\ to provide a
+better view of the electrical activity of the heart from the chest.
+They are all unipolar leads which use the WCT for the negative
+terminal.
+For the positive terminal they use one of the six precordial electrodes
+(figure~\ref{fig:intro:ecg:leads}), the locations of which are described in
+many textbooks (e.g.  \cite{Hampton2008}).
+The first precordial electrode, which is the positive terminal of
+$\text{V}_{\text{1}}$ (\ref{eqn:intro:leads:v1}) is located to the right of the
+sternum, in the fourth intercostal--between the ribs--space.
+The second precordial electrode, which is the positive terminal of
+$\text{V}_{\text{2}}$ (\ref{eqn:intro:leads:v2}) is located to the left of the
+sternum, in the fourth intercostal space.
+The third, the positive terminal of $\text{V}_{\text{3}}$
+(\ref{eqn:intro:leads:v3}) is located between the second and fourth precordial
+electrodes.
+The fourth ($\text{V}_{\text{4}}$, \ref{eqn:intro:leads:v4}) is located on the
+left midclavicular line, in the fifth intercostal space.
+The fifth ($\text{V}_{\text{5}}$, \ref{eqn:intro:leads:v5}) is located on the
+left anterior axillary line, in the fifth intercostal space.
+The sixth ($\text{V}_{\text{6}}$, \ref{eqn:intro:leads:v6}) is located on the
+left positerior axillary line, in the fifth intercostal space.
+
+The voltage, $V$, across each lead can be written as
+\begin{subequations} \label{eqn:intro:leads}
+\begin{align}
+V_{I}  = &\phi_{L} - \phi_{R}\label{eqn:intro:leads:i}\\
+V_{II}  = &\phi_{R} - \phi_{F}\label{eqn:intro:leads:ii} \\
+V_{III}  = &\phi_{L} - \phi_{F}\label{eqn:intro:leads:iii}\\
+V_{WCT}  = &\frac{\phi_{L} + \phi_{R} + \phi_{F}}{3}\label{eqn:intro:leads:wct}\\
+V_{aVL} = &\phi_{L} - \left(\frac{\phi_{R} + \phi_{F}}{2}\right) \label{eqn:intro:leads:avl}\\
+V_{aVR} = &\phi_{R} - \left(\frac{\phi_{L} + \phi_{F}}{2}\right)\label{eqn:intro:leads:avr} \\
+V_{aVF} = & \phi_{F} - \left(\frac{\phi_{R} + \phi_{L}}{2}\right)\label{eqn:intro:leads:avf}\\
+V_{1} = & \phi_1 - V_{WCT} \label{eqn:intro:leads:v1}\\
+V_{2} = & \phi_2 - V_{WCT} \label{eqn:intro:leads:v2}\\
+V_{3} = & \phi_3 - V_{WCT} \label{eqn:intro:leads:v3}\\
+V_{4} = & \phi_4 - V_{WCT} \label{eqn:intro:leads:v4}\\
+V_{5} = & \phi_5 - V_{WCT} \label{eqn:intro:leads:v5}\\
+V_{6} = & \phi_6 - V_{WCT} \label{eqn:intro:leads:v6}
+\end{align}
+\end{subequations}
+where $\phi_x$ is the potential measured at electrode $x$.
+
+As there are only 9 electrodes in the twelve lead ECG, there are only 8
+potential differences which can be uniquely determined.
+These are, by convention, leads I, II and $\text{V}_{\text{1--6}}$.
+The value of the other limb leads is that they provide a look at the activity of
+the heart from different angles, thus what might be unclear on one lead can be
+obvious on another.
+This concept of lead angles creates what is known as the hexaxial reference
+system (\cite{Lipman1994}, pp 94., amongst others), illustrated in
+figure~\ref{fig:intro:ecg:hex}.
+The angle at which each lead points is the direction of the positive terminal.
+Lead I, which is nominally horizontal, is at \degr{+0}.
+Under the hexaxial system, Lead II has an angle of \degr{+60}\ and lead III,
+\degr{+120}.
+The unipolar limb leads (both augmented and not) have angles of \degr{-30}\ for
+aVL, \degr{+90}\ for aVF and \degr{-150}\ for aVR.
+
+\subsection{The ECG Waves}
+
+In terms of the ECG, a `wave' is a deflection from the baseline observed in the
+lead.
+There are five standard waves in the ECG; P, Q, R, S and T.
+The origin of the names of these waves is a matter of some
+controversy~\cite{Hurst1998}, but whatever their origin, they are now enshrined
+in the literature.
+A schematic representation of the ECG waves is shown in
+figure~\ref{fig:intro:ecg:schematic}.
+Each of the waves is the result of the electrical activity in a particular part
+of the heart.
+Positive deflections are those which are above the baseline and negative ones
+below.
+
+The P-wave is caused by the depolarisation of the atria.
+It has a relatively low amplitude because the atria are small and thin walled
+compared to the ventricles, so there are not that many cells which can generate
+the wave.
+It tends to last from \ms{100} to \ms{120}.
+
+The QRS complex is associated with the ventricular depolarisation.
+It is a collection of up to three waves.
+Any negative deflection which preceeds the R wave is the Q wave.
+The R wave is the first positive deflection.
+The S wave is the first negative deflection after the R wave.
+A QRS complex does not need to have all three of the QRS waves present.
+The QRS complex tends to have the largest magnitude in the ECG and lasts
+approximately \ms{100}.
+
+The T wave is associated with the ventricular repolarisation.
+It occurs some time after the QRS complex.
+The $\text{T}_{\text{P}}$, caused by the atrial repolarisation is not normally
+visible on the ECG for a number of reasons.
+It is very small in magnitude, it is also often masked either by the QRS complex
+or by so called `baseline correction' algorithms which use the PR interval to
+determine a `zero' for the ECG.
+
+The axis of a wave is direction in which it has maximum amplitude.
+This is determined using the hexaxial reference system.
+A normal QRS complex (\ref{Lipman1994,Katz2006}) has an axis between \degr{-30}\
+and \degr{+110}.
+A normal P wave has an axis between \degr{+0}\ and \degr{+90}.
+
 
 \subsection{The Frank Vectorcardiogram}
 
