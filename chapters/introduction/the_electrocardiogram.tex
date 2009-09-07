@@ -212,6 +212,20 @@ A normal QRS complex (\cite{Lipman1994,Katz2006}) has an axis between \degr{-30}
 and \degr{+110}.
 A normal P wave has an axis between \degr{+0}\ and \degr{+90}.
 
+\subsubsection{Describing an ECG Wave}
+
+The terminology used to describe ECG waves is illustrated in
+figure~\ref{fig:intro:ecg:waveforms}.
+Positive waves, those with a deflection above the baseline, and negative waves,
+with a deflection below the baseline have already been explained.
+The P- and T-waves can have more complex morphology however.
+A P- or T- wave which shows both positive and negative deflections is termed
+biphasic.
+A positive--negative biphasic deflection is one which is first positive and then
+negative.
+A wave for which the converse is true is called negative--positive.
+A wave which is entirely positive, or negative, but that has a notch in the
+middle is described as bifid.
 
 \subsection{The Vectorcardiogram}
 
@@ -236,7 +250,16 @@ The frontal plane is the one in which the limb leads measure, whilst the transve
 can be related to the precordial leads, as illustrated in
 figure~\ref{fig:intro:ecg:planes}.
 
-Dower~\cite{Dower1980}\ proposed a series of coefficients for the three frank
-leads which would calculate from them into the twelve standard leads of the ECG.
+Dower~\cite{Dower1980}\ proposed a series of coefficients for the three Frank
+leads that would convert the Frank leads into the standard 12 lead ECG.
+However, the Frank leads are not recorded in common clinical practice.
+To remedy this fact, Edenbrant and Pahlm~\cite{Edenbrant1988} (and others, for
+example~\cite{Uijen1988}), proposed an `inverse dower' transformation.
+The inverse dower transform is a set of $8\times3$ coefficients
+(table~\ref{tbl:intro:ecg:inverse_dower}) which are used to multiply the eight
+independent components of the twelve lead ECG (I, II, $\text{V}_{\text{1--6}}$)
+to form the three Frank leads.
+
+\subsection{Body Surface Potential Mapping Arrays}
 
 
