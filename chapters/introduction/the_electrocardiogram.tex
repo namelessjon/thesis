@@ -41,13 +41,13 @@ Milaan, allows for a heart which consisted of distributed dipole sources
 sitting in a three dimensional, finite and inhomogeneous medium.
 
 First, it is useful to define what a lead is.
-A lead is defined as a pair of terminals, connected to any number of electrodes
+A lead is defined as a pair of terminals, each connected to any number of electrodes
 on the body, either directly or through any number of resistors or amplifiers.
 One of the terminals is designated (arbitrarily) as the `positive' terminal.
-The terminals are connected such that a positive measurement is taken, should
-the `positive' terminal have a higher potential than the `negative' one.
+The terminals are connected such that a positive measurement is taken if
+the `positive' terminal has a higher potential than the `negative' one.
 
-The lead theory is based on the fundamental principles of linear volume
+The lead field theory is based on the fundamental principles of linear volume
 conductors set out by Helmholtz in the middle of the nineteenth century.
 These principles only hold if the body can be treated as a linear volume
 conductor.
@@ -65,11 +65,21 @@ that would have been created by the field source.
 That is to say that the current flow is independent of the direction of
 energisation, from within or outside the medium.
 
-The concept of the lead field comes out of these principles.
-To derive the lead field, we consider a unit current flowing in a lead.
+To derive the lead field, we consider a unit current flowing in a
+lead $l$~\ref{fig:intro:ecg:lead_field}.
 The resulting flow of current through the body will have a certain magnitude and
 direction at every point; it is a vector field.
-Calling the vector field evoked by the unit current $\vec{L}$.
+This vector field is called $\vec{L}$, the lead field.
+If one considers a small volume in the heart region of the torso then the
+presence of the lead field, $\vec{L}$, will set up an electric field in the
+volume, $\vec{e}$.
+The principle of reciprocity means that if instead the electrical activity of
+the heart creates an electric field, $\vec{e}$, in the heart region then a unit
+current will flow through the lead $l$.
+The principle of superposition allows the contributions of many such small
+volumes, each containing their own field, $\vec{e_1},\cdots,\vec{e_n}$, to
+create a current, and thus a potential difference in $l$.
+
 
 \subsection{The Twelve Lead Electrocardiogram}
 
