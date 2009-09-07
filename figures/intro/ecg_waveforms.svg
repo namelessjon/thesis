@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="425.19684"
+   height="141.73228"
+   id="svg2"
+   sodipodi:version="0.32"
+   inkscape:version="0.46"
+   version="1.0"
+   sodipodi:docname="ecg_waveforms.svg"
+   inkscape:output_extension="org.inkscape.output.svg.inkscape"
+   inkscape:export-filename="/home/jon/thesis/figures/intro/ecg_waveforms.png"
+   inkscape:export-xdpi="300"
+   inkscape:export-ydpi="300">
+  <defs
+     id="defs4">
+    <inkscape:perspective
+       sodipodi:type="inkscape:persp3d"
+       inkscape:vp_x="0 : 526.18109 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_z="744.09448 : 526.18109 : 1"
+       inkscape:persp3d-origin="372.04724 : 350.78739 : 1"
+       id="perspective10" />
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     gridtolerance="10000"
+     guidetolerance="10"
+     objecttolerance="10"
+     inkscape:pageopacity="1"
+     inkscape:pageshadow="2"
+     inkscape:zoom="2.7845927"
+     inkscape:cx="180.57292"
+     inkscape:cy="70.866142"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="true"
+     units="mm"
+     inkscape:window-width="1280"
+     inkscape:window-height="951"
+     inkscape:window-x="0"
+     inkscape:window-y="0">
+    <inkscape:grid
+       type="xygrid"
+       id="grid2383"
+       visible="true"
+       enabled="true"
+       units="mm"
+       spacingx="1mm"
+       spacingy="1mm" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <text
+       xml:space="preserve"
+       style="font-size:18px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Sans;-inkscape-font-specification:Sans"
+       x="18.046091"
+       y="128.804"
+       id="text2393"><tspan
+         sodipodi:role="line"
+         id="tspan2395"
+         x="18.046091"
+         y="128.804">Positive</tspan></text>
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 7.0866142,53.149607 C 7.0866142,53.149607 14.173228,53.149607 17.716535,53.149607 C 32.749513,53.149605 38.116627,17.716537 53.149606,17.716537 C 68.182585,17.716537 73.549699,53.149606 88.582677,53.149607 C 95.669291,53.149607 99.212598,53.149607 99.212598,53.149607"
+       id="path2397"
+       sodipodi:nodetypes="csssc" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 113.38583,53.149607 C 113.38583,53.149607 120.47244,53.149607 124.01575,53.149607 C 139.04873,53.149605 144.41584,88.582678 159.44882,88.582678 C 174.4818,88.582678 179.84891,53.149605 194.88189,53.149607 C 198.4252,53.149607 205.51181,53.149607 205.51181,53.149607"
+       id="path2399"
+       sodipodi:nodetypes="cszsc" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 219.68504,53.149607 C 219.68504,53.149607 226.77165,53.149607 230.31496,53.149607 C 237.83145,53.149606 240.30007,35.433071 251.5748,35.433072 C 262.84953,35.433073 268.64653,70.866144 279.92126,70.866143 C 291.19599,70.866142 293.66461,53.149606 301.1811,53.149607 C 304.72441,53.149607 311.81102,53.149607 311.81102,53.149607"
+       id="path2401"
+       sodipodi:nodetypes="cszzsc" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 325.98425,53.149607 C 325.98425,53.149607 333.07087,53.149607 336.61417,53.149607 C 348.64055,53.149606 353.90083,24.80315 361.41732,24.803151 C 368.93381,24.803152 369.04064,31.889764 372.04724,31.889765 C 375.05384,31.889766 375.16068,24.803149 382.67717,24.803151 C 390.19366,24.803153 395.45393,53.149606 407.48031,53.149607 C 411.02362,53.149607 418.11024,53.149607 418.11024,53.149607"
+       id="path2403"
+       sodipodi:nodetypes="cszzzsc" />
+    <text
+       xml:space="preserve"
+       style="font-size:18px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Sans;-inkscape-font-specification:Sans"
+       x="118.64999"
+       y="128.804"
+       id="text2405"><tspan
+         sodipodi:role="line"
+         id="tspan2407"
+         x="118.64999"
+         y="128.804">Negative</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:18px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Sans;-inkscape-font-specification:Sans"
+       x="227.67381"
+       y="128.804"
+       id="text2409"><tspan
+         sodipodi:role="line"
+         id="tspan2411"
+         x="227.67381"
+         y="128.804">Biphasic</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:18px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Sans;-inkscape-font-specification:Sans"
+       x="351.92468"
+       y="128.804"
+       id="text2413"><tspan
+         sodipodi:role="line"
+         id="tspan2415"
+         x="351.92468"
+         y="128.804">Bifid</tspan></text>
+  </g>
+</svg>
