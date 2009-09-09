@@ -1,0 +1,258 @@
+\section{Mathematical Models of the Heart}
+
+Cardiac tissue has been modelled mathematically for about fifty years.
+While initial models were simple, there are now models of high sophistication
+available.
+These models are capable of reproducing both healthy and pathological behaviour
+with some accuracy.
+
+\subsection{Categorising Myocyte Models}
+
+Cellular models tend to be classified in two ways.
+The first differentiator is the level of detail employed.
+The second is on which cellular processes are modelled.
+
+Biophysically detailed models are complex.
+They consider the interactions of several different currents, and potentially
+intra- and extracellular ion concentrations, reservoirs as well as other
+details.
+The second type are simplified, phenomenological, models.
+These do not consider individual ion concentrations but instead just reproduce
+one desired factor, typically the action potential profile.
+
+Models, whether biophysically detailed or not, can concern themselves with the
+cellular electrophysiology, the mechanical contrations or both.
+This thesis concerns itself just with electrophysiological models.
+Models of the mechanics are not considered and are not treated in this
+description of mathematical modelling.
+
+\subsection{A Brief History Of Cardiac Myocyte Modeling}
+
+The first model of cardiac electrophysiology was published by
+Noble~\cite{Noble1962}, and modelled Purkinje fibre (A specialised part of the
+ventricular conduction system) action potentials.
+Shortly thereafter, various refinements were published, as further experimental
+data became available.
+This was eventually followed by the Beeler--Reuter~\cite{Beeler1977}\ model of
+the guinea pig ventricular myocyte.
+
+The Luo--Rudy guinea pig ventricular myocyte model was first published in
+1991~\cite{Luo1991} and was then sub-sequentially majorly revised and
+republished in 1994~\cite{Luo1994}.
+The first Luo-Rudy model was based on the Beeler--Reuter model, though with updated channel behaviours
+and more complex potassium channels.
+The second Luo-Rudy model was the first of the `second generation' models,
+with fluctuations in all ion concentrations, and a much more detailed series of
+equations for calcium handling.
+
+In 1998, the Courtemanche--Ramirez--Natel\cite{CRN1998}\ (CRN) model and the
+Nygren~\cite{Nygren1998}\ model were published.
+These were both models of the human atrium.
+They were also both second generation models, with detailed calcium handling.
+Also in 1998 Fenton and Karma published their phenomenological
+Fenton--Karma~\cite{Fenton1998}\ model, which used just three channels to
+reproduce the shape of the ventricular action potential.
+
+\subsection{Mathematical Models of Myocytes}
+
+Mathematical models of cardiac myocytes are built from a few simple assumptions
+and considerations.
+These concern the behaviour of the cellular membrane and ion channels.
+The important ones are detailed here.
+
+\subsubsection{Electric Circuit Model}
+
+The electrical circuit model of the cell membrane underpins much of the work in
+modelling the behaviour of cardiac myocytes.
+It is however a very simple concept.
+Since the membrane seperates charges, it may be considered as a capacitor, as
+shown in figure~\ref{fig:intro:math:circuit}.
+Since there is no net buildup of
+charge on either side of the membrane, any ionic current, \ii{ion}, must be
+countered by a capacitive current, and so
+\begin{equation}
+C_{m}\frac{dV_{m}}{dt} + \ii{ion} = 0
+\label{eqn:intro:math:basic}
+\end{equation}
+where $V_{m}$ is the membrane voltage, and is defined as the difference between
+the internal potential, $u_{i}$ and the external potential, $u_{e}$ or
+\begin{equation}
+V_{m} = u_{i} - u_{e}
+\label{eqn:intro:math:vm}
+\end{equation}
+When multiple currents are considered, the total inward and outward currents are
+summed.
+The difficulty comes in determining the form of \ii{ion}, which varies widely
+depending on the nature of the channel or pump in question.
+
+\subsubsection{The Nernst Equilibrium Potential}
+
+The Nernst equation is an important equation in electrophysiology.
+It describes how the difference in ion concentrations on two sides of a
+semi-permeable barrier can result in a potential difference across the barrier.
+Any voltage dependant factor of a current of an ion, S, includes a reversal
+potential, V$_{S}$, equal to the Nernst potential.
+At the reversal potential, the current falls to 0.
+When equilibrium is reached the potential difference, $V_{S}$, across the
+membrane is given by
+\begin{equation}
+V_{S} = \frac{RT}{zF}ln\left( \frac{[S]_{e}}{[S]_{i}} \right) 
+\end{equation} 
+where subscripts $i$ and $e$ denote internal and external concentrations of S,
+$R$ is the universal gas constant, $T$ is the absolute temperature, $F$ is
+Faraday's constant and $z$ the charge of the ion $S$.
+
+The Nerst Potential applies only to a single ion concentration.
+This is not as large a limitation as it first might seem.
+Whilst the action potential involves many ion species, many channels are ion
+specific and thus the Nerst potential applies across them.
+
+\subsubsection{The Hodgkin-Huxley Equations}
+
+Many mathematical models of cardiac myocytes feature one or more
+`Hodgkin--Huxley' channels.
+Hodgkin and Huxley developed them in a now classic series of papers concerning
+the current flow through the membrane of the squid giant axon.
+They characterise the current flow with elegance and surprising accuracy.
+It is important to note that the Hodgkin--Huxley equations consider the bulk
+behaviour of the many thousands of individual channel structures distributed
+across the membrane, not the behaviour of one single channel.
+
+Hodgkin and Huxley started with a very simple assumption.
+The current flow through a channel on the membrane, $I_{S}$ is given by
+\begin{equation}
+I_{S} = g_{S}\left(V-V_{S}\right)
+\label{eqn:intro:math:hh1}
+\end{equation}
+where $g_{S}$ is the channel conductance, $V$ the membrane potential and $V_{S}$
+the Nernst potential for the ion S.
+Equation (\ref{eqn:intro:math:hh1}) assumes that the channel is selective for
+one ion species S, and that the current is a simple linear function of the
+voltage across the membrane.
+
+With this underlying assumption, Hodgkin and Huxley set out to accurately map
+the behaviour of the current with regards time and voltage.
+The following section explains the description for the sodium current, \ii{Na}.
+From the form of the sodium channel under voltage clamp conditions, it is
+reasonable to expect $g_{Na}$ obeys a differential equation of the form
+\begin{equation}
+\frac{dg_{Na}}{dt} = f\left(v,t\right)
+\label{eqn:intro:math:hh2}
+\end{equation}
+where $v=V-V_{Na}$.
+However, the form of $g_{Na}$ is complex.
+While remaining at the same voltage, the conductance at first increases and then
+tails off.
+It appeared that there were two processes at work, one that turned the current
+on, and one that turned it off.
+Hodgkin and Huxley realised that it would be easier to write $g_{Na}$ as a
+function of two different variables.
+One which corresponded to the turning on and one to the turning off of the
+channel.
+This leads there being an activation variable, called $m$, an inactivation
+variable, called $h$ and that the current would be some linear combination of the
+two, multiplied by a constant conductance factor $\bar{g}_{Na}$.
+The two variables $m$ and $h$ would both satisfy a differential equation such as
+\begin{equation}
+\frac{dm}{dt}=\alpha_{m}\left(v\right)\left(1-m\right) -
+\beta_{m}\left(v\right)m
+\label{eqn:intro:math:dmdt}
+\end{equation}
+where $\alpha_{m}$ and $\beta_{m}$ are functions of $v\,\left(=V-V_{Na}\right)$.
+As an activation $m$, $\alpha_{m}$ and $\beta_{m}$ are such that $m$ is
+initially small but increases with the potential.
+As $h$ is an inactivation, $\alpha_{h}$ and $\beta_{h}$ give an initially high
+value of $h$ that then decays, inactivating the channel.
+
+The form proposed for $g_{Na}$ by Hodgkin and Huxley was
+\begin{equation}
+g_{Na}=\bar{g}_{Na}m^{3}h
+\label{eqn:intro:math:gna}
+\end{equation}
+where all symbols are as defined previously.
+The decision to raise $m$ to the third power was based on the rate of increase
+observed in voltage clamp experiments.
+It is interesting to note that when the structure of \ii{Na}\ was examined in
+detail, it was discovered that the channel has three structures which open to
+allow current to flow.
+A second structure, the `ball and chain' then acts to close the channel.
+
+Many different channels are modelled as Hodgkin--Huxley channels.
+Different channels have different activation and inactivation variables.
+These variables are modulated by different $\alpha$ and $\beta$ equations.
+
+\subsubsection{Markov Chain Currents}
+
+\subsection{Selected Myocyte Models}
+
+There are tens, perhaps hundreds, of myocyte models of varying complexity and
+accuracy.
+There are relatively few models of atrial myocytes in the human however.
+A brief description of the foremost two are given here, as well as a description
+of one of the most adaptable phenomological models.
+
+\subsubsection{The Courtemanche--Rameriz--Nattel Model}
+
+\subsubsection{The Nygren Model}
+
+\subsubsection{The Fenton--Karma Model}
+
+\subsection{Action Potential Propagation}
+
+Single myocyte models are important, and can tell us much about the heart in
+disease and health.
+The heart is not made up of isolated myocytes however.
+Whilst current computational power does not allow myocytes to be modelled on an
+individual cellular basis for the whole heart, continuum models of propagation
+have been developed.
+These are summed up in the bidomain equations, and their simplification, the
+monodomain equations.
+
+\subsubsection{The Bidomain Equation}
+
+The bidomain equation comes out of basic electromagnetic theory and several
+assumptions about the nature of cardiac tissue~\cite{Tung,STUFF}.
+\begin{enumerate}
+    \item The cardiac tissue contains two continuous, simply connected domains, the intracellular and extracellular domains.
+    There is no detailed consideration of the fine points of geometry.
+    \item The intra- and extracellular domains overlap and fill all of the cardiac muscle. Each point lies in both domains.
+    \item Charge does not accumulate.
+\end{enumerate}
+
+The derivation is not that difficult to work through, and it results in the bidomain equations
+\begin{align}
+\underline{\nabla}\cdot\left(\left(M_{i}+M_{e})\right)\underline{\nabla}u_{e}\right) + \underline{\nabla}\cdot\left( M_{i}\underline{\nabla}V_{m}\right) &=& 0
+\label{eqn:intro:math:bidom1}\\
+\underline{\nabla}\cdot\left(M_{i}\underline{\nabla}V_{m}\right) + \underline{\nabla}\cdot\left(M_{i}\underline{\nabla}u_{e}\right) &=& \chi C_{m}\frac{dV_{m}}{dt} + \chi{I_{ion}}
+\label{eqn:intro:math:bidom2}
+\end{align}
+where the suscript $i$ and $e$ refer to the intra- and extracellular quantities, $M$ is a matrix of conductivities, $\chi$ represents the surface-to-volume ratio of the cells and all other quantities are as defined previously.
+The bidomain equations are a coupled set of a parabolic and elliptic differential equation.
+
+Boundary conditions for the bidomain equations vary, though the most common ones are described here.
+First, no intracellular fluxes leave the heart.
+Second, the body is assumed to be a passive conductor that is isolated at the outer surface.
+The body potential at the surface of the heart is the extra-cellular potential at the surface of the heart.
+
+\subsubsection{The Monodomain Equation}
+
+While the bidomain equations represent a good tool for modelling some of the complexities of cardiac conduction, they are very demanding to solve, necessitating finding the solution to coupled parabolic and elliptic differential equation sets.
+The monodomain equation is the result of one simplifying assumption made to the bidomain equations.
+For the monodomain equation, we assume that the anisotropy ratio, $\lambda$, is the same for the intra- and extra-cellular fluids at all points.
+\begin{equation}
+M_{i} = {\lambda}M_{e}
+\label{eqn:intro:math:mratio}
+\end{equation}
+This assumption is not a very physiological one, but the simplification it
+allows is significant and so it is quite commonly used.
+
+Substituting (\ref{eqn:intro:math:mratio}) into (\ref{eqn:intro:math:bidom1})
+and (\ref{eqn:intro:math:bidom2}) and rearranging reduces the pair of equations
+to one single equation for the membrane potential
+\begin{equation}
+\frac{\lambda}{1+\lambda}\underline{\nabla}\cdot\left(M_{i}\underline{\nabla}V_{m}\right) = \chi C_{m}\frac{dV_{m}}{dt} + \chi{I_{ion}}
+\label{eqn:intro:math:mono}
+\end{equation}
+Typically, the factor of ${\lambda}/\left({1+\lambda}\right)$ is folded into $M_{i}$ to give the diffusion tensor $D$.
+In 1D, this is the cable equation, which is very widely used.
+The values of the components of the tensors $M_{x}$ or $D$ may be determined experimentally, or from a comparison of conduction in real and virtual tissue samples.
