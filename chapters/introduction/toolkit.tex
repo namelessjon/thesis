@@ -79,4 +79,91 @@ If the toolkit is closed source, this is impossible, or nearly so.
 In addition, the internal complexity of a toolkit can make additions in open
 source implementations difficult.
 
+\subsection{Available Toolkits}
 
+There are several available toolkits, of differing scales and intended uses.
+These represent the different intents of the authors and contributors.
+
+\subsubsection{CellML}
+
+Whilst not a toolkit in its own right, the CellML repository, curated by the
+University of Auckland~\cite{Lloyd2008}, represents a potentially useful
+resource for all cardiac modelers.
+Using an XML based markup language, CellML, the CellML repository contains
+representations of many electrophysiology models.
+From these XML documents, programs can create code to solve the system of
+equations representing the cellular model.
+Once a translator has been implemented, any model in CellML format should be
+easy to simulate.
+
+CellML is used as a model input format for several toolkits.
+CellML suffers from two problems.
+The first is that writing complex mathematics for ionic channel function can be
+difficult in the XML based format.
+The second is that the API itself for translating the CellML code into a form
+which is possible to compile is also complex, although this problem need only be
+solved once for any given toolkit.
+
+
+\subsubsection{Cardiac Arrhythmia Research Package}
+
+The Cardiac Arrhythmia Research Package~\cite{Bauer2007,Plank2005,Vigmond2007}\
+(CARP) is a sophisticated library for large scale cardiac modeling.
+It is developed by Dr. Edward Vigmond and Dr. Gernot Plank.
+It is mostly implemented in C/++.
+
+The CARP is intended to be a powerful and flexible cardiac simulation library.
+It is organised into three layers.
+The application layer is very high level and is intended to be mostly free of
+the complexities of the underlying model and parallelisation.
+The interface layer deals with the complexities of parallelization and
+distributing cellular models over the grid.
+The ionic layer has all the individual cell models, which again requires no
+knowledge of parallelization.
+
+The CARP can handle both structured and unstructured input grids and can also
+perform dynamic grid refinement.
+The API provided by the toolkit is quite clean and provides access to powerful
+techniques to solve large systems.
+The CARP doesn't currently support CellML model input.
+
+
+\subsubsection{CMISS}
+
+CMISS is a toolkit for solving problems in Continuum Mechanics, Image analysis,
+Signal processing and System Identification.
+It is developed by a group at the University of Auckland~\cite{CMISS}.
+The CMISS package is a collection of programs and libraries for solving a
+variety of problems, including electrophysiology.
+It is implemented principally in Fortran.
+A compiled version is freely available from the project website, for linux only.
+
+CMISS supports importing models from CellML.
+It includes quite powerful visualization capabilities in addition to the
+modelling capabilities it offers.
+The modelling implementation includes a variety of solvers for both ODE and
+PDEs.
+
+CMISS is complex enough that it has its own language for configuration files
+which define the problem to solve.
+In addition several configuration files are needed to define one problem.
+It also outputs results in its own format, which can make interoperability
+with different visualisation difficult.
+
+\subsubsection{Cellular Open Resource}
+
+The Cellular Open Resource (COR)~\cite{Garney2003}\ is intended for single cell
+modeling.
+It is freely available from the website, for windows only.
+It is allows editing of CellML files and execution of the models using a variety
+of integrators.
+The COR can provide tracings of all currents and state variables as the action
+potential evolves.
+It also supports exporting models to a variety of formats, including C and
+Fortran.
+
+The COR is single cell only, and only works on windows.
+The source code is not publicly available meaning that extension other than
+modifying models is not possible.
+Modification of models and specification of stimulus protocols is via its own
+programming language or direct modification of XML files.
