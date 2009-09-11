@@ -37,8 +37,8 @@ This was eventually followed by the Beeler--Reuter~\cite{Beeler1977}\ model of
 the guinea pig ventricular myocyte.
 
 The Luo--Rudy guinea pig ventricular myocyte model was first published in
-1991~\cite{Luo1991} and was then sub-sequentially majorly revised and
-republished in 1994~\cite{Luo1994}.
+1991~\cite{LR1991} and was then sub-sequentially majorly revised and
+republished in 1994~\cite{LR1994}.
 The first Luo-Rudy model was based on the Beeler--Reuter model, though with updated channel behaviours
 and more complex potassium channels.
 The second Luo-Rudy model was the first of the `second generation' models,
@@ -187,15 +187,122 @@ These variables are modulated by different $\alpha$ and $\beta$ equations.
 
 There are tens, perhaps hundreds, of myocyte models of varying complexity and
 accuracy.
-There are relatively few models of atrial myocytes in the human however.
+There are relatively few models of atrial myocytes for human tissue.
 A brief description of the foremost two are given here, as well as a description
 of one of the most adaptable phenomological models.
 
 \subsubsection{The Courtemanche--Rameriz--Nattel Model}
 
+The Courtemanche--Rameriz--Nattel (CRN) model~\cite{CRN1998}\ is a biophysically
+detailed second generation model of the human atrial myocyte.
+It was based on the Luo-Rudy~\cite{LR1994}\ model of the guinea pig ventricular
+myocyte.
+The currents were then modified based on data from human and animal atrial
+myocytes.
+
+The CRN model tracks 21 state variables.
+Most of these are gating parameters for the many ion channels, but the model
+also tracks the internal concentration of potassium, sodium and calcium ions.
+The external concentrations of ions are assumed constant.
+There are also state parameters representing the calcium stored in internal
+structures, such as the sarcoplasmic reticulum.
+\begin{equation}
+\label{eqn:intro:math:crn}
+\ii{ion} = \ii{Na} + \ii{K1} + \ii{to} + \ii{Kur} + \ii{Kr} + \ii{Ks} +
+\ii{Ca,L} + \ii{b,Na} + \ii{b,Ca} + \ii{NaK} + \ii{NaCa} + \ii{p,Ca}
+\end{equation}
+The CRN has 12 transmembrane currents which contribute to \ii{ion},
+equation~(\ref{eqn:intro:math:crn}), and pumps and 4 currents and
+pumps which just interact with the internal calcium stores.
+The external currents are \ii{Na}, the fast sodium current, \ii{K1}, the inward
+rectifier calcium current, \ii{to}, the transient outward current, \ii{Kur}, the
+ultra-rapid delayed rectifier current, \ii{Kr}, the rapid delayed rectifier
+current, \ii{Ks}, the slow delayed rectifier current, \ii{Ca,L}, the L-type
+calcium current, \ii{b,Na}, the sodium background current and \ii{b,Ca}, the
+calcium background current.
+All the currents are time-dependent, except for the background currents which
+have constant coductance and \ii{K1}, which is voltage-dependent.
+There are also three pumps; \ii{NaK}, the sodium--potassium exchanger,
+\ii{NaCa}, the sodium--calcium exchanger and \ii{p,Ca}, the calcium pump.
+
+As a biophysically detailed model, the CRN model is suitable for a variety of
+modeling tasks.
+The number of currents make it an attractive option for modeling drugs or
+genetic mutations.
+It can be expensive to solve for large numbers of cells, however.
+
 \subsubsection{The Nygren Model}
 
+The Nygren model~\cite{Nygren1998}\ is a biophysically detailed second
+generation model of the human atrial myocyte.
+It was based on the Linblad model of the rabbit atrium.
+The equations were then modified using human data, mostly gathered from the
+atrial appendages.
+
+The Nygren model tracks 29 state variables.
+Most of these are gating parameters.
+They model also tracks concentrations of ions, both internally and in
+extracellular cleft spaces, to represent local ion fluctuations.
+Like the CRN model, there are also variables to represent internal calcium
+handling.
+\begin{equation}
+\label{eqn:intro:math:nygren}
+\ii{ion} = \ii{Na} + \ii{K1} + \ii{to} + \ii{Kur} + \ii{Kr} + \ii{Ks} +
+\ii{Ca,L} + \ii{b,Na} + \ii{b,Ca} + \ii{NaK} + \ii{NaCa} + \ii{p,Ca}
+\end{equation}
+The Nygren model has 12 transmembrane currents which contribute to \ii{ion},
+equation~(\ref{eqn:intro:math:nygren}), and pumps and 4 currents and
+pumps which just interact with the internal calcium stores.
+The external currents are \ii{Na}, the fast sodium current, \ii{K1}, the inward
+rectifier calcium current, \ii{to}, the transient outward current, \ii{Kur}, the
+ultra-rapid delayed rectifier current, \ii{Kr}, the rapid delayed rectifier
+current, \ii{Ks}, the slow delayed rectifier current, \ii{Ca,L}, the L-type
+calcium current, \ii{b,Na}, the sodium background current and \ii{b,Ca}, the
+calcium background current.
+All the currents are time-dependent, except for the background currents which
+have constant coductance and \ii{K1}, which is voltage-dependent.
+There are also three pumps; \ii{NaK}, the sodium--potassium exchanger,
+\ii{NaCa}, the sodium--calcium exchanger and \ii{p,Ca}, the calcium pump.
+
+The Nygren model is a biophysically detailed model, suitable for a variety of
+modelling tasks.
+It has more involved mathematics and requires more storage than the CRN model,
+making it less attractive for large-scale simulation.
+It is also interesting to note that the two models have very different
+AP morphologies, the reasons for which are unclear.
+
 \subsubsection{The Fenton--Karma Model}
+
+The Fenton--Karma (FK) model~\cite{Fenton1998,Bueno-Orovio2008}\ is a
+phenomenological, or minimal variable, model of the ventricular action
+potential.
+The goal of the FK model is to accurately reproduce the AP profile and
+restitution properties of myocytes as well as short-term memory effects.
+The original FK model has 3 variables, a fourth was added recently.
+
+The FK model tracks 4 state variables.
+These have no real physiological analogues.
+\begin{equation}
+\label{eqn:intro:math:fko}
+\ii{ion} = \ii{fi} + \ii{si} + \ii{so}
+\end{equation}
+The FK model has 3 transmembrane currents which contribute to \ii{ion},
+equation~(\ref{eqn:intro:math:fko}).
+The fast inward current, \ii{fi}, is roughly analogous to the fast sodium
+current in more detailed models, the slow inward current, \ii{si}, fulfils a
+similar role to the L-type calcium current and the slow outward current, \ii{si},
+is analogous to the potassium rectifier currents.
+The behaviour of the currents is generally controlled by step functions based
+on the state variables.
+
+The FK model is not biophysically detailed.
+This makes it very fast to solve, making it attractive for large tissue
+simulations.
+The drawback of this is that incorporating complex hormonal or drug interactions
+is difficult.
+The model is highly modifiable, with parameter sets that can reproduce a variety
+of AP morphologies and restitution behaviours, including one for atrial myocyte
+APs~\cite{Weber2008}.
 
 \subsection{Action Potential Propagation}
 
