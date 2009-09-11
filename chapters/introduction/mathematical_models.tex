@@ -181,7 +181,33 @@ Many different channels are modelled as Hodgkin--Huxley channels.
 Different channels have different activation and inactivation variables.
 These variables are modulated by different $\alpha$ and $\beta$ equations.
 
-\subsubsection{Markov Chain Currents}
+\subsubsection{Markov Chain Channels}
+
+Markov chain models of ion channels~\cite{Balser1990,Clancy1999,Silva2005}\
+emerged when more detailed information on ion channel behaviour became
+available.
+This included single channel recordings rather than whole cell recordings.
+Under such conditions, as well as in certain pathological states, the
+Hodgkin--Huxley descriptions of the cells broke down.
+
+In a markov chain model, instead of having one or more activations or
+inactivations, the channel has a number of states.
+Common states can include open, inactive and closed.
+A channel can have more than one state of each sort.
+Transitions are only allowed between certain states and each transition has a,
+usually time or voltage dependent, probability.
+Channels only allow current to flow whilst in an open state.
+
+Markov chain models can be highly complex and contain many states.
+They can be utilised in a variaty of ways.
+One markov chain can represent the behaviour of all the individual channels on
+the cell.
+In this case, the total current flowing in the channel will be proportional to
+the fraction of open states.
+Cells can also have multiple markov chains to represent the flow through a
+channel, each with its own proportions of state occupancy.
+They also open the possibility of using stochastic simulation techniques where
+the transition between states is controlled by random chance.
 
 \subsection{Selected Myocyte Models}
 
@@ -363,3 +389,11 @@ to one single equation for the membrane potential
 Typically, the factor of ${\lambda}/\left({1+\lambda}\right)$ is folded into $M_{i}$ to give the diffusion tensor $D$.
 In 1D, this is the cable equation, which is very widely used.
 The values of the components of the tensors $M_{x}$ or $D$ may be determined experimentally, or from a comparison of conduction in real and virtual tissue samples.
+
+\subsection{Solving Mathematical Models}
+
+\subsubsection{Forward Euler Method}
+
+\subsubsection{Solving Partial Differential Equations}
+
+\subsubsection{The Rush--Larsen Technique}
