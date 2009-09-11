@@ -1,34 +1,82 @@
 \section{Cardiac Simulation Toolkit}
 
-To extract useful results from cardiac modelling two principle components are
-needed, as has been previously mentioned: the mathematical models used for
-cardiac activity and a computational representation of the experimental
-protocols followed to produce results.  A cardiac simulation toolkit provides
-one or both of these components to an investigator, removing the need for the
-investigator to implement those components themselves.  The word toolkit is
-chosen to differentiate from the relatively more common practice of just
-providing individual cell models.  A toolkit implies more than one model, or
-variants on a model, with a common calling interface and implementation of one
-or more experimental protocols or a non-programmatic way of setting up such
-protocols---whether through a GUI or through command-line options or
-configuration files.
+Extracting results from cardiac modeling requires a computational implementation
+of a cardiac model and then to drive this model through an experimental
+protocol.
+A cardiac simulation toolkit provides an implementation of the model, or models,
+and a way of driving them to produce results.
+In this way, they can simplify research for the investigator, saving time and
+effort of programming oneself.
 
-Toolkits have a number of advantages to the investigator, including a reduction
-in the work required to bring a paper to publication, increased consistency both
-within and outside of the group, fewer implementation mistakes, increased
-possibilities for collaboration and verification and a greater accessibility to
-cardiac simulations for non-programmers.  The disadvantages of toolkits are not
-as numerous, but they too will be considered.  A toolkit will need auditing, to
-ensure that the results it gives are accurate.  Toolkits can also constrain the
-avenues of experimentation pursued by an investigator by making protocols easier
-or harder to implement.  Finally, the additional complexity makes adding any new
-feature a little harder---there is a `feature cost'.
 
 \subsection{Advantages of Cardiac Simulation Toolkits}
 
+Toolkits can be an attractive option for cardiac investigators.
+The most obvious benefit is intrinsic in the nature of toolkits--the
+investigator need not implement a potentially complex model themselves.
+This saves effort both in the initial programming and also in the subsequent
+validation of the model which is essential for ensuring an accurate model has
+been created.
+This can also reduce the need for boring and repetitive programming.
+It can also open up the field of cardiac modeling to those without programming
+experience, such as physiologists and physicians, allowing them to contribute
+their experience and opinions to the field.
+
+Because a toolkit is intended to be used many times, it can be more feasible to
+incorporate more advanced techniques.
+These can include advanced solvers for ODEs and PDEs.
+The pay off for optimisation can also be higher.
+
+There are also benefits in consistency, both within and outside the research
+group.
+This allows for easier comparison of results between separate studies and
+quicker checking for errors.
+This can be especially significant in large-scale models.
+
+\subsection{Disadvantages of Cardiac Simulation Toolkits}
+
+Toolkits are not without problems, however.
+Some of these problems might be implementation specific, but many cannot be
+entirely avoided.
+They can roughly be divided into usage problems and extension problems.
+Usage problems concern the day-to-day usage of the toolkit, whilst extension
+problems deal with the issue of making the toolkit do more.
+
+One problem can be the complexity of the toolkit itself.
+Complexity can make toolkits hard, even intimidating to use.
+This can be mitigated through good documentation and logical layout.
+
+A second problem is one of platform dependency.
+A toolkit might rely on features only available on one platform or only be
+available in binary packages for that one platform.
+This can be especially important when the time comes to extend into a high
+performance computing environment, which can often be based on a different
+architecture and platform to local resources.
+
+A third problem, which is mostly implementation dependent, is one of
+configuration and output.
+Toolkits, especially those with graphical interfaces, can often only be setup
+through such interfaces.
+This can make setting up experiments with small variations tedious.
+The output can also be in a format which is only easily read by the toolkit
+itself, tying a user to the toolkit.
+
+Bugs can be present in both toolkit code and bespoke code.
+Whilst the nature of toolkits can result in such a bug being found sooner, the
+bug has a potential to influence many studies if the toolkit is widely used.
+This can obviously be mitigated through appropriate testing.
+
+Another problem can be one of `design impedance', which can also be expressed as
+`When all you have is a hammer, every problem looks like a nail'.
+Toolkits tend to present an easy or preferred path for modeling studies.
+This can make deviations from this path, even when they might be advisable for
+physiological considerations, harder.
+
+Moving on from usage considerations, extension problems can also be significant.
+Closely related to design impedance is the difficulty toolkits can present in
+extension.
+If the toolkit is closed source, this is impossible, or nearly so.
+In addition, the internal complexity of a toolkit can make additions in open
+source implementations difficult.
 
 
-Cardiac simulation toolkits have existed in one form or another for some
-time and include both commercial and open source 
-Several cardiac simulation systems have previously been released, one of
-the first of which is the OXSOFT HEART~\cite{Noble-1999}.
