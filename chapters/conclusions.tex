@@ -1,0 +1,55 @@
+\chapter{Conclusions}
+
+
+This was an investigation into models of cardiac tissue, with a special focus on
+atrial tissue\cite{foo}.
+It included whole atrial models, which were then extended beyond the heart to
+simulate the P-wave ECG.
+A toolkit providing access to efficient implementations of various experimental
+protocols was developed.
+A model of the atrium based on biophysically detailed myocyte models, including tissue heterogeneity and anisotropic
+conduction, was constructed.
+The atrial model was used as the basis of a model of the P-wave ECG which was
+solved using a boundary elemental formulation.
+All of the tools and models developed were used to perform physiological
+studies of tissues in healthy and diseased states.
+
+The cardiac toolkit which was developed provides easy access to a wide variety
+of experimental protocols.
+These protocols are used to assess the physiological impact of a gene mutation,
+drug action, hormonal effect or other electrophysiological modification.
+They include protocols which act on single cells and also on one dimensional
+idealisations of cardiac tissue.
+
+The implementations of these protocols focused on efficient algorithms
+which take advantage of the computational nature of the models.
+It was important that this did not compromise on the physiological accuracy and
+level of detail employed.
+This was accomplished in part through the use of lookup tables which reduced the
+computational effort needed to solve \ms{1}\ of cardiac activity compared to an
+implementation without such tables without impacting measured physiological
+characteristics significantly.
+Such a saving might be considered a `cell level' performance optimisation.
+Greater savings can be observed through the use of `protocol level' performance
+optimisation.
+These protocol level optimisations are where the computational nature of the
+models can really be exploited.
+Optimisations include storing of cellular state after the pre-pacing part of the
+protocol and adaptive stepping when tracking response curves of varying slope.
+There was also the novel use of a basic computer science algorithm, the binary
+search, to determine the limits in a number of experimental protocols.
+This can be used, with a sensible choice of initial guesses, to reduce the total
+number of cases which must be tested by an order of magnitude.
+
+The toolkit also offers an easy way of specifying and running 2D simulations.
+Simulation, even of irregular geometry, is simplified.
+Utilities can be used to convert quantified colour bitmaps into simulation
+geometries with heterogeneous electrophysiology.
+A variety of stimulation protocols can be specified, including both current and
+voltage stimuli.
+The simulations are accompanied by regular outputting of gif snapshots of the
+voltage, to allow simulations to be assessed as they run.
+In addition, the tissue simulation code is parallelized using a shared memory
+paradigm with OpenMP.
+
+
