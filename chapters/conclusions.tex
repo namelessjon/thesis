@@ -1,4 +1,4 @@
-\chapter{Conclusions}
+\chapter{Discussion And Conclusions}
 
 
 This was an investigation into models of cardiac tissue, with a special focus on
@@ -13,6 +13,8 @@ The atrial model was used as the basis of a model of the P-wave ECG which was
 solved using a boundary elemental formulation.
 All of the tools and models developed were used to perform physiological
 studies of tissues in healthy and diseased states.
+
+\section{Cardiac Simulation Toolkit}
 
 The cardiac toolkit which was developed provides easy access to a wide variety
 of experimental protocols.
@@ -52,4 +54,205 @@ voltage, to allow simulations to be assessed as they run.
 In addition, the tissue simulation code is parallelized using a shared memory
 paradigm with OpenMP.
 
+\section{Whole Atrial Model}
 
+The whole atrium model which was developed is capable of modeling the
+electrophysiological behaviour of the atrium at the whole tissue level.
+It includes both conduction anisotropy and tissue heterogeneity.
+The use of biophysically detailed myocyte model as the basis makes the model
+flexible.
+Diffusion of voltage was altered to produce conduction velocities in the atrial
+tissue comparable with those measured experimentally and to reproduce clinical
+measurement of total activation time under sinus rhythm.
+The model is based on an anatomical geometry, not an idealised one, including
+fluctuations in wall thickness and other anatomical deviations.
+All these features make the model suitable for modeling a variety of conditions.
+This includes those induced by fundamental changes to the electrophysiology
+caused by genetic defects or drug actions.
+
+The level of detail might make the model computationally unattractive, as it
+involves solving many ordinary differential equations to advance the cellular
+state as well as calculating the diffusion between many cells.
+The model is parallelized, using a shared memory paradigm, allowing the effort
+to be split over several cores.
+The biophysically detailed model used as the basis uses precomputed lookup
+tables to calculate many of the parameters which influence the gating variables,
+reducing repetition of effort at minimal cost of overall accuracy.
+Repeated calculations are also reduced by pre-computation of the laplacian
+operator used to diffuse the voltage.
+This is especially useful in the relatively thin walled atria, which therefore
+have many more boundary cells.
+All these refinements keep the total computational time within acceptable limits
+whilst maintaining the biophysical detail required for many studies.
+
+Using the toolkit and a simplified version of the whole atrial model the
+effects of a novel gene mutation, the S140G mutation in the KCNQ1 gene, were
+assessed.
+This gene has been linked to the prevalence of atrial fibrillation in a chinese
+family afflicted with it.
+The gene affects the \ii{Ks}\ channel, adding an instantaneous component to the
+channel kinetics.
+This additional leakage component dramatically abbreviates the action potential
+duration. 
+The restitution curves of the model were flattened and lowered by the influence of the
+mutation, reducing the rate response of the tissue.
+This allowed the tissue to sustain pacing at very high rates
+($>$\unit{500}{bpm}) which were observed clinically.
+Simulations in a two-dimensional tissue model revealed that the spatial
+vulnerability window was reduced, suggesting that a much smaller region of
+ectopic activity would be needed to incite arrhythmic activity.
+The two dimensional models also suggested that the mutation allowed longer
+lived spiral waves to exist in the tissue which would form a stable mother
+rotor.
+Simulations using the atrium model suggested that whilst in normal tissue
+arrhythmic excitation would often decay away, in tissues afflicted with the
+S140G mutation sustained arrhythmic activity was observed.
+This activity was often a sustained mother rotor, but sometimes the anatomical
+features present in the atrial model could lead to breakup into complex,
+fibrilatory activity.
+
+\section{Body Surface Potential Model}
+
+A model of the P-wave body surface potential using the boundary element method
+was created.
+This used the atrial model as the basis for calculating the cardiac dipoles.
+The meshes representing the body and selected internal inhomogeneities were
+based on CT scans although they had been simplified considerably.
+The atrium was located within the mesh using the internal inhomogeneities as
+guides as well as anatomical descriptions of the location of the atria.
+From the computed body surface potential traces were extracted to represent the
+12 lead ECG and body surface potential maps.
+
+
+Again, computational tractability was an important concern.
+This motivated the choice to use the boundary element method.
+In addition, the dipole contributions of several nodes of the atrial model were
+aggregated together and assumed to act at the centroid of the aggregated region.
+This reduced the total number of dipole sources by three orders of magnitude,
+whilst having negligible impact on the final result.
+The meshes were refined for the final computations to produce high quality body
+surface potential maps.
+This had almost no influence on the computed ECGs suggesting that for ECG
+centric studies, such a refined mesh was not required.
+Even with the refined mesh the problem remained tractable, solving \unit{1}{s}\
+of body surface potential calculations in an acceptable time using only one
+core.
+The implementation itself is quite flexible, allowing for easy incorporation of
+further meshes representing more internal detail.
+
+Using the model the influence of internal inhomogeneities was examined.
+It was found that the lungs tended to amplify the magnitudes of signals seen in
+the leads, whilst the presence of blood masses tended to reduce them.
+The inhomogeneities had little influence on the phase of the signals observed in
+the 12 lead ECG, which showed good agreement with the clinical norms of the
+P-wave ECG.
+The amplitudes of the signal, in constrast, tended to be outside the normal
+physiological range.
+The reason for this was not entirely clear.
+It could be due to the lack of consideration of certain inhomogeneities, such as
+the skeletal bones or the skeletal muscle layer.
+It might also be possible that a better model of the bloodmasses would reduce
+this.
+
+Despite the high amplitudes observed the model is still useful.
+The phase relationships are generally of more interest clinically as are the
+relative, rather than the absolute, amplitudes.
+Because of the biophysically detailed basis of the atrial model, the body
+surface potential model can be used in a variety of physiological studies to
+provide insight into the clinically observable effects of the studied influence.
+
+\section{Applications of the Body Surface Potential Model}
+
+The body surface potential model was used to investigate two cases of clinical
+interest.
+It was used to assess an algorithm developed by physicians for locating the
+origin of focal point tachycardia.
+Also, a novel clinical phenomena, inverted P-waves at night, was investigated.
+
+Focal atrial tachycardia is a supraventricular tachycardia characterised by
+excitation emerging from an ectopic focus site.
+It is readily treated by radio ablation therapy which is aided by accurate
+knowledge of the focal site.
+The algorithm presented used a decision tree approach, based on the waveform of
+several 12 lead ECG leads.
+To assess the algorithm, the model was paced from several ectopic sites around
+the atria.
+The ECG was used to make a decision based on the algorithm and this was compared
+to the actual origin.
+The origins predicted by the algorithm were in good agreement to the real pacing
+locations in 6 out of 8 cases and showed only minor difference (left verses
+right pulmonary veins) in one further case.
+The final case, which is quite inaccurate, would probably be resolved were the
+amplitudes closer to the clinically observed ranges--or if the algorithm's
+threshold were adjusted to account for the higher potentials.
+The good agreement provides validation of both the focal point origin algorithm
+and the model itself.
+
+Inverted P-waves at night are a phenomena which has not been reported on in the
+literature.
+They have been observed in the inferior limb leads in certain cases in patients
+undergoing 24 hour cardiac monitoring.
+It was hypothesised that this could be due to pacemaker shift in a distributed
+pacemaker complex, induced by hormonal changes at night.
+To investigate this hypothesis, the body surface potential model was paced from
+several sites along the crista terminalis, to represent progressively greater
+degree of shift and then the twelve lead ECG was computed.
+It was observed that as the pacing site moved further along the crista
+terminalis, the P-wave ECG in the inferior leads flattened and then inverted, in
+accordance with the hypothesis.
+Pacemaker shift is therefore a viable mechanism for the observed P-wave changes
+at night.
+
+\section{Future Work}
+
+The work presented here opens up many paths for future efforts.
+The models and tools developed in the study can be refined.
+They can also be used, with and without such refinement, for new studies.
+
+The toolkit developed can be extended in a number of ways.
+The library of cellular models available can be increased, either through
+direct addition, or by the development of a converter which can take CellML
+models and produce code suitable for use.
+More experimental protocols could be added to the toolkit, expanding its
+utility.
+The use of more sophisticated integrators for cellular equations could be
+incorporated into the models and their influence on the performance and results
+assessed.
+The toolkit could also be expanded into three dimensions, allowing the same ease
+of specifying numerical experiments to be enjoyed in whole heart simulations.
+
+The atrial model can also be refined in a number of ways.
+As new models of atrial tissue are developed, they can be incorporated into the
+model so that it always represents the best knowledge we have of the atrium and
+its complexities.
+A more complete map of the regions and directions of preferential conduction
+could be incorporated into the model which could be important for non-sinus
+rhythm cases.
+For some studies an accurate and auto-active pacemaker complex would be a
+benefit.
+Contraction, and the associated mechanical and electric coupling, could be
+incorporated into the model.
+
+Beyond the atrium, the body surface model has several avenues for further study.
+The influence of further inhomogeneities can be investigated.
+Patient specific studies, where the cardiac geometry and torso structure are
+based on CT and MRI scans of the patient offer exciting possibilities.
+First, direct comparison with clinical data allows for further validation of the
+underlying model.
+Such models can also be used to suggest and test appropriate clinical
+procedures.
+
+Patient specific models also allow for the possibility of developing a family of models,
+representing different orientations and conformations of the atrium and the
+surrounding torso.
+Using such a family of models would allow the results of computational studies
+to be stated with more confidence.
+An affect observed in one model might be an artefact of the geometry, but an
+affect observed in five or ten or more is much less likely to be so.
+
+Without any refinement, the toolkit and models developed offer a good basis for
+many electrophysiological studies on a variety of scales.
+The biophysical detail employed makes them suitable for the investigation of
+complex effects.
+The computational efficiency makes relatively long term simulations a
+possibility too.
