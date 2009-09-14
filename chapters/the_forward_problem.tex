@@ -1,15 +1,16 @@
 \chapter{Applications Of The Forward Problem}
 
-The ECG is the first tool cardiac doctors turn to when diagnosis of a problem is
+The ECG is the first tool cardiac physicians turn to when diagnosis of a problem is
 required.
-ECG machines can be found in almost every hospital in the world.
 A model of the atria and the surface potentials developed by the excitation of
-the model can be used to guide diagnosis of a variety of conditions.
-This can reduce the need for surgical procedures or suggest when they are
-essential.
+the model can be used to correlate ECG profiles to cardiac function in a variety
+of conditions.
+This can provide more details about the direct link between ECG indices and
+cardiac arrhythmia or other dysfunction.
 
-Whilst the inverse problem promises to reproduce the potentials on the heart
-from the potentials on the surface, the technique has limitations.
+While inverse solutions promise to reproduce the excitation sequence of the
+heart from the recorded potentials on the surface, the technique has serious
+limitations.
 For accurate solutions, patient specific geometries have to be constructed from
 MRI scans.
 There is also a need for complex lead systems, sometimes featuring more than two
@@ -34,17 +35,19 @@ the previous chapter.
 
 Atrial Tachycardias are one of the rarer forms of supraventricular
 tachycardia.
-They account for approximately 10\% of diagnosed supraventricular tachycardias/
-They tend to occur as a result of other cardiac or respiratory diseases.
+They account for approximately 10\% of diagnosed supraventricular tachycardias
+and tend to occur as a result of other cardiac or respiratory diseases.
 They are characterised by a high heart rate ($\leq$ \unit{250}{bpm}) and
 typically have evidence of an abnormal cardiac axis or P-wave
 morphology~\cite{MacFarlaneSinus1989}.
 They are hard to treat with drugs, but radiofrequency ablation can be used with
 a high probability of success.
-Diagnosis of atrial tachycardia can be difficult due to a lack of data.
+Diagnosis of atrial tachycardia, and focus, can be difficult due to a lack of
+research data.
 Attempts to locate the sites of the ectopic focus are current topics of clinical
 research~\cite{Kistler2006,Kahn2006,Yamane2001}.
-This study shows how the model can provide more data for clinicians to study.
+In this part of the study, I investigated possible correlations between P-wave
+ECG profiles and variation in ectopic focal site.
 
 \subsection{Model of Focal Atrial Tachycardia}
 
@@ -67,7 +70,7 @@ The algorithm developed by Kistler~et~al.~\cite{Kistler2006}\ is applied to the
 \end{center}
 \caption[Pacing Sites Around The Atria]{
 \label{fig:forward:fat:sites}
-Pacing sites used for the study of the Kistler~et~al. algorithm.
+Pacing sites used assessment of the Kistler~et~al. algorithm.
 The pacing centres are indicated by red dots.
 Note that sites are often on the interior of the atria at the indicated
 locations, or embedded in the wall.
@@ -112,7 +115,7 @@ The ECGs corresponding to the stimuli are shown in
 figure~\ref{fig:forward:fat:ecgs}.
 The classifications of the waveforms are shown in
 table~\ref{tbl:forward:fat:ecgs}.
-Classifications consider only the P-wave, and not the $\text{T}_{\text{P}}$
+Classifications consider only the P-wave and not the $\text{T}_{\text{P}}$
 wave.
 In the case of more than two significant deflections, the largest two are
 chosen.
@@ -172,12 +175,12 @@ P-wave which is positive in most leads.
 The P-wave is positive in leads II, III, aVF and $\text{V}_{\text{1--6}}$.
 It is negative in leads I, aVR and aVL.
 The sharp negative spike visible in $\text{V}_{\text{1, 2}}$ at approximately
-\ms{110}\ is caused by the faster conduction and loose
-connection to the main body of the atrial wall of the pectinate muscles.
+\ms{110}\ is caused by the faster conduction along the pectinate muscles, which
+are in places disconnected from the main wall of the atrium.
 This causes brief high voltage `islands' to appear ahead of the main wavefront,
 which generate dipoles of opposing sign to the main wavefront.
 This isn't a problem under sinus rhythm, which shows a much more regular
-excitation of the pectinate muscles.
+excitation of the pectinate muscles due to the differing origin of excitation.
 In addition, the exication wave front has just started to loop back around the
 inferior vena cava, travelling away from the frontal precordial leads.
 Many of the limb leads show a quite ragged profile, and are slightly bifid.
@@ -299,11 +302,10 @@ H & CT & CT \\
 
 \subsection{Discussion and Conclusion of Focal Atrial Tachycardia Study}
 
-The first thing that can be said about the results is that they generally show
-very good agreement with the focal tachycardia location algorithm developed by
-Kistler~et~al.
+The simulation results show very good agreement with the focal tachycardia
+location algorithm developed by Kistler~et~al.
 The algorithm, when used on the P-wave ECGs produced by the model, correctly
-guesses the origin of the focal point tachycardia in six out of the eight
+estimated the origin of the focal point tachycardia in six out of the eight
 cases considered.
 In addition, one of the errors (case C), is only mistaking between the left and
 right pulmonary veins.
@@ -375,8 +377,8 @@ algorithm, or the development of similar ones.
 
 \section{Inverted P-Waves at Night}
 
-Recently an observation was made~\cite{BoyettPrivate}\ concerning patients under
-24 hour ECG monitoring.
+Recently an observation was made concerning patients under
+24 hour ECG monitoring (Prof. Mark Boyett, Private Conversation, 2008).
 It was noted that some patients exhibited inverted P-waves at night.
 That is to say, if the patient showed a positive P-wave in leads II and aVF
 during the day, then at night the P-wave would be negative in leads II and aVF.
@@ -390,8 +392,12 @@ The presence of certain drugs and hormones, most notably acetylcholine, can caus
 the site of the leading pacemaker to move down the pace maker complex.
 Acetylcholine is released by what is know as increased `vagal tone'.
 This has been observed to happen at night.
-It was hypothesised that a pacemaker shift induced by this increased vagal tone
+
+The underlying mechanisms for the inverted P-waves at night are unknown.
+It was hypothesised that a pacemaker shift induced by increased vagal tone
 might lead to the observed P-wave inversion.
+In this study, I attempt to verify the hypothesis using the P-wave ECG model.
+
 
 \subsection{Methods}
 
@@ -419,6 +425,8 @@ The pacing centres are indicated by red dots.
 }
 \end{figure}
 
+The total activation time is calculated as the time after stimulus for all cells
+to become excited above \mv{-60}.
 ECGs were computed from the patterns of electrical excitation in the atrium.
 These were compared to the sinus rhythm ECGs computed in the previous chapter.
 In addition, using a so called `inverse Dower' method after Edenbrandt and
@@ -522,9 +530,9 @@ pectinate muscles, visible as the more widely spaced isochrones along these
 structures.
 The Bachmann bundle, meanwhile, conducts the electrical excitation to the left
 atrium, where it then starts to spread over the left atrial endocardial surface.
-In the right atrium the activation finishes, after approximately \ms{80}\ have
-elapsed since stimulation started, with the activation of the ring around the
-tricuspid valve and the right atrial appendage.
+In the right atrium the activation finishes, approximately \ms{80}\ after
+stimulation started, with the activation of the ring around the tricuspid valve
+and the right atrial appendage.
 In the left atrium, the far extremities of the left atrial appendage and the far
 side of the mitral valve to the Bachmann bundle are activated at approximately
 \ms{120}, completing the activation of the atria.
@@ -550,7 +558,7 @@ The pectinate muscles also influence the conduction, although the excitation
 wavefront reaches them later.
 Excitation still reaches the left atrium through the Bachmann bundle, although
 it is also conducted through the septum close to the inferior vena cava.
-The last point to be excited in the right atrium is still the appendage.
+The last region to be excited in the right atrium is still the appendage.
 In the left atrium, the last activation comes at \ms{140}.
 The left atrial appendage and the sheaths of the pulmonary veins both finish
 activating at this time.
@@ -626,8 +634,8 @@ Shown is one complete P-wave and $\text{T}_{\text{P}}$ wave, pacing at a rate of
 \unit{60}{bpm}.
 The scale is the same for all traces, indicated in the top right of panel (a),
 where the horizontal scale is in ms and the vertical in mV.
-The P-wave is positive in leads II and aVR after pacing from the sinus node.
-It is positive in leads II and aVR after pacing from site A.
+The P-wave is positive in leads II and aVF after pacing from the sinus node.
+It is positive in leads II and aVF after pacing from site A.
 Pacing from site B leads to a positive but highly bifid P-wave in both leads II
 and aVR.
 Site C shows negative then positive biphasic P-waves in both leads II and aVR.
@@ -865,7 +873,7 @@ The morphology of the loops can be used to gain further clues, such as with the
 initial rise and then fall visible in the Site B frontal vector loops.
 
 The limitations of the body surface potential model have been discussed
-previously (Section X.X.X).
+previously ($\S$\ref{sec:bsp:limits}).
 Of particular importance to this study is the lack of a distributed sinus node
 model~\cite{Yamamoto2007,Dobrzynski2005}\ for the human atrium.
 However, pacemaker shift under the influence of
@@ -901,19 +909,12 @@ observable consequences of changes to cardiac behaviour.
 
 \section{Discussion and Conclusion}
 
-The model which has been constructed has been used in two separate studies.
-The first study concerned itself with investigation into a new clinical
-phenomena, that of inverted P-waves at night.
-The second was a validation of an existing clinically derived algorithm for
+The constructed model has been used in two separate studies.
+The first was a validation of an existing clinically derived algorithm for
 predicting the origin of focal point tachycardia.
+The second study concerned itself with investigation into a new clinical
+phenomena, that of inverted P-waves at night.
 
-The inverted P-wave study confirms that a suggested mechanism for inverted
-P-waves at night, that of pacemaker shift under increased vagal tone, is
-plausible.
-The ECGs calculated by the model show a clear evolution as the pacing site
-shifts further down the crista terminalis.
-Additional validation is is obviously required with a suitable model of a
-distributed pacemaker complex.
 
 The focal tachycardia algorithm study confirms the performance of the algorithm.
 This validates both the algorithm and the model.
@@ -923,6 +924,14 @@ Despite this problem, the model still performs well and was `well behaved'
 according to the algorithm under test.
 In addition, there is no indication that a reduction in the amplitude due to a
 more complete consideration of the inhomogeneities would adversely impact this.
+
+The inverted P-wave study confirms that a suggested mechanism for inverted
+P-waves at night, that of pacemaker shift under increased vagal tone, is
+plausible.
+The ECGs calculated by the model show a clear evolution as the pacing site
+shifts further down the crista terminalis.
+Additional validation is is obviously required with a suitable model of a
+distributed pacemaker complex.
 
 The model developed is therefore a useful tool for cardiac modelling.
 It can enhance the conclusions that can be drawn from 3D simulations with
