@@ -156,7 +156,7 @@
          id="tspan2756"
          x="28.206844"
          y="44.839302"
-         style="font-size:18.00064659px;fill:#ffffff">A,I</tspan></text>
+         style="font-size:18.00064658999999878px;fill:#000000">(a,i)</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:40px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Sans;-inkscape-font-specification:Sans"
@@ -167,7 +167,7 @@
          id="tspan2760"
          x="155.76489"
          y="44.841061"
-         style="font-size:18px">A,II</tspan></text>
+         style="font-size:18px">(a,ii)</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:40px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Sans;-inkscape-font-specification:Sans"
@@ -178,7 +178,7 @@
          id="tspan2764"
          x="26.579855"
          y="172.40012"
-         style="font-size:18px">B,I</tspan></text>
+         style="font-size:18px;fill:#000000">(b, i)</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:40px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Sans;-inkscape-font-specification:Sans"
@@ -189,7 +189,7 @@
          id="tspan2768"
          x="154.13892"
          y="172.40012"
-         style="font-size:18px">B,II</tspan></text>
+         style="font-size:18px">(b,ii)</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:40px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Sans;-inkscape-font-specification:Sans"
@@ -200,7 +200,7 @@
          id="tspan2772"
          x="285.99713"
          y="46.677975"
-         style="font-size:18px">C</tspan></text>
+         style="font-size:18px">(c)</tspan></text>
     <g
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;letter-spacing:normal;word-spacing:normal;text-anchor:start;fill:none;fill-opacity:1;stroke:#000000;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10.43299961;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
        id="content"
@@ -228,6 +228,7 @@
    font-size="20px"
    id="text4427"> 0</text>
 
+
 <line
    style="stroke-width:0.5"
    x1="99.051003"
@@ -240,6 +241,7 @@
    transform="matrix(0.45,0,0,-0.45,77.992,100.05)"
    font-size="20px"
    id="text4431"> 20</text>
+
 
 <line
    style="stroke-width:0.5"
@@ -254,6 +256,7 @@
    font-size="20px"
    id="text4435"> 40</text>
 
+
 <line
    style="stroke-width:0.5"
    x1="99.051003"
@@ -266,6 +269,7 @@
    transform="matrix(0.45,0,0,-0.45,77.992,170.1)"
    font-size="20px"
    id="text4439"> 60</text>
+
 
 <line
    style="stroke-width:0.5"
@@ -280,6 +284,7 @@
    font-size="20px"
    id="text4443"> 80</text>
 
+
 <line
    style="stroke-width:0.5"
    x1="99.051003"
@@ -293,11 +298,13 @@
    font-size="20px"
    id="text4447"> 100</text>
 
+
 <text
    style="font-size:20px;fill:#000000;stroke:none;font-family:'Helvetica,sans-serif'"
    transform="matrix(0.45,0,0,-0.45,126.96,56)"
    font-size="20px"
    id="text4449">WT</text>
+
 
 <text
    style="font-size:20px;fill:#000000;stroke:none;font-family:'Helvetica,sans-serif'"
@@ -305,11 +312,13 @@
    font-size="20px"
    id="text4451">HT10</text>
 
+
 <text
    style="font-size:20px;fill:#000000;stroke:none;font-family:'Helvetica,sans-serif'"
    transform="matrix(0.45,0,0,-0.45,192.8,56)"
    font-size="20px"
    id="text4453">HT25</text>
+
 
 <polyline
    style="stroke-width:0.5"
@@ -320,6 +329,7 @@
    transform="matrix(0,0.45,0.45,0,62,88.106)"
    font-size="20px"
    id="text4457">Spatial Vulnerablity Window (mm)</text>
+
 
 <polyline
    style="fill:#000000;fill-rule:nonzero;stroke-width:0"

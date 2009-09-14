@@ -16936,7 +16936,7 @@
          id="tspan30064"
          x="100.10466"
          y="39.986168"
-         style="font-size:18px">I (1.0 s)</tspan></text>
+         style="font-size:18px">i (1.0 s)</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:22px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Sans;-inkscape-font-specification:Sans"
@@ -16947,7 +16947,7 @@
          id="tspan30068"
          x="214.37949"
          y="39.986168"
-         style="font-size:18px">II (1.5 s)</tspan></text>
+         style="font-size:18px">ii (1.5 s)</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:22px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Sans;-inkscape-font-specification:Sans"
@@ -16958,18 +16958,20 @@
          id="tspan30072"
          x="328.65436"
          y="39.986168"
-         style="font-size:18px">III (2.5 s)</tspan></text>
+         style="font-size:18px">iii (2.5 s)</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:22px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Sans;-inkscape-font-specification:Sans"
        x="428.7612"
        y="38.615074"
-       id="text30074"><tspan
+       id="text30074"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300"><tspan
          sodipodi:role="line"
          id="tspan30076"
          x="428.7612"
          y="38.615074"
-         style="font-size:18px">IV (tip trace)</tspan></text>
+         style="font-size:18px">iv (tip trace)</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:22px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Sans;-inkscape-font-specification:Sans"
