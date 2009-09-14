@@ -89,7 +89,7 @@ The 1D strand model is used for several experimental protocols, as
 a computationally cheaper alternative to a full tissue model.
 The 1D strand model consists of a number of nodes, typically 200 or 300, which
 are coupled electrically at the ends of the cells as shown in
-Figure~\ref{fig:toolkit:strand}.
+figure~\ref{fig:toolkit:strand}.
 The electrical activity at each node is modelled via a cellular
 electrophysiology model.
 Electrical conduction between the nodes is handled via a 1D formulation of the
@@ -533,7 +533,7 @@ If it is given too late, then propagation will occur in both directions, which
 in the ring case, results in the two excitation wavefronts annihilating each
 other.
 Normal pacing could then resume.
-These three cases are illustrated in Figure~\ref{fig:toolkit:vw}.
+These three cases are illustrated in figure~\ref{fig:toolkit:vw}.
 
 
 
@@ -842,7 +842,7 @@ Anion & 297.3 & 158.1 & 210.6 & 3.94 \\
 \end{table}
 
 The computed APD\emph{r}\ curves under the control and anion conditions are shown
-in Figure~\ref{fig:tookit:anion:ap},A and \ref{fig:tookit:anion:apdr},B, for the
+in figure~\ref{fig:tookit:anion:ap}(a) and \ref{fig:tookit:anion:apdr}(b), for the
 restitution curves of APD at 50\% (\apdr[50]) and 90\% (\apdr) of repolarization,
 respectively.
 The
@@ -863,14 +863,14 @@ DI approaches \ms{0}.
 \end{center}
 \caption[Anion Current APD Restitution]{
 \label{fig:tookit:anion:apdr}
-\textbf{A}
+(a)
 APDr curves for the CRN model in control (black) and anion (red) cases at 50\%
 repolarisation.
 The two variants are clearly different for all the DI in the simulation,
 with the anion case considerably below the control case for much of the DIs.
 The anion case also shows a reduced slope of the restitution curve compared to
 the control case.  Note the curves cross at DI \ms{200}.
-\textbf{B}
+(b)
 APDr curves for the CRN model in control and anion cases at 90\% repolarisation.
 The two variants behave the same at large DIs, but as the DI is decreased, the
 anion case shows a greater reduction in the \apd.
@@ -880,7 +880,7 @@ At short DI (below \ms{100}) the two curves rejoin each other.
 
 
 The ERP\emph{r} curves produced by the control and anion cases are shown in
-figure~\ref{fig:toolkit:anion:erpr},A.
+figure~\ref{fig:toolkit:anion:erpr}(a).
 In both cases the ERP\emph{r}\ curves are relatively
 flat, decreasing by approximately \ms{60}\ over the \ms{700}\ range of S1
 intervals considered.  The addition of the \ii{ANION}\ current changes the
@@ -902,7 +902,7 @@ in control to \ms{3.94}\ in anion case, a 22\% increase in the size of the
 region of unidirectional conduction block, shown in
 Table~\ref{tbl:toolkit:anion_params}.
 The CV\emph{r}\ curves, shown in
-Figure~\ref{fig:toolkit:anion:erpr},B, suggest that tissue with the anion sensitive current
+figure~\ref{fig:toolkit:anion:erpr}(b), suggest that tissue with the anion sensitive current
 shows faster CV at normal physiological stimulus intervals (corresponding to
 \msrange{500}{1000}).
 The average conduction velocity with \ii{ANION}\ is
@@ -921,13 +921,13 @@ before conduction block.
 \end{center}
 \caption[Anion Current ERPr and CVr] {
 \label{fig:toolkit:anion:erpr}
-\textbf{A}
+(a)
 ERP\emph{r} curves for the CRN model in control (black) and anion
 (red) cases.
 The addition of the \ii{ANION} current changes the behaviour of the cell from a long
 and flat plateau region followed by a relatively sharp decrease into a more
 constant decline.
-\textbf{B}
+(b)
 CV\emph{r}\ curves for the CRN model in control and anion cases.
  The CV\emph{r}\ curves are relatively flat for both cases over the range of
 \msrange{500}{1000}, before they both increase rapidly in steepness until the minimum
@@ -943,7 +943,7 @@ crosses the control curve at an approximate stimulus interval of \ms{460}.
 \end{center}
 \caption[Anion Sensitive Threshold Of Excitation and \ii{Na} activation]{
 \label{fig:toolkit:anion:toe}
-\textbf{A}
+(a)
 The threshold of excitation curves for the CRN model in control (black) and
 anion (red) cases.
 Both curves show a decreasing threshold of excitation until a critical point is
@@ -952,7 +952,7 @@ voltage is almost doubled.  In the control case this comes at an $\Delta t$ of
 \ms{321}\ and in anion, it comes at \ms{330}.
 Until this critical point is reached, the threshold of excitation is
 consistently lower for cells with \ii{ANION} compared with control.
-\textbf{B}
+(b)
 Maximal activation of the fast sodium current, \ii{Na}, as DI is decreased.
 The fast sodium current consistently activates to a
 greater degree in control cases than in anion cases.
@@ -963,7 +963,7 @@ intervals of \msrange{150}{200}.
 \end{figure}
 
 
-The threshold of excitation, shown in figure~\ref{fig:toolkit:anion:toe},A, shows that
+The threshold of excitation, shown in figure~\ref{fig:toolkit:anion:toe}(a), shows that
 \ii{ANION} reduces the minimum stimulus current by approximately \unit{0.2}{nS},
 a reduction of 10\%, at almost all $\Delta t$\ intervals.  It is also
 interesting to note that both control and anion tissue types show `supra-normal'
@@ -975,7 +975,7 @@ This occurs \ms{9}\ later in control tissue at
 \ms{321}\, compared with \ms{330}\ in control.
 
 The maximal activation of the fast sodium current, \ii{Na}, is shown in
-Figure~\ref{fig:toolkit:anion:toe},B.
+figure~\ref{fig:toolkit:anion:toe}(b).
 The presence of \ii{ANION}\ consistently reduces the maximal activation of \ii{Na}.
 At long DI, greater than \ms{400}, the reduction is 3\%, increasing to almost
 twice that in the range of \msrange{150}{200}.
@@ -1104,8 +1104,8 @@ by the original CRN model.
 
 The data for AFER were taken from experiments by Bosch et
 al.~\cite{Bosch1999} and Workman et al.~\cite{Workman2001}, representing
-the changes in ion channels in patients after one month (AF1)
-and up to six months (AF2) of chronic AF, respectively.  The
+the changes in ion channels in patients after one month (Bosch)
+and up to six months (Workman) of chronic AF, respectively.  The
 modifications to the cellular electrophysiology were described in
 Kharche et al.~\cite{Kharche2007}\ and reproduced in Table~\ref{tbl:afer:params}.
 
@@ -1147,7 +1147,7 @@ The ERP\emph{r} was calculated as described previously, with 10 S1 delivered at
 the given pacing rate and then a final S2 stimulus was used to determine the ERP
 after Workman et al.~\cite{Workman2001}.
 The VW and the CV\emph{r} were determined for control,
-AF1 and AF2 conditions, for each of the three atrial cell types classified by
+Bosch and Workman conditions, for each of the three atrial cell types classified by
 Seemann et al.. There were therefore nine 1D strand models tested.  The strand
 models were each 200 nodes long, with a spatial resolution of \mm{0.1}.  The
 diffusion constant used for all simulations was set to
@@ -1156,109 +1156,126 @@ giving a solitary wave conduction velocity of
 $0.267\,\text{mm}\,\text{ms}^{\text{-1}}$\ in control atrial tissue.  In all 1D
 strand simulations there was 1 S1 pulse and one S2 pulse.  This pulse was
 applied over 4 nodes (\unit{0.4}{mm}), had duration \ms{2} and magnitude
-\unit{10}{nS}.
+\unit{4}{nS}.
+The higher stimulus strength was necessary to excite the AFER remodelled tissue.
 
 Further, a 2D electrically heterogeneous sheet model was developed based on a
 laboratory photograph of the right atrium.  The photograph was digitized at a
 spatial resolution of \mm{0.1}. The model developed by segmenting areas of the
 tissue into AM, PM and CT tissue types.  The complete model had an approximate size of
 $130\times100\,\text{mm}$ and consisted of approximately 1 million active cell nodes.  The
-simulations were performed with all cells under control, AF1 and AF2 conditions,
+simulations were performed with all cells under control, Bosch and Workman conditions,
 with the conditions applied uniformly to the tissue.  All 2D sheet simulations
 were performed with the space step of \mm{0.1} and a time step of \ms{0.05}.
 
 \subsubsection{Results}
 
-Simulations were performed for all three cases: control, AF1 and AF2.
-However the results for AF1 and AF2 were qualitatively similar, although
-AF1 showed a much more profound effect on \apd\ reduction.
+Simulations were performed for all three cases: control, Bosch and Workman.
+However the results for Bosch and Workman were qualitatively similar, although
+Bosch showed a much more profound effect on \apd\ reduction.
 
 Incorporating the heterogeneity and AFER data causes significant differences in
 \apd\ and AP morphology to manifest, as shown in
-Figure~\ref{fig:toolkit:afer:apd},A.
+figure~\ref{fig:toolkit:afer:apd}(a).
 The effects of AFER are not uniform across the different cell types of the
-atrium.
-In addition, the 
-
-
-and it increases the difference in \apd\ between normal atrial
-myocytes and the CT cells, increasing from \ms{20.1} in control to \ms{28.1}
-in AF1 and \ms{33.4} in AF2.
+atrium in both cases (figure~\ref{fig:toolkit:afer:apd}(b)).
+The difference in the AP between AM/PM myocytes and CT myocytes in the Workman
+remodelled case is almost double that seen in either the Bosch remodelled case
+or control case.
+Note that in all cases there is almost no difference between AM and PM types.
 
 \begin{figure}
 \centering
 \includegraphics{figures/toolkit/afer/figures/01_APD}
 \caption[AFER AP Plots And APD differences]{
 \label{fig:toolkit:afer:apd}
-\textbf{A}.
+(a).
 Action potential profiles after pacing at \unit{1}{Hz}.
 Results are shown for AM/PM cells (solid lines) and CT cells (dashed lines).
-Control parameter traces are black, AF1 (Bosch) are red and AF2 (Workman) traces
+Control parameter traces are black, Bosch are red and Workman traces
 blue.
 The CT cells have a longer APD in all cases and show an elevated plateau
 potential.
-\textbf{B}.
+(b).
 APD differences between AM/PM cells and CT cells after pacing at \unit{1}{Hz}.
-Colour scheme as for panel \textbf{A}.
-There is almost no difference in $\delta$\apd\ between control and AF1 CT cells,
-but $\delta$\apd\ increased markedly when AF2 parameters are used.
+Colour scheme as for panel (a).
+There is almost no difference in $\delta$\apd\ between control and Bosch CT cells,
+but $\delta$\apd\ increased markedly when Workman parameters are used.
 }
 \end{figure}
 
-The APD\emph{r} curves, shown in Figure~\ref{fig:apdr}, are flatter over much
-of the range of diastolic intervals for AF1 and AF2 as compared to
-control.  However, the maximal slopes
-of the APDr curves for CT cells are higher for AF1, 5.3, and AF2, 2.8,
-compared with 2.1 in control.  The difference in the maximal slopes in
-different tissue types is increased, with CT having a larger maximal
-slope in all cases.  In the control tissue, the difference in maximal
-slopes was 0.1, compared with 0.4 in AF1 and 0.5 in AF2 tissue.
+The \apdr\ curves, shown in figure~\ref{fig:toolkit:afer:apdr}(a), are
+flatter over much of the range of diastolic intervals for Bosch and Workman as
+compared to control.
+The curves have two clear phases in the AFER cases; a very steep initial rise
+and then slower, asymptotic rise in \apd.
+In the control case the curves show an intermediate a phase with a slope between
+the two extremes.
+In the control CT case, the curves include a prominant notch at a DI of
+approximately \ms{130}\ which is caused by the up regulation of \ii{Ca,L}\ in CT
+cells.
+The down regulation associated with the AFER removes this.
+In both of the AFER cases, the curves are almost flat at DI \ms{750}, but in the
+control case, the \apd\ is still rising.
+The figure also emphasises the increased heterogeneity observed in the Workman
+case.
+
 
 \begin{figure}
 \centering
 \includegraphics{figures/toolkit/afer/figures/02_APDR}
-\caption[AFER APDr curves]{APDr curves for control CT (A), control AM/PM (B), AF1 CT (C),
-AF1 AM/PM (D), AF2 CT (E), AF2 AM/PM (F). In all cases the CT action
-potentials are above the AM/PM action potentials over the whole of the
-range considered.}
-\label{fig:apdr}
+\caption[AFER APDr and ERPr curves]{
+\label{fig:toolkit:afer:apdr}
+(a)
+\apdr\ curves showing \apd\ plotted against diastolic interval (DI) for control
+(black), Bosch (red) and Workman (blue) cases.
+AP/PM curves are shown as solid lines, CT curves are dashed.
+AFER acts to flatten the restitution curves.
+In all cases CT \apd\ is above AM/PM \apd.
+(b)
+ERP\emph{r}\ curves showing ERP plotted against S1 interval.
+Colour scheme is as for panel (a).
+In all cases CT ERP is above AM/PM ERP.
+Note that AFER enables successful excitation at much lower S1 intervals.
+}
 \end{figure}
 
 In AF tissue, the ERP\emph{r} was flattened for all tissue types compared with
-the control cells, as shown in Figure~\ref{fig:erpr}.  The curves also extended
-to lower BCLs for AF tissue, indicating that it was possible to excite AF tissue
-successfully at a higher rate than was possible in control tissue.
+the control cells, as shown in figure~\label{fig:toolkit:afer:apdr}(b).
+The curves also extended to lower S1 intervals for AF tissue, indicating that it
+was possible to excite AF tissue successfully at a higher rate than was possible
+in control tissue.
 Heterogeneity in ERP\emph{r} was largely unaffected by AF.
 
 \begin{figure}
 \centering
-\includegraphics{figures/toolkit/afer/3_erpr}
-\caption[AFER ERPr curves]{ERPr curves for control CT (A), control AM/PM (B), AF1 CT (C),
-AF1 AM/PM (D), AF2 CT (E), AF2 AM/PM (F).  Both AF1 and AF2 have a
-significantly reduced ERPr over the whole range considered, with AF1
-having a lower ERP then AF2.  In addition, AF1 and AF2 cells are still
+%\includegraphics{figures/toolkit/afer/3_erpr}
+\caption[AFER ERPr curves]{ERPr curves for control CT (A), control AM/PM (B), Bosch CT (C),
+Bosch AM/PM (D), Workman CT (E), Workman AM/PM (F).  Both Bosch and Workman have a
+significantly reduced ERPr over the whole range considered, with Bosch
+having a lower ERP then Workman.  In addition, Bosch and Workman cells are still
 excitable after pacing at \ms{100} shorter BCL.}
 \label{fig:erpr}
 \end{figure}
 
-Conduction velocity, shown in Figure~\ref{fig:cvr}, was slowed by AF,
+Conduction velocity, shown in figure~\ref{fig:cvr}, was slowed by AF,
 reducing the solitary wave velocity from $0.27\,\text{mm}\,\text{ms}^{\text{-1}}$\ in
-control to $0.25\,\text{mm}\,\text{ms}^{\text{-1}}$\ in AF1 and
+control to $0.25\,\text{mm}\,\text{ms}^{\text{-1}}$\ in Bosch and
 $0.26\,\text{mm}\,\text{ms}^{\text{-1}}$\ in
-AF2.  Maximal pacing rate increased from the control value of \unit{198}{bpm} to
-\unit{421}{bpm} in AF1 strands and \unit{315}{bpm} in AF2 strands.
+Workman.  Maximal pacing rate increased from the control value of \unit{198}{bpm} to
+\unit{421}{bpm} in Bosch strands and \unit{315}{bpm} in Workman strands.
 
 The VW was reduced by AF, but in all cell types the reduction was small.
-The control value of \ms{16.6} was reduced to \ms{14.2} in AF1 and \ms{14.7}
-in AF2 for AM and PM cell types.  The reduction in VW for CT cells was
-even smaller, from \ms{15.1} in control to \ms{14.5} and \ms{14.4} in AF1 and
-AF2, respectively.
+The control value of \ms{16.6} was reduced to \ms{14.2} in Bosch and \ms{14.7}
+in Workman for AM and PM cell types.  The reduction in VW for CT cells was
+even smaller, from \ms{15.1} in control to \ms{14.5} and \ms{14.4} in Bosch and
+Workman, respectively.
 
 \begin{figure}
 \centering
-\includegraphics{figures/toolkit/afer/4_cvr}
-\caption[AFER CVr curves]{CVr curves for control CT (A), control AM/PM (B), AF1 CT (C),
-AF1 AM/PM (D), AF2 CT (E), AF2 AM/PM (F).  In each of the conditions,
+%\includegraphics{figures/toolkit/afer/4_cvr}
+\caption[AFER CVr curves]{CVr curves for control CT (A), control AM/PM (B), Bosch CT (C),
+Bosch AM/PM (D), Workman CT (E), Workman AM/PM (F).  In each of the conditions,
 the CT cells showed a higher CV at long (1000~ms) S2 intervals, but AM
 and PM cells allow faster conduction at shorter S2 intervals.  The AF
 cases show reduced CV compared to the control and support a higher
@@ -1268,7 +1285,7 @@ pacing rate via reduced minimum interval.}
 
 Simulations over the 2D geometry examined the lifetime and behavior of
 spiral waves in the presence and absence of electrical heterogeneity.
-As can be seen in Figure~\ref{fig:plots}, panels Ai and Bi, re-entrant
+As can be seen in figure~\ref{fig:plots}, panels Ai and Bi, re-entrant
 activity self-terminated in both homogeneous and heterogeneous cases
 when due to spiral wave meander over a large tissue region, it
 exits the tissue.  Self-termination was much more rapid in the
@@ -1292,8 +1309,8 @@ regions, forming a complex and chaotic pattern of excitation.
 \caption[AFER 2D re-entry plots]{Simulation of re-entry in 2D sheets of electrically homogeneous
 (A) and electrically heterogeneous (B) sheets.  Columns show
 representative frames after initiation of re-entry at t = 0.  Panels i
-show data under control conditions, panels ii under AF1 conditions and
-panels iii under AF2 conditions.  Re-entry self-terminated under control
+show data under control conditions, panels ii under Bosch conditions and
+panels iii under Workman conditions.  Re-entry self-terminated under control
 conditions in both homogeneous (Ai) and heterogeneous (Bi).  Under AF
 conditions, re-entry becomes a sustained mother rotor in
 electrically homogeneous conditions (Aii, Aiii).  However, under
@@ -1308,16 +1325,16 @@ Biii).}
 AFER induces significant changes in the cellular electrophysiology that
 appear to affect rate dependent electrical activities.  It helps to
 sustain re-entry, providing evidence to substantiate the hypothesis of
-``AF begets AF''.
+`AF begets AF'.
 
 Considering first the single cell results, one of the most obvious
 effects is the striking reduction in the \apd\ and repolarization
-properties.  AFER abbreviated \apd\ in AM cells by 66~\% in AF1 and
-53~\% in AF2.  Other work has already suggested why the increases shown
-in the maximal slope of the APDr can be
-pro-arrhythmic~\cite{ByungSoo2002}, as can the reduced
-ERP~\cite{Xie2002}.  Our study suggested that reduction is not uniform
-across all cell types, which leads to an augmented heterogeneity.
+properties.  AFER abbreviated \apd\ in AM cells by 66~\% in Bosch and
+53~\% in Workman.
+Other work~\cite{Xie2002,ByungSoo2002} has already suggested why flattening of
+the ERP and APD restitution curves can be pro-arrhythmogenic.
+Our study suggested that reduction is not uniform across all cell types, which
+leads to an augmented heterogeneity.
 
 The 1D strand results for the CV tell a similar story.  AFER tissue
 forms a much better substrate for arrhythmic activity, supporting both a
@@ -1348,4 +1365,47 @@ erratic propagations, as has been seen in experiment~\cite{Kumagai1997}.
 Further study, in both 3D geometries and physiological experiments,
 would be needed to elucidate the true effects of the heterogeneity.
 
+\section{Discussion and Conclusions}
+
+A cardiac simulation library has been has been constructed.
+This includes implementations of a wide range of experimental protocols used to
+classify and quantify the influence on electrophysiology of ion channel changes.
+The library of tools was then used in two electrophysiological studies of atrial
+tissue.
+
+The cardiac simulation library developed includes experimental protocols used on
+lone myocyte models, as well as one- and two-dimensional idealisations of
+tissue.
+The library of tools is intended to be relatively simple to use and to extend,
+although it does require knowledge of programming to use to its full potential
+in its present form.
+The implementation is intended to be efficient, though without sacrificing
+biophysical detail in realistic cell models.
+This is accomplished through the use of adaptive stepping methods to track
+restitution curves of varying slope, decreasing the gap between data points as
+it starts to change more rapidly.
+In addition, state saving is performed to reduce the computation involved in
+repetitive pre-pacing.
+Lookup tables of voltage dependent properties can be employed to further cut
+computational time.
+The novel use of a very basic computer science algorithm, the binary search, is
+used to determine critical values in a number of protocols.
+The use of this algorithm allows parameter estimation to great accuracy from
+large initial range by successively halving the search space.
+
+The toolkit compares well with many existing frameworks.
+COR has many more cells available for use through the CellML repository and
+offers an easy way to graph the internal properties of the cell.
+Like the library developed here, COR is limited to one OS, windows in the case
+of the COR.
+COR has no inbuilt experimental protocols however and can only be used for
+single cell simulations, not tissue modelling.
+CMISS lacks experimental protocols and is hard to script to use automatically.
+It does offer much more sophisticated visualisation than the toolkit here, and
+can be used for full 3D simulations too.
+CARP offers much more powerful interfaces for cardiac modeling, including 3D
+models.
+It includes no experimental protocols, although those could probably be
+implemented using its API.
+Like this toolkit, CARP does not integrate with CellML.
 

@@ -19,7 +19,7 @@ set xrange [0:700]
 set multiplot layout 1,2 rowsfirst
 
 # plot the APDr,50 curves
-set label 1 "A" at graph -0.3,1 font "Helvetica,20"
+set label 1 "(a)" at graph -0.3,1 font "Helvetica,20"
 set xlabel "DI (ms)"
 set ylabel "APD_{90} (ms)"
 set yrange [50:350]
@@ -33,7 +33,7 @@ plot \
     "02_APDR/apd/s1s2_90_CRN98bosch_ct.dat" u 3:4 w l ls 5, \
     "02_APDR/apd/s1s2_90_CRN98workman_ct.dat" u 3:4 w l ls 6
 
-set label 1 "B"
+set label 1 "(b)"
 set xlabel "S1 Rate (ms)"
 set ylabel "ERP (ms)"
 set yrange [50:355]

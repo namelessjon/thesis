@@ -15,7 +15,7 @@ unset key
 set multiplot layout 1,2 rowsfirst
 
 # plot the APDr curves
-set label 1 "A" at graph -0.3,1 font "Times-Roman,24"
+set label 1 "(a)" at graph -0.3,1 font "Times-Roman,24"
 set xlabel "S1 Interval (ms)"
 set ylabel "ERP (ms)"
 set xrange [300:700]
@@ -25,7 +25,7 @@ plot    "03_ERPR/erpr_CRN98con.dat" w l ls 1, \
         "03_ERPR/erpr_CRN98icl.dat" w l ls 2
 
 # plot ERPr curves
-set label 1 "B"
+set label 1 "(b)"
 set xlabel "S2 Interval (ms)"
 set ylabel "Conduction Velocity (mm ms^{-1})"
 set yrange [0.2:0.3]

@@ -16,7 +16,7 @@ set xrange [250:1000]
 set multiplot layout 1,2 rowsfirst
 
 # plot the APDr curves
-set label 1 "A" at graph -0.3,1 font "Times-Roman,24"
+set label 1 "(a)" at graph -0.3,1 font "Times-Roman,24"
 set xlabel "S2 Interval (ms)"
 set ylabel "Threshold Of Excitation (nS)"
 set xtics 250,250
@@ -24,7 +24,7 @@ plot    "04_ToE/CRN98_con_excitability.dat" u 1:($2/10) w l ls 1, \
         "04_ToE/CRN98_icl_excitability.dat" u 1:($2/10) w l ls 2
 
 # plot ERPr curves
-set label 1 "B"
+set label 1 "(b)"
 set xlabel "DI (ms)"
 set ylabel "I_{Na} Activation"
 set yrange [0:0.5]

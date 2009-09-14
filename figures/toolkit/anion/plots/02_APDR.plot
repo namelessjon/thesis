@@ -16,7 +16,7 @@ set xrange [0:700]
 set multiplot layout 1,2 rowsfirst
 
 # plot the APDr,50 curves
-set label 1 "A" at graph -0.3,1 font "Times-Roman,24"
+set label 1 "(a)" at graph -0.3,1 font "Times-Roman,24"
 set xlabel "DI (ms)"
 set ylabel "APD_{50} (ms)"
 set yrange [50:350]
@@ -26,7 +26,7 @@ plot    "02_APDR/s1s2_50_CRN98con.dat" u 3:4 w l ls 1, \
         "02_APDR/s1s2_50_CRN98icl.dat" u 3:4 w l ls 2
 
 # plot APDr,90 curves
-set label 1 "B"
+set label 1 "(b)"
 set xlabel "DI (ms)"
 set ylabel "APD_{90} (ms)"
 set yrange [50:350]

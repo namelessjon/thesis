@@ -19,11 +19,11 @@ set xrange [0:700]
 set multiplot layout 1,2 rowsfirst
 
 # plot the AP curves
-set label 1 "A" at graph -0.3,1 font "Helvetica,20"
+set label 1 "(a)" at graph -0.3,1 font "Helvetica,20"
 set xlabel "Time (ms)"
 set ylabel "mV"
 set yrange [-90:30]
-set xrange [0:400]
+set xrange [0:500]
 set xtics 100
 plot \
     "01_APD/ap_CRN98con_1.0Hz.dat" u 1:2 w l ls 1, \
@@ -35,12 +35,12 @@ plot \
 
 
 # delta APD
-set label 1 "B"
-set xrange [0:40]
+set label 1 "(b)"
+set xrange [0:34]
 set yrange [0:40]
 set ylabel "{/Symbol d} APD_{90} (ms)"
 set xlabel ""
-set xtics ("Con" 10, "B" 20, "W" 30) scale 0
+set xtics ("Con" 5, "Bosch" 17, "Workman" 29) scale 0
 set boxwidth 8
 plot \
     "01_APD/ap_flat.dat" u 1:2 w boxes fs solid ls 1, \
