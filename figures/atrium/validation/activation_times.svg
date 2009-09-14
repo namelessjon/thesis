@@ -18,8 +18,8 @@
    sodipodi:docname="activation_times.svg"
    inkscape:output_extension="org.inkscape.output.svg.inkscape"
    inkscape:export-filename="/home/jon/thesis/figures/atrium/validation/activation_times.png"
-   inkscape:export-xdpi="600"
-   inkscape:export-ydpi="600">
+   inkscape:export-xdpi="300"
+   inkscape:export-ydpi="300">
   <defs
      id="defs4">
     <inkscape:perspective
@@ -191,7 +191,7 @@
          sodipodi:role="line"
          id="tspan2625"
          x="3.4026821"
-         y="16.182924">A</tspan></text>
+         y="16.182924">(a)</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:18px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Sans;-inkscape-font-specification:Sans"
@@ -201,6 +201,6 @@
          sodipodi:role="line"
          id="tspan2629"
          x="232.09166"
-         y="16.182924">B</tspan></text>
+         y="16.182924">(b)</tspan></text>
   </g>
 </svg>
