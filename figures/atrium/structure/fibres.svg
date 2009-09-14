@@ -9,8 +9,8 @@
    xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="531.49603"
-   height="283.46457"
+   width="513.77954"
+   height="256.88977"
    id="svg2"
    sodipodi:version="0.32"
    inkscape:version="0.46"
@@ -18,8 +18,8 @@
    sodipodi:docname="fibres.svg"
    inkscape:output_extension="org.inkscape.output.svg.inkscape"
    inkscape:export-filename="/home/jon/thesis/figures/atrium/structure/fibres.png"
-   inkscape:export-xdpi="600"
-   inkscape:export-ydpi="600">
+   inkscape:export-xdpi="300"
+   inkscape:export-ydpi="300">
   <defs
      id="defs4">
     <inkscape:perspective
@@ -55,12 +55,12 @@
      inkscape:pageopacity="1"
      inkscape:pageshadow="2"
      inkscape:zoom="1.4"
-     inkscape:cx="344.64507"
-     inkscape:cy="230.59472"
+     inkscape:cx="246.78793"
+     inkscape:cy="144.88043"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
-     units="cm"
+     units="mm"
      inkscape:window-width="1280"
      inkscape:window-height="951"
      inkscape:window-x="0"
@@ -81,40 +81,44 @@
      inkscape:groupmode="layer"
      id="layer1">
     <image
-       y="-0.28571254"
-       x="0.78571427"
+       y="8.6356331e-06"
+       x="0"
        id="image2466"
-       height="283.46457"
-       width="274.50449"
-       sodipodi:absref="/media/KINGSTON/Atrium/fibres_front.png"
-       xlink:href="/media/KINGSTON/Atrium/fibres_front.png" />
+       height="256.88977"
+       width="256.88977"
+       sodipodi:absref="/home/jon/thesis/figures/atrium/structure/fibres/fibres_front.png"
+       xlink:href="fibres/fibres_front.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
     <image
-       y="0.071427405"
-       x="276.92856"
+       y="6.7282849e-06"
+       x="256.88977"
        id="image2550"
-       height="283.46457"
-       width="256.91415"
-       sodipodi:absref="/media/KINGSTON/Atrium/fibres_below.png"
-       xlink:href="/media/KINGSTON/Atrium/fibres_below.png" />
+       height="256.88977"
+       width="256.88977"
+       sodipodi:absref="/home/jon/thesis/figures/atrium/structure/fibres/fibres_below.png"
+       xlink:href="fibres/fibres_below.png" />
     <text
        xml:space="preserve"
        style="font-size:30px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Times New Roman;-inkscape-font-specification:Times New Roman"
-       x="-2.8152357e-07"
-       y="20.607426"
+       x="-1.890625"
+       y="16.693369"
        id="text2554"><tspan
          sodipodi:role="line"
          id="tspan2556"
-         x="-2.8152357e-07"
-         y="20.607426">A</tspan></text>
+         x="-1.890625"
+         y="16.693369"
+         style="font-size:22px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Sans;-inkscape-font-specification:Sans">(a)</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:30px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Times New Roman;-inkscape-font-specification:Times New Roman"
-       x="277.14285"
-       y="21.321712"
+       x="254.99915"
+       y="16.714851"
        id="text2558"><tspan
          sodipodi:role="line"
          id="tspan2560"
-         x="277.14285"
-         y="21.321712">B</tspan></text>
+         x="254.99915"
+         y="16.714851"
+         style="font-size:22px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Sans;-inkscape-font-specification:Sans">(b)</tspan></text>
   </g>
 </svg>
