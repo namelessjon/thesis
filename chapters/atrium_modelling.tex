@@ -35,7 +35,7 @@ spatial resolution of \mm{0.33}.
 The extracted anatomical geometry is segmented into different tissue types,
 with distinct classifications for left and right atrium, the pectinate muscles,
 the crista terminalis, the Bachmann bundle and the sino-atrial node, as shown in
-Figure~\ref{atrium:geometry}.
+figure~\ref{atrium:geometry}.
 The geometry has been used in numerous previous simulation studies.
 It was discretised via a finite differences approach, which
 allows the whole atrium to be embedded in a block of $298\times269\times235$
@@ -46,18 +46,21 @@ The anatomical model also considers fibre orientation in the pectinate muscles,
 crista terminalis and Bachmann bundle, which always run parallel to the local
 axis of the tissue bundle, as determined by principle component
 analysis~\cite{Seemann2006}.
-Representations of the fibre structure are shown in Figure~\ref{atrium:fibres}.
+Representations of the fibre structure are shown in figure~\ref{atrium:fibres}.
 
 \begin{figure}
 \includegraphics{figures/atrium/structure/atrial_geometry}
 \caption[Atrial Geometry]{
 \label{atrium:geometry}
-\textbf{A} View up into the right atrium, showing the pectinate muscles
-(orange), crista terminalis (yellow) and sino-atrial node (red).  The atrial
-muscle is shown in blue.
-\textbf{B} A view of the atrial geometry looking down onto the wall of the right
+(a)
+View up into the right (RA) and left (LA) atriums, showing the pectinate muscles
+(PM, orange), crista terminalis (CT, yellow) and sino-atrial node (SAN, red).
+The atrial muscle is shown in blue.
+Also labelled are the right (RAA) and left (LAA) appendages.
+(b)
+A view of the atrial geometry looking down onto the wall of the right
 atrium.  Visible at the top of the panel is the opening for one of the pulmonary
-veins.
+veins (PV).
 }
 \end{figure}
 
@@ -66,7 +69,7 @@ veins.
 \caption[Atrial Fibre Structure]{
 \label{atrium:fibres}
 Representation of the fibre structure of the atrial geometry from a frontal
-view (\textbf{A}) and a view up into the atria from the ventricles (\textbf{B}).
+view (a) and a view up into the atria from the ventricles (b).
 The arrows in red are aligned along the unit vectors of the fibre orientation.
 The crista terminalis and the pectinate muscles are very easy to see with their
 well defined fibre orientation.
@@ -139,7 +142,7 @@ changes in $V$ in time, $t$, the trans-membrane voltage.
 where $D$ is a tensor representing the diffusivity of electrical potential, \ii{ion} is described by the
 CRN model (\ref{atrium:crn}), $C_{m}$ is the membrane capacitance and all other
 symbols have their usual meanings.  Equation (\ref{atrium:monodomain}) is
-advanced in time via the forward euler method with a timestep of \ms{0.05}.  For
+advanced in time via the forward euler method with a timestep of \ms{0.02}.  For
 simulations with isotropic conductivity between nodes a 7-node approximation of
 the differential operator is used.  When anisoptropy is present, a 19-node
 approximation is used.
@@ -233,7 +236,7 @@ These two files contain the theta and phi components of the fibre vectors
 between $0$ and $\pi$, discretised in 255 steps.
 The relationship between the angles theta and phi and the unit vector of fibre
 direction, $\mathbf{f}$, are shown in
-Figure~\ref{fig:atrium:structure:unit_vector}.
+figure~\ref{fig:atrium:structure:unit_vector}.
 \begin{figure}
 \begin{center}
 \includegraphics{figures/atrium/structure/unit_vector}
@@ -257,7 +260,7 @@ f_z &= \cos\theta\label{eqn:atrium:structure:anglestofz}
 \end{align}
 \end{subequations}
 where $\theta$ and $\phi$ are as indicated in
-Figure~\ref{fig:atrium:structure:unit_vector}\ and $f_x$, $f_y$, $f_z$ are the
+figure~\ref{fig:atrium:structure:unit_vector}\ and $f_x$, $f_y$, $f_z$ are the
 $x$--, $y$--, $z$-- components of the vector $\mathbf{f}$.
 
 
@@ -322,9 +325,9 @@ constructed.
 \subsection{Activation Maps}
 
 Snapshots of the electrical excitation are shown in
-Figure~\ref{fig:atrium:validation:main}\ and Figure~\ref{fig:atrium:validation:valves}.
+figure~\ref{fig:atrium:validation:main}\ and figure~\ref{fig:atrium:validation:valves}.
 A map of activation times over the whole atria are shown in
-Figure~\ref{fig:atrium:validation:times}.
+figure~\ref{fig:atrium:validation:times}.
 Excitation is initiated in the sino-atrial node.
 The excitation wave is rapidly conducted along the muscle bundles which comprise
 the crista terminalis and the pectinate muscles towards the base of the atrium
@@ -378,8 +381,8 @@ Snapshots shown for \ms{10}\ (i), \ms{15}\ (ii), \ms{20}\ (iii), \ms{25}\ (iv),
 \includegraphics{figures/atrium/validation/activation_times}
 \caption[Activation Times Under Sinus Rhythm]{
 \label{fig:atrium:validation:times}
-Activation times of the atrial geometry from a frontal view (\textbf{A}) and a
-view up into the atria from the ventricles (\textbf{B}).
+Activation times of the atrial geometry from a frontal view (a) and a
+view from the ventricles up into the atria (b).
 The influence of fibres on the activation times is clearly visible on both
 views.
 Excitation begins and the sinus node and spreads along the fibres over the
@@ -537,7 +540,7 @@ the $\alpha$-subunit of the \ii{Ks}\ channel.
 The gene was transfected into COS7 cells along with the second component of
 the $\alpha$-subunit, KCNE1, in both normal (WT) and mutated type (MT).
 The transfected cells were used to perform voltage clamp experiments.
-The clamp protocol used is shown in Figure~\ref{atrium:iks:vc},A.
+The clamp protocol used is shown in figure~\ref{atrium:iks:vc},A.
 This is the experimental protocol used by Chen et al.~\cite{Chen2003}.
 The cell was held at a holding potential of \mv{80} for \unit{0.5}{s}\ before
 being held at \mv{10}\ steps between \mv{-130}\ to \mv{50}\ for \unit{3}{s}.
@@ -545,24 +548,24 @@ The voltage steps were followed by a \mv{-40}\ holding potential, applied for
 \unit{1}{s}.
 The values of \ii{Ks} at the end of the step voltages were plotted against the
 step voltages to determine  I-V relationships for WT
-and MT cells, shown in Figure~\ref{atrium:iks:vc},B (points with errors) and
-current traces, shown in Figure~\ref{atrium:iks:vc},C and D for WT and MT,
+and MT cells, shown in figure~\ref{atrium:iks:vc},B (points with errors) and
+current traces, shown in figure~\ref{atrium:iks:vc},C and D for WT and MT,
 respectively.
 
 \begin{figure}
 \includegraphics{figures/atrium/iks/figures/01_IV}
 \caption[KCNQ1 mutation in IKs, experimental data]{
 \label{atrium:iks:vc}
-\textbf{A} Voltage clamp protocol used by Chen et al.~\cite{Chen2003}.
-\textbf{B} Experimental WT (black, closed circles) and MT (red, open circles)
+(a) Voltage clamp protocol used by Chen et al.~\cite{Chen2003}.
+(b) Experimental WT (black, closed circles) and MT (red, open circles)
 I-V relationships recorded by Chen et al.  Simulated I-V curves for WT (black
 lines) and MT (red lines).  Modelled curves are scaled to experimental points
 based on the WT current density at \mv{50}.
-\textbf{C} Experimental current traces for WT.
-\textbf{D} Simulated current traces for WT.
-\textbf{E} Experimental current traces for MT.  Note the instantaneous
+(c) Experimental current traces for WT.
+(d) Simulated current traces for WT.
+(e) Experimental current traces for MT.  Note the instantaneous
 activation, and the significant inward current at negative clamp potentials.
-\textbf{F} Simulated current traces for MT.
+(f) Simulated current traces for MT.
 }
 \end{figure}
 
@@ -587,9 +590,9 @@ The reversal potential was estimated from the experimental I-V relationships to 
 The inclusion of the $\varphi$\ parameter allowed the simulation of several
 intermediate mutant states, representative of a heterozygous mutation.
 Setting $\varphi = 1$\ and following the voltage clamp protocol shown in panel A
-of Figure~\ref{atrium:iks:vc}\ the I-V relationship of \ii{Ks}\ was simulated to
+of figure~\ref{atrium:iks:vc}\ the I-V relationship of \ii{Ks}\ was simulated to
 provide a good match to experimental data shown as the lines in panel B of
-Figure~\ref{atrium:iks:vc}.
+figure~\ref{atrium:iks:vc}.
 Also shown are the simulated current traces elicited by the voltage clamp
 protocol in panels D and F.
 The non-gated leakage component of \iip{Ks}\ sufficiently accounts for the
@@ -603,7 +606,7 @@ in a number of simulation protocols, as described in Chapter 2.
 Initially the \apd\ was evaluated under conditions corresponding to $\varphi =
 0$\ (WT) and $\varphi = 1$\ (MT).
 Under such conditions, the induced \apd\ shortening was found to result in
-un-physiological \apd\ values, shown in Figure \ref{atrium:iks:apd}.
+un-physiological \apd\ values, shown in figure \ref{atrium:iks:apd}.
 Therefore a pair of heterozygous cases, corresponding to $\varphi = 0.10$\
 (HT10) and $\varphi = 0.25$\ (HT25) were created and used in the evaluation of
 the mutation's effects.
@@ -616,25 +619,23 @@ For the 3D simulations, the model described in Sections
 Since the intention was just to investigate the influence of the mutation, the
 model was used without tissue anisotropy.
 The mutation was applied homogeneously with the electrical activity at all
-nodes described by either the WT or HT10 cells.
-An atrial model of nodes described by HT25 cells did support stable conduction
-and so it was not used in the 3D studies.
+nodes described by either the WT or HT25 cells.
 There was no heterogeneity introduced to account for the differing cell types
 present in the human atrium.
-To examine the behaviour of scroll waves under WT and HT10 conditions a protocol
+To examine the behaviour of scroll waves under WT and HT25 conditions a protocol
 analogous to the wave-break protocol described for 2D sheets of tissue was
 used~\cite{Kharche2007}.
-The protocol is illustrated in Figure~\ref{atrium:iks:scroll_init}.
+The protocol is illustrated in figure~\ref{atrium:iks:scroll_init}.
 \begin{figure}
 \includegraphics{figures/atrium/iks/scrollhowto}
 \caption[Initiating a Scroll Wave]{
 \label{atrium:iks:scroll_init}
 Stimulus protocol used to initiate a scroll wave.
-\textbf{A} One extreme of the atrial model is stimulated
-\textbf{B} The excitation is allowed to propagate
-\textbf{C} An S2 stimulus is delivered by clamping a section of the tissue, here
+(a) One extreme of the atrial model is stimulated
+(b) The excitation is allowed to propagate
+(c) An S2 stimulus is delivered by clamping a section of the tissue, here
 the lower quarter.
-\textbf{D} A scroll wave begins on the wall of the right atrium.
+(d) A scroll wave begins on the wall of the right atrium.
 }
 \end{figure}
 First, a small number of cells are simulated at one extreme of the atrial model.
@@ -653,13 +654,13 @@ The effect of an increase in the leakage current parameter were investigated.
 This was done using the standard \apd\ protocol and varying $\varphi$\ between
 0 and 1.
 Variation in \apd\ as $\varphi$\ is altered is shown in
-Figure~\ref{atrium:iks:aps},A.
-Representative APs are shown in Figure~\ref{atrium:iks:aps},B.
+figure~\ref{atrium:iks:aps}(a).
+Representative APs are shown in figure~\ref{atrium:iks:aps},B.
 The \apd\ under Control conditions (WT) was seen to be \ms{312.0}.
 Progressive mutation decreased the \apd\ to \ms{150.5}\ in HT10 case and
 \ms{79.3}\ in HT25 case.
 Under homozygous conditions, $\varphi = 1$\, the \apd\ was seen to be \ms{22.4}.
-Figure~\ref{atrium:iks:aps},B shows the inclusion of the mutant channel causes
+figure~\ref{atrium:iks:aps}(b) shows the inclusion of the mutant channel causes
 the changes in morphology associated with none of the mutant types having a
 plateau region.
 Inclusion of the mutant channel decreased the upstroke velocity of the AP from
@@ -667,7 +668,7 @@ Inclusion of the mutant channel decreased the upstroke velocity of the AP from
 in HT25.
 The upstroke velocity in the homozygous case was \unit{192.0}{V/s}.
 
-Figure~\ref{atrium:iks:aps},C shows the current profiles of \ii{Ks} over the course of
+figure~\ref{atrium:iks:aps}(c) shows the current profiles of \ii{Ks} over the course of
 an AP which correspond to the AP traces shown in panel B.
 \ii{Ks}\ is seen to increase considerably in both the HT10 and HT25 cases
 compared with the WT case.
@@ -682,18 +683,16 @@ activation in WT.
 \caption[Restitution properties with S140G mutation]{
 \label{atrium:iks:apdretal}
 Restitution curves for WT (black), HT10 (red, solid) and HT25 (red, dashed).
-\textbf{A} \apdr.
-\textbf{B} ERP\emph{r}.
-\textbf{C} CV\emph{r}.
-\textbf{D} Temporal VW to premature stimulus.
+(a) \apdr.
+(b) ERP\emph{r}.
+(c) CV\emph{r}.
+(d) Temporal VW to premature stimulus.
 }
 \end{figure}
 
-The \apdr\, Figure~\ref{atrium:iks:apdretal},A, reflects the decreased \apd\ with
+The \apdr\, figure~\ref{atrium:iks:apdretal}(a), reflects the decreased \apd\ with
 the restitution curves considerably flattened for both the mutant cases.
-The maximal slopes of the \apdr\ were measured to be 1.9, 0.78 and 0.56 in cases
-WT, HT10 and HT25 respectively.
-The ERP\emph{r}\ curves, Figure~\ref{atrium:iks:apdretal},B, also reflect the
+The ERP\emph{r}\ curves, figure~\ref{atrium:iks:apdretal}(b), also reflect the
 reduced \apd\ and show a similar flattening to that seen in the \apdr\ curves.
 At an S1 interval of \ms{1000}\ the ERP was found to be \ms{327.2}\ in WT,
 \ms{168.4} in HT10 and \ms{109.3} in HT25.
@@ -703,7 +702,7 @@ The minimum S1 interval sustained during the ERP\emph{r}\ calculations was
 \ms{328.7}\ in WT, \ms{184.3} in HT10 and \ms{126.7} in HT25.
 The solitary wave CV was not altered considerably by the mutation (\cms{26.7}\
 in WT c.f. \cms{26.8} in HT25).
-The CV\emph{r}\, Figure~\ref{atrium:iks:apdretal},C, curves confirm the findings
+The CV\emph{r}\, figure~\ref{atrium:iks:apdretal}(c), curves confirm the findings
 of the ERP\emph{r}\ calculations, that the mutant case supports successful
 excitation after a considerably reduced S2 interval.
 The minimum S2 interval which still allowed the test stimulus to propagate was
@@ -711,22 +710,22 @@ found to be \ms{317.1}\ in WT, \ms{151.7}\ in HT10 and \ms{92.5}\ in HT25.
 Vulnerability to premature excitation was relatively unaffected by the mutation.
 It was observed to increase in tissues where the mutation was present from a VW of
 \ms{3.2}\ in WT to \ms{3.4}\ in HT10 and \ms{3.3}\ in HT25
-(Figure~\ref{atrium:iks:apdretal},D).
+(figure~\ref{atrium:iks:apdretal}(d)).
 This is a small (less than 5~\%) change in the VW to premature excitation.
 
 \subsubsection{Dynamic Behaviours on a 2D sheet}
 
 Re-entry was initiated in 2D sheets of homogeneous virtual human atrial tissues
 for WT, HT10 and HT25 cases.
-The dynamical behaviours of the system were observed for \unit{5}{s}\ or until
+The dynamical behaviours of the system were observed for \unit{10}{s}\ or until
 all electrical activity ceased after the re-entry self terminated.
 Frames from the simulation and spiral tip traces are shown in
-Figure~\ref{atrium:iks:twodframes}.
+figure~\ref{atrium:iks:twodframes}.
 The lifespan of re-entrant waves in the WT case was seen to be \unit{2.8}{s},
 whilst in both the HT10 and HT25 cases the re-entry persisted for the duration
-of the simulation (\unit{5}{s}).
+of the simulation (\unit{10}{s}).
 In the WT case the spiral tip showed a large degree of meander
-(Figure~\ref{atrium:iks:twodframes},top row, column IV) even after the initial
+(figure~\ref{atrium:iks:twodframes},top row, column iv) even after the initial
 transitory period.
 The tip trajectory shows that the spiral wave completes several rotations, each
 accompanied by large movements of the tip before finally tip exits along the
@@ -741,8 +740,8 @@ pattern, indicative of a highly stable re-entrant wave.
 \includegraphics{figures/atrium/iks/2Dplots}
 \caption[2D Re-entry under S140G conditions]{
 \label{atrium:iks:twodframes}
-Snapshots of electrical activity extracted at \unit{1}{s}\ (I), \unit{1.5}{s}\
-(II) and \unit{2.5}{s}\ (III) after spiral wave initiation, with accompanying
+Snapshots of electrical activity extracted at \unit{1}{s}\ (i), \unit{1.5}{s}\
+(ii) and \unit{2.5}{s}\ (iii) after spiral wave initiation, with accompanying
 tip trace shown in (IV) for WT (top), HT10 (middle) and HT25 (bottom).  In the
 electrical activity plots red is fully depolarized, blue is the resting
 potential.  The WT spiral occupies much more of the tissue and has a very large
@@ -752,7 +751,7 @@ after the initial transient behaviour.
 \end{figure}
 
 Representative APs were extracted from a point in the tissue and used in
-dominant frequency analysis, shown in Figure~\ref{atrium:iks:twodfreq}.
+dominant frequency analysis, shown in figure~\ref{atrium:iks:twodfreq}.
 From the representative APs (top panels) it can be seen that the \apd\ decreases
 as a greater proportion of the mutation is present.
 The WT case also shows obvious alternans in the AP profiles reflecting its
@@ -778,7 +777,7 @@ point \mm{6}\ from top and left of the 2D sheets every \ms{2.5} of elapsed time.
 \end{figure}
 
 The minimal stimulus substrate size was computed as shown in
-Figure~\ref{atrium:iks:svw}.
+figure~\ref{atrium:iks:svw}.
 The mutation induced remodelling dramatically reduced the size of the SVW, from
 \mm{99.1}\ in WT conditions to \mm{12.3}\ in HT25 conditions, a reduction of
 87.5\%.
@@ -787,11 +786,11 @@ The mutation induced remodelling dramatically reduced the size of the SVW, from
 \includegraphics{figures/atrium/iks/07_svw}
 \caption[Spatial Vulnerability Window with S140G mutation]{
 \label{atrium:iks:svw}
-\textbf{A} Unsuccessful attempt at initiating figure-of-eight re-entry just
+(a) Unsuccessful attempt at initiating figure-of-eight re-entry just
 before (I) and after (II) re-entry would occur.
-\textbf{B} Successful initiation of figure-of-eight re-entry just before (I) and
+(b) Successful initiation of figure-of-eight re-entry just before (I) and
 just after (II) re-entry is initiated.
-\textbf{C} Spatial vulnerability window for WT (black), HT10 (red) and HT25
+(c) Spatial vulnerability window for WT (black), HT10 (red) and HT25
 (pink) tissue.
 Spatial vulnerability window is the minimum length of tissue that produces
 figure-of-eight re-entry.
@@ -807,7 +806,7 @@ as representative cases.
 The scroll waves were initiated on the right atrial free wall to allow
 initiation and initial evolution without interference with anatomical obstacles.
 The 3D simulation visualisations are presented in
-Figure~\ref{atrium:iks:threed}.
+figure~\ref{atrium:iks:threed}.
 In WT conditions, as observed in the 2D simulations, the scroll waves have a
 large meander and self-terminated in approximately \unit{4.2}{s}.
 As long as the scroll wave was initiated far from anatomical obstacles such as
@@ -815,7 +814,7 @@ venous openings, self-termination was independent of position.
 In certain cases where it was not `entrapment' of the scroll wave around an
 anatomical obstacle was observed, leading to prolonged scroll wave activity even
 in the WT case.
-Under HT10 conditions the small wavelength allowed scroll waves to become
+Under HT25 conditions the small wavelength allowed scroll waves to become
 persistent in all cases, as observed in 2D simulations.
 In contrast to the 2D simulations the presence of anatomical obstacles led to break up of the
 scroll wave into erratic propagations and short-lived wavelets.
@@ -827,26 +826,24 @@ This erratic behaviour then persisted until the end of simulation at
 \caption[Snapshots of membrane potential over the whole atrium with S140G
 mutation]{
 \label{atrium:iks:threed}
-Snapshots of the membrane potential for WT (top panels) and HT10 (bottom
-panels) taken at \unit{1}{s} (I), \unit{2}{s} (II), \unit{3}{s} (III) and
-\unit{4}{s} (IV) of simulated time.
+Snapshots of the membrane potential for WT (top panels) and HT25 (bottom
+panels) taken at \unit{1}{s} (i), \unit{2}{s} (ii), \unit{3}{s} (iii) and
+\unit{4}{s} (iv) of simulated time.
 In the plots, red shows full depolarized tissue, whilst blue tissue is at rest.
-By \unit{2}{s} the activity shown in panel bottom,II has started to break up, compared with
+By \unit{2}{s} the activity shown in panel bottom,ii has started to break up, compared with
 the more stable ave shown in the upper panel, just about to self-terminate in
-panel top,IV, as the excitation wavefront hits the non-conducting atrio-ventricular
+panel top,iv, as the excitation wavefront hits the non-conducting atrio-ventricular
 ring.
 }
 \end{figure}
 
 Representative AP profiles were extracted from several points throughout the
 atrial model and used in dominant frequency analysis.
-The dominant frequency in the HT10 case was found to be much higher,
+The dominant frequency in the HT25 case was found to be much higher,
 approximately \unit{10}{Hz}, than in the WT case, less than \unit{3}{Hz}.
-%This is shown in Figure~\ref{atrium:iks:threeddf}.
+%This is shown in figure~\ref{atrium:iks:threeddf}.
 
 \subsubsection{Discussion and Conclusions of the S140G Study}
-
-\paragraph{S140G mutation}
 
 The S140G mutation of the KCNQ1 $\beta$\ subunit of the \ii{Ks}\ ion channel
 causes a large gain of function.
@@ -887,8 +884,6 @@ The simulations shows that \ii{Ks}\ has an important role to play in the behavio
 of atrial cell electrophysiology and that gain of function mutations in the
 channel can lead to a large reduction in the \apd\ and ERP.
 
-\paragraph{Limitations of the Study}
-
 Limitations of the Courtemanche et al. model have been discussed
 previously\ref{CRN98}.
 This study was carried out using a model of the human atria which omitted
@@ -905,8 +900,6 @@ self-termination as expected, whilst the presence of the mutation leads to
 breakup and fibrillation.
 Simulation studies allow modelling of only the aspects of the disease which
 interest the investigator.
-
-\paragraph{Comparisons with other studies}
 
 Electrical remodelling involves complex regulatory mechanisms.
 AF is known to be associated with the remodelling of several ion channels.
