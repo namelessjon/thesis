@@ -104,7 +104,7 @@ electrophysiological heterogeneity to represent the regional difference in
 electrical activity of atrial myocytes and the other cellular types present in
 the geometry, such as the pectinate muscles and crista terminalis.
 The parameters used for
-heterogeneity were based on measurements taken by Feng et al.~\cite{feng1998}
+heterogeneity were based on measurements taken by Feng et al.~\cite{Feng1998}
 of the canine atrium.  These were converted to parameters for the CRN model by
 Seemann et al.~\cite{Seemann2004} and have been used in several simulation
 studies~\cite{Seemann2006,Stott2008}.  They are shown in
@@ -162,7 +162,7 @@ depolarization wave to the atrio-ventricular node, the pectinate muscles and the
 Bachmann bundle, the preferential pathway for conduction between the atria.
 To determine the influence of anisotropic conduction on the propagation of the
 electrical activity, we follow a method after Panfilov and
-Keener~\cite{panfilov1995}.
+Keener~\cite{Panfilov1995}.
 In this method there is a unit vector, $\mathbf{f}$, defined at every point in
 the tissue which has significant fibre orientation.
 This unit vector defines a set of co-ordinate axes, in which the conductivity
@@ -193,7 +193,7 @@ $\mathbf{A^{T}}$\ such that
 \mathbf{D} = \mathbf{A} \mathbf{\tilde{D}} \mathbf{A^{T}}
 \end{equation}
 To find $\mathbf{A}$\ it is possible to write out the involved rotations
-explicitly, however an alternative method~\cite{fention2005}\ uses the fact that
+explicitly, however an alternative method~\cite{Fenton2005}\ uses the fact that
 $\mathbf{f}$\ and the two vectors orthogonal to it, $\mathbf{g}$\ and
 $\mathbf{h}$\ are eigenvectors of $\mathbf{D}$.
 These have the eigenvalues of $D_{\parallel}$\ and $D_{\perp}$.
@@ -418,35 +418,38 @@ quantities except the left atrial activation time.
 
 Conduction velocities for the classes of tissue present in the model have been
 measured experimentally as \unit{0.68}{m/s}---\unit{1.03}{m/s}\ for atrial wall
-muscle~\ref{hansson1998}, \unit{0.7}{m/s}---\unit{1.3}{m/s}\ for crista
-terminalis~\ref{Boineau1988} in the human atrium.
+muscle~\cite{Hansson1998}, \unit{0.7}{m/s}---\unit{1.3}{m/s}\ for crista
+terminalis~\cite{Boineau1988} in the human atrium.
 Conduction velocity in the pectinate muscles or bachmann bundle has not been
 measured experimentally in human studies.
 
 \subsection{Comparisons with Existing Models}
 
 There are several existing three dimensional models of conduction in the whole
-human atrium~\ref{harild2000,zemlin2001,vigmond2001,seemann2006}.
+human atrium~\cite{Harrild2000,Zemlin2001,Vigmond2001,Seemann2006}\ which use
+some variant of a biophysical model for the atria.
+Others, such as the cellular automaton approach employed by Reumann et
+al.~\cite{Reumann2007}\ are not discussed here.
 They represent a range of electrophysiological detail, fibre structure and
 computational complexity.
-The model of Harild and Herenriqez~\ref{harild2000}\ has a detailed fibre
+The model of Harrild and Herenriqez~\cite{Harrild2000}\ has a detailed fibre
 structure, but this is coupled with homogeneous electrophysiology.
 In addition, the model has a relatively coarse space step, with an average
 inter-element distance of \mm{0.55}.
-The Zemlin~\ref{zemlin2001}\ model was also based on the visible human dataset.
+The Zemlin~\cite{Zemlin2001}\ model was also based on the visible human dataset.
 They used a reduced formulation of the Courtemanche et al. model which has 6
 variables.
 They included atrial wall muscle fibres based on dissection of anatomical
 specimens.
 There was no internal fibre structure such as the bachmann bundle however.
 It is a very efficient model.
-The Vigmond~\ref{vigmond2001}\ is an idealised model of an unusual construction.
+The Vigmond~\cite{Vigmond2001}\ is an idealised model of an unusual construction.
 It is topologically, rather than anatomically, correct and formulated as a
 series of shells, made up of interconnected fibres.
 The fibre based construction allows for efficient solutions.
-The Seemann~\ref{seemann2006}\ model is closely related to the model proposed in this
-chapter--it would be accurate to say that this model is a simplification of the
-model by Seemann et al.
+The Seemann~\cite{Seemann2006}\ model is closely related to the model proposed in this
+chapter--it would be accurate to say that this model is a simplification or
+refinement of the Seemann model. 
 The Seemann et al. model features an autoactive sino-atrial node complex, while
 the model here focuses on the atrial conduction only.
 It uses a full formulation of the Courtemanche et al model, without lookup
@@ -875,7 +878,7 @@ responsible for the maintenance of AF in those afflicted with the mutation.
 Repolarisation of cardiac myocytes depends on the \ii{Ks}\ (KCNQ1/KCNE1) and
 \ii{Kr}\ (hERG) channels.
 Previous clinical and simulation studies have linked mutation leading to
-gain of function in the \ii{Ks}\ to SQT syndromes.
+gain of function in the \ii{Ks}\ to SQT syndromes~\cite{Brugada2004,Hong2005}.
 Studies by Bosch and Workmann into AF induced remodelling focused on the
 \ii{K1}\ and \ii{to}\ potassium channels, as well as the L-type calcium channel.
 Atrial \ii{Ks}\ is a much lower magnitude than ventricular \ii{Ks}\ so its
@@ -884,15 +887,15 @@ The simulations shows that \ii{Ks}\ has an important role to play in the behavio
 of atrial cell electrophysiology and that gain of function mutations in the
 channel can lead to a large reduction in the \apd\ and ERP.
 
-Limitations of the Courtemanche et al. model have been discussed
-previously\ref{CRN98}.
 This study was carried out using a model of the human atria which omitted
 spatial and electrical heterogeneity.
 This allowed the mutation to be studied without the additional complexity
 introduced by heterogeneity.
 In addition, it is well known that AF can induce significant structural
-remodelling with most AF observed in clinical settings accompanied by cardiac
+remodelling~\cite{Goette2002,Avitall2008} with most AF observed in clinical settings accompanied by cardiac
 structural disorders.
+Inter-myocyte coupling can also be influenced~\cite{Velden1998}\ by chronic
+atrial fibrillation.
 Such etiology is beyond the scope of this study and would be a significant
 investigation in its own right.
 Despite the relative simplicity of the study in 3D, the control cases still show
@@ -903,9 +906,10 @@ interest the investigator.
 
 Electrical remodelling involves complex regulatory mechanisms.
 AF is known to be associated with the remodelling of several ion channels.
-Recent clinical studies have identified several numerous genes responsible for a
+Recent clinical studies have identified numerous
+genes~\cite{Otway2007,Xia2005,Yang2004,Restier2008,Hong2005,Ravens2008,Yang1997a,Olson2005a} responsible for a
 propensity towards AF due to reductions in the ERP and \apd.
-A recent modelling study of mutation in the KCNJ2 Kir2.1 gene, leading to gain
+A recent modelling study of mutation in the KCNJ2 Kir2.1 gene~\cite{Kharche2008}, leading to gain
 of function in the \ii{K1}\ channel, was found to lead to dramatic reduction in
 ERP and \apd.
 An extension of the simulation study into three dimensions showed that it led to
@@ -917,16 +921,14 @@ presented in this chapter.
 Computational studies of AF have investigated the effects of AF at both cellular
 and tissue levels.
 Cellular effects of AF are important and have been explored in several
-investigations.
+investigations~\cite{Zhang2005,Workman2001,Bosch2005}.
 On the tissue level, Pandit et al. have studied the effects of channel blocking
-on 2D propagations.
+on 2D propagations\cite{Pandit2005}.
 Three dimensional studies have included Reumann et al. who used a cellular
-automaton based model of the human atria to study AF.
+automaton based model of the human atria to study AF~\cite{Reumann2007}.
 Such a model, by its nature, does not consider the continuous time variation of
 potentials within the human atria, and may accumulate significant error in a
 short period of time.
-The model presented in this chapter represents the most biophysically detailed
-and anatomically accurate model of AF in the human atria to date.
 
 \section{Modelling the Whole Atrium: Conclusion}
 

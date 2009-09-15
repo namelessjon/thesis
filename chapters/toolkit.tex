@@ -257,7 +257,7 @@ technique with a cell that has a number of stochastic components could
 potentially affect the quality of the results.
 
 The second way in which caching can be employed is in the creation of `lookup
-tables'.
+tables'~\cite{Victorri1985,Cooper2006}.
 A lookup table is a pre-computed table of the values an expression can
 take.
 When the expression would normally be evaluated, the table is used
@@ -309,7 +309,7 @@ critical value. In real experiments, ones involving actual cardiac tissue, the
 typical experimental protocol would involve stimulating the tissue at
 sequentially shorter intervals, until no stimulation was provoked.  This might
 involve stimulating the cell thousands of times, which would be expensive
-computationally to model exactly.  Instead, a binary search for the critical
+computationally to model exactly.  Instead, a binary search~\cite{IntroAlgo} for the critical
 value can be performed, using the pseudo-code shown in Algorithm~\ref{toolkit:binary}
 
 \begin{algorithm}
@@ -476,9 +476,12 @@ by the library alongside the membrane potential trace.
 \subsection{Action Potential Duration Restitution}
 
 The library calculates the APD\emph{r} via a standard S1--S2 protocol used in both
-numerical simulations and also in physiological experiments.  The APD\emph{r} is used
+numerical simulations~\cite{Kim2002,Xie2002,Qu1999,Cherry2004,Cherry2007,Decker2009} and also in physiological
+experiments~\cite{Boyett1978,Taggart1996}.  The APD\emph{r} is used
 as a measure of how the cell responds to stimulations at different rates.
 
+A single cell protocol to evaluate the ADP\emph{r}\ curve as results gained are
+similar to strand protocols~\cite{Xie2002,Decker2009}.
 The cellular model is paced $N-1$\ times with a stimulus close to the threshold
 value at a given stimulus interval, S1.  At this point, the state is saved for the
 paced cells.  The $N$th S1 stimulus is then given, followed by the S2 after a
@@ -490,7 +493,8 @@ the \apdr[50]\ restitution can be calculated.
 
 \subsection{Effective Refractory Period Restitution}
 
-The ERP\emph{r} is calculated by the library using standard experimental protocols.
+The ERP\emph{r} is calculated by the library using standard experimental
+protocolsi~\cite{Workman2001,Kharche2008}.
 The ERP is defined as the shortest possible stimulus interval, S2, which still
 allows a successful AP to be elicited after pacing $N$ times at a pacing
 interval S1.  A successful AP is defined as an AP which has an amplitude
@@ -522,7 +526,7 @@ S2 interval would fall within the $N^{\text{th}}$ AP.
 
 The VW measurement is based around a 1D ring model of cardiac tissue.
 It is used to quantify the vulnerability of cardiac tissue to the genesis of
-arrhythmia via re-entrant activity.
+arrhythmia via re-entrant activity~\cite{Quan1990,Zhang2003,Gonzales2003}.
 The VW is defined as the time period in the refractory tail of a propagating
 excitation wave that results in unidirectional conduction block.
 In the case of a ring model of the tissue this causes retrograde propagation,
@@ -602,7 +606,7 @@ tested.
 
 \subsection{Conduction Velocity Restitution}
 
-The CV is the rate of propagation of the excitation wave.
+The CV is the rate of propagation of the excitation wavei.
 It is determined by the difference in excitation times at two points divided by
 the distance between them.
 It is measured both in both experimental and numerical studies and is therefore
@@ -613,7 +617,8 @@ stimulus which still propagates successfully.
 It is similar to the ERP, but can also be influenced by inter-cellular coupling
 and heterogeneity in the strand.
 The CV\emph{r} is found via stimulating the strand at successively shorter
-intervals and noting the changes in the measured CV.
+intervals and noting the changes in the measured
+CV~\cite{Cherry2008,Zhang2003,Qu2006}.
 The minimum stimulus interval is found via noting when the curve ends.
 
 
@@ -663,7 +668,8 @@ activity \ms{2.5} apart.
 
 The spatial vulnerability (SV) of cardiac tissue is defined as the smallest
 length of tissue which, when given a stimulus at the threshold level in the wake
-of a propagating wave, gives rise to at least one `figure of eight' re-entry.
+of a propagating wave, gives rise to at least one `figure of eight'
+re-entry~\cite{Zou2005}.
 A figure of eight re-entry occurs when the excitation waves from the ends of the
 test length propagate back through the centre of the length.
 This results in a pair of contra-rotating spiral waves, one at each end of the
@@ -701,11 +707,11 @@ the sino-atrial node.
 
 \subsection{Anion Currents In The Human Atrium}
 
-In a recent experimental study, Li et al.~\cite{li2007} determined the existence
+In a recent experimental study, Li et al.~\cite{Li2007} determined the existence
 of a novel outwardly rectifying anion current in human atrial myocytes isolated
 from right atrial appendages taken from patients undergoing coronary bypass
 surgery.
-A preliminary computational study has been conducted~\cite{li2007}\ to
+A preliminary computational study has been conducted~\cite{Li2007}\ to
 investigate the effects of the anion sensitive current, \ii{ANION}, on atrial
 action potentials.
 However it is still unclear on how this novel current affects intra-atrial
@@ -714,7 +720,7 @@ This section aims to investigate in detail the effects of \ii{ANION}\ on atrial
 action potential, conduction behaviours and the dynamic behaviours of re-entrant
 spiral waves.
 
-The Li et al.~\cite{li2007}\ study determined the current carried by this novel
+The Li et al.~\cite{Li2007}\ study determined the current carried by this novel
 ion chanel, \ii{ANION}, could be modelled by
 \begin{equation}
 \label{eqn:anion:ianion}
@@ -801,7 +807,7 @@ The \apd\ is slightly reduced from \ms{299.6} to \ms{297.3}, whereas the
 The AP profile shows a depressed plateau region (phase 2), reduced from
 \mv{-9.56}\ to \mv{-14.1}\ and a slightly elevated resting potential,
 \mv{-79.0}\ in the anion case cf. \mv{-80.9}\ in control.
-This is consistent with the Li~et~al.~\cite{li2007} study, and is included here
+This is consistent with the Li~et~al.~\cite{Li2007} study, and is included here
 only for completeness.
 
 \begin{figure}
@@ -1331,7 +1337,7 @@ Considering first the single cell results, one of the most obvious
 effects is the striking reduction in the \apd\ and repolarization
 properties.  AFER abbreviated \apd\ in AM cells by 66~\% in Bosch and
 53~\% in Workman.
-Other work~\cite{Xie2002,ByungSoo2002} has already suggested why flattening of
+Other work~\cite{Xie2002,ByungSoo2002,Karma1994,Tusscher2006} has already suggested why flattening of
 the ERP and APD restitution curves can be pro-arrhythmogenic.
 Our study suggested that reduction is not uniform across all cell types, which
 leads to an augmented heterogeneity.
@@ -1348,10 +1354,12 @@ re-entrant behavior between homogeneous and heterogeneous simulations.
 The homogeneous sheets show self-termination of re-entry in control
 tissue, whilst the reduced ERP and conduction wavelength allow the rotor
 to remain stable and persist for the duration of the simulation in AFER
-condtions.  The heterogeneous sheet simulations, show spiral wave
+condtions as is expected from the flattened restitution
+curves~\cite{Xie2002,Karma1994}.
+The heterogeneous sheet simulations, show spiral wave
 breakup, as observed in real tissue \cite{Kumagai1997}, in both control
 and AF simulations, possibly due to elevated plateau potentials and
-increased refractory period of the CT cells.  Self-termination is still
+increased refractory period of the CT cells~\cite{Clayton2005}.  Self-termination is still
 observed in control simulations and is more rapid than in homogeneous
 tissue.
 
