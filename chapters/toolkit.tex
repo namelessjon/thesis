@@ -13,7 +13,7 @@ computers with a XX GHz Althon X2 chip and 1 GB RAM and on Horace, the local HPC
 facility.  Horace has 24 compute nodes, each one consisting of four Intel Itanium2
 Montecito Dual Core 1.6GHz processors, 16GB RAM and up to 512GB of local scratch
 space.  The nodes are connected by a high speed Quadrics QsNetII
-interconnect~\cite{horace}.  Horace provides compilers for both Fortran and C,
+interconnect.  Horace provides compilers for both Fortran and C,
 and for both the MPI and OpenMP parallelization libraries.
 
 \subsection{Implementation}
@@ -33,7 +33,7 @@ was implemented using the monodomain equations.
 The cellular model used for much of the developmental process was the
 Courtemanche et al. human atrial myocyte model~\cite{CRN98}.
 Also currently implemented are the Nygren et al. human atrial myocyte
-model~\cite{nygren98} and the four variable formulation of the Fenton-Karma
+model~\cite{Nygren1998} and the four variable formulation of the Fenton-Karma
 minimal variable model~\cite{Bueno-Orovio2008}.
 These cellular models describe the behaviour of a cell using coupled systems of
 non-linear ordinary differential equations.
@@ -69,27 +69,26 @@ in the introduction.
 
 \subsubsection{Strand Model}
 
-\begin{figure}
-\setlength{\unitlength}{1mm}
-\begin{picture}(130,30)
-
-\multiput(0,10)(20, 0){7}{\usebox{\cell}}
-\multiput(10,14)(20, 0){6}{\usebox{\resistor}}
-\end{picture}
-\caption[Schematic diagram of a 1D strand]{\label{fig:toolkit:strand}
-Schematic diagram of a 1D strand.
-The strand is 7 nodes long, with each node represented by the blue square.
-The electrical activity at each node is represented by a mathematical model of
-the trans-membrane currents.
-The cell is coupled to its neighbours through resistances, the black rectangles.
-}
-\end{figure}
+% \begin{figure}
+% \setlength{\unitlength}{1mm}
+% \begin{picture}(130,30)
+% 
+% \multiput(0,10)(20, 0){7}{\usebox{\cell}}
+% \multiput(10,14)(20, 0){6}{\usebox{\resistor}}
+% \end{picture}
+% \caption[Schematic diagram of a 1D strand]{\label{fig:toolkit:strand}
+% Schematic diagram of a 1D strand.
+% The strand is 7 nodes long, with each node represented by the blue square.
+% The electrical activity at each node is represented by a mathematical model of
+% the trans-membrane currents.
+% The cell is coupled to its neighbours through resistances, the black rectangles.
+% }
+% \end{figure}
 
 The 1D strand model is used for several experimental protocols, as
 a computationally cheaper alternative to a full tissue model.
 The 1D strand model consists of a number of nodes, typically 200 or 300, which
-are coupled electrically at the ends of the cells as shown in
-figure~\ref{fig:toolkit:strand}.
+are coupled electrically at the ends of the cells.
 The electrical activity at each node is modelled via a cellular
 electrophysiology model.
 Electrical conduction between the nodes is handled via a 1D formulation of the
@@ -100,35 +99,35 @@ flux boundary conditions.
 
 \subsubsection{Sheet Model}
 
-\begin{figure}
-\setlength{\unitlength}{1mm}
-\begin{picture}(130,130)
-\multiput(0,0)(20, 0){7}{
-    \multiput(0,0)(0,20){7}{
-        \usebox{\cell}
-    }
-}
-\multiput(10,4)(20, 0){6}{
-    \multiput(0,0)(0, 20){7}{
-        \usebox{\resistor}
-    }
-}
-\multiput(4, 10)(20, 0){7}{
-    \multiput(0, 0)(0, 20){6}{
-        \usebox{\vresistor}
-    }
-}
-\end{picture}
-\caption[Schematic diagram of a 2D sheet]{\label{fig:toolkit:sheet}
-Schematic diagram of a 2D strand.
-The strand is $7\times7$ nodes in size, with each node represented by a blue
-square.
-The electrical activity at each node is represented by a mathematical model of
-the trans-membrane currents.
-The cell is coupled to its neighbours along the cardinal directions through
-resistances, the smaller black rectangles.
-}
-\end{figure}
+% \begin{figure}
+% \setlength{\unitlength}{1mm}
+% \begin{picture}(130,130)
+% \multiput(0,0)(20, 0){7}{
+%     \multiput(0,0)(0,20){7}{
+%         \usebox{\cell}
+%     }
+% }
+% \multiput(10,4)(20, 0){6}{
+%     \multiput(0,0)(0, 20){7}{
+%         \usebox{\resistor}
+%     }
+% }
+% \multiput(4, 10)(20, 0){7}{
+%     \multiput(0, 0)(0, 20){6}{
+%         \usebox{\vresistor}
+%     }
+% }
+% \end{picture}
+% \caption[Schematic diagram of a 2D sheet]{\label{fig:toolkit:sheet}
+% Schematic diagram of a 2D strand.
+% The strand is $7\times7$ nodes in size, with each node represented by a blue
+% square.
+% The electrical activity at each node is represented by a mathematical model of
+% the trans-membrane currents.
+% The cell is coupled to its neighbours along the cardinal directions through
+% resistances, the smaller black rectangles.
+% }
+% \end{figure}
 
 The 2D sheet model is used for several experimental protocols, as well as more
 general numerical experimentation.  The 2D sheet model consists of a grid of
@@ -460,11 +459,23 @@ and computation of the spatial vulnerability window.
 
 \subsection{Action Potential}
 
+\begin{figure}
+\centering
+\includegraphics{figures/toolkit/illustrations/labelled_ap_profile}
+\caption[Illustration of AP properties]{
+\label{fig:toolkit:illus:ap}
+Schematic AP with various action potential properties noted.
+Shown are the overshoot (OS), \apd, \apd[50], $\frac{dV}{dt}_{\text{max}}$ and
+the resting membrane potential.
+}
+\end{figure}
+
 The action potential profile is one of the fundamentals of cellular modelling,
-with a number of associated properties.  These include the action potential
+with a number of associated properties, illustrated in
+figure~\ref{fig:toolkit:illus:ap}.  These include the action potential
 duration at 90\% repolarisation, \apd; the action potential
 duration at 50\% repolarisation, \apd[50]; the maximal overshoot, OS; the
-upstroke velocity, $\frac{dV}{dt}_{\text{max}}$\ and the resting membrane
+upstroke velocity, $\frac{dV}{dt}_{\text{max}}$ and the resting membrane
 potential.
 
 To compute these quantities, the cell is paced $N$\ times at given S1 interval.
@@ -526,7 +537,7 @@ S2 interval would fall within the $N^{\text{th}}$ AP.
 
 The VW measurement is based around a 1D ring model of cardiac tissue.
 It is used to quantify the vulnerability of cardiac tissue to the genesis of
-arrhythmia via re-entrant activity~\cite{Quan1990,Zhang2003,Gonzales2003}.
+arrhythmia via re-entrant activity~\cite{Quan1990,Zhang2003,Gonzalez2003}.
 The VW is defined as the time period in the refractory tail of a propagating
 excitation wave that results in unidirectional conduction block.
 In the case of a ring model of the tissue this causes retrograde propagation,
@@ -537,9 +548,31 @@ If it is given too late, then propagation will occur in both directions, which
 in the ring case, results in the two excitation wavefronts annihilating each
 other.
 Normal pacing could then resume.
-These three cases are illustrated in figure~\ref{fig:toolkit:vw}.
+These three cases are illustrated in figure~\ref{fig:toolkit:illus:vw}.
 
 
+\begin{figure}
+\centering
+\includegraphics{figures/toolkit/illustrations/vw}
+\caption[Illustration of VW cases]{
+\label{fig:toolkit:illus:vw}
+Illustrative space--time plots of the vulnerable window.
+In all plots, colour represents membrane potential from resting (blue) to
+depolarized (orange), position along the strand changes horizontally, whilst
+time advances upwards.
+Normal conduction is from left to right.
+In all plots, the latter half of the last S1 pulse can be seen in the lower
+right.
+(a) Complete Block.  The stimulus is too early, and no excitation can be evoked.
+(b) Unidirectional Block.
+The stimulus has been delivered in the vulnerable window.
+The stimulus can propagate only back along the strand.
+In a ring, this would be re--entrant.
+(b) Bidirectional Conduction.
+The stimulus is delivered too late.
+The bidirectional waves will anihilate each other.
+}
+\end{figure}
 
 
 The VW is found in a 1D strand model, set up as described previously.
@@ -641,7 +674,8 @@ does not propagate the length of the strand.
 
 The dynamic behaviours of spiral waves are characterised by the stability,
 mobility and lifespan (LS).
-Spiral Wave LS is examined experimentally and numerically.
+Spiral Wave LS is examined experimentally~\cite{Kumagai1997} and
+numerically~\cite{Qu2000,Nygren2001,Cherry2007,Clayton2005,Zhang2003}.
 The LS of the spiral wave and the meander pattern of the tip are both used to
 gain insight into the behaviour of the tissue under conditions of cardiac
 arrhythmia.
@@ -757,7 +791,7 @@ $\text{Cl}^{\text{-}}$ ions.
 The effects of the addition of this current to atrial myocyte cells was
 quantified.
 In the following paragraphs, `control' is used to denote the original
-Courtemanche~et~al.~\ref{CRN98}\ atrial myocyte model and `anion' to denote the
+Courtemanche~et~al.~\cite{CRN98}\ atrial myocyte model and `anion' to denote the
 Courtemanche~et~al. model with the addition current described by
 (\ref{eqn:anion:ianion}) and using the $\text{Cl}^{\text{-}}$ parameter set from
 Table~\ref{tbl:anion:params}.
@@ -800,8 +834,26 @@ to break the wave was \mv{0} and it was applied for \ms{1}.
 \subsubsection{Results}
 
 
+\begin{figure}
+\begin{center}
+\includegraphics{figures/toolkit/anion/figures/01_AP}
+\end{center}
+\caption[Anion Current AP Profiles and \ii{Ca,L}\ gating parameters]{
+\label{fig:tookit:anion:ap}
+(a) AP profile for the CRN model in control (black) and anion (red) cases.
+The inclusion of the $\text{Cl}^{\text{-}}$ carrying current results in a small
+change of AP morphology, with a depressed plateau potential and an elevated
+resting potential.
+(b) Fractional opening of the gates of \ii{Ca,L}.
+The $d$ (activation) gate is shown dashed, the $f$ (inactivation) gate solid.
+Colours as in panel (a).
+The $f$ gate takes longer to inactivate, whilst the $d$ gate does not activate
+as much.
+}
+\end{figure}
+
 The AP generated by the control and anion simulations are shown in
-figure~\ref{fig:toolkit:anion:ap}.
+figure~\ref{fig:tookit:anion:ap}(a).
 The \apd\ is slightly reduced from \ms{299.6} to \ms{297.3}, whereas the
 \apd[50]\ is more significantly reduced, from \ms{180.1} to \ms{158.1}.
 The AP profile shows a depressed plateau region (phase 2), reduced from
@@ -810,18 +862,12 @@ The AP profile shows a depressed plateau region (phase 2), reduced from
 This is consistent with the Li~et~al.~\cite{Li2007} study, and is included here
 only for completeness.
 
-\begin{figure}
-\begin{center}
-\includegraphics{figures/toolkit/anion/figures/01_AP}
-\end{center}
-\caption[Anion Current AP Profiles]{
-\label{fig:tookit:anion:ap}
-AP profile for the CRN model in control (black) and anion (red) cases.
-The inclusion of the $\text{Cl}^{\text{-}}$ carrying current results in a small
-change of AP morphology, with a depressed plateau potential and an elevated
-resting potential.
-}
-\end{figure}
+Transients of the $d$ and $f$ gate of the \ii{Ca,L}\ open fractions are shown in
+figure~\ref{fig:tookit:anion:ap}(b).
+The $f$ gate in the \ii{ANION}\ case has a higher fraction of open channels for
+longer than the control case.
+The $d$ gate does not activate as much in the plateau region, contributing to
+the shorter plateau.
 
 
 \begin{table}
@@ -836,7 +882,7 @@ $\frac{dV}{dt}_max$.
 The temporal vulnerability window to unidirectional conduction block, VW.
 }
 \begin{center}
-\begin{tabular}{r c c c c }
+\begin{tabular}{r r r r r}
 \toprule
 Case & \apd\ (ms) & \apd[50]\ (ms) & $\frac{dV}{dt}_max$ ($\text{mV}\,\text{ms}^{\text{-1}}$) & VW (ms)  \\
 \midrule
@@ -848,7 +894,7 @@ Anion & 297.3 & 158.1 & 210.6 & 3.94 \\
 \end{table}
 
 The computed APD\emph{r}\ curves under the control and anion conditions are shown
-in figure~\ref{fig:tookit:anion:ap}(a) and \ref{fig:tookit:anion:apdr}(b), for the
+in figure~\ref{fig:tookit:anion:apdr}(a) and \ref{fig:tookit:anion:apdr}(b), for the
 restitution curves of APD at 50\% (\apdr[50]) and 90\% (\apdr) of repolarization,
 respectively.
 The
@@ -989,16 +1035,43 @@ Both curves rapidly decrease to almost no \ii{Na}\ activation at an DI of
 \ms{00}\ but the anion case starts this descent first.
 
 
-Spiral waves were induced in a square sheet.  Representative plots of the
+\begin{figure}
+\begin{center}
+\includegraphics{figures/toolkit/anion/twod_traces}
+\end{center}
+\caption[Anion Sensitive Tissue Sheets and Spiral Lifespands]{
+\label{fig:toolkit:anion:spiral}
+(a)
+Representative membrane potentials and tip trace for control (top row) and anion
+sensitive cases (bottom row).
+Times are from the initiation of spiral activity via cross--field protocol.
+Cross--field stimulus was delivered at \ms{345}\ wall time.
+Colour represents membrane potential and is coloured from blue (depolarised,
+\mv{-80}) to orange (excited, $>\mv{0}$).
+Both spiral waves are highly mobile, meandering over a very large area of
+tissue.
+(b)
+Lifespan as related to time of initiation.
+Lifespan in \ii{ANION}\ is relatively constant at around \ms{1600}\ whilst
+control lifespan fluctuates considerably.
+}
+\end{figure}
+
+Spiral waves were induced in a square sheet.
+Representative plots of the
 membrane potential over the whole sheet, produced as the simulation was ongoing,
-are show in figure~\ref{anion:spiral}.  Panels A i--iv show the membrane
-potential for control, whilst Panels B i--iv show the membrane potential for
-anion, as the simulation evolved.  The path followed by the spiral wave tip as
-it meandered is shown in A,v and B,v for control and anion, respectively.  In
-both cases the spiral wave starts in the centre of the tissue and then follows a
+are shown in figure~\ref{fig:toolkit:anion:spiral}(a).
+The top row corresponds to control tissue, whilst the bottom row has an
+\ii{ANION}\ sensitive current active.
+Times of the membrane potential snapshots are relative to initiation of reentry at t = \ms{345}.
+Tip traces are in the 5th column.
+In both cases the spiral wave starts in the centre of the tissue and then follows a
 looping track around the tissue before finally it exits the tissue when it
-cannot turn fast enough around its own refractory tail.  This process takes
-\ms{1700} in control and \ms{2300} in anion.
+cannot turn fast enough around its own refractory tail.
+Lifespans of reentry from differing initiation times are shown in
+~\ref{fig:toolkit:anion:spiral}(b).
+Lifespan in \ii{ANION}\ is relatively constant at around \ms{1600}\ whilst
+control lifespan fluctuates considerably, from \ms{1175}\ to \ms{3910}.
 
 \subsubsection{Discussions and Conclusions}
 
@@ -1007,9 +1080,12 @@ that large, at least when considered on the single cell level.
 However, despite the current's small influence on the action potential duration,
 it does have significant effects on the restitution properties of the cell and
 on the behaviour of cells in a tissue.
+The general behaviours of the Courtemanche cell have been discussed elsewhere,
+for example in~\cite{CRN98,Cherry2008a}, I only discuss the differences the
+\ii{ANION}\ current makes.
 
 The most noticeable effect of the inclusion of \ii{ANION}\ in a cellular model
-is the abbreviation of the \apd[50]\ and the accompanying reduction in the
+is the abbreviation of the \apd[50]\ and an accompanying reduction in the
 plateau potential.  The abbreviation is due to \ii{ANION}\ acting as a
 rectifying current when the membrane potential is above \mv{-45}.   Conversely,
 at potentials below \mv{-45}\ \ii{ANION}\ acts to depolarize the cell, leading
@@ -1037,11 +1113,11 @@ it does in the control simulations which lack the current.
 For the 1D strand results, both the CV\emph{r} and threshold of
 excitation data also show rate dependent influence.
 At a long stimulus interval, the increased excitability of the cell by the anion
-current leads to a higher conduction velocity.
+current leads to a higher conduction velocity~\cite{Nygren2000}.
 The increased excitability at long stimulus interval is due to the inward nature
 of the anion current in the very first stages of the action potential.
 This increased excitability allows atrial cells with \ii{ANION}\ to conduct the
-excitation wave faster until, the stimulus interval reaches a critical value of
+excitation wave faster until, when the stimulus interval reaches a critical value of
 \ms{500}, control cells start to conduct faster.
 At this stimulus interval, the threshold of excitation is still lower for the
 anion case, so another factor is responsible for the reduction in conduction
@@ -1060,28 +1136,25 @@ with the control case.
 The increase in the
 vulnerability window appears to be quite significant, at over 20\% larger than
 the vulnerability window in tissue without \ii{ANION}.
-Both the increased vulnerability window and the reduced conduction velocity at
-short pacing intervals suggests that the addition of \ii{ANION} may be
-pro-arrhythmogenic.
-The increased vulnerability window has an obvious influence on the genesis of
+An increased vulnerability window has an obvious influence on the genesis of
 re-entrant excitation---A larger vulnerability window increases the chance of a
-premature excitation interrupting the normal function of the heart.  The
-influence of conduction velocity on re-entrant excitation is subtler, but a
-reduced conduction velocity reduces the wavelength of the excitation wave.  This
-allows a greater number of excitation waves to persist in the same area of
-tissue, reducing the likelihood of a re-entrant excitation self-terminating.
+premature excitation interrupting the normal function of the heart.
+Though in both cases, the vulnerability window is relatively small.
 
-Finally, considering the results from the sheet model of the tissue which was
-used to investigate the dynamic behaviours of induced spiral wave re-entry, we can see our
-hypothesis from the 1D strand results is born out.
-A revolving spiral wave
-typically rotates at a higher frequency than the normal excitation rate of
-cardiac tissue.  The excitation waves in the 2D sheet are therefore operating in
-the short stimulus interval regime.  Cells which contain \ii{ANION}\ have a
-slower conduction velocity in this regime and so the spiral wave can be
-sustained for longer due to it's shorter wavelength.
-However, the reduction in wavelength is not severe enough to create a stable
-mother rotor, as been observed in studies of pathological conditions.
+
+Dynamic behaviours of the 2D spiral wave are interesting.
+Both cells show a highly mobile spiral tip, due to their long \apd\ and ERP
+relative to the size of the tissue.
+However in the \ii{ANION}\ case, this does not translate into a widely varying
+spiral lifespan, as might be expected from such mobility.
+The restitution properties are generally slightly flattened by the inclusion of
+\ii{ANION}, although perhaps importantly here, in the rapid pacing region, the
+ERP is higher for \ii{ANION}\ bearing cells.
+Further investigation, perhaps using the phase field
+method~\cite{Biktashev1994}\ to start with a `stationary' spiral would be of use
+to elucidate the effects.
+
+
 
 \subsection{Atrial Fibrillation Induced Remodelling And Heterogeneity}
 
@@ -1412,8 +1485,7 @@ COR has many more cells available for use through the CellML repository and
 offers an easy way to graph the internal properties of the cell.
 Like the library developed here, COR is limited to one OS, windows in the case
 of the COR.
-COR has no inbuilt experimental protocols however and can only be used for
-single cell simulations, not tissue modelling.
+COR has no inbuilt experimental protocols however.
 CMISS lacks experimental protocols and is hard to script to use automatically.
 It does offer much more sophisticated visualisation than the toolkit here, and
 can be used for full 3D simulations too.
@@ -1423,3 +1495,20 @@ It includes no experimental protocols, although those could probably be
 implemented using its API.
 Like this toolkit, CARP does not integrate with CellML.
 
+The computational studies reveal the power of the toolkit and the experimental
+protocols in assessing the effects of a subtle (\ii{ANION}) and large (AFER)
+remodelling of cellular electrophysiological properties.
+In the \ii{ANION}\ study, the influence of a novel anion bearing current in the
+human atrium was examined.
+Despite the small influence of the current on the \apd\ and its time independent
+nature, there were significant alterations in the rate dependant and dynamic
+behaviours of the cell.
+This is due to the voltage at which the current act, and the corresponding
+alterations to the time courses of currents which do have time dependent
+properties.
+The AFER study, by contrast, involved remodelling where many currents were
+affected.
+In this study, the restitution curves were significantly flattened, leading to
+stable spiral waves.
+Regional differences in AP profiles, caused by the natural heterogeneity of the
+atrium, lead to breakup on the edges of such regions.

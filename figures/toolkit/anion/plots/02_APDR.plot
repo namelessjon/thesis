@@ -1,5 +1,5 @@
 # plot for APDR traces
-set terminal postscript enhanced eps color size 12cm,6cm "Times-Roman" 18
+set terminal postscript enhanced eps color size 12cm,6cm "Helvetica" 18
 set output "figures/02_APDR.eps"
 set border 3
 
@@ -16,7 +16,7 @@ set xrange [0:700]
 set multiplot layout 1,2 rowsfirst
 
 # plot the APDr,50 curves
-set label 1 "(a)" at graph -0.3,1 font "Times-Roman,24"
+set label 1 "(a)" at graph -0.4,1 font "Helvetica,18"
 set xlabel "DI (ms)"
 set ylabel "APD_{50} (ms)"
 set yrange [50:350]

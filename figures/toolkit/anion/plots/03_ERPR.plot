@@ -1,5 +1,5 @@
 # plot for I-V curves and current traces
-set terminal postscript enhanced eps color size 12cm,6cm "Times-Roman" 18
+set terminal postscript enhanced eps color size 12cm,6cm "Helvetica" 18
 set output "figures/03_ERPR.eps"
 set border 3
 
@@ -15,7 +15,7 @@ unset key
 set multiplot layout 1,2 rowsfirst
 
 # plot the APDr curves
-set label 1 "(a)" at graph -0.3,1 font "Times-Roman,24"
+set label 1 "(a)" at graph -0.4,1 font "Helvetica,18"
 set xlabel "S1 Interval (ms)"
 set ylabel "ERP (ms)"
 set xrange [300:700]
