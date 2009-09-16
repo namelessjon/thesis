@@ -39,7 +39,7 @@ They account for approximately 10\% of diagnosed supraventricular tachycardias
 and tend to occur as a result of other cardiac or respiratory diseases.
 They are characterised by a high heart rate ($\leq$ \unit{250}{bpm}) and
 typically have evidence of an abnormal cardiac axis or P-wave
-morphology~\cite{MacFarlaneSinus1989}.
+morphology~\cite{Conover1996,Lipman1994,Rankin1989}.
 They are hard to treat with drugs, but radiofrequency ablation can be used with
 a high probability of success.
 Diagnosis of atrial tachycardia, and focus, can be difficult due to a lack of
@@ -435,7 +435,7 @@ and used to construct representations of the heart
 vector~\cite{Frank1956,MacFarlane1989a} ECG (VECG).
 To perform the inverse dower transformation, a matrix that has been optimized for
 the P-wave (shown in Table~\ref{tbl:forward:idparams}) was
-used~\cite{Guillem2007}.
+used~\cite{Guillem2008}.
 
 
 \begin{table}
@@ -443,7 +443,7 @@ used~\cite{Guillem2007}.
 \label{tbl:forward:idparams}
 Factors to construct the Frank VECG from the standard 12 lead ECG set.
 Parameters optimised to accurately reproduce the P-wave heart
-vector~\cite{Guillem2007}.
+vector~\cite{Guillem2008}.
 Each of the 8 leads are multiplied by the given parameters to provide the
 orthogonal Frank lead.
 }
@@ -606,7 +606,7 @@ the wave are indicated on either side of a slash.
 For example, $+/+$ would be a positive, bifid wave and $-/+$ would be a negative
 then positive biphasic wave.
 Site denotes the pacing site, where S is the sinus node and Sites A--C are as
-indicated in Figure~\ref{fig:forward:ct_sites}.
+indicated in Figure~\ref{fig:forward::inverse:ct_sites}.
 }
 \begin{center}
 \begin{tabular}{c c c c c c c c c c c c c}
@@ -858,7 +858,7 @@ hypothesised.
 As the pacing site moves away from the sinus node, the P-wave duration also
 increases.
 Especially for the lower crista terminalis sites (B \& C), the duration exceeds
-normal P-wave limits~\cite{Lemery2004,MacFarlane1989}.
+normal P-wave limits~\cite{Lemery2004,MacFarlane1989b}.
 It is possible that a more detailed intra-atrial conduction system, including an
 inferior pathway would reduce total conduction time, and therefore P-wave
 duration in these cases.
@@ -875,7 +875,7 @@ initial rise and then fall visible in the Site B frontal vector loops.
 The limitations of the body surface potential model have been discussed
 previously ($\S$\ref{sec:bsp:limits}).
 Of particular importance to this study is the lack of a distributed sinus node
-model~\cite{Yamamoto2007,Dobrzynski2005}\ for the human atrium.
+model~\cite{Yamamoto2006,Dobrzynski2005}\ for the human atrium.
 However, pacemaker shift under the influence of
 acetylcholine~\cite{Shibata2001}\ has been observed in rabbits and in
 humans~\cite{Opthof1988}\ so it seems plausible as a mechanism for the shifts
@@ -886,7 +886,7 @@ data, which is often only for the standard twelve leads.
 The selection of the correct transform matrix is
 important~\cite{Guillem2008,Luo1991b,Hyttinen1995}\ and it is possible that the
 vector loop accuracy could be improved by the use of a transformation matrix
-optimised for the body surface potential model~\cite{vanOosterom2007}.
+optimised for the body surface potential model~\cite{Oosterom2007}.
 This is especially true for the Z-axis, which has the lowest correllation
 coefficient of the leads~\cite{Hyttinen1995}.
 Alternatively a true frank lead system, or a hybrid model could be constructed.

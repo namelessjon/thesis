@@ -15,7 +15,7 @@ To reproduce the ECG with mathematical models, it is necessary to solve the forw
 As was noted earlier ($\S$\ref{sec:intro:forward:numerical}) solving the forward
 problem involves solving Poisson's equation in the body.
 In an infinite homogeneous conducting medium, a solution to Poisson's equation
-for the field at any given point, $\phi$, is~\cite{Plonsey1963}
+for the field at any given point, $\phi$, is~\cite{Plonsey1989}
 \begin{equation}
 \label{eqn:bsp:infinite}
 \phi = \frac{1}{4 \pi \sigma} \int \frac{- \nabla \cdot
@@ -69,7 +69,7 @@ $r$ is $|\mathbf{r'}-\mathbf{r}|$.
 Here, $\mathbf{r'}$ is a vector to an arbitrary point in the volume $V$ at which
 we wish to evaluate the field and $\mathbf{r}$ is a vector to an elemental
 volume, $dv$, somewhere within the volume $V$.
-Using (\ref{eqn:bsp:poisson}) we have
+Using possion's equation (\ref{eqn:intro:forward:poisson2}) we have
 \begin{equation}
 \label{eqn:bsp:greenandpoisson}
 \int_{V}
@@ -181,7 +181,7 @@ vector of the infinite medium potentials at the centres of the triangles of the
 surface.
 Equation (\ref{eqn:bsp:matrix}) can be extended to allow for multiple
 inhomogeneities, derivations for which can be found
-in~\cite{Barr1966,Geselowitz1968,Geselowitz1970,Gulrajani1983,Gulrajani1989}.
+in~\cite{Barr1966,Gulrajani1983,Gulrajani1989}.
 
 If the surface $S$ was discretised with sufficient accuracy then $\mathbf{A}$
 will necessarily be singular, due to the physical nature of the problem.
@@ -348,7 +348,7 @@ tissue.
 Equation (\ref{eqn:bsp:poissonrep}) is of the form of poisson's equation.
 The equation can be interpreted to indicate that the term on the left hand side
 is the source of the extracellular potentials.
-By comparing (\ref{eqn:bsp:poissonrep}) with (\ref{eqn:bsp:poisson}) it is
+By comparing (\ref{eqn:bsp:poissonrep}) with (\ref{eqn:intro:forward:poisson2}) it is
 obvious that
 \begin{equation}
 \label{eqn:bsp:ji}
@@ -357,7 +357,7 @@ obvious that
 
 \section{Torso Geometry}
 
-The torso geometry used in this study is shown in figure~\ref{fig:bsp:torso},(a).
+The torso geometry used in this study is shown in figure~\ref{fig:bsp:torso}(a).
 It was created by Weixue and Ling~\cite{Weixue1993,Weixue1996}\ and has been
 used in numerous simulations.
 The geometry was derived from CT images of the human torso.
@@ -385,7 +385,7 @@ than 0.01\%.
 \begin{figure}
 \includegraphics{figures/bsp/thorax_layout}
 \caption[Torso showing embedded atrium and lead locations]{
-\label{bsp:fig:torso}
+\label{fig:bsp:torso}
 (a) Torso geometry used in this study.
 The torso geometry, shown unrefined for clarity is shown as a wireframe.
 The lungs are shown in blue, the blood masses in red.
@@ -399,7 +399,7 @@ The atrial model constructed in the previous chapter was positioned within the
 torso using the descriptions of Ho and S\'{a}nchez-Quintana~\cite{Ho2009}
 with the ventricular meshes from the original torso used as an additional guide.
 First, the model was centred in the atrial co-ordinate system.
-Using the z-x-z convention for Euler angles~\cite{eulerref} acting on the heart
+Using the z-x-z convention for Euler angles~\cite{Goldstein1980} acting on the heart
 (rather than the co-ordinate system of the heart), the atrium was rotated by
 $\left(315, 135, 310\right)$.
 Following rotation, a translation of $\left(-0.003, -0.075, -0.217\right)$ was
@@ -879,7 +879,7 @@ table~\ref{tbl:bsp:ecg}.
 
 The phase of the signal, that is whether it is rising or falling, does not seem
 to be influenced by the presence or absence of
-inhomogeneities~\cite{Rudy2006,Gulrajani1983}, only the amplitude.
+inhomogeneities~\cite{Ramanathan2001a,Gulrajani1983}, only the amplitude.
 However, the influence of the inhomogeneities in each lead is not equal, with
 some leads being increased and others decreased.
 This suggests that the inhomogeneities might have greater importance in the
@@ -912,7 +912,7 @@ QRS-complex which most 12 lead systems are scaled to view.
 There is also the lack of the QRS complex, which often obscures the
 $\text{T}_{\text{P}}$ wave.
 
-Macfarlane and Lawrie~\cite{MacFarlane1989}\ give the P-wave duration in
+Macfarlane and Lawrie~\cite{MacFarlane1989b}\ give the P-wave duration in
 lead II for males and females in various age groups.
 Due to the hybrid nature of the model, it is hard to know which group gives the
 most accurate comparison.
@@ -926,7 +926,7 @@ They report the maximum P-wave potential in lead II to be approximately
 The maximum potential observed in the fully heterogeneous case is \mv{+0.497}.
 In general, the amplitudes in all leads fall outside the maxima observed in the
 clinical data.
-This is expected~\cite{Rudy2006,Gulrajani1983,Gulrajani1989,Klepfer1997}\ as internal
+This is expected~\cite{Ramanathan2001a,Gulrajani1983,Gulrajani1989,Klepfer1997}\ as internal
 inhomogeneities tend to reduce the observed potentials as they `smear' the
 electrical signal out over the torso.
 
@@ -984,13 +984,13 @@ studies~\cite{Lian2002,Seger2004,Oosterom2005,vanDam2005} which have considered
 the generated P-wave.
 These studies represent a range of approaches to the problem.
 
-The Lian et al.~\cite{Lian2002}\ study used the Weixue~\cite{Lu1993,Weixue1996}\ torso
+The Lian et al.~\cite{Lian2002}\ study used the Weixue~\cite{Weixue1993,Weixue1996}\ torso
 geometry as in this study.
 Their source model was based on atrial geometry extracted from the original CT
 images the torso surface was also based on.
 It was discretised at a resolution of \mm{1.5}.
 Electrical activation of each of the 65,000 nodes was determined using a rule
-based~\cite{Lu1993}\ system, similar to cellular automata, although a full
+based~\cite{Weixue1993}\ system, similar to cellular automata, although a full
 electrophysiological model was used at each point.
 The activation sequence of the nodes is predetermined and there is no direct
 coupling between cells.
@@ -1022,11 +1022,12 @@ Double Layer~\cite{Huiskamp1988} (EDL).
 Briefly, this technique uses Gauss' Theorem to represent the dipole generated by
 the whole atria using the voltage distribution on the surface of the atria.
 The validity of this technique under all conditions has been questioned both
-theoretically~\cite{Geselowitz1992}\ and experimentally~\cite{Scher1994}.
+theoretically~\cite{Geselowitz1989a,Geselowitz1992}\ and experimentally~\cite{Scher1994}.
 Their torso and atria are based on MRI data.
 The atrial model is generated from the endocardial surface of the atria.
 The atrial walls are then assumed to have a uniform thickness of \mm{2},
-extending out from the endocardial surface in all directions.
+extending out from the endocardial surface in all directions, which may not be
+an ideal approximation~\cite{Ho2009}.
 Membrane kinetics within this volume use a modified version of the Courtemanche
 et al.~\cite{CRN98}\ model, modified to have a shorter \apd\ which was
 optemized based on recorded potentials from the patient who provided the MRI
