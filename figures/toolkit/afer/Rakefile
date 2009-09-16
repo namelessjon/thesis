@@ -46,3 +46,25 @@ directory 'figures'
 FileList["plots/**/*.plot"].pathmap('%n').each do |figure|
   plot figure
 end
+
+twod_plots = {
+  'het_bosch' => 141,
+  'hom_bosch' => 141,
+  'het_control' => 157,
+  'hom_control' => 157,
+  'het_workman' => 181,
+  'hom_workman' => 181,
+}
+
+twod_plots.each do |name, start|
+  directory "04_plots/#{name}"
+
+  [1,2,3,4].each do |t|
+    fn = "/media/My Passport/afsheets/%s_jpgs/RA%06d.jpg" % [name, (t*400)+start ]
+    file "04_plots/#{name}/#{name}_#{t}.jpg" => ["04_plots/#{name}", fn] do |t|
+      cp fn, t.name
+    end
+    task :twod_figure => "04_plots/#{name}/#{name}_#{t}.jpg"
+  end
+end
+

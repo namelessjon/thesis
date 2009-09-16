@@ -1247,84 +1247,87 @@ Note that AFER enables successful excitation at much lower S1 intervals.
 \end{figure}
 
 In AF tissue, the ERP\emph{r} was flattened for all tissue types compared with
-the control cells, as shown in figure~\label{fig:toolkit:afer:apdr}(b).
+the control cells, as shown in figure~\ref{fig:toolkit:afer:apdr}(b).
 The curves also extended to lower S1 intervals for AF tissue, indicating that it
 was possible to excite AF tissue successfully at a higher rate than was possible
 in control tissue.
 Heterogeneity in ERP\emph{r} was largely unaffected by AF.
 
-\begin{figure}
-\centering
-%\includegraphics{figures/toolkit/afer/3_erpr}
-\caption[AFER ERPr curves]{ERPr curves for control CT (A), control AM/PM (B), Bosch CT (C),
-Bosch AM/PM (D), Workman CT (E), Workman AM/PM (F).  Both Bosch and Workman have a
-significantly reduced ERPr over the whole range considered, with Bosch
-having a lower ERP then Workman.  In addition, Bosch and Workman cells are still
-excitable after pacing at \ms{100} shorter BCL.}
-\label{fig:erpr}
-\end{figure}
-
-Conduction velocity, shown in figure~\ref{fig:cvr}, was slowed by AF,
+Conduction velocity, shown in figure~\ref{fig:toolkit:afer:cvr}(a), was slowed by AF,
 reducing the solitary wave velocity from $0.27\,\text{mm}\,\text{ms}^{\text{-1}}$\ in
 control to $0.25\,\text{mm}\,\text{ms}^{\text{-1}}$\ in Bosch and
 $0.26\,\text{mm}\,\text{ms}^{\text{-1}}$\ in
-Workman.  Maximal pacing rate increased from the control value of \unit{198}{bpm} to
-\unit{421}{bpm} in Bosch strands and \unit{315}{bpm} in Workman strands.
+Workman.
+Maximal pacing rate increased from the control value of \unit{187}{bpm} to
+\unit{512}{bpm} in Bosch strands and \unit{347}{bpm} in Workman strands of AM or
+PM cells.
+In CT strands, maximal pacing rates of \unit{183}{bpm}, \unit{451}{bpm}\ and
+\unit{287}{bpm}\ were observed for Control, Bosch and Workman cases
+respectively.
+The heterogeneity of minimal pacing intervals is significantly increased by
+AFER, from \unit{4}{bpm}\ to over \unit{50}{bpm}\ in Bosch and Workman strands.
 
-The VW was reduced by AF, but in all cell types the reduction was small.
-The control value of \ms{16.6} was reduced to \ms{14.2} in Bosch and \ms{14.7}
-in Workman for AM and PM cell types.  The reduction in VW for CT cells was
-even smaller, from \ms{15.1} in control to \ms{14.5} and \ms{14.4} in Bosch and
-Workman, respectively.
+The VW was reduced by AF, figure~\ref{fig:toolkit:afer:cvr}(b).
+The control value of \ms{4.8}\ was reduced to \ms{2.0}\ in Bosch and \ms{3.0}\ in Workman for AM and PM cell types.
+In CT cells under control conditions, the VW was reduced to \ms{}
+The reduction in VW for CT cells was reduced, to \ms{4.6}.
+In contrast, the VW increased for AF cases; \ms{2.1}\ and \ms{3.2}\ for Bosch
+and Workman cases respectively.
+
 
 \begin{figure}
 \centering
-%\includegraphics{figures/toolkit/afer/4_cvr}
-\caption[AFER CVr curves]{CVr curves for control CT (A), control AM/PM (B), Bosch CT (C),
-Bosch AM/PM (D), Workman CT (E), Workman AM/PM (F).  In each of the conditions,
-the CT cells showed a higher CV at long (1000~ms) S2 intervals, but AM
-and PM cells allow faster conduction at shorter S2 intervals.  The AF
-cases show reduced CV compared to the control and support a higher
-pacing rate via reduced minimum interval.}
-\label{fig:cvr}
+\includegraphics{figures/toolkit/afer/figures/03_CVR}
+\caption[AFER CVr curves and VWs]{
+\label{fig:toolkit:afer:cvr}
+(a) 
+CV\emph{r}\ curves for Control (black), Bosch (Red) and Workman (Blue) tissues.
+AM/PM cells are indicated by solid lines, CT cells by dashed.
+In all cases, the CT cells show a higher conduction velocity at long
+($>$\ms{600}) S2 intervals, but AM/PM muscles allow faster conduction at lower
+conduction intervals.
+AF cases show a reduced conduction velocity in all instances and support a
+higher pacing rate via reduced minimal interval.
+}
 \end{figure}
 
-Simulations over the 2D geometry examined the lifetime and behavior of
+Simulations over the 2D geometry examined the lifetime and behaviour of
 spiral waves in the presence and absence of electrical heterogeneity.
-As can be seen in figure~\ref{fig:plots}, panels Ai and Bi, re-entrant
-activity self-terminated in both homogeneous and heterogeneous cases
-when due to spiral wave meander over a large tissue region, it
-exits the tissue.  Self-termination was much more rapid in the
-electrically heterogeneous case, taking \unit{1.31}{s}, compared with
-\unit{3.20}{s} in
-the homogeneous case.
+As can be seen in figure~\ref{fig:toolkit:afer:2d}, panels (a)(C) and (b)(C), re-entrant
+activity self-terminated in both homogeneous and heterogeneous cases.
+Spiral wave meander over a large region of tissue eventually causes the tip to
+leave the tissue.
+Self-termination was much more rapid in the electrically heterogeneous case,
+taking \unit{1.31}{s}, compared with \unit{3.20}{s} in the homogeneous case.
 
 Conversely, under AF conditions the re-entry persisted after it was
 induced for the whole period of the simulation, a lifespan of over \unit{5}{s}.
-Under electrically homogeneous conditions, panels Aii and Aiii show a
-stable mother rotor rotating anti-clockwise in the tissue.  But in
-heterogeneous conditions, as shown in panels Bii and Biii, a similar
-mother rotor to the homogeneous cases is visible towards the right of
-each frame.  On the left of the frames, the rotor breaks up into
-multiple fibrillatory wavelets on the border of the heterogeneous
-regions, forming a complex and chaotic pattern of excitation.
+Under electrically homogeneous conditions, panels (a)(B) and (a)(W) show a
+stable mother rotor rotating anti-clockwise in the tissue.
+In heterogeneous conditions, as shown in panels (b)(B) and (b)(W), a similar
+mother rotor to the homogeneous cases is visible towards the right of each
+frame.
+On the left of the frames, the rotor breaks up into multiple fibrillatory
+wavelets on the border of the heterogeneous regions, forming a complex and
+chaotic pattern of excitation.
 
-\begin{figure*}[t]
+\begin{figure}
 \centering
-%\includegraphics{figures/figure4}
-\caption[AFER 2D re-entry plots]{Simulation of re-entry in 2D sheets of electrically homogeneous
-(A) and electrically heterogeneous (B) sheets.  Columns show
-representative frames after initiation of re-entry at t = 0.  Panels i
-show data under control conditions, panels ii under Bosch conditions and
-panels iii under Workman conditions.  Re-entry self-terminated under control
-conditions in both homogeneous (Ai) and heterogeneous (Bi).  Under AF
-conditions, re-entry becomes a sustained mother rotor in
-electrically homogeneous conditions (Aii, Aiii).  However, under
-electrically heterogeneous conditions AF causes re-entry to degenerate
-into erratic propagations on the borders of the heterogeneity (Bii,
-Biii).}
-\label{fig:plots}
-\end{figure*}
+\includegraphics{figures/toolkit/afer/2d_plots}
+\caption[AFER 2D re-entry plots]{
+\label{fig:toolkit:afer:2d}
+Simulation of re-entry in 2D sheets of electrically homogeneous
+(a) and electrically heterogeneous (b) sheets.
+Colour represents membrane potential from blue (resting) to orange (excited).
+Columns show representative frames after initiation of re-entry at t = 0.
+Rows C, B, W show data from control, Bosch and Workman cases, respectively.
+Re-entry self-terminated under control conditions in both homogeneous (a)(C) and
+heterogeneous (a)(C).
+Under AF conditions, re-entry becomes a sustained mother rotor in
+electrically homogeneous conditions ((a)(B), (a)(W)).
+However, under electrically heterogeneous conditions AF causes re-entry to degenerate
+into erratic propagations on the borders of the heterogeneity ((b)(B), (b)(W)) }
+\end{figure}
 
 \subsubsection{Discussion and conclusions}
 
@@ -1333,21 +1336,23 @@ appear to affect rate dependent electrical activities.  It helps to
 sustain re-entry, providing evidence to substantiate the hypothesis of
 `AF begets AF'.
 
-Considering first the single cell results, one of the most obvious
-effects is the striking reduction in the \apd\ and repolarization
-properties.  AFER abbreviated \apd\ in AM cells by 66~\% in Bosch and
-53~\% in Workman.
+The single cell results show a striking reduction in the \apd\ and
+repolarization properties.
+AFER abbreviated \apd\ in AM cells by 66~\% in Bosch and 53~\% in Workman.
 Other work~\cite{Xie2002,ByungSoo2002,Karma1994,Tusscher2006} has already suggested why flattening of
 the ERP and APD restitution curves can be pro-arrhythmogenic.
 Our study suggested that reduction is not uniform across all cell types, which
 leads to an augmented heterogeneity.
 
-The 1D strand results for the CV tell a similar story.  AFER tissue
-forms a much better substrate for arrhythmic activity, supporting both a
-much higher maximal pacing rate and in addition, the reduction in
-conduction wavelength, to below half the control values. This allows a
-greater number of excitation waves to exist in the tissue at any one
-time.
+From the 1D results, AFER tissue forms a much better substrate for arrhythmic
+activity.
+It supports a much higher pacing rate and has a reduced conduction wavelength
+(conduction velocity multiplied by \apd), allowing a greater number of
+excitation waves to exist in the tissue.
+The increase in the heterogeneity of the maximal pacing rates suggests that
+remodelled tissues might be more vulnerable to localised regions of conduction
+block.
+This has been shown to lead to re-entry~\cite{Xie2001a}.
 
 The 2D simulations in the realistic sheet show a marked difference in
 re-entrant behavior between homogeneous and heterogeneous simulations.
@@ -1359,9 +1364,10 @@ curves~\cite{Xie2002,Karma1994}.
 The heterogeneous sheet simulations, show spiral wave
 breakup, as observed in real tissue \cite{Kumagai1997}, in both control
 and AF simulations, possibly due to elevated plateau potentials and
-increased refractory period of the CT cells~\cite{Clayton2005}.  Self-termination is still
-observed in control simulations and is more rapid than in homogeneous
-tissue.
+increased refractory period of the CT cells~\cite{Clayton2005}, combined with
+the slower conduction velocity at high pacing rates.
+Self-termination is still observed in control simulations and is more rapid than
+in homogeneous tissue.
 
 It is still unclear about the pro- or anti-arrhythmogenic effects of
 electrical heterogeneity in the human atria.  Self-termination is more
