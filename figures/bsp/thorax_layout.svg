@@ -69,7 +69,7 @@
      inkscape:pageopacity="1"
      inkscape:pageshadow="2"
      inkscape:zoom="2"
-     inkscape:cx="210.7077"
+     inkscape:cx="145.24609"
      inkscape:cy="179.78583"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
@@ -101,8 +101,7 @@
        height="265.74802"
        width="265.74802"
        sodipodi:absref="/home/jon/thesis/figures/bsp/torso_internal.png"
-       xlink:href="torso_internal.png"
-       sodipodi:insensitive="true" />
+       xlink:href="torso_internal.png" />
     <image
        y="0"
        x="265.74802"
@@ -110,50 +109,49 @@
        height="265.74802"
        width="265.74802"
        sodipodi:absref="/home/jon/thesis/figures/bsp/thorax_leads.png"
-       xlink:href="thorax_leads.png"
-       sodipodi:insensitive="true" />
+       xlink:href="thorax_leads.png" />
     <text
        xml:space="preserve"
        style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Sans;-inkscape-font-specification:Sans"
-       x="3.4456508"
-       y="17.71652"
+       x="-1.71875"
+       y="15.175781"
        id="text2603"><tspan
          sodipodi:role="line"
          id="tspan2605"
-         x="3.4456508"
-         y="17.71652"
-         style="font-weight:bold;-inkscape-font-specification:Sans Bold">A</tspan></text>
+         x="-1.71875"
+         y="15.175781"
+         style="font-weight:normal;-inkscape-font-specification:Sans">(a)</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Sans;-inkscape-font-specification:Sans"
-       x="267.45541"
-       y="17.71652"
+       x="264.02927"
+       y="15.195312"
        id="text2607"><tspan
          sodipodi:role="line"
          id="tspan2609"
-         x="267.45541"
-         y="17.71652"
-         style="font-weight:bold;-inkscape-font-specification:Sans Bold">B</tspan></text>
+         x="264.02927"
+         y="15.195312"
+         style="font-weight:normal;-inkscape-font-specification:Sans">(b)</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:18px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Sans;-inkscape-font-specification:Sans"
-       x="290"
-       y="24.748016"
+       x="294"
+       y="27.248016"
        id="text2611"><tspan
          sodipodi:role="line"
          id="tspan2613"
-         x="290"
-         y="24.748016">RA</tspan></text>
+         x="294"
+         y="27.248016">R</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:18px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Sans;-inkscape-font-specification:Sans"
-       x="487"
+       x="494"
        y="24.748016"
        id="text2615"><tspan
          sodipodi:role="line"
          id="tspan2617"
-         x="487"
-         y="24.748016">LA</tspan></text>
+         x="494"
+         y="24.748016">L</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:18px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Sans;-inkscape-font-specification:Sans"
@@ -163,7 +161,7 @@
          sodipodi:role="line"
          id="tspan2621"
          x="420"
-         y="263.74802">LL</tspan></text>
+         y="263.74802">F</tspan></text>
     <g
        id="g2631"
        transform="translate(-14.5,1)">
