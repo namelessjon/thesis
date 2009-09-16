@@ -37,15 +37,15 @@ This was eventually followed by the Beeler--Reuter~\cite{Beeler1977}\ model of
 the guinea pig ventricular myocyte.
 
 The Luo--Rudy guinea pig ventricular myocyte model was first published in
-1991~\cite{LR1991} and was then sub-sequentially majorly revised and
-republished in 1994~\cite{LR1994}.
+1991~\cite{Luo1991} and was then sub-sequentially majorly revised and
+republished in 1994~\cite{Luo1994}.
 The first Luo-Rudy model was based on the Beeler--Reuter model, though with updated channel behaviours
 and more complex potassium channels.
 The second Luo-Rudy model was the first of the `second generation' models,
 with fluctuations in all ion concentrations, and a much more detailed series of
 equations for calcium handling.
 
-In 1998, the Courtemanche--Ramirez--Natel\cite{CRN1998}\ (CRN) model and the
+In 1998, the Courtemanche--Ramirez--Natel\cite{CRN98}\ (CRN) model and the
 Nygren~\cite{Nygren1998}\ model were published.
 These were both models of the human atrium.
 They were also both second generation models, with detailed calcium handling.
@@ -219,7 +219,7 @@ of one of the most adaptable phenomological models.
 
 \subsubsection{The Courtemanche--Rameriz--Nattel Model}
 
-The Courtemanche--Rameriz--Nattel (CRN) model~\cite{CRN1998}\ is a biophysically
+The Courtemanche--Rameriz--Nattel (CRN) model~\cite{CRN98}\ is a biophysically
 detailed second generation model of the human atrial myocyte.
 It was based on the Luo-Rudy~\cite{Luo1994}\ model of the guinea pig ventricular
 myocyte.
@@ -261,7 +261,7 @@ It can be expensive to solve for large numbers of cells, however.
 
 The Nygren model~\cite{Nygren1998}\ is a biophysically detailed second
 generation model of the human atrial myocyte.
-It was based on the Linblad model of the rabbit atrium.
+It was based on the Linblad~\cite{Lindblad1996} model of the rabbit atrium.
 The equations were then modified using human data, mostly gathered from the
 atrial appendages.
 
@@ -295,7 +295,8 @@ modelling tasks.
 It has more involved mathematics and requires more storage than the CRN model,
 making it less attractive for large-scale simulation.
 It is also interesting to note that the two models have very different
-AP morphologies, the reasons for which are unclear.
+AP morphologies, the reasons for which have been the subject of some
+research~\cite{Nygren2001,Syed2005,Cherry2008}.
 
 \subsubsection{The Fenton--Karma Model}
 
@@ -344,7 +345,7 @@ monodomain equations.
 \subsubsection{The Bidomain Equation}
 
 The bidomain equation comes out of basic electromagnetic theory and several
-assumptions about the nature of cardiac tissue~\cite{Tung,Geselowitz1983}.
+assumptions about the nature of cardiac tissue~\cite{Tung1978,Geselowitz1983}.
 \begin{enumerate}
     \item The cardiac tissue contains two continuous, simply connected domains, the intracellular and extracellular domains.
     There is no detailed consideration of the fine points of geometry.
@@ -359,7 +360,7 @@ The derivation is not that difficult to work through, and it results in the bido
 \underline{\nabla}\cdot\left(M_{i}\underline{\nabla}V_{m}\right) + \underline{\nabla}\cdot\left(M_{i}\underline{\nabla}u_{e}\right) &=& \chi C_{m}\frac{dV_{m}}{dt} + \chi{I_{ion}}
 \label{eqn:intro:math:bidom2}
 \end{align}
-where the suscript $i$ and $e$ refer to the intra- and extracellular quantities, $M$ is a matrix of conductivities, $\chi$ represents the surface-to-volume ratio of the cells and all other quantities are as defined previously.
+where the subscript $i$ and $e$ refer to the intra- and extracellular quantities, $M$ is a matrix of conductivities, $\chi$ represents the surface-to-volume ratio of the cells and all other quantities are as defined previously.
 The bidomain equations are a coupled set of a parabolic and elliptic differential equation.
 
 Boundary conditions for the bidomain equations vary, though the most common ones are described here.
@@ -388,7 +389,7 @@ to one single equation for the membrane potential
 \end{equation}
 Typically, the factor of ${\lambda}/\left({1+\lambda}\right)$ is folded into $M_{i}$ to give the diffusion tensor $D$.
 In 1D, this is the cable equation, which is very widely used.
-The values of the components of the tensors $M_{x}$ or $D$ may be determined experimentally, or from a comparison of conduction in real and virtual tissue samples.
+The values of the components of the tensors $M_{i}$ or $D$ may be determined experimentally, or from a comparison of conduction in real and virtual tissue samples.
 
 \subsection{Solving Mathematical Models}
 

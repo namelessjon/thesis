@@ -103,16 +103,19 @@ difficult in the XML based format.
 The second is that the API itself for translating the CellML code into a form
 which is possible to compile is also complex, although this problem need only be
 solved once for any given toolkit.
+This makes certain refinements of model code very easy, for
+example~\cite{Cooper2006}\ used CellML models to automatically tablize cardiac
+models.
 
 
 \subsubsection{Cardiac Arrhythmia Research Package}
 
-The Cardiac Arrhythmia Research Package~\cite{Vigmond2003,Bauer2007,Plank2005,Vigmond2007}\
+The Cardiac Arrhythmia Research Package~\cite{Vigmond2003,Bauer2007,Plank2007,Vigmond2007}\
 (CARP) is a sophisticated library for large scale cardiac modeling.
 It is developed by Dr. Edward Vigmond and Dr. Gernot Plank.
 It is mostly implemented in C/++.
 
-The CARP is intended to be a powerful and flexible cardiac simulation library.
+CARP is intended to be a powerful and flexible cardiac simulation library.
 It is organised into three layers.
 The application layer is very high level and is intended to be mostly free of
 the complexities of the underlying model and parallelisation.
@@ -121,11 +124,11 @@ distributing cellular models over the grid.
 The ionic layer has all the individual cell models, which again requires no
 knowledge of parallelization.
 
-The CARP can handle both structured and unstructured input grids and can also
+CARP can handle both structured and unstructured input grids and can also
 perform dynamic grid refinement.
 The API provided by the toolkit is quite clean and provides access to powerful
 techniques to solve large systems.
-The CARP doesn't currently support CellML model input.
+CARP doesn't currently support CellML model input.
 
 
 \subsubsection{CMISS}
@@ -152,17 +155,17 @@ with different visualisation difficult.
 
 \subsubsection{Cellular Open Resource}
 
-The Cellular Open Resource (COR)~\cite{Garney2003}\ is intended for single cell
+The Cellular Open Resource (COR)~\cite{Garny2003}\ is intended for single cell
 modeling.
 It is freely available from the website, for windows only.
 It is allows editing of CellML files and execution of the models using a variety
 of integrators.
-The COR can provide tracings of all currents and state variables as the action
+COR can provide tracings of all currents and state variables as the action
 potential evolves.
 It also supports exporting models to a variety of formats, including C and
 Fortran.
 
-The COR is single cell only, and only works on windows.
+COR only works on windows.
 The source code is not publicly available meaning that extension other than
 modifying models is not possible.
 Modification of models and specification of stimulus protocols is via its own

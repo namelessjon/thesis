@@ -9,7 +9,7 @@ These three electrodes form the bases of many ECGs recorded to this day.
 The string galvanometer was highly sensitive electrical recording device for its
 time, and was developed by Einthoven.
 For the development of the ECG and the string galvanometer, Einthoven was awarded
-the nobel prize in 1924~\cite{Kligfield2002,TEXTBOOKS}.
+the nobel prize in 1924~\cite{Kligfield2002,Levick1991}.
 
 Since Einthoven's day, the ECG has been continually refined.
 This refinement has included both improvements in the way that individual leads
@@ -17,7 +17,7 @@ are measured, and new leads that are recorded.
 In addition, there have been a number of specialised lead sets developed for
 particular purposes, such as exercise recording and 24 hour measurement.
 Research into new lead sets, to better understand the functioning of the heart,
-continues to this day~\cite{PAPERS}.
+continues to this day~\cite{Jahrsdoerfer2005,MOARREFS}.
 
 \subsection{Lead Theory}
 \label{sec:intro:ecg:lead_theory}
@@ -52,7 +52,7 @@ The lead field theory is based on the fundamental principles of linear volume
 conductors set out by Helmholtz in the middle of the nineteenth century.
 These principles only hold if the body can be treated as a linear volume
 conductor.
-This is a good approximation~\cite{REFS}.
+This is a good approximation~\cite{Geddes1967}.
 
 The first principle, that of superposition, states that the electric field
 resulting from several sources in the medium is equal to the sum of the fields
@@ -96,7 +96,7 @@ and F as the positive terminal.
 Lead III (\ref{eqn:intro:leads:iii}) is formed between L as the negative terminal
 and F as the positive terminal.
 
-Wilson~\cite{Wilson1933}, in the 1930s, introduced an indifferent
+Wilson~\cite{Wilson1934}, in the 1930s, introduced an indifferent
 electrode,  constructed by averaging the potentials at the three limb
 electrodes (\ref{eqn:intro:leads:wct}).
 This is the Wilson's central terminal (WCT).
@@ -178,6 +178,19 @@ Under the hexaxial system, Lead II has an angle of \degr{+60}\ and lead III,
 \degr{+120}.
 The unipolar limb leads (both augmented and not) have angles of \degr{-30}\ for
 aVL, \degr{+90}\ for aVF and \degr{-150}\ for aVR.
+
+\begin{figure}
+\begin{center}
+\includegraphics{figures/intro/hexaxial}
+\end{center}
+\caption[Hexaxial Reference System]{
+\label{fig:intro:ecg:hex}
+Diagram of the hexaxial reference reference system, showing the nominal
+directions of the 6 limb leads.
+The positive senses of the leads are in bold, the negative are dashed.
+\degr{+0}\ is horizontal and to the left, in the reference frame of the body.
+}
+\end{figure}
 
 \subsection{The ECG Waves}
 
@@ -306,12 +319,38 @@ figure~\ref{fig:intro:ecg:planes}.
 Dower~\cite{Dower1980}\ proposed a series of coefficients for the three Frank
 leads that would convert the Frank leads into the standard 12 lead ECG.
 However, the Frank leads are not recorded in common clinical practice.
-To remedy this fact, Edenbrant and Pahlm~\cite{Edenbrant1988} (and others, for
+To remedy this fact, Edenbrant and Pahlm~\cite{Edenbrandt1988} (and others, for
 example~\cite{Uijen1988}), proposed an `inverse dower' transformation.
 The inverse dower transform is a set of $8\times3$ coefficients
 (table~\ref{tbl:intro:ecg:inverse_dower}) which are used to multiply the eight
 independent components of the twelve lead ECG (I, II, $\text{V}_{\text{1--6}}$)
 to form the three Frank leads.
+
+
+\begin{table}
+\caption[Inverse Dower Factors after Edenbrandt and Pahlm]{
+\label{tbl:intro:ecg:inverse_dower}
+Factors to construct the Frank VECG from the standard 12 lead ECG
+set~\cite{Edenbrandt1988}.
+Each of the 8 leads are multiplied by the given parameters to provide the
+orthogonal Frank lead.
+}
+\begin{center}
+\begin{tabular}{c c c c c c c c c}
+\toprule
+& $\text{V}_{\text{1}}$ &$\text{V}_{\text{2}}$ & $\text{V}_{\text{3}}$ &
+$\text{V}_{\text{4}}$ & $\text{V}_{\text{5}}$ & $\text{V}_{\text{6}}$ & I & II \\
+\midrule
+X & $-0.172$ & $-0.073$ & $0.122$ & $0.231$ & $0.239$ & $0.193$ & $0.156$ & $-0.010$ \\
+Y & $0.057$ & $-0.019$ & $-0.106$ & $-0.022$ & $0.040$ & $0.048$ & $-0.227$ & $0.886$ \\
+Z & $-0.228$ & $-0.310$ & $-0.245$ & $-0.063$ & $0.054$ & $0.108$ & $0.021$ & $0.102$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+\end{table}
+
+
+
 
 \subsection{Body Surface Potential Mapping Arrays}
 
@@ -321,7 +360,7 @@ These allow the whole of the body surface potential to be examined and
 to be used to establish diagnostic criteria.
 Mapping systems are also important for so called `inverse solutions', where the
 cardiac sources are estimated from the external potentials (for example,
-\cite{Ramanathan2007}).
+\cite{Ramanathan2006}).
 They are also used for the construction of new lead sets (for example, \cite{}).
 Arrays of anywhere from 16 to over 200 electrodes have been used in such
 studies.
