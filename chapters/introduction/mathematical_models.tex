@@ -21,12 +21,12 @@ These do not consider individual ion concentrations but instead just reproduce
 one desired factor, typically the action potential profile.
 
 Models, whether biophysically detailed or not, can concern themselves with the
-cellular electrophysiology, the mechanical contrations or both.
+cellular electrophysiology, the mechanical contractions or both.
 This thesis concerns itself just with electrophysiological models.
 Models of the mechanics are not considered and are not treated in this
 description of mathematical modelling.
 
-\subsection{A Brief History Of Cardiac Myocyte Modeling}
+\subsection{A Brief History of Cardiac Myocyte Modeling}
 
 The first model of cardiac electrophysiology was published by
 Noble~\cite{Noble1962}, and modelled Purkinje fibre (A specialised part of the
@@ -103,7 +103,7 @@ $\text{E}_{\text{Ca}}$ and $\text{E}_{\text{Na}}$.
 The electrical circuit model of the cell membrane underpins much of the work in
 modelling the behaviour of cardiac myocytes.
 It is however a very simple concept.
-Since the membrane seperates charges, it may be considered as a capacitor, as
+Since the membrane separates charges, it may be considered as a capacitor, as
 shown in figure~\ref{fig:intro:math:circuit}.
 Since there is no net buildup of
 charge on either side of the membrane, any ionic current, \ii{ion}, must be
@@ -143,7 +143,7 @@ I_{S} = g_{S}\left(V-V_{S}\right)
 \label{eqn:intro:math:hh1}
 \end{equation}
 where $g_{S}$ is the channel conductance, $V$ the membrane potential and $V_{S}$
-the Nernst potential for the ion S.
+the Nernst potential for the ion $S$.
 Equation (\ref{eqn:intro:math:hh1}) assumes that the channel is selective for
 one ion species S, and that the current is a simple linear function of the
 voltage across the membrane.
@@ -199,7 +199,7 @@ Many different channels are modelled as Hodgkin--Huxley channels.
 Different channels have different activation and inactivation variables.
 These variables are modulated by different $\alpha$ and $\beta$ equations.
 
-\subsubsection{Markov Chain Channels}
+\subsubsection{Markov Chain Descriptions Of Ion Channels}
 
 Markov chain models of ion channels~\cite{Balser1990,Clancy1999,Silva2005}\
 emerged when more detailed information on ion channel behaviour became
@@ -217,7 +217,7 @@ usually time or voltage dependent, probability.
 Channels only allow current to flow whilst in an open state.
 
 Markov chain models can be highly complex and contain many states.
-They can be utilised in a variaty of ways.
+They can be utilised in a variety of ways.
 One markov chain can represent the behaviour of all the individual channels on
 the cell.
 In this case, the total current flowing in the channel will be proportional to
@@ -349,7 +349,7 @@ The model is highly modifiable, with parameter sets that can reproduce a variety
 of AP morphologies and restitution behaviours, including one for atrial myocyte
 APs~\cite{Weber2008}.
 
-\subsection{Action Potential Propagation}
+\subsection{Models of Action Potential Propagation}
 
 Single myocyte models are important, and can tell us much about the heart in
 disease and health.
@@ -372,12 +372,15 @@ assumptions about the nature of cardiac tissue~\cite{Tung1978,Geselowitz1983}.
 \end{enumerate}
 
 The derivation is not that difficult to work through, and it results in the bidomain equations
+\begin{subequation}
+\label{eqn:intro:math:bidom}
 \begin{align}
 \underline{\nabla}\cdot\left(\left(M_{i}+M_{e})\right)\underline{\nabla}u_{e}\right) + \underline{\nabla}\cdot\left( M_{i}\underline{\nabla}V_{m}\right) &=& 0
 \label{eqn:intro:math:bidom1}\\
 \underline{\nabla}\cdot\left(M_{i}\underline{\nabla}V_{m}\right) + \underline{\nabla}\cdot\left(M_{i}\underline{\nabla}u_{e}\right) &=& \chi C_{m}\frac{dV_{m}}{dt} + \chi{I_{ion}}
 \label{eqn:intro:math:bidom2}
 \end{align}
+\end{subequation}
 where the subscript $i$ and $e$ refer to the intra- and extracellular quantities, $M$ is a matrix of conductivities, $\chi$ represents the surface-to-volume ratio of the cells and all other quantities are as defined previously.
 The bidomain equations are a coupled set of a parabolic and elliptic differential equation.
 
@@ -409,17 +412,110 @@ Typically, the factor of ${\lambda}/\left({1+\lambda}\right)$ is folded into $M_
 In 1D, this is the cable equation, which is very widely used.
 The values of the components of the tensors $M_{i}$ or $D$ may be determined experimentally, or from a comparison of conduction in real and virtual tissue samples.
 
-\subsection{Solving Mathematical Models}
+\subsection{Numerical Techniques}
 
 There exist a wealth of techniques for solving the ordinary differential
 equations (ODEs) and partial differential equations (PDEs) involved in
-mathematical models.
+mathematical models~\cite{Sundnes2006}.
 These techniques vary in complexity and accuracy.
 The correct choice of technique depends on a number of factors including the
 `stiffness' of the equations, the desired accuracy and others.
 
-\subsubsection{Forward Euler Method}
+\subsubsection{The Forward Euler Method}
+
+The forward Euler method~\cite{Birkhoff1989}\ is perhaps the simplest numerical
+integration technique.
+It requires a relatively small (time) step between integration points.
+It is never--the--less quite suitable to use in simulations of the electrical
+activity of the heart.
+A typical set of ODEs representing the electrical activity of a myocyte are very
+`stiff', which is to say they can be numerically unstable if the step size is
+too large, and so more sophisticated methods can also require a very small
+timestep.
+
+The forward Euler method works as follows.
+If we have a function, $f(t, u)$, for which we know the initial
+values, $(t_0, u_0)$, then by assuming the rate of change of $f$ remains constant
+over some small interval, $h$, we can integrate the equation as follows
+\begin{subequations}
+\label{eqn:intro:euler}
+\begin{align}
+t_{n+1} = & t_n + h \label{eqn:intro:euler:t} \\
+u_{n+1} = & u_n + hf(t_n, u_n) \label{eqn:intro:euler:x}
+\end{align}
+\end{subequations}
+As long as the interval is small enough the sequence $u_1,u_2,\cdots,u_n$
+should be a good approximation of the time evolution of $u$.
+If we have more than one value on the right hand side of the equation ($u =
+u^{(1)}, u^{(1)}, \cdots, u^{(n)}$) then all values of the right hand side are
+assumed constant for each step of the integration.
+In cardiac systems, $h$ is typically \ms{0.02}\ or smaller.
 
 \subsubsection{The Finite Difference Method}
 
+The finite difference method~\cite{Morton2005} is a way of calculating the
+solution to a spatially extended problem.
+Such problems include PDEs such as the bidomain (\ref{eqn:intro:math:bidom}) and
+monodomain (\ref{eqn:intro:math:mono}) equations.
+The general form of such equations in the variable $u(t, u)$ is
+\begin{equation}
+\label{eqn:intro:fd:partial}
+\frac{\partial u}{\partial t} = \frac{\partial}{\partial x} \left( b(t, x)
+\frac{\partial u}{\partial x} \right) + c(t, x)u + d(t, x) + e(t, u)
+\end{equation}
+Where $t$ is the time, $x$ is the spatial variable and $b$, $c$, $d$ and $e$ are
+known functions.
+The function $e$ will quite often be \ii{ion}\ for a particular cell.
+
+In the finite difference method, the problem space---the cardiac tissue, in this
+thesis---is divided up into a number of nodes.
+The spacing between each node is $\Delta x$ in the x direction (and in higher
+dimensions,  $\Delta y$ in the y direction and so on).
+To advance the solution in time, the forward Euler method
+(\ref{eqn:intro:euler}) can be used.
+To approximate the differential in space, the centred second difference can be
+used.
+For the node at $x_i$ at time $t_n$ it is:
+\begin{equation}
+\label{eqn:intro:fd:secondcentral}
+\frac{\partial^2 u}{\partial x^2}\left(x_i, t_n\right) \approx \frac{u(x_{i+1},t_n) - 2u(x_{i},t_n) + u(x_{i-1},t_n) }{\left(\Delta x\right)^2}
+\end{equation}
+where $i$ is the index of the node, and $n$ the index of the instant of time.
+The space centered first difference (needed when conductional anisotropy is to
+be taken into account) is:
+\begin{equation}
+\label{eqn:intro:fd:firstcentral}
+\frac{\partial u}{\partial x}\left(x_i, t_n\right) \approx \frac{u(x_{i+1},t_n) - u(x_{i-1},t_n) }{2\left(\Delta x\right)}
+\end{equation}
+
+The most common boundary conditions we want to apply are Neumann, `no flux',
+boundary conditions where the differential of $u$ with respect to $x$ is set to
+zero at the edges of the tissue.
+At the edge of the tissue, the approximation for the space differential
+(\ref{eqn:intro:fd:secondcentral}) becomes:
+\begin{equation}
+\label{eqn:intro:fd:secondcentralboundary}
+\frac{\partial^2 u}{\partial x^2}\left(x_i, t_n\right) \approx \frac{2\left((u(x_{i-1},t_n) - u(x_{i},t_n) \right)  }{\left(\Delta x\right)^2}
+\end{equation}
+if the node at $x_{i+1}$ would be `outside' the tissue.
+The approximation if the converse is true ($x_{i-1}$ is outside) replaces
+$x_{i-1}$ with $x_{i+1}$.
+The one dimensional approximation becomes:
+\begin{equation}
+\label{eqn:intro:fd:firstcentralboundary}
+\frac{\partial u}{\partial x}\left(x_i, t_n\right) \approx \frac{u(x_{i},t_n) - u(x_{i-1},t_n) }{\left(\Delta x\right)}
+\end{equation}
+again, for if the node $x_{i+1}$ is outside.
+
+In higher orders, (\ref{eqn:intro:fd:secondcentral}) and
+(\ref{eqn:intro:fd:firstcentral}) are applied along each direction.
+The nodes used in the calculation of the value $u_x$ are known as the stencil.
+The typical 5-node stencil used for solving (\ref{eqn:intro:fd:partial}) and
+hence (\ref{eqn:intro:math:bidom}) or (\ref{eqn:intro:math:mono}) is illustrated
+in figure~\ref{fig:intro:math:stencil}.
+Other schemes can use different stencils.
+
+
 \subsubsection{The Rush--Larsen Technique}
+
+
