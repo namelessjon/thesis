@@ -84,7 +84,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -6325,5 +6325,45 @@
        id="path4598"
        style="fill:none;stroke:#000000;stroke-width:1.32330203;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none"
        d="m 257.55141,513.11789 254.96538,0 0,-255.56491 -254.96538,0 0,255.56491 z" />
+    <text
+       xml:space="preserve"
+       style="font-size:18px"
+       x="1.2278652"
+       y="17.007502"
+       id="text1567"><tspan
+         sodipodi:role="line"
+         id="tspan1569"
+         x="1.2278652"
+         y="17.007502">(s)</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:18px"
+       x="257.98544"
+       y="16.453074"
+       id="text1571"><tspan
+         sodipodi:role="line"
+         id="tspan1573"
+         x="257.98544"
+         y="16.453074">(a)</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:18px"
+       x="1.396225"
+       y="273.59671"
+       id="text1575"><tspan
+         sodipodi:role="line"
+         id="tspan1577"
+         x="1.396225"
+         y="273.59671">(b)</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:18px"
+       x="257.26266"
+       y="274.15115"
+       id="text1579"><tspan
+         sodipodi:role="line"
+         id="tspan1581"
+         x="257.26266"
+         y="274.15115">(c)</tspan></text>
   </g>
 </svg>
