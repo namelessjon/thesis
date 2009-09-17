@@ -16,7 +16,7 @@ set xrange [0:1000]
 set multiplot layout 2,2 rowsfirst
 
 # plot the APDr curves
-set label 1 "(a)" at graph -0.25,1 font "Helvetica,30"
+set label 1 "(a)" at graph -0.4,1 font "Helvetica,18"
 set xlabel "DI (ms)"
 set ylabel "APD_{90} (ms)"
 plot    "03_REST/apdr/apdr_control.dat" w l ls 1, \
@@ -33,7 +33,7 @@ plot    "03_REST/ERPr/erpr_CRN98con.dat" w l ls 1, \
         "03_REST/ERPr/erpr_CRN98s140g25.dat" w l ls 3
 
 # plot CVr curves
-set label 1 "(c)"
+set label 1 "(c)" at graph -0.33,1
 set xlabel "S2 Interval (ms)"
 set yrange [20:28]
 set ylabel "CV (cm s^{-1})"
