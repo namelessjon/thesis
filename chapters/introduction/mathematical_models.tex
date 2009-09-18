@@ -506,11 +506,20 @@ The one dimensional approximation becomes:
 \frac{\partial u}{\partial x}\left(x_i, t_n\right) \approx \frac{u(x_{i},t_n) - u(x_{i-1},t_n) }{\left(\Delta x\right)}
 \end{equation}
 again, for if the node $x_{i+1}$ is outside.
-
+\begin{figure}
+\begin{center}
+\includegraphics{figures/intro/stencil}
+\end{center}
+\caption[5--node Stencil for the Finite Difference Method]{
+\label{fig:intro:math:stencil}
+Representation of the finite difference method in two dimensions.
+The stencil of the central node (solid black) is indicated in red.
+}
+\end{figure}
 In higher orders, (\ref{eqn:intro:fd:secondcentral}) and
 (\ref{eqn:intro:fd:firstcentral}) are applied along each direction.
 The nodes used in the calculation of the value $u_x$ are known as the stencil.
-The typical 5-node stencil used for solving (\ref{eqn:intro:fd:partial}) and
+The typical 5--node stencil used for solving (\ref{eqn:intro:fd:partial}) and
 hence (\ref{eqn:intro:math:bidom}) or (\ref{eqn:intro:math:mono}) is illustrated
 in figure~\ref{fig:intro:math:stencil}.
 Other schemes can use different stencils.
