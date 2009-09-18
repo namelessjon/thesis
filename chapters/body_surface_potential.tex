@@ -52,9 +52,8 @@ bounded by $\text{S}_{1}$.
 }
 \end{figure}
 
-To account for the influence of the finite dimensions of the torso we can use
-either a FEM or a BEM (See Chapter XXXX for a discussion
-of the history of the two methods).
+To account for the influence of the torso on the extra--cardiac potentials, we
+use a Boundary Element Method (BEM).
 The derivation for the BEM method is based on Green's
 Theorem~\cite{Barr1966,Gulrajani1989,Clayton2002},
 which states that for a volume, $V$, bounded by a surface, $S$, that
@@ -313,7 +312,7 @@ chapter provides an output of the trans-membrane potentials, $V_m$.
 To relate the values of $V_m$ to $\mathbf{J}^i$ we consider the bidomain
 model~\cite{Tung1978,Geselowitz1989}.
 As previously discussed, the bidomain model considers the cardiac tissue as
-comprising two `syncytica' occupying the whole of cardiac tissue and seperated
+comprising two `syncytica' occupying the whole of cardiac tissue and separated
 by the cell membrane.
 These are the intra- and extra-cellular spaces.
 This leads to the following two relationships
@@ -487,7 +486,7 @@ were been passed through a digital low-pass filter at \unit{100}{Hz},
 corresponding to the typical frequency response of a clinical ECG unit, from
 \unit{0.5}{Hz}\ to \unit{100}{Hz}.
 Using the three limb leads (LA, LL, RA) the WCT was computed and used to
-contruct isopotential maps.
+construct isopotential maps.
 Whilst the algorithm employed offers a natural zero potential, the use of the
 WCT allows for direct comparison with clinical studies which almost exclusively
 employ the WCT for this purpose~\cite{Taccardi1966,Mirvis1980}
@@ -500,7 +499,7 @@ rhythm, the atrial model developed in the previous chapter was used.
 The simulation of the electrical activity involved the full fibre orientation
 description with an anisotropy ratio of 1:9.
 There was heterogeneous cell electrophysiology used, with differential
-electropphysiology for the atrial myocyte, pectinate muscle and crista
+electrophysiology for the atrial myocyte, pectinate muscle and crista
 terminalis cells.
 The atrium was paced at the site corresponding to the sinus node at a frequency
 of \unit{1}{Hz}\ for \unit{2}{s}.
@@ -525,7 +524,7 @@ filtering performed on the signals in the time domain.
 Simulated BPSM during sinus rhythm with a homogeneous
 torso.
 Blue represents negative potentials, and red positive ones, relative to the zero
-defined by the wilson's central terminal.
+defined by the Wilson's central terminal.
 The torso begins approximately isopotential before a distinct pattern of
 potential, with an area of negative potential over the upper right lung and an
 area of positive potential on the lower torso.
@@ -573,7 +572,7 @@ underlying fibre structure.
 Simulated body surface potential plots during sinus rhythm with lungs assigned
 conductivity from table~\ref{tbl:bsp:conductances}.
 Blue represents negative potentials, and red positive ones, relative to the zero
-defined by the wilson's central terminal.
+defined by the Wilson's central terminal.
 The torso begins approximately isopotential before a distinct pattern of
 potential, with an area of negative potential over the upper right lung and
 area of positive potential on lower half of the torso.
@@ -661,9 +660,9 @@ homogeneous calculations.
 \caption[Body Surface Potential snapshots, with all inhomogeneities]{
 \label{bsp:fig:all_bsp}
 Simulated body surface potential plots during sinus rhythm with all
-inhomogeneties assigned conductivities from table~\ref{tbl:bsp:conductances}.
+inhomogeneities assigned conductivities from table~\ref{tbl:bsp:conductances}.
 Blue represents negative potentials, and red positive ones, relative to the zero
-defined by the wilson's central terminal.
+defined by the Wilson's central terminal.
 The torso begins approximately isopotential before a distinct pattern of
 potential, with an area of negative potential over the upper right lung and an
 area of positive potential below it.
@@ -1014,7 +1013,7 @@ that observed in this chapter.
 They report that the maximum and minimum potentials observed are approximately
 \mv{0.25}\ and \mv{-0.25} respectively--similar in magnitude to those observed
 in this model, although closer to the normal limits.
-The use of a cellular automaton model would make simulation of Ischemia, genetic
+The use of a cellular automaton model would make simulation of ischaemia, genetic
 mutation or atrial fibrillation induced remodelling problematic.
 
 Oosterom et al.~\cite{Oosterom2005}\ used a technique called the Equivalent
@@ -1030,7 +1029,7 @@ extending out from the endocardial surface in all directions, which may not be
 an ideal approximation~\cite{Ho2009}.
 Membrane kinetics within this volume use a modified version of the Courtemanche
 et al.~\cite{CRN98}\ model, modified to have a shorter \apd\ which was
-optemized based on recorded potentials from the patient who provided the MRI
+optimized based on recorded potentials from the patient who provided the MRI
 geometry.
 They do not present BSPMs from their simulations, though their optimized results
 show very close agreement with the recorded clinical ECGs from the study.
@@ -1072,7 +1071,7 @@ The size and shape of the ventricular bloodmasses, whilst extracted from the
 internal surfaces of the ventricular mesh associated with the torso, do not
 exactly correspond to the sizes of the atrial valve openings.
 In addition, the presence of the lungs presented a constraint on the location of
-the atria, due to a requirement that the atrium should reside wholely within the
+the atria, due to a requirement that the atrium should reside wholly within the
 main torso cavity--an orientation that had previously been considered `good' had
 to be discarded when lungs were introduced.
 

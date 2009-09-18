@@ -58,7 +58,7 @@ The rate of change of membrane potential, $V$, is given by
 \label{eqn:toolkit:monodomain}
 \frac{\partial V}{\partial t} = D \nabla^{2} V - \frac{\ii{ion}}{C_{m}}
 \end{equation}
-where $D$ is a constant representing the diffusivity of transmebrane through
+where $D$ is a constant representing the diffusivity of transmembrane potential through
 space, \ii{ion}\ represents the total trans-membrane of a cellular model, such
 as \ii{tot}\ from (\ref{eqn:intro::math:crn}) and $C_{m}$ is the membrane capacitance
 of the cell.
@@ -295,7 +295,7 @@ The use of lookup tables can significantly speed up code execution.
 It can also influence the results, due to the discretisation involved in the
 computations.
 However even a small number of steps, sufficient to discretise with a
-resolution of \mv{0.1}, typically indroduces a $leq$~0.1\% error.
+resolution of \mv{0.1}, typically introduces a $leq$~0.1\% error.
 Meanwhile, a 5x or greater speedup is not impossible.
 
 \subsubsection{Binary Searches}
@@ -639,7 +639,7 @@ tested.
 
 \subsection{Conduction Velocity Restitution}
 
-The CV is the rate of propagation of the excitation wavei.
+The CV is the rate of propagation of the excitation wave.
 It is determined by the difference in excitation times at two points divided by
 the distance between them.
 It is measured both in both experimental and numerical studies and is therefore
@@ -755,7 +755,7 @@ action potential, conduction behaviours and the dynamic behaviours of re-entrant
 spiral waves.
 
 The Li et al.~\cite{Li2007}\ study determined the current carried by this novel
-ion chanel, \ii{ANION}, could be modelled by
+ion channel, \ii{ANION}, could be modelled by
 \begin{equation}
 \label{eqn:anion:ianion}
 I_{ANION} = g_{ANION} \frac{V-E_{ANION}}{1-\left(c\times e^{d\times\left(V-E_{ANION}\right)}\right)}
@@ -1077,7 +1077,7 @@ control lifespan fluctuates considerably, from \ms{1175}\ to \ms{3910}.
 
 The effects of the inclusion of an anion sensitive current do not seem to be
 that large, at least when considered on the single cell level.
-However, despite the current's small influence on the action potential duration,
+However, despite the small influence of the current on the action potential duration,
 it does have significant effects on the restitution properties of the cell and
 on the behaviour of cells in a tissue.
 The general behaviours of the Courtemanche cell have been discussed elsewhere,
@@ -1167,7 +1167,7 @@ fibrillation induced remodelling (AFER) during chronic atrial
 fibrillation (AF) on human atrial cells~\cite{Bosch1999,Workman2001}.
 
 In this study, we quantified the changes in electrophysiological
-behavior in cell and 1D homogeneous models under AFER compared to control
+behaviour in cell and 1D homogeneous models under AFER compared to control
 conditions.  Further, re-entrant waves in 2D electrically homogeneous
 and electrically heterogeneous sheets were studied.
 
@@ -1290,7 +1290,7 @@ The curves have two clear phases in the AFER cases; a very steep initial rise
 and then slower, asymptotic rise in \apd.
 In the control case the curves show an intermediate a phase with a slope between
 the two extremes.
-In the control CT case, the curves include a prominant notch at a DI of
+In the control CT case, the curves include a prominent notch at a DI of
 approximately \ms{130}\ which is caused by the up regulation of \ii{Ca,L}\ in CT
 cells.
 The down regulation associated with the AFER removes this.

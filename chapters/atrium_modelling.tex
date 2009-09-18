@@ -53,7 +53,7 @@ Representations of the fibre structure are shown in figure~\ref{atrium:fibres}.
 \caption[Atrial Geometry]{
 \label{atrium:geometry}
 (a)
-View up into the right (RA) and left (LA) atriums, showing the pectinate muscles
+View up into the right (RA) and left (LA) atria, showing the pectinate muscles
 (PM, orange), crista terminalis (CT, yellow) and sino-atrial node (SAN, red).
 The atrial muscle is shown in blue.
 Also labelled are the right (RAA) and left (LAA) appendages.
@@ -142,9 +142,9 @@ changes in $V$ in time, $t$, the trans-membrane voltage.
 where $D$ is a tensor representing the diffusivity of electrical potential, \ii{ion} is described by the
 CRN model (\ref{atrium:crn}), $C_{m}$ is the membrane capacitance and all other
 symbols have their usual meanings.  Equation (\ref{atrium:monodomain}) is
-advanced in time via the forward euler method with a timestep of \ms{0.02}.  For
+advanced in time via the forward Euler method with a timestep of \ms{0.02}.  For
 simulations with isotropic conductivity between nodes a 7-node approximation of
-the differential operator is used.  When anisoptropy is present, a 19-node
+the differential operator is used.  When anisotropy is present, a 19-node
 approximation is used.
 
 \subsection{Tissue Anisotropy}
@@ -286,7 +286,7 @@ linear array, containing the 6 or 18 neighbours of the active nodes to be used
 in the diffusion tensor approximation.
 The geometry and state information can therefore be represented by one linear
 array of cellular states, one linear array used as a `map' and one
-linear array representing the components of the laplacian.
+linear array representing the components of the Laplacian.
 This linear data structure is very easy to parallelize on a shared memory
 system.
 
@@ -308,10 +308,10 @@ workload was effectively distributed over the 8 cores.
 To verify the model, it was used to simulate a normal propagation, initiated
 from the sino-atrial node.
 The fully detailed model was used.
-The laplacian was precomputed to include all the information on tissue
+The Laplacian was precomputed to include all the information on tissue
 anisotropy from the fibre orientation which accompanied the geometry.
 The bulk diffusivity, $D$, of the tissue was set to $0.18$.
-The anisotropy ratio for transverse to longitudinal condution was set to 1:9.
+The anisotropy ratio for transverse to longitudinal conduction was set to 1:9.
 The activity at each node was represented by the Courtemanche et al. model with
 voltage and ion concentration dependent parameters pre-computed and tabulated.
 A timestep of \ms{0.02}\ was used to integrate both the cellular model at each
@@ -338,7 +338,7 @@ The presence of the muscle bundles on the endocardial surface causes earlier
 activation of the epicardial surface.
 The left atrium is activated first by the Bachmann bundle.
 After this excitation spreads down and around the left atrial wall to the
-atrio-ventricular ring and the left atrial apendage.
+atrio-ventricular ring and the left atrial appendage.
 Complete activation of the right and left atria takes approximately \ms{125}.
 After the activation there is an extended plateau phase, which lasts for
 approximately \ms{100}.
@@ -386,7 +386,7 @@ view from the ventricles up into the atria (b).
 The influence of fibres on the activation times is clearly visible on both
 views.
 Excitation begins and the sinus node and spreads along the fibres over the
-atrial epi- and endo-cardial surfaces.
+atrial epi- and endocardial surfaces.
 The appendages are the last to activate.
 }
 \end{figure}
@@ -396,7 +396,7 @@ Time to depolarisation was taken as the time for a myocyte to attain a potential
 of \mv{-60}.
 The site of first activation of the endocardial surface of the left atrium
 occurs at \ms{26}\ in the region of the Bachmann's bundle.
-The time to total depolarisation of the endorcardial surface was \ms{95}\ for
+The time to total depolarisation of the endocardial surface was \ms{95}\ for
 the right atrium and \ms{94}\ for the left atrium.
 Conduction velocities were estimated from surface activation time information.
 Conduction velocities are found to be $\text{1.30}\pm
@@ -407,14 +407,14 @@ in the atrial wall.
 
 \subsection{Comparisons with Experimental Studies}
 
-In a recent patient study Lemary et al. performed simultaneous recordings of
+In a recent patient study Lemery et al. performed simultaneous recordings of
 extracellular potentials on the endocardial surfaces of the atria of twenty
 patients before they underwent catheter ablation therapy.
-They found the total activation time under sinus rhythem for the endocardial
+They found the total activation time under sinus rhythm for the endocardial
 surfaces of both atria was \ms{120}.
 The total activation time for the right and left atria was found to be \ms{81}\
 and \ms{80}\ respectively.
-The time to first activation of the left atrium at the bachmann's bundle was
+The time to first activation of the left atrium at the Bachmann's bundle was
 found to be \ms{41}.
 The results from the simulated propagation are within the range of results
 measured clinically for all times and within one SD of the mean for all
@@ -446,7 +446,7 @@ They used a reduced formulation of the Courtemanche et al. model which has 6
 variables.
 They included atrial wall muscle fibres based on dissection of anatomical
 specimens.
-There was no internal fibre structure such as the bachmann bundle however.
+There was no internal fibre structure such as the Bachmann bundle however.
 It is a very efficient model.
 The Vigmond~\cite{Vigmond2001}\ is an idealised model of an unusual construction.
 It is topologically, rather than anatomically, correct and formulated as a
@@ -486,7 +486,7 @@ The mechanisms through which AF influences the heart are complex, but the
 remodelling of the cellular electrophysiology is believed to contribute to
 reduced ERPs and through that, favour the formation of stable, long lived
 spiral waves and organ level microwavelet re-entry.
-AF is often preceeded by congestive heart failure, cardiomegaly and other
+AF is often preceded by congestive heart failure, cardiomegaly and other
 structural cardiac diseases, but there are significant numbers of suffers with
 no such structural defects.
 There is also evidence of a genetic predisposition to AF, which is sometimes
