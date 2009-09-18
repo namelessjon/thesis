@@ -54,6 +54,17 @@ voltage, to allow simulations to be assessed as they run.
 In addition, the tissue simulation code is parallelized using a shared memory
 paradigm with OpenMP.
 
+The toolkit was used to complete two computational studies.
+These examined the influence of a novel anion bearing current, \ii{ANION}, in
+atrial myocyte cells and the effects of atrial fibrillation induced
+electrophysiological remodelling on the heterogeneity of atrial myocyte
+electrophysiological properties.
+The two studies represent different extremes.
+In the \ii{ANION}\ study the influence on the action potential itself was very
+small, although even this had significant influence on the dynamic behaviours.
+In the remodelling study, the effects were obvious at all levels and this was
+reflected in the persistent spiral wave activity.
+
 \section{Whole Atrial Model}
 
 The whole atrium model which was developed is capable of modeling the
@@ -232,6 +243,13 @@ For some studies an accurate and auto-active pacemaker complex would be a
 benefit.
 Contraction, and the associated mechanical and electric coupling, could be
 incorporated into the model.
+
+It might also be interesting to construct a limit variable formulation of the
+model, either with Fenton--Karma variants or through variable reduction of the
+CRN or other biophysically detailed models.
+This would enable rapid initial investigation of interesting phenomena.
+The full model would then be used to verify the initial findings and confirm
+they still existed.
 
 Beyond the atrium, the body surface model has several avenues for further study.
 The influence of further inhomogeneities can be investigated.
