@@ -529,3 +529,35 @@ Other schemes can use different stencils.
 \subsubsection{The Rush--Larsen Technique}
 
 
+The Rush--Larsen technique~\cite{Rush1978}\ is a specialised way of solving
+equations such as (\ref{eqn:intro:math:dmdt}) for the gating parameters.
+Since $\alpha_m$ and $\beta_m$ are dependent only the voltage, not on time, a
+solution to (\ref{eqn:intro:math:dmdt})~\cite{Hodkgin1952} is:
+\begin{equation}
+\label{eqn:intro:math:dmdtsoln}
+m = m_{\inf} - \left(m_{\inf} - m_0\right)\exp\left(-\frac{t}{\tau_m}\right)
+\end{equation}
+where
+\begin{equation}
+\label{eqn:intro:math:infm}
+m_{\inf} = \frac{\alpha_{m}}{\alpha_{m} + \beta_{m}}
+\end{equation}
+and
+\begin{equation}
+\label{eqn:intro:math:taum}
+\tau_m = \frac{1}{\alpha_{m} + \beta_{m}}
+\end{equation}
+where $m_0$ is the initial value of $m$.
+
+Rush and Larsen realised that over a sufficiently small time interval, $\Delta t$,
+the parameters $\alpha_m$ and $\beta_m$ could be considered constant.
+Taking $m_0$ to be the value of $m(t)$ at time $t$, (\ref{eqn:intro:math:dmdtsoln})
+could be used to calculate the next value of $m$, $m(t + \Delta t)$ as:
+\begin{equation}
+\label{eqn:intro:math:dmdtsoln}
+m(t+ \Delta t) = m_{\inf} - \left(m_{\inf} - m(t)\right)\exp\left(-\frac{\Delta t}{\tau_m}\right)
+\end{equation}
+Using (\ref{eqn:intro:math:dmdtsoln}) is more accurate than the forward Euler
+method (\ref{eqn:intro:euler}), since it depends only on the value of the
+membrane potential, not the derivative of $m$.
+
