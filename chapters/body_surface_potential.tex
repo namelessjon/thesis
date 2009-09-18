@@ -178,9 +178,20 @@ torso surface with a typical term of $\displaystyle A_{ij} =
 vector of the potentials of the $n$ triangles and $\mathbf{B}$ is a column
 vector of the infinite medium potentials at the centres of the triangles of the
 surface.
-Equation (\ref{eqn:bsp:matrix}) can be extended to allow for multiple
+
+Using a multiple sufrace generalisation of Green's theorm, equation
+(\ref{eqn:bsp:discretefinal}) can be extended  to allow for multiple
 inhomogeneities, derivations for which can be found
 in~\cite{Barr1966,Gulrajani1983,Gulrajani1989}.
+For a body consisting of $m$ surfaces:
+\begin{equation}
+\label{eqn:bsp:multiple}
+\phi_{i} + \sum_{s = 1}^{m} \left(\frac{\sigma^{-}_{s} - \sigma^{+}_{s} }{\sigma^{-}_{r} + \sigma^{+}_{r} }\right)
+    \sum_{j=1,j \neq i}^n \left( \frac{\Delta\Omega_{ij}}{2\pi} \right)\phi_{j} =
+\frac{1}{2 \pi \left(\sigma^{-}_{r} + \sigma^{+}_{r}\right)}\int_{V} \frac{-\nabla \cdot \mathbf{J}^{i}}{r}dv
+\end{equation}
+Where $r$ is the surface of the element $i$ and $s$ the surface of the element
+$j$.
 
 If the surface $S$ was discretised with sufficient accuracy then $\mathbf{A}$
 will necessarily be singular, due to the physical nature of the problem.
