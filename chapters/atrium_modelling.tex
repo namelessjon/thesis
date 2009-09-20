@@ -83,7 +83,8 @@ well defined fibre orientation.
 
 The electrical activity at each of the nodes was described by the equations of
 the Courtemanche--Ramirez--Nattel (CRN) of the human atrial
-myocyte~\cite{CRN98}.  This model, as previously described, is a second
+myocyte~\cite{CRN98}.  This model, as previously described
+($\S$\ref{sec:intro:math:crn}), is a second
 generation model. It has 21 state variables, representing ionic gating activations
 and inactivations and intracellular concentrations of ionic species.  In the
 model, the total current, \ii{ion} is made up of the contributions of numerous
@@ -133,7 +134,8 @@ parameters.
 \subsection{Monodomain Equation}
 
 To simulate the propagation of electrical activity over the finite difference
-geometry previously described, the mono-domain equation is used to describe the
+geometry previously described, the mono-domain equation
+($\S$\ref{sec:intro:math:mono}) is used to describe the
 changes in $V$ in time, $t$, the trans-membrane voltage.
 \begin{equation}
 \label{atrium:monodomain}
@@ -152,7 +154,7 @@ approximation is used.
 The heart has a complex fibrous structure (Chapter 1), and this manifests
 electrically as regions which have preferential conduction directions.
 The preferential conduction directions show greatly increased conduction
-velocities, sometimes by a factor of up to five~\cite{}.
+velocities, sometimes by a factor of up to five.
 The fibre structure and regions of preferential conduction are generally
 considered much more important for the ventricles than for the atria.
 The atria, or more specifically the right atrium, do possess several structures
@@ -339,7 +341,7 @@ activation of the epicardial surface.
 The left atrium is activated first by the Bachmann bundle.
 After this excitation spreads down and around the left atrial wall to the
 atrio-ventricular ring and the left atrial appendage.
-Complete activation of the right and left atria takes approximately \ms{125}.
+Complete activation of the right and left atria takes approximately \ms{120}.
 After the activation there is an extended plateau phase, which lasts for
 approximately \ms{100}.
 During this plateau phase the whole atrium has a very uniform potential.
@@ -407,7 +409,7 @@ in the atrial wall.
 
 \subsection{Comparisons with Experimental Studies}
 
-In a recent patient study Lemery et al. performed simultaneous recordings of
+In a recent patient study Lemery et al.~\cite{Lemery2004} performed simultaneous recordings of
 extracellular potentials on the endocardial surfaces of the atria of twenty
 patients before they underwent catheter ablation therapy.
 They found the total activation time under sinus rhythm for the endocardial
@@ -596,14 +598,19 @@ The reversal potential was estimated from the experimental I-V relationships to 
 \mv{-76.3}.
 The inclusion of the $\varphi$\ parameter allowed the simulation of several
 intermediate mutant states, representative of a heterozygous mutation.
-Setting $\varphi = 1$\ and following the voltage clamp protocol shown in panel A
+Setting $\varphi = 1$\ and following the voltage clamp protocol shown in panel (a)
 of figure~\ref{atrium:iks:vc}\ the I-V relationship of \ii{Ks}\ was simulated to
-provide a good match to experimental data shown as the lines in panel B of
+provide a good match to experimental data shown as the lines in panel (b) of
 figure~\ref{atrium:iks:vc}.
 Also shown are the simulated current traces elicited by the voltage clamp
-protocol in panels D and F.
+protocol in panels (d) and (f).
 The non-gated leakage component of \iip{Ks}\ sufficiently accounts for the
 changed current density and kinetics.
+Note that in panel (b) the modelled current traces have been normalised by the
+maximum current observed with a normal \ii{Ks}\ and the WT KCNQ1.
+The differing time-course of the currents are likely due to the different temperatures
+at which the simulations were performed.
+However, no data on the temperature dependence of \ii{Ks}\ was available.
 
 \subsubsection{Simulation Protocols}
 \label{sec:atrium:s140g:methods}

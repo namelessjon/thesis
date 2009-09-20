@@ -32,8 +32,7 @@ was implemented using the monodomain equations.
 
 The cellular model used for much of the developmental process was the
 Courtemanche et al. human atrial myocyte model~\cite{CRN98}.
-Also currently implemented are the Nygren et al. human atrial myocyte
-model~\cite{Nygren1998} and the four variable formulation of the Fenton-Karma
+Also currently implemented is the four variable formulation of the Fenton-Karma
 minimal variable model~\cite{Bueno-Orovio2008}.
 These cellular models describe the behaviour of a cell using coupled systems of
 non-linear ordinary differential equations.
@@ -42,16 +41,17 @@ and the flow of current through ionic channels in the cell membrane or between
 intra-cellular compartments, or their notional equivalents in the case of
 minimal variable models.
 
-These equations were generally solved using the simplest time-stepping method
-available, the explicit Euler method.
-To improve performance and stability, some variables were integrated using the
+These equations were integrated using the simplest time-stepping method
+available, the forward Euler method.
+To improve performance and stability, gating variables were integrated using the
 Rush-Larsen method.
-More complex integration schemes were tried, but did not significantly improve
-performance to compensate for the greater complexity.
+Whilst this does require a small timestep, the resulting models are relatively
+simple, making expansion easy.
+
 
 \subsubsection{Monodomain Equations}
 
-The monodomain equations were used to couple multiple cells together to describe
+The monodomain equations ($\S$\ref{sec:intro:math:mono}) were used to couple multiple cells together to describe
 a tissue over which excitation could be conducted.
 The rate of change of membrane potential, $V$, is given by
 \begin{equation}
@@ -60,12 +60,10 @@ The rate of change of membrane potential, $V$, is given by
 \end{equation}
 where $D$ is a constant representing the diffusivity of transmembrane potential through
 space, \ii{ion}\ represents the total trans-membrane of a cellular model, such
-as \ii{tot}\ from (\ref{eqn:intro::math:crn}) and $C_{m}$ is the membrane capacitance
+as \ii{tot}\ from (\ref{eqn:intro:math:crn}) and $C_{m}$ is the membrane capacitance
 of the cell.
 A finite differences approach is used to discretize the model in 1D or 2D with
 an explicit Euler scheme used to advance the timestep.
-A discussion of the merits of the monodomain and bidomain equations can be found
-in the introduction.
 
 \subsubsection{Strand Model}
 
@@ -185,7 +183,8 @@ separation of the computers which can reduce efficiency.
 For the parallelism involved in the library, the OpenMP parallelism library was
 chosen.
 This choice was made for a number of reasons.
-Implementations of OpenMP can be found on many systems, with gcc, icc and the
+Implementations of OpenMP can be found on many systems, with gcc~\cite{gcc},
+icc~\cite{icc}\ and the
 Sun compiler all having an OpenMP implementation.
 This makes the library suitable for use on both HPC systems and on modern
 multiple core desktops.
@@ -219,8 +218,8 @@ Several of the techniques used are presented here.
 
 \subsubsection{The Compiler}
 
-The library has been compiled using the GNU C compiler (gcc)~\cite{gcc}, the
-Intel C compiler (icc)~\cite{icc} and the Sun microsystems compiler.
+The library has been compiled using the GNU C compiler (gcc)~\cite{gcc}\ and the
+Intel C compiler (icc)~\cite{icc}.
 All three have OpenMP implementations available and all three are capable of
 performing a number of optimisations, controlled via flags.
 The most important
@@ -666,7 +665,7 @@ The CV is estimated from the difference in excitation times, defined as the
 instant at which the node is excited above \mv{-60}, at 2 nodes which are
 located 100 nodes apart.
 This minimizes any possible influence from boundary conditions.
-The S2 time is then stepped via an adaptive step, until a second excitation wave
+The S2 time is then stepped until a second excitation wave
 does not propagate the length of the strand.
 
 
@@ -878,13 +877,13 @@ cell modified to include $\text{Cl}^{\text{-}}$-carrying current).
 The duration of the action potential at 50\% and 90\%
 repolarization, \apd[50]\ and \apd\ respectively.
 The maximum observed upstroke velocity of the action potential,
-$\frac{dV}{dt}_max$.
+$\frac{dV}{dt}_{max}$.
 The temporal vulnerability window to unidirectional conduction block, VW.
 }
 \begin{center}
-\begin{tabular}{r r r r r}
+\begin{tabular}{r l l l l}
 \toprule
-Case & \apd\ (ms) & \apd[50]\ (ms) & $\frac{dV}{dt}_max$ ($\text{mV}\,\text{ms}^{\text{-1}}$) & VW (ms)  \\
+Case & \apd\ (ms) & \apd[50]\ (ms) & $\frac{dV}{dt}_{max}$ ($\text{mV}\,\text{ms}^{\text{-1}}$) & VW (ms)  \\
 \midrule
 Control & 299.6 & 180.1 & 217.1 & 3.22 \\
 Anion & 297.3 & 158.1 & 210.6 & 3.94 \\
@@ -1166,9 +1165,10 @@ data available on the ion channel remodelling due to atrial
 fibrillation induced remodelling (AFER) during chronic atrial
 fibrillation (AF) on human atrial cells~\cite{Bosch1999,Workman2001}.
 
-In this study, we quantified the changes in electrophysiological
+In this study changes in electrophysiological
 behaviour in cell and 1D homogeneous models under AFER compared to control
-conditions.  Further, re-entrant waves in 2D electrically homogeneous
+conditions were quantified.
+Further, re-entrant waves in 2D electrically homogeneous
 and electrically heterogeneous sheets were studied.
 
 \subsubsection{Methods}

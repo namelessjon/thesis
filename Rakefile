@@ -60,6 +60,7 @@ file PDF => (FileList["#{PAPER}.tex", BIBLIOGRAPHY, "chapters/**/*.tex"] + figur
   sh "bibtex #{PAPER}"
   sh "pdflatex #{PAPER}"
   sh "pdflatex #{PAPER}"
+  sh "pdflatex #{PAPER}"
 end
 
 # clean up common latex gunk

@@ -10,7 +10,7 @@ with some accuracy.
 
 Cellular models tend to be classified in two ways.
 The first differentiator is the level of detail employed.
-The second is on which cellular processes are modelled.
+The second is which cellular processes are modelled.
 
 Biophysically detailed models are complex.
 They consider the interactions of several different currents, and potentially
@@ -66,7 +66,7 @@ The Nernst equation is an important equation in electrophysiology~\cite{Fall2002
 It describes how the difference in ion concentrations on two sides of a
 semi-permeable barrier can result in a potential difference across the barrier.
 Any voltage dependant factor of a current of an ion, S, includes a reversal
-potential, V$_{S}$, equal to the Nernst potential.
+potential, $V_{S}$, equal to the Nernst potential.
 At the reversal potential, the current falls to 0.
 When equilibrium is reached the potential difference, $V_{S}$, across the
 membrane is given by
@@ -78,9 +78,8 @@ $R$ is the universal gas constant, $T$ is the absolute temperature, $F$ is
 Faraday's constant and $z$ the charge of the ion $S$.
 
 The Nernst Potential applies only to a single ion concentration.
-This is not as large a limitation as it first might seem.
-Whilst the action potential involves many ion species, many channels are ion
-specific and thus the Nernst potential applies across them.
+Since many ion channels are ion channel specific, the Nernst potential can still
+be used to calculate the driving potential.
 
 \subsubsection{Electric Circuit Model}
 
@@ -233,9 +232,10 @@ There are tens, perhaps hundreds, of myocyte models of varying complexity and
 accuracy.
 There are relatively few models of atrial myocytes for human tissue.
 A brief description of the foremost two are given here, as well as a description
-of one of the most adaptable phenomological models.
+of one of the most adaptable phenomenological models.
 
 \subsubsection{The Courtemanche--Rameriz--Nattel Model}
+\label{sec:intro:math:crn}
 
 The Courtemanche--Rameriz--Nattel (CRN) model~\cite{CRN98}\ is a biophysically
 detailed second generation model of the human atrial myocyte.
@@ -265,7 +265,7 @@ current, \ii{Ks}, the slow delayed rectifier current, \ii{Ca,L}, the L-type
 calcium current, \ii{b,Na}, the sodium background current and \ii{b,Ca}, the
 calcium background current.
 All the currents are time-dependent, except for the background currents which
-have constant coductance and \ii{K1}, which is voltage-dependent.
+have constant conductance and \ii{K1}, which is voltage-dependent.
 There are also three pumps; \ii{NaK}, the sodium--potassium exchanger,
 \ii{NaCa}, the sodium--calcium exchanger and \ii{p,Ca}, the calcium pump.
 
@@ -390,6 +390,7 @@ Second, the body is assumed to be a passive conductor that is isolated at the ou
 The body potential at the surface of the heart is the extra-cellular potential at the surface of the heart.
 
 \subsubsection{The Monodomain Equation}
+\label{sec:intro:math:mono}
 
 While the bidomain equations represent a good tool for modelling some of the complexities of cardiac conduction, they are very demanding to solve, necessitating finding the solution to coupled parabolic and elliptic differential equation sets.
 The monodomain equation is the result of one simplifying assumption made to the bidomain equations.
@@ -409,7 +410,7 @@ to one single equation for the membrane potential
 \label{eqn:intro:math:mono}
 \end{equation}
 Typically, the factor of ${\lambda}/\left({1+\lambda}\right)$ is folded into
-$M_{i}$ and the membrane capacitance $C_m$ to give the diffusion tensor $D$.
+$M_{i}$, along with $\chi$ and the membrane capacitance $C_m$ to give the diffusion tensor $D$.
 In 1D, this is the cable equation.
 The values of the components of the tensors $M_{i}$ or $D$ may be determined experimentally, or from a comparison of conduction in real and virtual tissue samples.
 
@@ -448,7 +449,7 @@ u_{n+1} = & u_n + hf(t_n, u_n) \label{eqn:intro:euler:x}
 As long as the interval is small enough the sequence $u_1,u_2,\cdots,u_n$
 should be a good approximation of the time evolution of $u$.
 If we have more than one value on the right hand side of the equation ($u =
-u^{(1)}, u^{(1)}, \cdots, u^{(n)}$) then all values of the right hand side are
+u^{(1)}, u^{(2)}, \cdots, u^{(n)}$) then all values of the right hand side are
 assumed constant for each step of the integration.
 In cardiac systems, $h$ is typically \ms{0.02}\ or smaller.
 
@@ -529,10 +530,10 @@ Other schemes can use different stencils.
 \subsubsection{The Rush--Larsen Technique}
 
 
-The Rush--Larsen technique~\cite{Rush1978}\ is a specialised way of solving
+The Rush--Larsen technique~\cite{RL78}\ is a specialised way of solving
 equations such as (\ref{eqn:intro:math:dmdt}) for the gating parameters.
-Since $\alpha_m$ and $\beta_m$ are dependent only the voltage, not on time, a
-solution to (\ref{eqn:intro:math:dmdt})~\cite{Hodkgin1952} is:
+Since $\alpha_m$ and $\beta_m$ are dependent only on the voltage, not on time, a
+solution to (\ref{eqn:intro:math:dmdt})~\cite{Hodgkin1952} is:
 \begin{equation}
 \label{eqn:intro:math:dmdtsoln}
 m = m_{\inf} - \left(m_{\inf} - m_0\right)\exp\left(-\frac{t}{\tau_m}\right)
@@ -554,10 +555,10 @@ the parameters $\alpha_m$ and $\beta_m$ could be considered constant.
 Taking $m_0$ to be the value of $m(t)$ at time $t$, (\ref{eqn:intro:math:dmdtsoln})
 could be used to calculate the next value of $m$, $m(t + \Delta t)$ as:
 \begin{equation}
-\label{eqn:intro:math:dmdtsoln}
+\label{eqn:intro:math:dmdtsolnrl}
 m(t+ \Delta t) = m_{\inf} - \left(m_{\inf} - m(t)\right)\exp\left(-\frac{\Delta t}{\tau_m}\right)
 \end{equation}
-Using (\ref{eqn:intro:math:dmdtsoln}) is more accurate than the forward Euler
+Using (\ref{eqn:intro:math:dmdtsolnrl}) is more accurate than the forward Euler
 method (\ref{eqn:intro:euler}), since it depends only on the value of the
 membrane potential, not the derivative of $m$.
 
