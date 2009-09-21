@@ -176,8 +176,9 @@ The two variables $m$ and $h$ would both satisfy a differential equation such as
 \label{eqn:intro:math:dmdt}
 \end{equation}
 where $\alpha_{m}$ and $\beta_{m}$ are functions of $v\,\left(=V-V_{Na}\right)$.
-As an activation $m$, $\alpha_{m}$ and $\beta_{m}$ are such that $m$ is
-initially small but increases with the potential.
+As $m$ is an activation, $\alpha_{m}$ and $\beta_{m}$ are such that $m$ is
+initially small but increases with the potential allowing current to flow within
+the channel.
 As $h$ is an inactivation, $\alpha_{h}$ and $\beta_{h}$ give an initially high
 value of $h$ that then decays, inactivating the channel.
 
@@ -192,7 +193,7 @@ observed in voltage clamp experiments.
 It is interesting to note that when the structure of \ii{Na}\ was examined in
 detail, it was discovered that the channel has three structures which open to
 allow current to flow.
-A second structure, the `ball and chain' then acts to close the channel.
+A second type of structure, the `ball and chain', then acts to close the channel.
 
 Many different channels are modelled as Hodgkin--Huxley channels.
 Different channels have different activation and inactivation variables.
@@ -228,7 +229,7 @@ the transition between states is controlled by random chance.
 
 \subsection{Selected Myocyte Models}
 
-There are tens, perhaps hundreds, of myocyte models of varying complexity and
+There are many myocyte models of varying complexity and
 accuracy.
 There are relatively few models of atrial myocytes for human tissue.
 A brief description of the foremost two are given here, as well as a description
@@ -264,8 +265,8 @@ ultra-rapid delayed rectifier current, \ii{Kr}, the rapid delayed rectifier
 current, \ii{Ks}, the slow delayed rectifier current, \ii{Ca,L}, the L-type
 calcium current, \ii{b,Na}, the sodium background current and \ii{b,Ca}, the
 calcium background current.
-All the currents are time-dependent, except for the background currents which
-have constant conductance and \ii{K1}, which is voltage-dependent.
+All the currents are time-dependent and voltage, except for the background currents which
+have constant conductance and \ii{K1}, which is just voltage-dependent.
 There are also three pumps; \ii{NaK}, the sodium--potassium exchanger,
 \ii{NaCa}, the sodium--calcium exchanger and \ii{p,Ca}, the calcium pump.
 
@@ -303,30 +304,30 @@ ultra-rapid delayed rectifier current, \ii{Kr}, the rapid delayed rectifier
 current, \ii{Ks}, the slow delayed rectifier current, \ii{Ca,L}, the L-type
 calcium current, \ii{b,Na}, the sodium background current and \ii{b,Ca}, the
 calcium background current.
-All the currents are time-dependent, except for the background currents which
-have constant coductance and \ii{K1}, which is voltage-dependent.
+All the currents are time- and voltage-dependent, except for the background
+currents which have constant coductance and \ii{K1}, which is voltage-dependent.
 There are also three pumps; \ii{NaK}, the sodium--potassium exchanger,
 \ii{NaCa}, the sodium--calcium exchanger and \ii{p,Ca}, the calcium pump.
 
-The Nygren model is a biophysically detailed model, suitable for a variety of
-modelling tasks.
-It has more involved mathematics and requires more storage than the CRN model,
-making it less attractive for large-scale simulation.
+The Nygren model has more involved mathematics and requires more storage than
+the CRN model, making it less attractive for large-scale simulation.
 It is also interesting to note that the two models have very different
 AP morphologies, the reasons for which have been the subject of some
 research~\cite{Nygren2001,Syed2005,Cherry2008}.
 
 \subsubsection{The Fenton--Karma Model}
 
-The Fenton--Karma (FK) model~\cite{Fenton1998,Bueno-Orovio2008}\ is a
-phenomenological, or minimal variable, model of the ventricular action
+The Fenton--Karma (FK) model is a
+phenomenological, minimal variable, model of the ventricular action
 potential.
 The goal of the FK model is to accurately reproduce the AP profile and
 restitution properties of myocytes as well as short-term memory effects.
-The original FK model has 3 variables, a fourth was added recently.
+The original FK model has 3 variables, a fourth was added
+recently~\cite{Fenton1998,Bueno-Orovio2008}.
 
 The FK model tracks 4 state variables.
-These have no real physiological analogues.
+These have no true physiological analogues, but certain correlations can be
+drawn.
 \begin{equation}
 \label{eqn:intro:math:fko}
 \ii{ion} = \ii{fi} + \ii{si} + \ii{so}
@@ -528,7 +529,6 @@ Other schemes can use different stencils.
 
 
 \subsubsection{The Rush--Larsen Technique}
-
 
 The Rush--Larsen technique~\cite{RL78}\ is a specialised way of solving
 equations such as (\ref{eqn:intro:math:dmdt}) for the gating parameters.
