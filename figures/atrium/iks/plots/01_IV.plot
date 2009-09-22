@@ -14,7 +14,7 @@ unset xtics
 unset ytics
 plot sin(x)
 # plot iv curves
-set label 1 "(b)"
+set label 1 "(a)"
 set zeroaxis ls 1
 set xtics axis nomirror
 set ytics axis nomirror 40
@@ -33,7 +33,7 @@ set datafile separator ","
 set yrange [-60:160]
 # exp con
 set xrange [0:4.5]
-set label 1 "(c)"
+set label 1 "(b)"
 plot    "01_IV/figure_1_exp_con_trace.csv" u 1:2 w l ls 5 , \
         "01_IV/figure_1_exp_con_trace.csv" u 3:4 w l ls 5 , \
         "01_IV/figure_1_exp_con_trace.csv" u 5:6 w l ls 5 , \
@@ -42,7 +42,7 @@ plot    "01_IV/figure_1_exp_con_trace.csv" u 1:2 w l ls 5 , \
         "01_IV/figure_1_exp_con_trace.csv" u 11:12 w l ls 5
 # model con
 set xrange [0:4500]
-set label 1 "(d)"
+set label 1 "(c)"
 plot    "01_IV/figure_1_mod_con_trace.csv" u 1:2 w l ls 5 , \
         "01_IV/figure_1_mod_con_trace.csv" u 3:4 w l ls 5 , \
         "01_IV/figure_1_mod_con_trace.csv" u 5:6 w l ls 5 , \
@@ -64,7 +64,7 @@ plot    "01_IV/figure_1_mod_con_trace.csv" u 1:2 w l ls 5 , \
         "01_IV/figure_1_exp_con_trace.csv" u 37:38 w l ls 5
 # exp mut
 set xrange [0:4.5]
-set label 1 "(e)"
+set label 1 "(d)"
 plot    "01_IV/figure_1_exp_mut_trace.csv" u 1:2 w l ls 5 , \
         "01_IV/figure_1_exp_mut_trace.csv" u 3:4 w l ls 5 , \
         "01_IV/figure_1_exp_mut_trace.csv" u 5:6 w l ls 5 , \
@@ -84,7 +84,7 @@ plot    "01_IV/figure_1_exp_mut_trace.csv" u 1:2 w l ls 5 , \
         "01_IV/figure_1_exp_mut_trace.csv" u 33:34 w l ls 5 
 # mod mut
 set xrange [0:4500]
-set label 1 "(f)"
+set label 1 "(e)"
 plot    "01_IV/figure_1_mod_mut.csv" u 1:2 w l ls 5 , \
         "01_IV/figure_1_mod_mut.csv" u 3:4 w l ls 5 , \
         "01_IV/figure_1_mod_mut.csv" u 5:6 w l ls 5 , \
