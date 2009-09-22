@@ -114,7 +114,7 @@ file 'contents.html' => 'README.md' do |t|
 end
 
 task :count do
-  count = `find . -name '*.tex' | xargs TeXcount.pl -brief`
+  count = `find . -name '*.tex' | xargs texcount.pl -brief`
   if count =~ /(\d+)\+(\d+)\+(\d+) \([^)]+\) TOTAL COUNT/
     puts "Words in text:     #{$1}"
     puts "Words in headers:  #{$2}"
