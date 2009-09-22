@@ -9,7 +9,7 @@ on open standards, or simple binary formats.  The output formats provided by the
 various driver programs are also in simple binary or ASCII formats, to allow
 them to be easily visualized with both commercial and open source visualisation
 tools.  The results presented later in this chapter were performed on desktop
-computers with a Althon X2 3600+ chip and 1 GB RAM and on Horace, the local HPC
+computers with a Athlon X2 3600+ chip and 1 GB RAM and on Horace, the local HPC
 facility.  Horace has 24 compute nodes, each one consisting of four Intel Itanium2
 Montecito Dual Core 1.6GHz processors, 16GB RAM and up to 512GB of local scratch
 space.  The nodes are connected by a high speed Quadrics QsNetII
@@ -20,7 +20,7 @@ and for both the MPI and OpenMP parallelization libraries.
 
 The experimental protocol drivers and the cellular models were implemented in
 the C programming language.
-Much of the supporting code and supplementary tools was implemented in the ruby
+Much of the supporting code and supplementary tools were implemented in the ruby
 programming language~\cite{Flanagan2008}.
 The cellular models currently implemented are based on the Hodgkin-Huxley
 formalism, although there is no fundamental reason why a Markov chain based
@@ -191,7 +191,7 @@ multiple core desktops.
 In addition, for those systems on which running in parallel is not desirable,
 the same code can be compiled serially.
 Whilst an MPI implementation would allow more processors to be used to execute a
-task, in general 8 cores of horace were found to be sufficient for running most
+task, in general 8 cores of Horace were found to be sufficient for running most
 jobs and in compiling for MPI some of the flexibility would be lost from the
 library.
 
@@ -220,14 +220,14 @@ Several of the techniques used are presented here.
 
 The library has been compiled using the GNU C compiler (gcc)~\cite{gcc}\ and the
 Intel C compiler (icc)~\cite{icc}.
-All three have OpenMP implementations available and all three are capable of
+Both have OpenMP implementations available and all three are capable of
 performing a number of optimisations, controlled via flags.
 The most important
 aspect of the
 optimisations is that they should not alter the behaviour of the floating point
 handling, as this could have significant impact on the final result computed.
 Despite this caveat, the results of applying certain optimisation flags can be
-quite significant.
+quite significant, speeding execution by several percent.
 
 \subsubsection{Caching of Computed Values}
 
@@ -357,15 +357,15 @@ If there are two such values within the range, the result of the algorithm is
 unpredictable.
 In practice, this constraint is quite easy to work within.
 
-\subsubsection{Adaptive Step}
+\subsubsection{Adaptive Step for Restitution Tracking}
 
 Adaptive step mechanisms are employed in the library when there is a need to
 provide output over a wide range of times, when the slope of the graph is not
 constant over the range to be graphed.  This is very common in the modelling of
 cardiac cells, which often show an exponential dependence of various parameters
 on the  stimulus interval, and are graphed over a range of hundreds or thousands
-of milliseconds.  A step that sufficient to track the curve at the upper limits
-of the range will completely fail at the steeper slow of the lower limits,
+of milliseconds.  A step sufficient to track the curve at the upper limits
+of the range will completely fail at the steeper slope of the lower limits,
 whilst a step that will track the curve for the lower limits will result in
 unnecessary work being done at the upper end of the range.  To alleviate this
 problem, an adaptive stepping mechanism is used, as shown in the pseudo-code
@@ -491,7 +491,7 @@ experiments~\cite{Boyett1978,Taggart1996}.  The APD\emph{r} is used
 as a measure of how the cell responds to stimulations at different rates.
 
 A single cell protocol to evaluate the ADP\emph{r}\ curve as results gained are
-similar to strand protocols~\cite{Xie2002,Decker2009}.
+similar to strand protocols~\cite{Xie2002,Decker2009}\ with much less effort .
 The cellular model is paced $N-1$\ times with a stimulus close to the threshold
 value at a given stimulus interval, S1.  At this point, the state is saved for the
 paced cells.  The $N$th S1 stimulus is then given, followed by the S2 after a
@@ -504,7 +504,7 @@ the \apdr[50]\ restitution can be calculated.
 \subsection{Effective Refractory Period Restitution}
 
 The ERP\emph{r} is calculated by the library using standard experimental
-protocolsi~\cite{Workman2001,Kharche2008}.
+protocols~\cite{Workman2001,Kharche2008}.
 The ERP is defined as the shortest possible stimulus interval, S2, which still
 allows a successful AP to be elicited after pacing $N$ times at a pacing
 interval S1.  A successful AP is defined as an AP which has an amplitude
@@ -567,7 +567,7 @@ right.
 The stimulus has been delivered in the vulnerable window.
 The stimulus can propagate only back along the strand.
 In a ring, this would be re--entrant.
-(b) Bidirectional Conduction.
+(c) Bidirectional Conduction.
 The stimulus is delivered too late.
 The bidirectional waves will anihilate each other.
 }
@@ -627,7 +627,7 @@ test stimulus is delivered $\Delta t$\ seconds after the 100th node depolarises
 to a group of 4 nodes centred on the 100th node.  After the test stimulus is
 delivered the 4 nodes are tested for the excitation condition, attaining a
 membrane potential of \mv{-20}.  If it is successful, the current stimulus
-strength will assigned to the high guess.  If not, to the low guess.  In
+strength will be assigned to the high guess.  If not, to the low guess.  In
 addition, the simulation is continued to evaluate whether bidirectional,
 unidirectional or no conduction of the excitation wave is evoked by the
 stimulus.  The strand is then reset to the cached state and the new stimulus
@@ -929,6 +929,27 @@ At short DI (below \ms{100}) the two curves rejoin each other.
 }
 \end{figure}
 
+\begin{figure}
+\begin{center}
+\includegraphics{figures/toolkit/anion/figures/03_ERPR}
+\end{center}
+\caption[Anion Current ERPr and CVr] {
+\label{fig:toolkit:anion:erpr}
+(a)
+ERP\emph{r} curves for the CRN model in control (black) and anion
+(red) cases.
+The addition of the \ii{ANION} current changes the behaviour of the cell from a long
+and flat plateau region followed by a relatively sharp decrease into a more
+constant decline.
+(b)
+CV\emph{r}\ curves for the CRN model in control and anion cases.
+ The CV\emph{r}\ curves are relatively flat for both cases over the range of
+\msrange{500}{1000}, before they both increase rapidly in steepness until the minimum
+stimulus interval is reached at approximately \ms{320} for both control and anion.
+The CV is higher at longer stimulus intervals for the anion case, before it
+crosses the control curve at an approximate stimulus interval of \ms{460}.
+}
+\end{figure}
 
 The ERP\emph{r} curves produced by the control and anion cases are shown in
 figure~\ref{fig:toolkit:anion:erpr}(a).
@@ -968,28 +989,6 @@ before conduction block.
 
 \begin{figure}
 \begin{center}
-\includegraphics{figures/toolkit/anion/figures/03_ERPR}
-\end{center}
-\caption[Anion Current ERPr and CVr] {
-\label{fig:toolkit:anion:erpr}
-(a)
-ERP\emph{r} curves for the CRN model in control (black) and anion
-(red) cases.
-The addition of the \ii{ANION} current changes the behaviour of the cell from a long
-and flat plateau region followed by a relatively sharp decrease into a more
-constant decline.
-(b)
-CV\emph{r}\ curves for the CRN model in control and anion cases.
- The CV\emph{r}\ curves are relatively flat for both cases over the range of
-\msrange{500}{1000}, before they both increase rapidly in steepness until the minimum
-stimulus interval is reached at approximately \ms{320} for both control and anion.
-The CV is higher at longer stimulus intervals for the anion case, before it
-crosses the control curve at an approximate stimulus interval of \ms{460}.
-}
-\end{figure}
-
-\begin{figure}
-\begin{center}
 \includegraphics{figures/toolkit/anion/figures/04_ToE}
 \end{center}
 \caption[Anion Sensitive Threshold Of Excitation and \ii{Na} activation]{
@@ -1005,14 +1004,13 @@ Until this critical point is reached, the threshold of excitation is
 consistently lower for cells with \ii{ANION} compared with control.
 (b)
 Maximal activation of the fast sodium current, \ii{Na}, as DI is decreased.
-The fast sodium current consistently activates to a
-greater degree in control cases than in anion cases.
+The fast sodium current consistently activates to a greater degree in control
+cases than in anion cases.
 Note also the rate
 dependent nature of the effect, with the greatest difference observed at S1
 intervals of \msrange{150}{200}.
 }
 \end{figure}
-
 
 The threshold of excitation, shown in figure~\ref{fig:toolkit:anion:toe}(a), shows that
 \ii{ANION} reduces the minimum stimulus current by approximately \unit{0.2}{nS},
@@ -1031,9 +1029,7 @@ The presence of \ii{ANION}\ consistently reduces the maximal activation of \ii{N
 At long DI, greater than \ms{400}, the reduction is 3\%, increasing to almost
 twice that in the range of \msrange{150}{200}.
 Both curves rapidly decrease to almost no \ii{Na}\ activation at an DI of
-\ms{00}\ but the anion case starts this descent first.
-
-
+\ms{0}\ but the anion case starts this descent first.
 \begin{figure}
 \begin{center}
 \includegraphics{figures/toolkit/anion/twod_traces}
@@ -1055,7 +1051,6 @@ Lifespan in \ii{ANION}\ is relatively constant at around \ms{1600}\ whilst
 control lifespan fluctuates considerably.
 }
 \end{figure}
-
 Spiral waves were induced in a square sheet.
 Representative plots of the
 membrane potential over the whole sheet, produced as the simulation was ongoing,
@@ -1226,8 +1221,9 @@ The ERP\emph{r} was calculated as described previously, with 10 S1 delivered at
 the given pacing rate and then a final S2 stimulus was used to determine the ERP
 after Workman et al.~\cite{Workman2001}.
 The VW and the CV\emph{r} were determined for control,
-Bosch and Workman conditions, for each of the three atrial cell types classified by
-Seemann et al.. There were therefore nine 1D strand models tested.  The strand
+Bosch and Workman conditions, for each of the three atrial cell types
+considered.
+There were therefore nine 1D strand models tested.  The strand
 models were each 200 nodes long, with a spatial resolution of \mm{0.1}.  The
 diffusion constant used for all simulations was set to
 $0.03125\,\text{mm}^{\text{2}}\,\text{ms}^{\text{-1}}$~\cite{Biktasheva2005},
@@ -1354,13 +1350,18 @@ and Workman cases respectively.
 \caption[AFER CVr curves and VWs]{
 \label{fig:toolkit:afer:cvr}
 (a) 
-CV\emph{r}\ curves for Control (black), Bosch (Red) and Workman (Blue) tissues.
+CV\emph{r}\ curves for Control (black), Bosch (red) and Workman (blue) tissues.
 AM/PM cells are indicated by solid lines, CT cells by dashed.
 In all cases, the CT cells show a higher conduction velocity at long
 ($>$\ms{600}) S2 intervals, but AM/PM muscles allow faster conduction at lower
 conduction intervals.
 AF cases show a reduced conduction velocity in all instances and support a
 higher pacing rate via reduced minimal interval.
+(b) Vulnerability Window for Control (black), Bosch (red) and Workman (blue).
+AM/PM cell types are shown solid, CT cells partially shaded.
+The VW is reduced for the AF remodelled cases, due to a reduced excitability.
+The presence of the remodelling also reverses the difference in VW between cell
+types.
 }
 \end{figure}
 
@@ -1454,7 +1455,7 @@ would be needed to elucidate the true effects of the heterogeneity.
 
 \section{Discussion and Conclusions}
 
-A cardiac simulation library has been has been constructed.
+A cardiac simulation library has been constructed.
 This includes implementations of a wide range of experimental protocols used to
 classify and quantify the influence on electrophysiology of ion channel changes.
 The library of tools was then used in two electrophysiological studies of atrial
@@ -1493,8 +1494,8 @@ found time.
 The toolkit compares well with many existing frameworks.
 COR has many more cells available for use through the CellML repository and
 offers an easy way to graph the internal properties of the cell.
-Like the library developed here, COR is limited to one OS, windows in the case
-of the COR.
+Like the library developed here, COR is limited to one OS, which is Microsoft
+Windows for COR.
 COR has no inbuilt experimental protocols however.
 CMISS lacks experimental protocols and is hard to script to use automatically.
 It does offer much more sophisticated visualisation than the toolkit here, and
