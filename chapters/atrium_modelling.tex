@@ -89,11 +89,12 @@ generation model. It has 21 state variables, representing ionic gating activatio
 and inactivations and intracellular concentrations of ionic species.  In the
 model, the total current, \ii{ion} is made up of the contributions of numerous
 ion channels and exchangers.
-\begin{equation}
+\begin{align}
 \label{atrium:crn}
 \ii{ion} = \ii{Na} + \ii{K1} + \ii{to} + \ii{Kur} + \ii{Ks} + \ii{Kr} +
-\ii{Ca,L} + \ii{p,Ca} + \ii{NaK} + \ii{NaCa} + \ii{b,Na} + \ii{b,Ca}
-\end{equation}
+\ii{Ca,L} \nonumber \\
++ \ii{p,Ca} + \ii{NaK} + \ii{NaCa} + \ii{b,Na} + \ii{b,Ca}
+\end{align}
 where \ii{Na}, \ii{K1}, \ii{to}, \ii{Kur}, \ii{Ks}, \ii{Kr}, \ii{Ca,L},
 \ii{p,Ca}, \ii{b,Na} and \ii{b,Ca}\ represent ionic currents and \ii{NaK}\ and
 \ii{NaCa}\ are ion exchangers.  As a second generation model, the CRN model also
@@ -216,7 +217,7 @@ write
 where $\mathbf{I}$\ is the identity matrix, and all other symbols are as defined
 previously.
 The directions of preferential conduction for the atrial geometry used in the
-study were described by a pair of angles $\theta$\ and $\phi$\ representing the
+study were described by a pair of angles $\theta$ and $\phi$ representing the
 orientation of the unit vector $\mathbf{f}$\ at each point in spherical polar
 co-ordinates.
 In cells with no assigned preferential conduction direction, the components of
@@ -234,9 +235,9 @@ which is the diffusion tensor for isotropic conduction.
 
 The fibre orientations for the anatomical geometry used in this study are
 defined in two files.
-These two files contain the theta and phi components of the fibre vectors
+These two files contain the $\theta$ and $\phi$ components of the fibre vectors
 between $0$ and $\pi$, discretised in 255 steps.
-The relationship between the angles theta and phi and the unit vector of fibre
+The relationship between the angles $\theta$ and $\phi$ and the unit vector of fibre
 direction, $\mathbf{f}$, are shown in
 figure~\ref{fig:atrium:structure:unit_vector}.
 \begin{figure}
@@ -252,7 +253,7 @@ The angle $\phi$ is the angle of rotation of $\mathbf{f}$ around the $z$ axis in
 the $x\text{--}y$ plane.
 }
 \end{figure}
-To convert theta and phi to the unit vector $\mathbf{f}$ we
+To convert $\theta$ and $\phi$ to the unit vector $\mathbf{f}$ we
 use~\cite{Misner1973},
 \begin{subequations}\label{eqn:atrium:structure:anglestof}
 \begin{align}
@@ -302,8 +303,6 @@ array.
 A snapshot of the trans-membrane potentials at each of the active node sites was
 output every \ms{1}\ of simulated time.
 Simulation of \unit{1}{s}\ of atrial activity took 3.4 hours.
-A parallel fraction of XXXX was attained, indicating that almost all of the
-workload was effectively distributed over the 8 cores.
 
 \section{Validation of the Model}
 
@@ -334,8 +333,9 @@ Excitation is initiated in the sino-atrial node.
 The excitation wave is rapidly conducted along the muscle bundles which comprise
 the crista terminalis and the pectinate muscles towards the base of the atrium
 and the atrio-ventricular ring.
-The influence of the crista terminalis and the pectinate muscle bundles is
-clearly obvious on the epicardial surface of the right atrium.
+The influence of the preferential conduction along the crista terminalis and
+pectinate muscle bundles is obvious on the epicardial surface of the right
+atrium.
 The presence of the muscle bundles on the endocardial surface causes earlier
 activation of the epicardial surface.
 The left atrium is activated first by the Bachmann bundle.
@@ -423,10 +423,13 @@ measured clinically for all times and within one SD of the mean for all
 quantities except the left atrial activation time.
 
 Conduction velocities for the classes of tissue present in the model have been
-measured experimentally as \unit{0.68}{m/s}---\unit{1.03}{m/s}\ for atrial wall
-muscle~\cite{Hansson1998}, \unit{0.7}{m/s}---\unit{1.3}{m/s}\ for crista
+measured experimentally from $0.68\,\text{ms}^{\text{-1}}$ to
+$1.03\,\text{ms}^{\text{-1}}$ for atrial wall
+muscle~\cite{Hansson1998},
+from $0.7\,\text{ms}^{\text{-1}}$ to 
+$1.3\,\text{ms}^{\text{-1}}$ for crista
 terminalis~\cite{Boineau1988} in the human atrium.
-Conduction velocity in the pectinate muscles or bachmann bundle has not been
+Conduction velocity in the pectinate muscles or Bachmann bundle has not been
 measured experimentally in human studies.
 The measured conduction velocities are within the experimental limits, providing
 further confirmation.
@@ -549,32 +552,30 @@ the $\alpha$-subunit of the \ii{Ks}\ channel.
 The gene was transfected into COS7 cells along with the second component of
 the $\alpha$-subunit, KCNE1, in both normal (WT) and mutated type (MT).
 The transfected cells were used to perform voltage clamp experiments.
-The clamp protocol used is shown in figure~\ref{atrium:iks:vc},A.
-This is the experimental protocol used by Chen et al.~\cite{Chen2003}.
-The cell was held at a holding potential of \mv{80} for \unit{0.5}{s}\ before
+The clamp protocol used by Chen et al.~\cite{Chen2003} was as follows:
+the cell was held at a holding potential of \mv{80} for \unit{0.5}{s}\ before
 being held at \mv{10}\ steps between \mv{-130}\ to \mv{50}\ for \unit{3}{s}.
 The voltage steps were followed by a \mv{-40}\ holding potential, applied for
 \unit{1}{s}.
 The values of \ii{Ks} at the end of the step voltages were plotted against the
 step voltages to determine  I-V relationships for WT
-and MT cells, shown in figure~\ref{atrium:iks:vc},B (points with errors) and
-current traces, shown in figure~\ref{atrium:iks:vc},C and D for WT and MT,
+and MT cells, shown in figure~\ref{atrium:iks:vc}(a) (points with errors) and
+current traces, shown in figure~\ref{atrium:iks:vc}(b) and (d) for WT and MT,
 respectively.
 
 \begin{figure}
 \includegraphics{figures/atrium/iks/figures/01_IV}
 \caption[KCNQ1 mutation in IKs, experimental data]{
 \label{atrium:iks:vc}
-(a) Voltage clamp protocol used by Chen et al.~\cite{Chen2003}.
-(b) Experimental WT (black, closed circles) and MT (red, open circles)
-I-V relationships recorded by Chen et al.  Simulated I-V curves for WT (black
+(a) Experimental WT (black, closed circles) and MT (red, open circles)
+I-V relationships recorded by Chen et al~\cite{Chen2003}.  Simulated I-V curves for WT (black
 lines) and MT (red lines).  Modelled curves are scaled to experimental points
 based on the WT current density at \mv{50}.
-(c) Experimental current traces for WT.
-(d) Simulated current traces for WT.
-(e) Experimental current traces for MT.  Note the instantaneous
+(b) Experimental current traces for WT.
+(c) Simulated current traces for WT.
+(d) Experimental current traces for MT.  Note the instantaneous
 activation, and the significant inward current at negative clamp potentials.
-(f) Simulated current traces for MT.
+(e) Simulated current traces for MT.
 }
 \end{figure}
 
@@ -598,15 +599,14 @@ The reversal potential was estimated from the experimental I-V relationships to 
 \mv{-76.3}.
 The inclusion of the $\varphi$\ parameter allowed the simulation of several
 intermediate mutant states, representative of a heterozygous mutation.
-Setting $\varphi = 1$\ and following the voltage clamp protocol shown in panel (a)
-of figure~\ref{atrium:iks:vc}\ the I-V relationship of \ii{Ks}\ was simulated to
-provide a good match to experimental data shown as the lines in panel (b) of
+Setting $\varphi = 1$\ and following the voltage clamp protocol the I-V relationship of \ii{Ks}\ was simulated to
+provide a good match to experimental data, shown as the lines in panel (a) of
 figure~\ref{atrium:iks:vc}.
 Also shown are the simulated current traces elicited by the voltage clamp
-protocol in panels (d) and (f).
+protocol in panels (c) and (e).
 The non-gated leakage component of \iip{Ks}\ sufficiently accounts for the
 changed current density and kinetics.
-Note that in panel (b) the modelled current traces have been normalised by the
+Note that in panel (a) the modelled current traces have been normalised by the
 maximum current observed with a normal \ii{Ks}\ and the WT KCNQ1.
 The differing time-course of the currents are likely due to the different temperatures
 at which the simulations were performed.
@@ -970,9 +970,16 @@ tractable times on modern hardware.
 The model accurately reproduces the activation sequence of the healthy human
 atrium.
 Time to total activation and individual tissue conduction velocities both fall
-within experimental values.
+within experimental and clinical values.
 Thanks to the use of a biophysically detailed model of cellular action
 potential, the model can also be used to simulate pathological cases such as
 familial atrial fibrillation.
 
+The S140G mutation in the KCNQ1 protein causes a dramatic change in the
+electrophysiological behaviours of the \ii{Ks}\ rectifier current.
+The up-regulation of the \ii{Ks}\ channel causes a large reduction in the \apd.
+This then influences the rest of the electrophysiology, effecting all aspects of
+the cellular electrical behaviour.
+It is very easy to see how the mutation is associated with a prevalence of
+atrial fibrillation in families which have inherited the gene.
 
