@@ -453,6 +453,14 @@ of \degreetitle.
         \titlep
         \ifsigpage\signaturepage\fi
         \tableofcontents
+
+        \begin{center}
+        \begin{minipage}{4in}
+                \parindent=0pt
+        Word Count: 44224
+                \par
+        \end{minipage}%
+        \end{center}%
         \newpage
         \iftablespage
                 \addvspace{10pt}
