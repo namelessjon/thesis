@@ -202,10 +202,10 @@ These variables are modulated by different $\alpha$ and $\beta$ equations.
 \subsubsection{Markov Chain Descriptions Of Ion Channels}
 
 Markov chain models of ion channels~\cite{Balser1990,Clancy1999,Silva2005}\
-emerged when more detailed information on ion channel behaviour became
+emerged when more detailed information on ion channels became
 available.
 This included single channel recordings rather than whole cell recordings.
-Under such conditions, as well as in certain pathological states, the
+In such conditions, as well as in certain pathological states, the
 Hodgkin--Huxley descriptions of the cells broke down.
 
 In a markov chain model, instead of having one or more activations or
@@ -251,11 +251,12 @@ also tracks the internal concentration of potassium, sodium and calcium ions.
 The external concentrations of ions are assumed constant.
 There are also state parameters representing the calcium stored in internal
 structures, such as the sarcoplasmic reticulum.
-\begin{equation}
+\begin{align}
 \label{eqn:intro:math:crn}
-\ii{ion} = \ii{Na} + \ii{K1} + \ii{to} + \ii{Kur} + \ii{Kr} + \ii{Ks} +
-\ii{Ca,L} + \ii{b,Na} + \ii{b,Ca} + \ii{NaK} + \ii{NaCa} + \ii{p,Ca}
-\end{equation}
+\ii{ion} = \ii{Na} + \ii{K1} + \ii{to} + \ii{Kur} + \ii{Kr} + \ii{Ks} + 
+\ii{Ca,L} \nonumber \\
++ \ii{b,Na} + \ii{b,Ca} + \ii{NaK} + \ii{NaCa} + \ii{p,Ca}
+\end{align}
 The CRN has 12 transmembrane currents and pumps which contribute to \ii{ion},
 equation~(\ref{eqn:intro:math:crn}), and 4 currents and
 pumps which just interact with the internal calcium stores.
@@ -290,11 +291,12 @@ They model also tracks concentrations of ions, both internally and in
 extracellular cleft spaces, to represent local ion fluctuations.
 Like the CRN model, there are also variables to represent internal calcium
 handling.
-\begin{equation}
+\begin{align}
 \label{eqn:intro:math:nygren}
-\ii{ion} = \ii{Na} + \ii{K1} + \ii{to} + \ii{Kur} + \ii{Kr} + \ii{Ks} +
-\ii{Ca,L} + \ii{b,Na} + \ii{b,Ca} + \ii{NaK} + \ii{NaCa} + \ii{p,Ca}
-\end{equation}
+\ii{ion} = \ii{Na} + \ii{K1} + \ii{to} + \ii{Kur} + \ii{Kr} + \ii{Ks} + 
+\ii{Ca,L} + \nonumber \\
+\ii{b,Na} + \ii{b,Ca} + \ii{NaK} + \ii{NaCa} + \ii{p,Ca}
+\end{align}
 The Nygren model has 12 transmembrane currents and pumps which contribute to \ii{ion},
 equation~(\ref{eqn:intro:math:nygren}), and 4 currents and
 pumps which just interact with the internal calcium stores.
