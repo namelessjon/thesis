@@ -179,7 +179,7 @@ vector of the potentials of the $n$ triangles and $\mathbf{B}$ is a column
 vector of the infinite medium potentials at the centres of the triangles of the
 surface.
 
-Using a multiple sufrace generalisation of Green's theorm, equation
+Using a multiple surface generalisation of Green's theorm, equation
 (\ref{eqn:bsp:discretefinal}) can be extended  to allow for multiple
 inhomogeneities, derivations for which can be found
 in~\cite{Barr1966,Gulrajani1983,Gulrajani1989}.
@@ -198,7 +198,7 @@ will necessarily be singular, due to the physical nature of the problem.
 This was noted by Salu~\cite{Salu1980}\ who proposed a solution which takes
 advantage of the physical properties of the system (an alternative method of
 removing the singularity of the system was proposed by Lynn and Timlake, the
-deflation method).
+deflation method as by employed in~\cite{Barnard1967}).
 Salu noted that, experimentally, the potential $\phi$ can only be determined up to
 an additive constant.
 Therefore $\phi$ can be taken as $0$ at arbitrarily chosen point, without
@@ -251,7 +251,7 @@ Whenever (\ref{eqn:bsp:salulambdaB}) is not fulfilled, due to numerical errors
 in the discritisation and creation of $\textbf{A}$ or in the calculation of
 $\textbf{B}$, the addition of the $\alpha$ term ensures that
 (\ref{eqn:bsp:salufinal}) has a consistent solution.
-It is important to note that consistent does not mean necessarily mean accurate
+It is important to note that consistent does not necessarily mean accurate
 or correct.
 The addition of the $\alpha$ term merely ensures that a solution will exist.
 Due care must still be taken with the construction of each $A_{ij}$ term and
@@ -355,7 +355,7 @@ Combining these two equations leads to
 \end{equation}
 where $\sigma = \sigma_i + \sigma_e$, the bulk conductivity of the cardiac
 tissue.
-Equation (\ref{eqn:bsp:poissonrep}) is of the form of poisson's equation.
+Equation (\ref{eqn:bsp:poissonrep}) is of the form of Poisson's equation.
 The equation can be interpreted to indicate that the term on the left hand side
 is the source of the extracellular potentials.
 By comparing (\ref{eqn:bsp:poissonrep}) with (\ref{eqn:intro:forward:poisson2}) it is
@@ -372,7 +372,7 @@ It was created by Weixue and Ling~\cite{Weixue1993,Weixue1996}\ and has been
 used in numerous simulations.
 The geometry was derived from CT images of the human torso.
 The geometry consists of 412 vertices which were linked by 820 triangular
-elements for the thorax and 297 vertices for the for the lungs which were linked
+elements for the thorax and 297 vertices for the lungs which were linked
 by 586 triangles.
 In addition, a geometric representation of the ventricular blood masses was
 constructed based on the ventricular mesh from the Weixue and Ling geometry.
@@ -770,7 +770,7 @@ It is inverted in leads aVR and aVL.
 In general, the presence of the lungs appears to amplify the signal compared to
 the simulations without lungs.
 
-The atrial repolarization wave, the $\text{T}_{\text{P}}$ wave, is easily
+The $\text{T}_{\text{P}}$ wave is
 visible in most leads, though in the leads which did not attain very high
 potentials (I, aVL, $\text{V}_{\text{1--3}}$) it is very flat.
 In all the leads in which it appears, it is inverted compared to the P-wave in
@@ -803,10 +803,9 @@ It is inverted in leads aVR and aVL.
 The presence of the bloodmasses generally acts to reduce the amplitudes of the
 P-wave ECG.
 
-The atrial repolarization wave, the $\text{T}_{\text{P}}$ wave, is easily
+The $\text{T}_{\text{P}}$ wave is
 visible in most leads, though in the leads which did not attain very high
-potentials (I, aVL, $\text{V}_{\text{1--3}}$) it is very flat--In lead
-$\text{V}_{\text{2}}$ it is so flat it is almost impossible to see.
+potentials (I, aVL, $\text{V}_{\text{1--3}}$) it is very flat.
 In all the leads in which it appears, it is inverted compared to the P-wave in
 that lead and has a lower (less than 50\% in all leads) amplitude.
 It appears to start immediately after the P-wave in all leads.
@@ -839,14 +838,14 @@ This results in an ECG which generally has lesser amplitudes than those observed
 in the simulations where only the lungs are present, though greater than the
 magnitudes where there is just the torso.
 
-The atrial repolarization wave, the $\text{T}_{\text{P}}$ wave, is easily
-visible in most leads, though in the leads which did not attain very high
-potentials (I, aVL, $\text{V}_{\text{1--3}}$) it is very flat--In lead
-$\text{V}_{\text{2}}$ it is so flat it is almost impossible to see.
+The $\text{T}_{\text{P}}$ wave is visible in
+most leads, though in the leads which did not attain very high potentials (I,
+aVL, $\text{V}_{\text{1--3}}$) it is very flat.
 In all the leads in which it appears, it is inverted compared to the P-wave in
 that lead and has a lower (less than 50\% in all leads) amplitude.
 It appears to start immediately after the P-wave in all leads.
-The $\text{T}_{\text{P}}$ is broader than the P-wave in all leads.
+The $\text{T}_{\text{P}}$ is broader than the P-wave in all leads, corresponding
+to the lower speed of repolarization.
 
 A summary table of the maxima or minima of the leads is shown in
 table~\ref{tbl:bsp:ecg}.
@@ -947,7 +946,7 @@ figure~\ref{bsp:fig:mirvis_compare}.
 They presented a `typical case' from their study of 40 individuals.
 The BSPM generated by the combined atrial and torso model shows quite good
 agreement with the experimental BSPM recorded by Mirvis.
-The BSPM stares off almost isopotential with a single positive peak.
+The BSPM starts off almost isopotential with a single positive peak.
 This then grows in both physical extent and magnitude, moving towards the middle
 of the precordial leads.
 At \ms{48}\ there are two distinct negative and positive regions, with a single
