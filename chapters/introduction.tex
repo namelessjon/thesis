@@ -1,0 +1,101 @@
+\chapter{Introduction}
+
+Cardiac disease is one of the biggest causes of death in the UK, causing over
+one third of all deaths.
+In addition to the deaths, many more people suffer the after effects of a heart
+attack or live with the difficulties caused by heart failure~\cite{bhf2008}.
+These figures are duplicated across much of the developed world.
+
+Mathematical modelling of the heart offers a way of gaining insight into the
+cardiac processes and the mechanisms of cardiac disease.
+It is a well established field of research with numerous international journals
+and conferences discussing the findings.
+Mathematical models allow physiological effects to be dissected and quantified
+in ways that can be difficult for in vivo and in vitro experiments.
+This can be used to inform both further experiments and clinical diagnosis and
+treatment.
+
+Mathematical models exist for many different types of cardiac cells and
+cardiac tissue.
+Many studies of cardiac tissue focus on the ventricles, with atrial studies less
+common.
+This is in part because failure of the ventricles can have a much more serious
+impact, but in spite of this, the atria represent an interesting target to
+study.
+They have a complex electrophysiology and topology.
+
+This study therefore aims to construct a series of models and tools for studying
+the atria of the heart.
+This involves modelling the atria and their processes on a wide variety of scales,
+from the single cell to the whole atrium.
+To enhance the clinical relevance of the study, a model of the atrium sitting
+within the human torso will also be constructed.
+This will allow the P-wave ECG to be calculated, the first view many cardiac
+physicians will have of a failing atrium.
+The tools will then be used to study a variety of factors that influence atrial
+behaviour.
+
+\section{Motivations}
+
+\section{Aims}
+
+\section{Synopsis}
+
+This thesis consists of seven chapters.
+In these chapters, a general background of the subject is given, before more
+specific details of the toolkit developed are given.
+There is then a section of experimental work with single cell, 1D, 2D and 3D
+models.
+A model of the body surface potential is then developed before being used in
+experimental studies of the P-wave ECG.
+Finally, conclusions and future work are given.
+
+\paragraph{Chapter 1}: This chapter.
+A introduction to the motivations and aims of the thesis and a summary of the
+chapters contained within.
+
+\paragraph{Chapter 2}: The physiological and mathematical background needed to
+understand this thesis.
+A description of the heart, with emphasis on the atria, is given, from the micro to the macro scale.
+The normal functioning of the heart is described, both on cellular and whole
+organ levels.
+Mathematical models of cardiac tissue on all scales are introduced.
+This includes a brief history of model development and information on both the
+benefits and limitations of modelling.
+
+\paragraph{Chapter 3}: The development and components of a cardiac simulation
+toolkit.
+A description of the technology and techniques which have gone into the
+development of the cardiac simulation toolkit.
+Details are given of the experimental protocols modelled by the toolkit.
+The features offered by the toolkit are compared with the offerings of existing
+toolkits.
+
+\paragraph{Chapter 4}: Experimental studies in the atrium.
+The atrial model developed in the thesis is presented, along with validating
+information.
+Experimental studies are presented, using the toolkit and simplified
+versions of the whole atrium model.
+These studies include a familial gene mutation, atrial fibrillation induced
+remodelling and a novel current found in the human atrium.
+
+\paragraph{Chapter 5}: The body surface potential or forward problem.
+The mathematics of computing the body surface potential from the electrical
+potentials in the heart are given along with implementation details of the
+software used to solve them and the torso model used.
+The effects of internal inhomogeneities in the torso on the generated ECG are
+investigated.
+The generated ECGs are compared with clinical data from both twelve lead and
+body surface potential mapping.
+
+\paragraph{Chapter 6}: Applications of the forward problem.
+The body surface potential model is used in two clinical studies.
+The first uses the model to validate an existing algorithm for predicting the
+origin of focal tachycardia based on clinical data.
+The second uses the model to investigate the causes of a novel clinical
+phenomena, inverted P-waves at night.
+
+\paragraph{Chapter 7}: Discussions and Conclusions
+This includes a look to the future and the many avenues for future research
+offered by the toolkit and models developed in the thesis.
+
