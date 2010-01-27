@@ -1,5 +1,35 @@
 \chapter{Constructing a Cardiac Simulation Toolkit}
 
+The cardiac simulation toolkit was developed to provide a more systematic
+framework for exploring the properties of cardiac cell and tissue models.
+It does this through offering a uniform and simple cell interface, a series of
+standardised pacing protocols and facilities for two dimensional simulations.
+It is intended to be easy to script to make constructing more complex numerical
+experiments as easy as possible.
+
+Existing cardiac simulation toolkits offer graphical interfaces and require
+specification of the desired protocol through such interfaces.
+The toolkit instead has inbuilt knowledge of several simulation protocols.
+This ensures different investigations use the same protocols, allowing results
+to be compared more directly.
+In addition, by performing specific simulation protocols with a dedicated
+program, performance optimisations specific to a given protocol are possible.
+
+The toolkit proposed in this chapter allows many aspects of the simulation,
+including the parameters used in the model, to be specified on the commandline
+or via simple configuration files.
+By allowing such control potentially boring and time consuming investigations,
+such as investigating how a property varies with the alteration of a parameter
+or set of parameters, can be driven externally rather than via repeated manual
+alterations.
+This both reduces errors and increases productivity.
+
+The toolkit therefore offers an extensible environment for performing cardiac
+simulations.
+It has inbuilt knowledge of several experimental protocols.
+No existing simulation toolkit offers these features.
+
+
 \section{Simulation Environment}
 
 The simulation environment provided by the cardiac toolkit is intended to be as
