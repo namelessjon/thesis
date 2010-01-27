@@ -368,24 +368,105 @@ monodomain equations.
 The bidomain equation comes out of basic electromagnetic theory and several
 assumptions about the nature of cardiac tissue~\cite{Tung1978,Geselowitz1983}.
 \begin{enumerate}
-    \item The cardiac tissue contains two continuous, simply connected domains, the intracellular and extracellular domains.
+    \item The cardiac tissue contains two continuous, simply connected domains,
+    the intracellular and extracellular domains separated by the cell membrane.
     There is no detailed consideration of the fine points of geometry.
     \item The intra- and extracellular domains overlap and fill all of the cardiac muscle. Each point lies in both domains.
     \item Charge does not accumulate.
 \end{enumerate}
 
 The derivation, starting from Maxwell's Equations, is not that difficult to work
-through and it results in the bidomain equations:
+through.
+\begin{equation}
+\label{eqn:intro:math:maxwell}
+\nabla x \mathbf{E} + \mathbf{\dot{B}} = 0
+\end{equation}
+Treating the situation as quasi-static with no rapid changes of field, $\mathbf{\dot{B}} = 0$, and so
+\begin{equation}
+\label{eqn:intro:math:maxwellqs}
+\nabla x \mathbf{E} = 0
+\end{equation}
+In this situation, the electrical field, $\mathbf{E}$, can be written as the
+divergence of some scalar field, $u$:
+\begin{equation}
+\label{eqn:intro:math:electricfield}
+\mathbf{E} = - \nabla u
+\end{equation}
+The current which flows in the tissue, $\mathbf{J}$, is then given by the simple
+relationship
+\begin{equation}
+\label{eqn:intro:math:current}
+\mathbf{J} = \mathbf{M} \mathbf{E}
+\end{equation}
+where $\mathbf{M}$ is a tensor of the conductivities in the tissue.
+Substituting in (\ref{eqn:intro:math:electricfield}) and using the subscripts
+$i$ and $e$ to represent the intra- and extracellular domains, respectively,
+expressions for the current flow in each domain are
+\begin{subequations}
+\label{eqn:intro:math:currentsubs}
+\begin{align}
+\mathbf{J}_i &=& - \mathbf{M}_i \nabla u_i
+\label{eqn:intro:math:currenti}\\
+\mathbf{J}_e &=& - \mathbf{M}_e \nabla u_e
+\label{eqn:intro:math:currente}
+\end{align}
+\end{subequations}
+Since no charge accumulates (our third assumption), the amount of current
+entering a small volume, $\partial V$, must equal the amount of current leaving
+the small volume
+\begin{equation}
+\label{eqn:intro:math:currentvolumeinteg}
+\int_{\partial V} \left(\mathbf{J}_i + \mathbf{J}_e\right) \cdot d\mathbf{S} = 0
+\end{equation}
+The volume $V$ may be arbitrarily chosen and so using the divergence theorem
+\begin{equation}
+\label{eqn:intro:math:currentdiv}
+\nabla \cdot \left(\mathbf{J}_i + \mathbf{J}_e\right) = 0
+\end{equation}
+Substituting in the equations (\ref{eqn:intro:math:currenti}) and
+(\ref{eqn:intro:math:currente}) we obtain
+\begin{equation}
+\label{eqn:intro:math:currentdivsubst}
+\nabla \cdot \left(- \mathbf{M}_i \nabla u_i \right) + \nabla \cdot \left(-\mathbf{M}_e \nabla u_e \right) = 0
+\end{equation}
+Any current which flows between the two domains must cross the cell membrane, so
+\begin{equation}
+\label{eqn:intro:math:currentdivim}
+- \nabla \cdot \left(- \mathbf{M}_i \nabla u_i \right) = \nabla \cdot \left(-\mathbf{M}_e \nabla u_e \right) = I_m
+\end{equation}
+where $I_m$ is the transmembrane current.
+There is already an expression for $I_m$, given by (\ref{eqn:intro:math:basic}).
+This expression is per unit area of the cell surface, whereas we now want current per unit volume.
+We therefore introduce $\chi$, the ratio of the cell surface area to the cell volume and so
+\begin{equation}
+\label{eqn:intro:math:im}
+I_m = \chi \left(C_{m}\frac{dV_{m}}{dt} + I_{ion}\right)
+\end{equation}
+
+Combining (\ref{eqn:intro:math:currentdivsubst}),
+(\ref{eqn:intro:math:currentdivim}) and (\ref{eqn:intro:math:im}) produces
+\begin{subequations}
+\label{eqn:intro:math:bidom3}
+\begin{align}
+\nabla\cdot\left(\left(M_{e}\right)\nabla u_{e}\right) + \nabla\cdot\left(M_{i}\nabla u_{i}\right) &=& 0
+\label{eqn:intro:math:bidom31}\\
+\nabla\cdot\left(M_{i}\nabla u_{i}\right) &=& \chi \left(C_{m}\frac{dV_{m}}{dt} + I_{ion}\right)
+\label{eqn:intro:math:bidom32}
+\end{align}
+\end{subequations}
+Which is two equations in three unknowns.  However previously
+(\ref{eqn:intro:math:vm}) defined $u_i = V + u_e$ and so substituting and
+re-arranging, the bidomain equations are obtained
 \begin{subequations}
 \label{eqn:intro:math:bidom}
 \begin{align}
-\nabla\cdot\left(\left(M_{i}+M_{e}\right)\nabla u_{e}\right) + \nabla\cdot\left( M_{i}\nabla V_{m}\right) &=& 0
+\nabla\cdot\left(\left(\mathbf{M}_{i}+\mathbf{M}_{e}\right)\nabla u_{e}\right) + \nabla\cdot\left( \mathbf{M}_{i}\nabla V_{m}\right) &=& 0
 \label{eqn:intro:math:bidom1}\\
-\nabla\cdot\left(M_{i}\nabla V_{m}\right) + \nabla\cdot\left(M_{i}\nabla u_{e}\right) &=& \chi C_{m}\frac{dV_{m}}{dt} + \chi{I_{ion}}
+\nabla\cdot\left(\mathbf{M}_{i}\nabla V_{m}\right) + \nabla\cdot\left(\mathbf{M}_{i}\nabla u_{e}\right) &=& \chi \left(C_{m}\frac{dV_{m}}{dt} + I_{ion}\right)
 \label{eqn:intro:math:bidom2}
 \end{align}
 \end{subequations}
-where the subscript $i$ and $e$ refer to the intra- and extracellular quantities, $M$ is a matrix of conductivities, $\chi$ represents the surface-to-volume ratio of the cells and all other quantities are as defined previously.
+where all symbols are as defined previously.
 The bidomain equations are a coupled set of a parabolic and elliptic differential equation.
 
 Boundary conditions for the bidomain equations vary, though the most common ones are described here.
@@ -400,7 +481,7 @@ While the bidomain equations represent a good tool for modelling some of the com
 The monodomain equation is the result of one simplifying assumption made to the bidomain equations.
 For the monodomain equation, we assume that the anisotropy ratio, $\lambda$, is the same for the intra- and extra-cellular fluids at all points.
 \begin{equation}
-M_{i} = {\lambda}M_{e}
+\mathbf{M}_{i} = {\lambda}\mathbf{M}_{e}
 \label{eqn:intro:math:mratio}
 \end{equation}
 This assumption is not a very physiological one, but the simplification it
@@ -410,7 +491,7 @@ Substituting (\ref{eqn:intro:math:mratio}) into (\ref{eqn:intro:math:bidom1})
 and (\ref{eqn:intro:math:bidom2}) and rearranging reduces the pair of equations
 to one single equation for the membrane potential
 \begin{equation}
-\frac{\lambda}{1+\lambda}\nabla\cdot\left(M_{i}\nabla V_{m}\right) = \chi C_{m}\frac{dV_{m}}{dt} + \chi{I_{ion}}
+\frac{\lambda}{1+\lambda}\nabla\cdot\left(\mathbf{M}_{i}\nabla V_{m}\right) = \chi \left( C_{m}\frac{dV_{m}}{dt} + I_{ion}\right)
 \label{eqn:intro:math:mono}
 \end{equation}
 Typically, the factor of ${\lambda}/\left({1+\lambda}\right)$ is folded into
