@@ -379,9 +379,9 @@ through and it results in the bidomain equations:
 \begin{subequations}
 \label{eqn:intro:math:bidom}
 \begin{align}
-\underline{\nabla}\cdot\left(\left(M_{i}+M_{e})\right)\underline{\nabla}u_{e}\right) + \underline{\nabla}\cdot\left( M_{i}\underline{\nabla}V_{m}\right) &=& 0
+\nabla\cdot\left(\left(M_{i}+M_{e}\right)\nabla u_{e}\right) + \nabla\cdot\left( M_{i}\nabla V_{m}\right) &=& 0
 \label{eqn:intro:math:bidom1}\\
-\underline{\nabla}\cdot\left(M_{i}\underline{\nabla}V_{m}\right) + \underline{\nabla}\cdot\left(M_{i}\underline{\nabla}u_{e}\right) &=& \chi C_{m}\frac{dV_{m}}{dt} + \chi{I_{ion}}
+\nabla\cdot\left(M_{i}\nabla V_{m}\right) + \nabla\cdot\left(M_{i}\nabla u_{e}\right) &=& \chi C_{m}\frac{dV_{m}}{dt} + \chi{I_{ion}}
 \label{eqn:intro:math:bidom2}
 \end{align}
 \end{subequations}
@@ -410,7 +410,7 @@ Substituting (\ref{eqn:intro:math:mratio}) into (\ref{eqn:intro:math:bidom1})
 and (\ref{eqn:intro:math:bidom2}) and rearranging reduces the pair of equations
 to one single equation for the membrane potential
 \begin{equation}
-\frac{\lambda}{1+\lambda}\underline{\nabla}\cdot\left(M_{i}\underline{\nabla}V_{m}\right) = \chi C_{m}\frac{dV_{m}}{dt} + \chi{I_{ion}}
+\frac{\lambda}{1+\lambda}\nabla\cdot\left(M_{i}\nabla V_{m}\right) = \chi C_{m}\frac{dV_{m}}{dt} + \chi{I_{ion}}
 \label{eqn:intro:math:mono}
 \end{equation}
 Typically, the factor of ${\lambda}/\left({1+\lambda}\right)$ is folded into
