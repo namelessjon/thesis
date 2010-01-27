@@ -660,6 +660,15 @@ CV\emph{r}, SVW and the dynamic behaviours of spiral waves were evaluated for
 the WT, HT10 and HT25 cases.
 For the 3D simulations, the model described in Sections
 \ref{atrium:sec:geometry}\ and \ref{atrium:sec:model}\ was used.
+
+The diffusion coefficient, $D$, was set to
+$0.03125\,\text{mm}^{\text{2}}\,\text{ms}^{\text{-1}}$~\cite{Biktasheva2005}\
+for all tissue simulations.
+This is lower than the value used for the atrium model in healthy conditions.
+This value allows scroll waves to be initiated easily.
+It also emulates the conduction velocity reduction often seen in pathological
+conduction cases.
+
 Since the intention was just to investigate the influence of the mutation, the
 model was used without tissue anisotropy.
 The mutation was applied homogeneously with the electrical activity at all
@@ -678,8 +687,13 @@ Stimulus protocol used to initiate a scroll wave.
 (a) One extreme of the atrial model is stimulated
 (b) The excitation is allowed to propagate
 (c) An S2 stimulus is delivered by clamping a section of the tissue, here
-the lower quarter.
+the upper quarter.
 (d) A scroll wave begins on the wall of the right atrium.
+
+NB: The shorter action potential shown in this figure was selected for clarity.
+It is very short when compared with figure~\ref{fig:atrium:validation:main}.
+This is due to a combination of the reduced value of $D$ used in this study and
+the shortening of the action potential induced by the mutation under study.
 }
 \end{figure}
 First, a small number of cells are simulated at one extreme of the atrial model.
