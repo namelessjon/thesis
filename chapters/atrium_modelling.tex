@@ -132,6 +132,18 @@ parameters.
 \end{center}
 \end{table}
 
+The CRN model was chosen for the biophysical detail it provides.
+This enables the model to be used in the simulation of diseased or remodelled tissue, or
+tissue under the influence of cardiac drugs.
+The Fenton--Karma model, ($\S$\ref{sec:intro:math:fk}), is attractive as it is a
+simpler model than the CRN model.
+This makes it quick to simulate large timescale activity, but this same
+simplicity can make incorporating drug actions or other behavioural
+modifications difficult.
+This made it inappropriate for use in many of the modelling studies the atrium
+model would otherwise be suitable for.
+
+
 \subsection{Monodomain Equation}
 
 To simulate the propagation of electrical activity over the finite difference
@@ -149,6 +161,12 @@ advanced in time via the forward Euler method with a timestep of \ms{0.02}.  For
 simulations with isotropic conductivity between nodes a 7-node approximation of
 the differential operator is used.  When anisotropy is present, a 19-node
 approximation is used.
+
+The boundary conditions used in the simulation were the no-flux conditions.
+This was implemented by setting the differential of the voltage to 0 at all
+boundary locations.
+A rule system based on the locations of cells on the boundary was used to modify
+the Laplacian to enforce this condition.
 
 \subsection{Tissue Anisotropy}
 
@@ -311,8 +329,12 @@ from the sino-atrial node.
 The fully detailed model was used.
 The Laplacian was precomputed to include all the information on tissue
 anisotropy from the fibre orientation which accompanied the geometry.
-The bulk diffusivity, $D$, of the tissue was set to $0.18$.
-The anisotropy ratio for transverse to longitudinal conduction was set to 1:9.
+The bulk diffusivity, $D$, of the tissue was set to $0.18\,\text{mm}^{\text{2}}\,\text{ms}^{\text{-1}}$.
+This value was selected via numerical experimentation.
+The parameter was adjusted until an appropriate activation time was attained.
+
+The anisotropy ratio for transverse to longitudinal conduction was set to 1:9
+after Seemann et al~\cite{Seemann2006}.
 The activity at each node was represented by the Courtemanche et al. model with
 voltage and ion concentration dependent parameters pre-computed and tabulated.
 A timestep of \ms{0.02}\ was used to integrate both the cellular model at each
@@ -322,6 +344,14 @@ corresponding to the sino-atrial node of the model.
 The excitation was then allowed to propagate without interference.
 After the propagation was allowed to run its course, activation maps were
 constructed.
+
+The numerical implementation was tested for stability by reducing the timestep
+to \ms{0.002}.
+Whilst stimulating with this reduced timestep, a small ($>$5\%) difference in the relative number
+of excited cells at any given timestep.
+This difference was negligible compared to the total number of cells which could
+be excited.
+The solution was therefore considered to be stable.
 
 \subsection{Activation Maps}
 
