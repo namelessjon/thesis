@@ -141,7 +141,7 @@ This makes it quick to simulate large timescale activity, but this same
 simplicity can make incorporating drug actions or other behavioural
 modifications difficult.
 This made it inappropriate for use in many of the modelling studies the atrium
-model would otherwise be suitable for.
+model would otherwise be useful for.
 
 
 \subsection{Monodomain Equation}
@@ -345,8 +345,8 @@ The excitation was then allowed to propagate without interference.
 After the propagation was allowed to run its course, activation maps were
 constructed.
 
-The numerical implementation was tested for stability by reducing the timestep
-to \ms{0.002}.
+The numerical implementation was within the theoretical limit of stability and
+was tested by reducing the timestep to \ms{0.002}.
 Whilst stimulating with this reduced timestep, a small ($>$5\%) difference in the relative number
 of excited cells at any given timestep.
 This difference was negligible compared to the total number of cells which could
