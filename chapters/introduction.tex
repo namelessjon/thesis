@@ -6,6 +6,21 @@ In addition to the deaths, many more people suffer the after effects of a heart
 attack or live with the difficulties caused by heart failure~\cite{bhf2008}.
 These figures are duplicated across much of the developed world.
 
+
+\section{Motivations}
+
+The atria have generally been neglected in studies, compared to the ventricles
+at least.
+Many more studies focus on ventricular tissue than atrial tissue, and many of
+the atrial studies focus more on the pacemaker of the heart, than the atria as a
+whole.
+The atria have a complex electrophysiology and topology.
+Whilst atrial dysfunction is rarely fatal, atrial arrhythmias are amongst the
+most common cardiac diseases, reducing the quality of life for hundreds of
+thousands of people.
+They have recently been the focus of a variety of clinical and physiological
+interest, interest which has not yet been reflected in cardiac modelling.
+
 Mathematical modelling of the heart offers a way of gaining insight into the
 cardiac processes and the mechanisms of cardiac disease.
 It is a well established field of research with numerous international journals
@@ -15,32 +30,71 @@ in ways that can be difficult for in vivo and in vitro experiments.
 This can be used to inform both further experiments and clinical diagnosis and
 treatment.
 
-Mathematical models exist for many different types of cardiac cells and
-cardiac tissue.
-Many studies of cardiac tissue focus on the ventricles, with atrial studies less
-common.
-This is in part because failure of the ventricles can have a much more serious
-impact, but in spite of this, the atria represent an interesting target to
-study.
-They have a complex electrophysiology and topology.
+Despite these benefits, mathematical modelling has a number of downsides.
+One of these is the technical expertise needed to model the heart.
+It is a non-trivial programming task to setup a computer to solve the equations
+of a mathematical model.
+There are existing toolkits which solve this issue, but they have limitations.
+Once the model has been set up, it needs to be used in a variety of experimental
+protocols, to quantify the behaviour of the model and any abnormal conditions
+the experimenter is interested in.
+This task is both complicated, as the experimental protocols can involve complex
+pacing patterns and require detailed measurements to be taken.
+The task is also quite simple and repetitive, in that the same protocols are
+wanted to assess many different cell types and abnormal conditions.
+Finally, such protocols can vary between experimenters, making it harder to
+compare results between different studies.
 
-This study therefore aims to construct a series of models and tools for studying
-the atria of the heart.
-This involves modelling the atria and their processes on a wide variety of scales,
-from the single cell to the whole atrium.
-To enhance the clinical relevance of the study, a model of the atrium sitting
-within the human torso will also be constructed.
-This will allow the P-wave ECG to be calculated, the first view many cardiac
-physicians will have of a failing atrium.
-The tools will then be used to study a variety of factors that influence atrial
-behaviour.
-
-\section{Motivations}
-
-
+A second problem is that of clinical relevance.
+Many computational experiments focus on simplified models of cardiac tissue in
+one or two dimensions.
+Whilst such experiments are useful for elucidating complex interactions, they
+can be of limited use to a clinician.
+The clinical electrocardiologist typically works with external tools such as the
+ECG.
+Clinical procedures are more expensive, stressful and sometimes dangerous.
+Diagnosis therefore depends on using the ECG to infer the activity within the
+heart.
+Being able to link the electrical activity within a model to the observed
+surface ECG can help with this, allowing an atrial model to be used to test
+hypotheses with direct clinical relevance.
 
 
 \section{Aims}
+
+To address these issues, the thesis has three broad aims.
+To construct a toolkit suitable for modelling cardiac tissue and particularly
+atrial cells, to construct a model of the human atrium and the surface ECG and to
+use the toolkit and the model in studies of the human atrium.
+
+The cardiac simulation toolkit aims to address several problems of cardiac
+modelling.
+As a toolkit, it simplifies the basic set up for numerical experiments by
+providing mathematical models ready to solve.
+In addition, it will provide a number of experimental protocols, reducing the
+repetitive work required to perform numerical experiments on cardiac tissue and
+making cross-study comparisons easier.
+The toolkit will also take advantage of optimisation techniques, making such
+studies faster to undertake.
+
+The model of the human atrium should allow for the modelling of some of the
+complexities of atrial tissue; this includes regions of heterogeneous
+electrophysiology and anisotropic conduction.
+Through use of appropriately biophysically detailed models as the basis, it will
+be suitable for use in studies such as electrophysiological remodelling or
+inherited gene mutation.
+Optimisation techniques will be used to make the problem computational
+tractable.
+The atrial model will be coupled to a representation of the human torso and used
+as the basis of a forward calculation of the surface P-wave ECG.
+This will allow studies of direct clinical relevance.
+
+
+The tools and models will then be used in studies of atrial electrophysiology.
+These will involve modelling the atrium on a number of scales from the single
+cell through to the P-wave ECG.
+The studies will incorporate both normal electrophysiology and a variety of
+abnormal electrophysiological conditions.
 
 \section{Synopsis}
 
