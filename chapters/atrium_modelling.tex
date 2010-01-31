@@ -163,10 +163,11 @@ the differential operator is used.  When anisotropy is present, a 19-node
 approximation is used.
 
 The boundary conditions used in the simulation were the no-flux conditions.
-This was implemented by setting the differential of the voltage to 0 at all
-boundary locations.
-A rule system based on the locations of cells on the boundary was used to modify
-the Laplacian to enforce this condition.
+A rule system based on the locations of nodes on the boundary was used to modify
+the Laplacian to enforce the no-flux condition.
+Nodes on the boundary had the differential of voltage set to 0 in the direction
+of nodes outside the tissue.
+This approximation was simple to implement.
 
 \subsection{Tissue Anisotropy}
 
