@@ -674,6 +674,34 @@ mutant conditions.
 A reduction of intracellular coupling has been noted in experimental and
 clinical studies of atrial fibrillation~\cite{Velden1998,Shaw1997}.
 
+The Dominant Frequency (DF) of the tissue activity in 2D cases was estimated
+using a Fast Fourier Transform~\cite{Zaitsev2000}\ (FFT) to compute the power
+spectrum.
+Voltage traces from selected points through the diagonal were used as the input.
+Matlab was used to compute the FFT.
+The \unit{10}{s}\ duration of the simulation gives a resolution of
+\unit{0.1}{Hz}.
+Ascertaining the DF from the FFT reveals the primary frequency of activation of any
+source in the tissue, with multiple sources revealed as multiple peaks.
+Conversely, if there is no coherent source, the power spectrum will lack clear
+peaks.
+An alternative might have been to use a threshold crossing
+algorithm~\cite{Chen1996}.
+These are more commonly applied to ECG recordings.
+In such an algorithm the time interval between instants the voltage signal crosses
+a particular threshold, typically 20\% of the maximum, in a given window,
+typically \unit{1}{s}, is recorded.
+From the average of such intervals, the rate can be estimated.
+The evolution of the rate can also be tracked, from interval to interval.
+Using a threshold crossing interval method has some advantages over the FFT
+based approach chosen, since it hard to track the evolution of rate with an FFT
+algorithm.
+However, if desired, zero padding could be used to estimate the DF for
+each \unit{1}{s}\ segment with an FFT.
+The use of an FFT makes multiple sources clearer than a threshold crossing
+interval, as there will be two peaks, instead of high variability in
+interval.
+
 
 Since the intention was just to investigate the influence of the mutation, the
 model was used without tissue anisotropy.
