@@ -226,6 +226,32 @@ task, in general 8 cores of Horace were found to be sufficient for running most
 jobs and in compiling for MPI some of the flexibility would be lost from the
 library.
 
+\subsubsection{Parallel Fraction and Amdahl's Law}
+
+Ideally, parallelizing computer code would speed the execution up in direct
+proportion to the number processors employed.
+Use four processors and the computation is completed in one quarter of the time.
+Unfortunately, this relationship rarely holds.
+This was first noted by Amdahl~\cite{Amdalh1967}, although his observations were
+not directly related to parallelization, rather to the general idea of speedup.
+Since differing portions of the code do not speed up in the same way, the
+maximum speedup that can be observed will be limited by the lowest speedup.
+
+For parallel code, this concept becomes the parallel fraction.
+Some, hopefully most, of the code will be executed in parallel.
+This code will speed up when run on more processors.
+Some of the code will be serial however.
+This is typically communication, both between parallel processes and to output
+data, but might also include set up costs.
+Serial code can't get faster on more computers, without an algorithm change, and
+so it limits the maximum speed up.
+The maximum speedup, $S_N$, for $N$ processors is given by
+\begin{equation}
+\label{eqn:toolkit:amdahl}
+S_N = \frac{1}{\left(1 - P\right) + \frac{P}{N}}
+\end{equation}
+where $P$ is the parallel fraction.
+
 \subsection{Performance Optimisation}
 
 Optimisation is the process of improving a given quantity.
