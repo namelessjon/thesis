@@ -559,6 +559,8 @@ significant alteration in channel kinetics needed to reproduce such traces.
 In addition, any remodelling would need to sustain pacing at very high
 frequencies.
 
+\subsection{Methods}
+
 \subsubsection{Modelling the Mutation}
 
 This study, as in the previous chapter, uses the CRN model, developed by
@@ -741,6 +743,8 @@ A correctly timed S2 stimulus results in a scroll wave on the wall of the right
 atrium.
 After initiation, the models were simulated until activity ceased or until
 \unit{6}{s}\ of simulated time had elapsed.
+
+\subsection{Results}
 
 \subsubsection{Changes in \apd\ due to S140G mutation}
 
@@ -948,7 +952,7 @@ The dominant frequency in the HT25 case was found to be much higher,
 approximately \unit{10}{Hz}, than in the WT case, less than \unit{3}{Hz}.
 %This is shown in figure~\ref{atrium:iks:threeddf}.
 
-\subsubsection{Discussion and Conclusions of the S140G Study}
+\subsection{Discussion and Conclusions}
 
 The S140G mutation of the KCNQ1 $\beta$\ subunit of the \ii{Ks}\ ion channel
 causes a large gain of function.
@@ -1028,6 +1032,10 @@ Such a model, by its nature, does not consider the continuous time variation of
 potentials within the human atria, and may accumulate significant error in a
 short period of time.
 
+\input{chapters/studies/afer}
+
+\input{chapters/studies/anion}
+
 \section{Modelling the Whole Atrium: Conclusion}
 
 A realistic model of the human atria has been developed.
@@ -1059,3 +1067,25 @@ the cellular electrical behaviour.
 It is very easy to see how the mutation is associated with a prevalence of
 atrial fibrillation in families which have inherited the gene.
 
+The AFER study, by contrast, involved remodelling where many currents were
+affected.
+In this study, the restitution curves were significantly flattened, leading to
+stable spiral waves.
+Regional differences in AP profiles, caused by the natural heterogeneity of the
+atrium, lead to breakup on the edges of such regions.
+
+In the \ii{ANION}\ study, the influence of a novel anion bearing current in the
+human atrium was examined.
+Despite the small influence of the current on the \apd\ and its time independent
+nature, there were significant alterations in the rate dependant and dynamic
+behaviours of the cell.
+This is due to the voltage at which the current act, and the corresponding
+alterations to the time courses of currents which do have time dependent
+properties.
+
+All three experimental studies involved the use of the toolkit developed in
+chapter~\ref{chapter:toolkit}.
+They showcase its versatility in modelling effects from the subtle, such as
+\ii{ANION}, to severe, such as the S140G mutation study.
+In addition, the S140G study demonstrates (a reduced version of) the whole
+atrium model in operation.
