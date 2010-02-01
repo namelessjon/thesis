@@ -310,6 +310,26 @@ give identical results whether the state is saved or not.  Using such a
 technique with a cell that has a number of stochastic components could
 potentially affect the quality of the results.
 
+The speedup gained by this method of saving state can be quite significant, but
+it varies markedly depending on the protocol used.
+To give a concrete example, the conduction velocity restitution protocol,
+described in detail later, involves pre-pacing the strand ten times before the
+conduction velocity is measured with an eleventh stimulus.
+This is repeated perhaps forty times with different intervals between the tenth
+and eleventh stimuli, to track the restitution curve.
+This requires the strand to simulated through 440 stimulations.
+The first nine pre-pacing intervals will be identical in each of those forty
+cases (to allow for premature stimuli, the tenth stimulus must be repeated).
+If the state is saved just before the tenth stimulus is delivered, then instead
+only 89 stimulations need to be calculated.
+The nine prepacing stimuli, the result of which is saved, and then the forty
+pairs of tenth and eleventh stimuli.
+This gives a speedup of almost 5x.
+In practice this might be better as the test
+stimulus is often premature, reducing the total time that must be stimulated for
+the pairs of tenth and eleventh stimuli.
+
+
 The second way in which caching can be employed is in the creation of `lookup
 tables'~\cite{Victorri1985,Cooper2006}.
 A lookup table is a pre-computed table of the values an expression can
@@ -351,7 +371,30 @@ It can also influence the results, due to the discretisation involved in the
 computations.
 However even a small number of steps, sufficient to discretise with a
 resolution of \mv{0.1}, typically introduces a $\leq$~0.1\% error.
-Meanwhile, a 5x or greater speedup is not impossible.
+A typical example of the difference lookup tables can make to execution time is
+shown in table~\ref{tbl:toolkit:lookup}.
+A speed up of 2.9x is attained for the simulation of a plane wave on a
+$375\times375$ sheet of CRN cells.
+
+\begin{table}
+    \caption[Execution time with and without lookup tables]{
+    Execution time for simulations with and without lookup tables.  Both
+    simulations were performed on one processor on horace, solving a plane wave
+    on a $375\times375$ node sheet of CRN cells for \ms{100}.
+    A speedup of almost 3x is attained.
+    }
+    \begin{center}
+    \begin{tabular}{ l l }
+    \toprule
+    Case & Execution Time (seconds) \\
+    \midrule
+    no lookup tables & 3750.5 \\
+    lookup tables & 1284.0 \\
+    \bottomrule
+    \label{tbl:toolkit:lookup}
+    \end{tabular}
+    \end{center}
+\end{table}
 
 \subsubsection{Binary Searches}
 
@@ -406,6 +449,8 @@ value.
 For example, to find a parameter to an accuracy of \ms{1}\ in a range of
 \ms{250}\ statistically requires 125 sequential iterations.
 To find that same parameter using binary iterations requires just 8.
+This is a speedup of approximately 15x, although this depends on where in the
+range searched the parameter actually lies.
 
 An important limitation of the binary search method is that there must only be
 one critical value.
