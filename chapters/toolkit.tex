@@ -277,12 +277,11 @@ Several of the techniques used are presented here.
 
 The library has been compiled using the GNU C compiler (gcc)~\cite{gcc}\ and the
 Intel C compiler (icc)~\cite{icc}.
-Both have OpenMP implementations available and all three are capable of
+Both have OpenMP implementations available and are capable of
 performing a number of optimisations, controlled via flags.
-The most important
-aspect of the
-optimisations is that they should not alter the behaviour of the floating point
-handling, as this could have significant impact on the final result computed.
+The most important aspect of the optimisations is that they should not alter the
+behaviour of the floating point handling, as this could have significant impact
+on the final result computed.
 Despite this caveat, the results of applying certain optimisation flags can be
 quite significant, speeding execution by several percent.
 
