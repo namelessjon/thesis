@@ -701,3 +701,57 @@ Using (\ref{eqn:intro:math:dmdtsolnrl}) is more accurate than the forward Euler
 method (\ref{eqn:intro:euler}), since it depends only on the value of the
 membrane potential, not the derivative of $m$.
 
+\subsection{Limitations of Modelling}
+
+Despite the inherent advantages of modelling, it does have disadvantages one
+must be aware of as well.
+Some of these are intrinsic to models, and others emerge from choices made.
+Knowing the weaknesses of modelling can improve the conclusions drawn from
+modelling.
+
+One limitation of modelling is that often a choice must be made.
+Phenomenological models offer very fast solution times, but do so by sacrificing
+physiological detail.
+Biophysically detailed models can offer more insight, but can be very slow to
+solve, especially for tissue simulations.
+
+The most obvious limitation of modelling is that a model can only ever be as
+good as the assumptions and experimental data which are the input.
+A model based on incomplete information or inaccurate assumptions is unlikely to
+produce acceptable results.
+Worse, it can lead to likely looking but erroneous results.
+
+There is also the danger of extrapolation.
+This can be particularly true for human models, which are often based on limited
+data and supplemented by information from different animal tissues.
+One clear example of this is the CRN and Nygren models.
+Both are models of human atrial tissue and in addition are largely based on the
+same human experimental data.
+They have a different action potential morphology, with the CRN showing a spike
+and dome morphology whilst the Nygren model producing a triangular morphology.
+Both have been observed in human atrial cells~\cite{Wang1993}\ isolated from the
+same preparation.
+The two cellular models also display different rate dependent adaptation
+characteristics~\cite{Cherry2007}.
+Despite this, many studies (in this thesis too) select just one model to base
+their conclusions on.
+Extrapolation can also be an issue when animal electrophysiology differs from
+the human, such as in the Purkinje fibres~\cite{Stewart2009}.
+In the human Purkinje fibre, the APD is very similar to a ventricular APD,
+whereas in canine, rabbit and sheep ventricles, the APD in a Purkinje fibre cell
+is prolonged.
+
+Many modelling descriptions are also statistical or homogenised.
+The Hodgkin--Huxley equations are a statistical description of cell open states.
+The bidomain model (and hence the monodomain) model assume a continuous medium,
+rather than the micro-scale connections in human cardiac tissue.
+Whilst these are often fine assumptions to make in healthy tissue, disease is
+often the state we are more interested in modelling, and in disease these
+assumptions can break down.
+
+On a more practical level,  second generation models can have complex
+inter-relationships between initial conditions and behaviour.
+They have also been shown to exhibit long term drift in ionic
+concentrations~\cite{Hund2001}.
+These require careful validation of such models, and consideration of long term
+behaviours.
