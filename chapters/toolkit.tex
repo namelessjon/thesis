@@ -900,9 +900,20 @@ found time.
 The toolkit compares well with many existing frameworks.
 COR has many more cells available for use through the CellML repository and
 offers an easy way to graph the internal properties of the cell.
-Like the library developed here, COR is limited to one OS, which is Microsoft
-Windows for COR.
-COR has no inbuilt experimental protocols however.
+COR is limited running on Microsoft windows, whilst the toolkit is limited
+to running on linux.
+It has no inbuilt experimental protocols, at the time of writing, although there
+will eventually be `COR projects' which will enable protocols to be specified
+and shared more easily.
+All experimental protocols therefore have to be programmed individually for each
+cell, either in the programming language provided by COR or the CellML markup
+language.
+The publicly available version of COR is also limited to single cell
+simulations, although papers indicate it can be used for more complex
+simulations and includes parallelization.
+COR does use a more sophisticated solver than the toolkit developed here, the
+CVODE solver.
+
 CMISS lacks experimental protocols and is hard to script to use automatically.
 It does offer much more sophisticated visualisation than the toolkit here, and
 can be used for full 3D simulations too.
