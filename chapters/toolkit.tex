@@ -475,29 +475,58 @@ the lower end of the range.
 Since curves can increase or decrease the absolute difference between the two
 values is compared.
 
-\subsubsection{Parallel Input/Output}
+\subsubsection{Parallel Speedup}
 
-Input and output for simulations is obviously essential if they are to be of any
-use.  This input and output can involve the reading or writing of many megabytes
-or gigabytes of information over the course of a simulation, often in a variety
-of different formats.  This most significant for sheet simulations and it is
-those that we consider here.
+Single cell and one dimensional problems and protocols are speed up sufficiently
+by the techniques previously outlined.
+The two dimensional sheet simulations can take a significant amount of time
+however.
+It also often difficult to apply some of the more significant optimisations such
+as binary searches to two dimensional simulations.
+For this reason, the two dimensional simulations are parallelized with OpenMP.
 
-Data input is typically not that significant a cost for
-simulations, as whilst various simulation maps and saved states be quite large,
-the cost is typically only paid once.  Data output is often required at numerous
-points throughout the course of the simulation since almost all simulations are
-performed to examine the time evolution of the cardiac system.  Many simulations
-will output the value of state parameters, most commonly the voltage, at all
-points in the tissue every few milliseconds of simulated time.  Other state
-variables might also be desired and the toolkit also offers `live visualization'
-of two dimensional sheets via output of images in the GIF format.  In addition,
-the whole state is output regularly, to allow simulations to be resumed at a
-later point in time.  This output usually stops all simulation whilst it is
-being written to disk, time during which the processors are typically idle.  By
-allowing multiple threads to output in parallel, the cost of outputting multiple
-files can be reduced to the cost of outputting one.
+As noted earlier, the maximum speedup which can be obtained is limited by
+Amdahl's law.
+One of the typical serial portions of the code is the input and output; it is
+essential if the simulations are to be of any use, but it also typically halts
+execution while it is ongoing.
+In the toolkit, there are three things periodically output in sheet simulations: a record of all the
+membrane potentials, a GIF formatted visualisation of the same, and (less
+frequenty) a complete output of all the state variables to allow simulation to
+be resumed.
+In the toolkit, these are output in parallel with each output initiated in a
+different thread of the simulation.
+This allows what is normally a serial task to be performed in parallel.
 
+Using OpenMP, these parallel i/o techniques and techniques to improve
+parallelization (such as giving each thread its own copy of the lookup tables to
+reduce memory bandwidth contention), the speedup obtained is shown in
+figure~\ref{fig:toolkit:parallel}.
+This was for a simulation of a plane wave on a sheet of $375\times375$ nodes,
+using the CRN model with lookup tables.
+The simulation was run for \ms{500}\ of simulated time and had output every
+\ms{2.5}\ and full state output every \ms{10}.
+The graph shows the parallel fraction is somewhere between 0.98 and 0.99 for
+eight processors (the limit for an OpenMP process on the horace supercomputer).
+This is a good parallel fraction.
+The reduced parallel fraction at lower processors could be due to the reduced
+size of caches, requiring more information to be accessed from main RAM.
+
+\begin{figure}
+\centering
+\includegraphics{figures/toolkit/speedup/speed}
+\caption[Parallel speedup for toolkit code]{
+\label{fig:toolkit:parallel}
+Plot of relative speedup against number of processors for a two dimensional
+simulation using the toolkit performed on horace.
+The relative speedup obtained is plotted in a solid black line.
+The solid red line represents ideal (1:1) speedup.
+The five dashed red lines represent the speedup predicted for, from top to
+bottom, $P = 0.99, 0.98, 0.97, 0.96, 0.95$.
+The speedup obtained on 8 processors is very close to that predicted for a
+parallel fraction of 0.99.
+}
+\end{figure}
 
 \section{Experimental Protocols}
 \label{sec:toolkit:protocols}
