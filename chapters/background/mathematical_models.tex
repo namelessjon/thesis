@@ -622,6 +622,12 @@ In the finite difference method, the problem space---the cardiac tissue, in this
 thesis---is divided up into a number of nodes.
 The spacing between each node is $\Delta x$ in the x direction (and in higher
 dimensions,  $\Delta y$ in the y direction and so on).
+Or
+\begin{equation}
+\label{eqn:intro:fd:partial2}
+\frac{\partial u}{\partial t} = D \frac{\partial^2 u}{\partial x^2}
+\end{equation}
+
 To advance the solution in time, the forward Euler method
 (\ref{eqn:intro:euler}) can be used.
 To approximate the differential in space, the centred second difference can be
@@ -674,6 +680,28 @@ The typical 5--node stencil used for solving (\ref{eqn:intro:fd:partial}) and
 hence (\ref{eqn:intro:math:bidom}) or (\ref{eqn:intro:math:mono}) is illustrated
 in figure~\ref{fig:intro:math:stencil}.
 Other schemes can use different stencils.
+
+Another important concept for the finite difference approximation, and
+particularly for the forward Euler approximation, is that of
+stability~\cite{Langtangen2003}.
+Stability is closely related to the accuracy of the solution.
+It arises from the finite discretisation of the problem.
+The choice of timestep, $\Delta t$, and space step, $\Delta x$, limits how fast
+information (and thus excitation) can be transmitted in the discretised system.
+The diffusion parameter, $D$, determines how fast information should be
+transmitted in the system.
+If information is required to be transmitted faster than the system can transmit
+such information, the solution is said to be unstable.
+The stability critereon for (\ref{eqn:intro:fd:partial2}) is
+\begin{equation}
+\label{eqn:intro:fd:stability}
+\Delta t \leq \frac{{\Delta x}^{2}}{2D}
+\end{equation}
+Where all symbols are defined previously.
+If the parameter choices do not satisfy this relationship, inaccuracies may
+arise.
+
+
 
 
 \subsubsection{The Rush--Larsen Technique}
