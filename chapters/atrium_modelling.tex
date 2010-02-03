@@ -347,12 +347,35 @@ The excitation was then allowed to propagate without interference.
 After the propagation was allowed to run its course, activation maps were
 constructed.
 
-The numerical implementation was within the theoretical limit of stability and
-was tested by reducing the timestep to \ms{0.002}.
-Whilst stimulating with this reduced timestep, a small ($>$5\%) difference in the relative number
-of excited cells at any given timestep.
-This difference was negligible compared to the total number of cells which could
-be excited and so the solution was considered stable.
+The numerical implementation was tested for stability by reducing the timestep to \ms{0.002}.
+Representative AP traces were extracted from points within the
+tissue (shown in figure~\ref{fig:atrium:structure:stability}) and show almost
+identical action potential profiles in both a point in the middle of the crista
+terminalis (high anisotropy) and in the pulmonary vein region (low anisotropy)
+compared to the traces generated at the longer, \ms{0.02}, timestep.
+The minor differences present were considered acceptable.
+In addition to AP profiles, the number of active cells was examined at several
+time points in the simulation.
+A small ($<$5\%) difference in the relative number of excited cells was observed
+at any given time point.
+This difference becomes wholly negligible when compared to the total number of cells which could
+be excited.
+This is further evidence of stability.
+\begin{figure}
+\begin{center}
+\includegraphics{figures/atrium/validation/stability/stability}
+\end{center}
+\caption[Extracted AP traces at 0.002ms and 0.02ms]{
+\label{fig:atrium:structure:stability}
+Representative action potentials extracted from (a) a site near the pulmonary
+veins and (b) the crista terminalis.
+The solid red line is a tracing from simulation at \ms{0.02}, the dashed from
+\ms{0.002}.
+The two traces have identical morphology from both (a) and (b) and almost
+entirely over lay, thus the solution was considered stable and sufficiently
+accurate.
+}
+\end{figure}
 
 \subsection{Activation Maps}
 
