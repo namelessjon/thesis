@@ -457,7 +457,7 @@ of \degreetitle.
         \begin{center}
         \begin{minipage}{4in}
                 \parindent=0pt
-        Word Count: 44224
+        Word Count: 50385
                 \par
         \end{minipage}%
         \end{center}%
