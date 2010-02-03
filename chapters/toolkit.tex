@@ -166,9 +166,9 @@ model.  Conduction of the electrical excitation between the nodes uses the
 monodomain equations with no flux boundary conditions applied at all tissue
 boundaries and a 5-node approximation of the Laplacian.  The square sheet model,
 used in several of the numerical experimental protocols described later, is
-typically $375\times375$ nodes, representing 140,625 cellular models.  Two dimensional
+typically $375\times375$ nodes, representing 140,625 `cells'.  Two dimensional
 idealizations of physiological preparations can have many more nodes, to on the
-order of $10^{6}$ cellular models.  These idealizations can often be quite
+order of $10^{6}$ `cells'.  These idealizations can often be quite
 irregular and so to allow easy and effective partition of workload across
 multiple processors, the tissue map is decomposed into a 1D array which contains
 references to the neighbouring cells.
@@ -621,7 +621,8 @@ experiments~\cite{Boyett1978,Taggart1996}.  The APD\emph{r} is used
 as a measure of how the cell responds to stimulations at different rates.
 
 A single cell protocol to evaluate the ADP\emph{r}\ curve as results gained are
-similar to strand protocols~\cite{Xie2002,Decker2009}\ with much less effort .
+similar to strand protocols~\cite{Xie2002,Decker2009}\ with much reduced
+computational effort.
 The cellular model is paced $N-1$\ times with a stimulus close to the threshold
 value at a given stimulus interval, S1.  At this point, the state is saved for the
 paced cells.  The $N$th S1 stimulus is then given, followed by the S2 after a
