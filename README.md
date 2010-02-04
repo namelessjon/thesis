@@ -1,112 +1,21 @@
-Chapters
-========
+Developing Realistic Models of the Human Atrium and the P-Wave ECG
+==================================================================
 
-Introduction
-------------
+(The University of Manchester)
 
-* The Heart
-  * structure
-  * function
-* Cellular Modelling
-  * basic principles
-  * model development
-  * models
-* Toolkits
-  * advantages of toolkits
-  * currently existing ones
-    * COR
-    * PhyENV
-    * OXSOFT Heart
-    * CellML
-* The BSP
-  * Why are we interested?
-  * the ECG
-  * P-waves
-  * current state of simulations
+Cardiac disease, including atrial fibrillation (AF), is one of the biggest causes of morbidity and mortality in the UK, accounting for one third of all
+deaths. Cardiac modelling is now a well established field.  Mathematical models offer a valuable way of gaining insight into the dynamic behaviours of the
+heart, in normal and pathological conditions.  Great efforts have been put into modelling the ventricles, whilst the atria have received less focus.  This
+thesis therefore concentrates on developing models of the atria.
+
+In the first part of the thesis, I developed a simulation toolkit for modelling myocyte electrophysiology and excitation waves in 1D \& 2D tissues.
+It includes optimisations such as adaptive stimulus protocols.  As examples of application, it is used to investigate effects of a novel anion bearing current on atrial excitation and the effect of AF remodelling on atrial myocyte electrical heterogeneity.
+
+In the second part, a computationally efficient and anatomically based model of the atria is constructed.  The 3D model includes heterogeneous, biophysically detailed electrophysiology and conduction anisotropy.  The full model activates in \ms{121}\ in sinus rhythm, in close agreement with clinical data.  The model is used, with the toolkit, to investigate the function effects of S140G mutation in KCNQ1 which is associated with familial AF.
+
+In the last half of the thesis, the 3D model forms the core of a boundary element model of the P-wave Body Surface Potential (BSP).  The BSP model incorporates representations of the lungs and the heart blood masses.  Generated ECGs show qualitative agreement with clinical data.  Their morphology is as expected for a healthy person, with a lead II duration of \ms{103}.  The BSP model is used to verify an existing algorithm for focal atrial tachycardia location and in providing explanation for a novel clinical phenomena, inverted P-waves at night.
 
 
-Toolkit Methods
----------------
-
-* experimental protocols
-  * APD
-  * APDr
-  * ERPr
-  * CV
-  * VW
-  * cut wave?
-* new methods
-  * binary searching
-  * caching
-  * direct visualization
-  * maps expanded for general use.
-* tying it together
+Models of the human atria and body surface potential are constructed.  The models are validated against both experimental and clinical data.  These models are suitable to use as the platform for further research.
 
 
-ThreeD Methods
---------------
-
-* fibre structure
-* heterogenity
-* parallelization
-
-
-Body Surface Potential Methods
-------------------------------
-
-* math involved
-* heart rotation
-* phase measurement methods
-
-
-Toolkit Results
----------------
-
-* anion work
-* 2D sheet results
-
-
-ThreeD Results
---------------
-
-* fibres and hetero
-* spiral waves with anion
-
-
-Body Surface Potential Results
-------------------------------
-
-* plots
-* ecgs
-* phase plots
-* location of arrhythmias and ECG profiles.
-
-Discussion
-----------
-
-* toolkit
-* threeD
-* BSP
-
-Appendix A
-----------
-* documentation for toolkit
-
-
-
-Problems
-========
-
-CellML
-------
-
-* Why don't we use it?
-  * No, really, why don't we?
-  * atrium simulations primarily
-* Can we use it?
-
-BSP
----
-
-* What if it doesn't look right?
-* What limitations?
